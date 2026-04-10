@@ -1,7 +1,7 @@
 [project]
-name = "jobs"
+name = "jobs-france"
 version = "0.1.0"
-description = "Add your description here"
+description = "Visualiseur du marché du travail français - Exposition IA des métiers ROME"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
