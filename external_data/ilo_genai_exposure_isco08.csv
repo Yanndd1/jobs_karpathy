@@ -1,0 +1,428 @@
+isco08_code,occupation_title,exposure_category,mean_task_score,n_tasks
+1111,Legislators,Not Exposed,0.3131,8
+1112,Senior government officials,Minimal Exposure,0.3767,9
+1113,Traditional chiefs and heads of village,Not Exposed,0.2305,7
+1114,Senior officials of special-interest organizations,Minimal Exposure,0.3683,9
+1120,Managing directors and chief executives,Minimal Exposure,0.3759,11
+1211,Finance managers,Minimal Exposure,0.3728,8
+1212,Human resource managers,Minimal Exposure,0.3564,11
+1213,Policy and planning managers,Not Exposed,0.3593,9
+1219,Business services and administration managers not elsewhere classified,Exposed: Gradient 2,0.4190,10
+1221,Sales and marketing managers,Exposed: Gradient 2,0.4122,8
+1222,Advertising and public relations managers,Minimal Exposure,0.3882,8
+1223,Research and development managers,Minimal Exposure,0.3975,8
+1311,Agricultural and forestry production managers,Minimal Exposure,0.2697,12
+1312,Aquaculture and fisheries production managers,Not Exposed,0.2196,13
+1321,Manufacturing managers,Minimal Exposure,0.3787,12
+1322,Mining managers,Minimal Exposure,0.3473,10
+1323,Construction managers,Minimal Exposure,0.3384,11
+1324,"Supply, distribution and related managers",Minimal Exposure,0.3850,12
+1330,Information and communications technology service managers,Exposed: Gradient 2,0.4402,11
+1341,Child care services managers,Minimal Exposure,0.2994,9
+1342,Health services managers,Minimal Exposure,0.3630,10
+1343,Aged care services managers,Minimal Exposure,0.3438,10
+1344,Social welfare managers,Minimal Exposure,0.3692,10
+1345,Education managers,Minimal Exposure,0.3630,11
+1346,Financial and insurance services branch managers,Exposed: Gradient 2,0.4693,11
+1349,Professional services managers not elsewhere classified,Minimal Exposure,0.3836,9
+1411,Hotel managers,Exposed: Gradient 1,0.3730,10
+1412,Restaurant managers,Minimal Exposure,0.3630,10
+1420,Retail and wholesale trade managers,Exposed: Gradient 2,0.4359,7
+1431,"Sports, recreation and cultural centre managers",Minimal Exposure,0.3225,9
+2111,Physicists and astronomers,Exposed: Gradient 1,0.3798,11
+2112,Meteorologists,Exposed: Gradient 3,0.5364,9
+2113,Chemists,Minimal Exposure,0.3875,9
+2114,Geologists and geophysicists,Minimal Exposure,0.3633,12
+2120,"Mathematicians, actuaries and statisticians",Exposed: Gradient 3,0.5615,10
+2131,"Biologists, botanists, zoologists and related professionals",Exposed: Gradient 2,0.3969,8
+2132,"Farming, forestry and fisheries advisers",Not Exposed,0.2852,12
+2133,Environmental protection professionals,Minimal Exposure,0.3837,7
+2141,Industrial and production engineers,Minimal Exposure,0.3670,10
+2142,Civil engineers,Not Exposed,0.3021,7
+2143,Environmental engineers,Minimal Exposure,0.3814,9
+2144,Mechanical engineers,Not Exposed,0.3234,7
+2145,Chemical engineers,Minimal Exposure,0.3516,8
+2146,"Mining engineers, metallurgists and related professionals",Not Exposed,0.2925,9
+2149,Engineering professionals not elsewhere classified,Not Exposed,0.3047,9
+2151,Electrical engineers,Not Exposed,0.3142,6
+2152,Electronics engineers,Exposed: Gradient 2,0.4238,8
+2153,Telecommunications engineers,Exposed: Gradient 2,0.4821,7
+2161,Building architects,Minimal Exposure,0.3714,9
+2162,Landscape architects,Minimal Exposure,0.3708,9
+2163,Product and garment designers,Minimal Exposure,0.3497,9
+2164,Town and traffic planners,Minimal Exposure,0.4081,8
+2165,Cartographers and surveyors,Exposed: Gradient 2,0.4387,8
+2166,Graphic and multimedia designers,Exposed: Gradient 2,0.4930,10
+2211,Generalist medical practitioners,Not Exposed,0.2866,11
+2212,Specialist medical practitioners,Not Exposed,0.2715,12
+2221,Nursing professionals,Not Exposed,0.2520,10
+2222,Midwifery professionals,Minimal Exposure,0.2991,8
+2230,Traditional and complementary medicine professionals,Minimal Exposure,0.3239,7
+2240,Paramedical practitioners,Not Exposed,0.2334,9
+2250,Veterinarians,Not Exposed,0.1419,9
+2261,Dentists,Not Exposed,0.1493,12
+2262,Pharmacists,Minimal Exposure,0.3323,13
+2263,Environmental and occupational health and hygiene professionals,Not Exposed,0.2802,10
+2264,Physiotherapists,Minimal Exposure,0.2836,7
+2265,Dieticians and nutritionists,Minimal Exposure,0.4139,7
+2266,Audiologists and speech therapists,Not Exposed,0.2376,7
+2267,Optometrists and ophthalmic opticians,Not Exposed,0.2371,7
+2269,Health professionals not elsewhere classified,Not Exposed,0.1950,8
+2310,University and higher education teachers,Minimal Exposure,0.3694,9
+2320,Vocational education teachers,Minimal Exposure,0.3483,10
+2330,Secondary education teachers,Not Exposed,0.2982,11
+2341,Primary school teachers,Not Exposed,0.2612,10
+2342,Early childhood educators,Not Exposed,0.2081,9
+2351,Education methods specialists,Exposed: Gradient 1,0.3930,10
+2352,Special needs teachers,Not Exposed,0.2836,11
+2353,Other language teachers,Minimal Exposure,0.3391,8
+2354,Other music teachers,Minimal Exposure,0.3536,11
+2355,Other arts teachers,Minimal Exposure,0.3463,10
+2356,Information technology trainers,Exposed: Gradient 2,0.4700,6
+2359,Teaching professionals not elsewhere classified,Minimal Exposure,0.3269,12
+2411,Accountants,Exposed: Gradient 3,0.5132,8
+2412,Financial and investment advisers,Exposed: Gradient 3,0.5746,6
+2413,Financial analysts,Exposed: Gradient 4,0.6181,9
+2421,Management and organization analysts,Exposed: Gradient 2,0.4601,9
+2422,Policy administration professionals,Minimal Exposure,0.4179,7
+2423,Personnel and careers professionals,Exposed: Gradient 2,0.4480,5
+2424,Training and staff development professionals,Exposed: Gradient 2,0.4069,8
+2431,Advertising and marketing professionals,Exposed: Gradient 3,0.5547,9
+2432,Public relations professionals,Exposed: Gradient 2,0.4316,8
+2433,Technical and medical sales professionals (excluding ICT),Exposed: Gradient 3,0.4993,12
+2434,Information and communications technology sales professionals,Exposed: Gradient 3,0.5125,7
+2511,Systems analysts,Exposed: Gradient 2,0.4900,7
+2512,Software developers,Exposed: Gradient 3,0.5266,8
+2513,Web and multimedia developers,Exposed: Gradient 4,0.6045,5
+2514,Applications programmers,Exposed: Gradient 3,0.5710,5
+2519,Software and applications developers and analysts not elsewhere classified,Exposed: Gradient 3,0.5502,5
+2521,Database designers and administrators,Exposed: Gradient 3,0.5675,6
+2522,Systems administrators,Exposed: Gradient 3,0.5660,5
+2523,Computer network professionals,Exposed: Gradient 3,0.5157,7
+2529,Database and network professionals not elsewhere classified,Exposed: Gradient 2,0.4866,8
+2611,Lawyers,Minimal Exposure,0.3633,10
+2612,Judges,Not Exposed,0.3125,7
+2619,Legal professionals not elsewhere classified,Minimal Exposure,0.3729,4
+2621,Archivists and curators,Exposed: Gradient 2,0.4728,10
+2622,Librarians and related information professionals,Exposed: Gradient 3,0.5533,9
+2631,Economists,Exposed: Gradient 3,0.5546,12
+2632,"Sociologists, anthropologists and related professionals",Exposed: Gradient 2,0.4778,9
+2633,"Philosophers, historians and political scientists",Exposed: Gradient 2,0.4713,8
+2634,Psychologists,Exposed: Gradient 1,0.3906,9
+2635,Social work and counselling professionals,Not Exposed,0.2832,11
+2636,Religious professionals,Not Exposed,0.1658,9
+2641,Authors and related writers,Exposed: Gradient 3,0.5454,6
+2642,Journalists,Exposed: Gradient 3,0.5357,10
+2643,"Translators, interpreters and other linguists",Exposed: Gradient 3,0.5925,6
+2651,Visual artists,Not Exposed,0.2101,8
+2652,"Musicians, singers and composers",Not Exposed,0.2803,8
+2653,Dancers and choreographers,Not Exposed,0.1935,6
+2654,"Film, stage and related directors and producers",Minimal Exposure,0.3651,7
+2655,Actors,Minimal Exposure,0.3143,7
+2656,"Announcers on radio, television and other media",Exposed: Gradient 2,0.4725,5
+2659,Creative and performing artists not elsewhere classified,Not Exposed,0.1294,4
+3111,Chemical and physical science technicians,Not Exposed,0.2575,6
+3112,Civil engineering technicians,Not Exposed,0.2764,9
+3113,Electrical engineering technicians,Not Exposed,0.2702,6
+3114,Electronics engineering technicians,Minimal Exposure,0.3796,7
+3115,Mechanical engineering technicians,Not Exposed,0.2644,8
+3116,Chemical engineering technicians,Not Exposed,0.3234,5
+3117,Mining and metallurgical technicians,Not Exposed,0.2822,8
+3118,Draughtspersons,Minimal Exposure,0.3475,8
+3119,Physical and engineering science technicians not elsewhere classified,Not Exposed,0.2560,5
+3121,Mining supervisors,Not Exposed,0.2870,5
+3122,Manufacturing supervisors,Minimal Exposure,0.3471,6
+3123,Construction supervisors,Not Exposed,0.2817,6
+3131,Power production plant operators,Not Exposed,0.2754,6
+3132,Incinerator and water treatment plant operators,Not Exposed,0.2656,8
+3133,Chemical processing plant controllers,Not Exposed,0.2938,6
+3134,Petroleum and natural gas refining plant operators,Not Exposed,0.2905,5
+3135,Metal production process controllers,Minimal Exposure,0.3073,7
+3141,Life science technicians (excluding medical),Exposed: Gradient 1,0.3812,13
+3142,Agricultural technicians,Not Exposed,0.2593,9
+3143,Forestry technicians,Not Exposed,0.2115,10
+3151,Ships' engineers,Not Exposed,0.2315,5
+3152,Ships' deck officers and pilots,Not Exposed,0.2878,8
+3153,Aircraft pilots and related associate professionals,Not Exposed,0.2740,7
+3154,Air traffic controllers,Minimal Exposure,0.3100,8
+3155,Air traffic safety electronics technicians,Minimal Exposure,0.3432,9
+3211,Medical imaging and therapeutic equipment technicians,Not Exposed,0.2200,8
+3212,Medical and pathology laboratory technicians,Minimal Exposure,0.3071,10
+3213,Pharmaceutical technicians and assistants,Minimal Exposure,0.2999,9
+3214,Medical and dental prosthetic technicians,Not Exposed,0.1800,10
+3221,Nursing associate professionals,Minimal Exposure,0.2174,6
+3222,Midwifery associate professionals,Not Exposed,0.1969,4
+3230,Traditional and complementary medicine associate professionals,Not Exposed,0.1869,6
+3240,Veterinary technicians and assistants,Not Exposed,0.1410,10
+3251,Dental assistants and therapists,Not Exposed,0.1641,8
+3252,Medical records and health information technicians,Exposed: Gradient 3,0.5162,6
+3253,Community health workers,Not Exposed,0.2246,6
+3254,Dispensing opticians,Not Exposed,0.2400,4
+3255,Physiotherapy technicians and assistants,Not Exposed,0.1702,6
+3256,Medical assistants,Exposed: Gradient 1,0.3460,10
+3257,Environmental and occupational health inspectors and associates,Not Exposed,0.2424,10
+3258,Ambulance workers,Not Exposed,0.2154,6
+3259,Health associate professionals not elsewhere classified,Minimal Exposure,0.3048,7
+3311,Securities and finance dealers and brokers,Exposed: Gradient 4,0.6314,5
+3312,Credit and loans officers,Exposed: Gradient 4,0.6050,6
+3313,Accounting associate professionals,Exposed: Gradient 2,0.4921,6
+3314,"Statistical, mathematical and related associate professionals",Exposed: Gradient 3,0.5656,8
+3315,Valuers and loss assessors,Exposed: Gradient 2,0.4490,5
+3321,Insurance representatives,Exposed: Gradient 3,0.5267,6
+3322,Commercial sales representatives,Exposed: Gradient 2,0.4900,7
+3323,Buyers,Minimal Exposure,0.3940,10
+3324,Trade brokers,Exposed: Gradient 2,0.4446,6
+3331,Clearing and forwarding agents,Exposed: Gradient 3,0.5725,5
+3332,Conference and event planners,Exposed: Gradient 2,0.4779,7
+3333,Employment agents and contractors,Minimal Exposure,0.3900,6
+3334,Real estate agents and property managers,Minimal Exposure,0.3521,7
+3339,Business services agents not elsewhere classified,Exposed: Gradient 2,0.4450,6
+3341,Office supervisors,Exposed: Gradient 2,0.4288,6
+3342,Legal secretaries,Exposed: Gradient 3,0.5504,7
+3343,Administrative and executive secretaries,Exposed: Gradient 3,0.5363,8
+3344,Medical secretaries,Exposed: Gradient 3,0.5303,8
+3351,Customs and border inspectors,Minimal Exposure,0.3209,8
+3352,Government tax and excise officials,Exposed: Gradient 2,0.4931,4
+3353,Government social benefits officials,Exposed: Gradient 2,0.4525,4
+3354,Government licensing officials,Exposed: Gradient 2,0.4305,5
+3355,Police inspectors and detectives,Not Exposed,0.2329,6
+3359,Regulatory government associate professionals not elsewhere classified,Minimal Exposure,0.3600,4
+3411,Legal and related associate professionals,Exposed: Gradient 1,0.3908,10
+3412,Social work associate professionals,Minimal Exposure,0.3285,10
+3413,Religious associate professionals,Not Exposed,0.1205,6
+3421,Athletes and sports players,Not Exposed,0.2283,8
+3422,"Sports coaches, instructors and officials",Minimal Exposure,0.3741,11
+3423,Fitness and recreation instructors and program leaders,Not Exposed,0.2458,6
+3431,Photographers,Exposed: Gradient 1,0.3903,8
+3432,Interior designers and decorators,Minimal Exposure,0.3672,10
+3433,"Gallery, museum and library technicians",Exposed: Gradient 1,0.3703,9
+3434,Chefs,Not Exposed,0.2505,10
+3511,Information and communications technology operations technicians,Exposed: Gradient 2,0.4291,8
+3512,Information and communications technology user support technicians,Exposed: Gradient 2,0.4703,9
+3513,Computer network and systems technicians,Exposed: Gradient 2,0.4300,6
+3514,Web technicians,Exposed: Gradient 3,0.5286,7
+3521,Broadcasting and audio-visual technicians,Minimal Exposure,0.3518,7
+3522,Telecommunications engineering technicians,Minimal Exposure,0.4530,5
+4110,General office clerks,Exposed: Gradient 4,0.5950,8
+4120,Secretaries (general),Exposed: Gradient 3,0.5766,8
+4131,Typists and word processing operators,Exposed: Gradient 4,0.6521,7
+4132,Data entry clerks,Exposed: Gradient 4,0.7000,5
+4211,Bank tellers and related clerks,Exposed: Gradient 3,0.5822,6
+4212,"Bookmakers, croupiers and related gaming workers",Exposed: Gradient 2,0.4460,5
+4213,Pawnbrokers and money-lenders,Exposed: Gradient 2,0.4805,5
+4214,Debt-collectors and related workers,Exposed: Gradient 2,0.4260,5
+4221,Travel consultants and clerks,Exposed: Gradient 3,0.5551,8
+4222,Contact centre information clerks,Exposed: Gradient 3,0.5808,6
+4223,Telephone switchboard operators,Exposed: Gradient 3,0.5372,5
+4224,Hotel receptionists,Exposed: Gradient 3,0.5142,9
+4225,Enquiry clerks,Exposed: Gradient 3,0.5740,5
+4226,Receptionists (general),Exposed: Gradient 3,0.5650,5
+4227,Survey and market research interviewers,Exposed: Gradient 3,0.5475,5
+4229,Client information workers not elsewhere classified,Exposed: Gradient 2,0.4156,6
+4311,Accounting and bookkeeping clerks,Exposed: Gradient 4,0.6400,5
+4312,"Statistical, finance and insurance clerks",Exposed: Gradient 4,0.6395,5
+4313,Payroll clerks,Exposed: Gradient 4,0.6065,5
+4321,Stock clerks,Minimal Exposure,0.3690,5
+4322,Production clerks,Exposed: Gradient 2,0.4355,5
+4323,Transport clerks,Exposed: Gradient 3,0.4950,6
+4411,Library clerks,Exposed: Gradient 2,0.4604,6
+4412,Mail carriers and sorting clerks,Exposed: Gradient 2,0.4075,4
+4413,"Coding, proof-reading and related clerks",Exposed: Gradient 3,0.5145,5
+4414,Scribes and related workers,Exposed: Gradient 3,0.5833,3
+4415,Filing and copying clerks,Exposed: Gradient 1,0.3686,5
+4416,Personnel clerks,Exposed: Gradient 4,0.6050,7
+4419,Clerical support workers not elsewhere classified,Exposed: Gradient 4,0.6279,4
+5111,Travel attendants and travel stewards,Not Exposed,0.2152,11
+5112,Transport conductors,Minimal Exposure,0.2493,10
+5113,Travel guides,Minimal Exposure,0.3189,9
+5120,Cooks,Not Exposed,0.1840,7
+5131,Waiters,Minimal Exposure,0.2807,7
+5132,Bartenders,Not Exposed,0.2610,10
+5141,Hairdressers,Not Exposed,0.1731,8
+5142,Beauticians and related workers,Not Exposed,0.1831,8
+5151,"Cleaning and housekeeping supervisors in offices, hotels and other establishments",Not Exposed,0.2201,8
+5152,Domestic housekeepers,Not Exposed,0.1994,9
+5153,Building caretakers,Minimal Exposure,0.2662,8
+5161,"Astrologers, fortune-tellers and related workers",Minimal Exposure,0.2967,6
+5162,Companions and valets,Not Exposed,0.2178,3
+5163,Undertakers and embalmers,Not Exposed,0.1665,6
+5164,Pet groomers and animal care workers,Not Exposed,0.1407,9
+5165,Driving instructors,Not Exposed,0.2050,6
+5169,Personal services workers not elsewhere classified,Not Exposed,0.2133,3
+5211,Stall and market salespersons,Exposed: Gradient 1,0.3496,7
+5212,Street food salespersons,Not Exposed,0.2245,5
+5221,Shop keepers,Exposed: Gradient 2,0.4307,7
+5222,Shop supervisors,Minimal Exposure,0.3603,8
+5223,Shop sales assistants,Exposed: Gradient 1,0.3845,5
+5230,Cashiers and ticket clerks,Exposed: Gradient 1,0.3944,8
+5241,Fashion and other models,Not Exposed,0.2480,5
+5242,Sales demonstrators,Exposed: Gradient 2,0.4175,5
+5243,Door to door salespersons,Exposed: Gradient 2,0.4586,7
+5244,Contact centre salespersons,Exposed: Gradient 4,0.6116,8
+5245,Service station attendants,Minimal Exposure,0.2406,8
+5246,Food service counter attendants,Not Exposed,0.2381,8
+5311,Child care workers,Not Exposed,0.1905,8
+5312,Teachers' aides,Not Exposed,0.2411,7
+5321,Health care assistants,Not Exposed,0.1408,6
+5322,Home-based personal care workers,Minimal Exposure,0.2465,9
+5329,Personal care workers in health services not elsewhere classified,Not Exposed,0.1504,6
+5411,Fire-fighters,Not Exposed,0.1833,6
+5412,Police officers,Not Exposed,0.1394,4
+5413,Prison guards,Not Exposed,0.1375,7
+5414,Security guards,Not Exposed,0.2025,6
+5419,Protective services workers not elsewhere classified,Not Exposed,0.1972,5
+6111,Field crop and vegetable growers,Not Exposed,0.1761,11
+6112,Tree and shrub crop growers,Not Exposed,0.1711,11
+6113,"Gardeners, horticultural and nursery growers",Not Exposed,0.1842,12
+6114,Mixed crop growers,Not Exposed,0.1724,11
+6121,Livestock and dairy producers,Not Exposed,0.1700,13
+6122,Poultry producers,Not Exposed,0.1892,12
+6123,Apiarists and sericulturists,Not Exposed,0.2216,7
+6129,Animal producers not elsewhere classified,Not Exposed,0.2000,9
+6130,Mixed crop and animal producers,Not Exposed,0.1900,10
+6210,Forestry and related workers,Not Exposed,0.1189,10
+6221,Aquaculture workers,Not Exposed,0.2248,10
+6222,Inland and coastal waters fishery workers,Not Exposed,0.1748,10
+6223,Deep-sea fishery workers,Not Exposed,0.1755,9
+6224,Hunters and trappers,Not Exposed,0.0898,5
+6310,Subsistence crop farmers,Not Exposed,0.1257,7
+6320,Subsistence livestock farmers,Not Exposed,0.1270,12
+6330,Subsistence mixed crop and livestock farmers,Not Exposed,0.1185,9
+6340,"Subsistence fishers, hunters, trappers and gatherers",Not Exposed,0.1175,8
+7111,House builders,Not Exposed,0.1370,7
+7112,Bricklayers and related workers,Not Exposed,0.0887,3
+7113,"Stonemasons, stone cutters, splitters and carvers",Not Exposed,0.1094,7
+7114,"Concrete placers, concrete finishers and related workers",Not Exposed,0.1035,5
+7115,Carpenters and joiners,Not Exposed,0.1295,5
+7119,Building frame and related trades workers not elsewhere classified,Not Exposed,0.0937,3
+7121,Roofers,Not Exposed,0.1263,6
+7122,Floor layers and tile setters,Not Exposed,0.1019,4
+7123,Plasterers,Not Exposed,0.1143,7
+7124,Insulation workers,Not Exposed,0.1271,6
+7125,Glaziers,Not Exposed,0.1369,4
+7126,Plumbers and pipe fitters,Not Exposed,0.1515,5
+7127,Air conditioning and refrigeration mechanics,Not Exposed,0.2069,4
+7131,Painters and related workers,Not Exposed,0.1260,5
+7132,Spray painters and varnishers,Not Exposed,0.1192,3
+7133,Building structure cleaners,Not Exposed,0.0917,3
+7211,Metal moulders and coremakers,Not Exposed,0.1337,7
+7212,Welders and flamecutters,Not Exposed,0.1303,8
+7213,Sheet-metal workers,Not Exposed,0.2064,7
+7214,Structural-metal preparers and erectors,Not Exposed,0.1108,6
+7215,Riggers and cable splicers,Not Exposed,0.1263,6
+7221,"Blacksmiths, hammersmiths and forging press workers",Not Exposed,0.1655,7
+7222,Toolmakers and related workers,Not Exposed,0.2045,11
+7223,Metal working machine tool setters and operators,Not Exposed,0.1817,6
+7224,"Metal polishers, wheel grinders and tool sharpeners",Not Exposed,0.1686,7
+7231,Motor vehicle mechanics and repairers,Not Exposed,0.1780,8
+7232,Aircraft engine mechanics and repairers,Not Exposed,0.1949,10
+7233,Agricultural and industrial machinery mechanics and repairers,Not Exposed,0.1739,7
+7234,Bicycle and related repairers,Not Exposed,0.1313,6
+7311,Precision-instrument makers and repairers,Not Exposed,0.2141,12
+7312,Musical instrument makers and tuners,Not Exposed,0.1403,11
+7313,Jewellery and precious-metal workers,Not Exposed,0.1755,11
+7314,Potters and related workers,Not Exposed,0.1780,11
+7315,"Glass makers, cutters, grinders and finishers",Not Exposed,0.1865,13
+7316,"Sign writers, decorative painters, engravers and etchers",Not Exposed,0.1840,14
+7317,"Handicraft workers in wood, basketry and related materials",Not Exposed,0.1356,11
+7318,"Handicraft workers in textile, leather and related materials",Not Exposed,0.1332,14
+7321,Pre-press technicians,Exposed: Gradient 1,0.3821,7
+7322,Printers,Not Exposed,0.2494,9
+7323,Print finishing and binding workers,Not Exposed,0.2200,7
+7411,Building and related electricians,Not Exposed,0.1913,8
+7412,Electrical mechanics and fitters,Not Exposed,0.1745,7
+7413,Electrical line installers and repairers,Not Exposed,0.1537,6
+7421,Electronics mechanics and servicers,Not Exposed,0.2475,9
+7422,Information and communications technology installers and servicers,Not Exposed,0.2389,7
+7511,"Butchers, fishmongers and related food preparers",Not Exposed,0.1253,8
+7512,"Bakers, pastry-cooks and confectionery makers",Not Exposed,0.1691,8
+7513,Dairy-products makers,Not Exposed,0.2150,8
+7514,"Fruit, vegetable and related preservers",Not Exposed,0.1480,5
+7515,Food and beverage tasters and graders,Minimal Exposure,0.3055,5
+7516,Tobacco preparers and tobacco products makers,Not Exposed,0.1435,5
+7521,Wood treaters,Not Exposed,0.2245,8
+7522,Cabinet-makers and related workers,Not Exposed,0.1623,6
+7523,Woodworking-machine tool setters and operators,Not Exposed,0.2163,6
+7531,"Tailors, dressmakers, furriers and hatters",Not Exposed,0.1459,11
+7532,Garment and related pattern-makers and cutters,Not Exposed,0.1681,12
+7533,"Sewing, embroidery and related workers",Not Exposed,0.1218,12
+7534,Upholsterers and related workers,Not Exposed,0.1770,12
+7535,"Pelt dressers, tanners and fellmongers",Not Exposed,0.1096,13
+7536,Shoemakers and related workers,Not Exposed,0.1690,13
+7541,Underwater divers,Not Exposed,0.1564,12
+7542,Shotfirers and blasters,Not Exposed,0.1196,11
+7543,Product graders and testers (excluding foods and beverages),Minimal Exposure,0.3086,9
+7544,Fumigators and other pest and weed controllers,Not Exposed,0.1332,7
+7549,Craft and related workers not elsewhere classified,Not Exposed,0.1437,2
+8111,Miners and quarriers,Not Exposed,0.1725,9
+8112,Mineral and stone processing plant operators,Not Exposed,0.2080,10
+8113,Well drillers and borers and related workers,Not Exposed,0.1875,10
+8114,"Cement, stone and other mineral products machine operators",Not Exposed,0.2264,10
+8121,Metal processing plant operators,Not Exposed,0.2650,8
+8122,"Metal finishing, plating and coating machine operators",Not Exposed,0.2048,8
+8131,Chemical products plant and machine operators,Not Exposed,0.2442,6
+8132,Photographic products machine operators,Not Exposed,0.2716,8
+8141,Rubber products machine operators,Not Exposed,0.1822,6
+8142,Plastic products machine operators,Not Exposed,0.1750,7
+8143,Paper products machine operators,Not Exposed,0.1808,3
+8151,"Fibre preparing, spinning and winding machine operators",Not Exposed,0.1550,12
+8152,Weaving and knitting machine operators,Not Exposed,0.1650,13
+8153,Sewing machine operators,Not Exposed,0.1478,8
+8154,"Bleaching, dyeing and fabric cleaning machine operators",Not Exposed,0.2098,12
+8155,Fur and leather preparing machine operators,Not Exposed,0.1460,11
+8156,Shoemaking and related machine operators,Not Exposed,0.1625,3
+8157,Laundry machine operators,Not Exposed,0.1564,9
+8159,"Textile, fur and leather products machine operators not elsewhere classified",Not Exposed,0.1575,5
+8160,Food and related products machine operators,Not Exposed,0.1532,7
+8171,Pulp and papermaking plant operators,Minimal Exposure,0.2753,8
+8172,Wood processing plant operators,Not Exposed,0.1440,5
+8181,Glass and ceramics plant operators,Not Exposed,0.1735,13
+8182,Steam engine and boiler operators,Not Exposed,0.1950,7
+8183,"Packing, bottling and labelling machine operators",Not Exposed,0.2225,3
+8211,Mechanical machinery assemblers,Minimal Exposure,0.2695,5
+8212,Electrical and electronic equipment assemblers,Minimal Exposure,0.2767,5
+8219,Assemblers not elsewhere classified,Minimal Exposure,0.3190,5
+8311,Locomotive engine drivers,Not Exposed,0.1985,5
+8312,"Railway brake, signal and switch operators",Not Exposed,0.1750,5
+8321,Motorcycle drivers,Minimal Exposure,0.2497,5
+8322,"Car, taxi and van drivers",Exposed: Gradient 1,0.2762,8
+8331,Bus and tram drivers,Not Exposed,0.1786,7
+8332,Heavy truck and lorry drivers,Minimal Exposure,0.2450,6
+8341,Mobile farm and forestry plant operators,Not Exposed,0.1228,8
+8342,Earthmoving and related plant operators,Not Exposed,0.1314,7
+8343,"Crane, hoist and related plant operators",Not Exposed,0.1751,7
+8344,Lifting truck operators,Not Exposed,0.1980,5
+8350,Ships' deck crews and related workers,Not Exposed,0.1425,6
+9111,Domestic cleaners and helpers,Not Exposed,0.1434,7
+9112,"Cleaners and helpers in offices, hotels and other establishments",Not Exposed,0.1188,4
+9121,Hand launderers and pressers,Not Exposed,0.1437,4
+9122,Vehicle cleaners,Not Exposed,0.0890,6
+9123,Window cleaners,Not Exposed,0.1113,3
+9129,Other cleaning workers,Not Exposed,0.1021,6
+9211,Crop farm labourers,Not Exposed,0.0914,8
+9212,Livestock farm labourers,Not Exposed,0.1185,10
+9213,Mixed crop and livestock farm labourers,Not Exposed,0.1127,11
+9214,Garden and horticultural labourers,Not Exposed,0.1158,9
+9215,Forestry labourers,Not Exposed,0.0941,8
+9216,Fishery and aquaculture labourers,Not Exposed,0.1105,7
+9311,Mining and quarrying labourers,Not Exposed,0.1089,7
+9312,Civil engineering labourers,Not Exposed,0.0930,5
+9313,Building construction labourers,Not Exposed,0.0939,6
+9321,Hand packers,Not Exposed,0.1975,3
+9329,Manufacturing labourers not elsewhere classified,Not Exposed,0.1200,4
+9331,Hand and pedal vehicle drivers,Not Exposed,0.2070,5
+9332,Drivers of animal-drawn vehicles and machinery,Not Exposed,0.1324,9
+9333,Freight handlers,Not Exposed,0.1408,6
+9334,Shelf fillers,Not Exposed,0.2047,8
+9411,Fast food preparers,Not Exposed,0.1831,9
+9412,Kitchen helpers,Not Exposed,0.1296,6
+9510,Street and related service workers,Not Exposed,0.1787,8
+9520,Street vendors (excluding food),Not Exposed,0.2045,5
+9611,Garbage and recycling collectors,Not Exposed,0.0919,4
+9612,Refuse sorters,Not Exposed,0.1813,6
+9613,Sweepers and related labourers,Not Exposed,0.0944,4
+9621,"Messengers, package deliverers and luggage porters",Exposed: Gradient 1,0.3700,6
+9622,Odd job persons,Not Exposed,0.1102,7
+9623,Meter readers and vending-machine collectors,Exposed: Gradient 1,0.3768,7
+9624,Water and firewood collectors,Not Exposed,0.0892,6
+9629,Elementary workers not elsewhere classified,Minimal Exposure,0.2922,8

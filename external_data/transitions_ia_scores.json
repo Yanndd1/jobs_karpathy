@@ -1,0 +1,3969 @@
+[
+  {
+    "label": "Agriculteur céréalier",
+    "domain": "A",
+    "fap_code": "A0Z10",
+    "salary_net_monthly": 1820,
+    "employment_count": 165000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2023,
+        "src": "France Stratégie · automatisation agriculture"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Frey & Osborne 2024 update"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Le Monde · IA et agriculture"
+      }
+    ],
+    "weighted_score": 2.71,
+    "rationale": "Présence terrain et conduite d'engins limitent l'automatisation. Les outils d'aide à la décision progressent mais restent en appui."
+  },
+  {
+    "label": "Maraîcher",
+    "domain": "A",
+    "fap_code": "A0Z20",
+    "salary_net_monthly": 1650,
+    "employment_count": 52000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2022,
+        "src": "OCDE · automatisation agriculture"
+      },
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2023,
+        "src": "Acemoglu & Restrepo · travail manuel"
+      }
+    ],
+    "weighted_score": 2.0,
+    "rationale": "Travail physique saisonnier et grande variabilité des produits limitent l'automatisation."
+  },
+  {
+    "label": "Éleveur bovin",
+    "domain": "A",
+    "fap_code": "A1Z10",
+    "salary_net_monthly": 1750,
+    "employment_count": 98000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2023,
+        "src": "INRAE · robots de traite"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "La France Agricole · robots et IA"
+      }
+    ],
+    "weighted_score": 2.33,
+    "rationale": "Robots de traite existent mais la gestion du troupeau reste très humaine."
+  },
+  {
+    "label": "Conseiller bancaire",
+    "domain": "C",
+    "fap_code": "C2Z10",
+    "salary_net_monthly": 2680,
+    "employment_count": 158000,
+    "regulations": [
+      "RGPD",
+      "AMF"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "NBER w31161 · LLMs & finance jobs"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "BCE · IA secteur bancaire"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2023,
+        "src": "McKinsey · bancassurance"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Les Échos · robo-advisors"
+      }
+    ],
+    "weighted_score": 6.89,
+    "rationale": "Analyse financière et conseil patrimonial très exposés aux LLMs et robo-advisors. La relation de confiance personnelle résiste."
+  },
+  {
+    "label": "Actuaire",
+    "domain": "C",
+    "fap_code": "C2Z30",
+    "salary_net_monthly": 4350,
+    "employment_count": 6200,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2023,
+        "src": "NBER · modélisation ML & assurance"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Brynjolfsson · tâches analytiques"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2024,
+        "src": "IMF WP · assurance & IA"
+      }
+    ],
+    "weighted_score": 8.6,
+    "rationale": "Modélisation statistique = cœur automatisable par ML spécialisés. Valeur migre vers l'interprétation et la gouvernance."
+  },
+  {
+    "label": "Analyste risques",
+    "domain": "C",
+    "fap_code": "C2Z20",
+    "salary_net_monthly": 3680,
+    "employment_count": 22000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA",
+      "NIS2"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2023,
+        "src": "Eloundou et al. (OpenAI) · LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "BIS · IA & risques financiers"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Reuters · IA compliance"
+      }
+    ],
+    "weighted_score": 7.71,
+    "rationale": "Analyse documentaire et scoring facilement automatisables. L'expertise de jugement dans les cas complexes résiste."
+  },
+  {
+    "label": "Agent immobilier",
+    "domain": "Q",
+    "fap_code": "C3Z10",
+    "salary_net_monthly": 2420,
+    "employment_count": 148000,
+    "regulations": [
+      "RGPD",
+      "AMF"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2023,
+        "src": "McKinsey · proptech & agences"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Le Figaro Immo · visites virtuelles"
+      },
+      {
+        "tier": 4,
+        "val": 6.0,
+        "year": 2025,
+        "src": "PropTech France · baromètre"
+      }
+    ],
+    "weighted_score": 5.14,
+    "rationale": "Visites virtuelles et scoring automatique progressent ; négociation et réseau local résistent."
+  },
+  {
+    "label": "Commercial B2B",
+    "domain": "D",
+    "fap_code": "D1Z10",
+    "salary_net_monthly": 2890,
+    "employment_count": 242000,
+    "regulations": [
+      "RGPD"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Gartner · SDR automation"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2023,
+        "src": "Autor et al. · tâches vs emplois"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Harvard Business Review · IA & vente"
+      }
+    ],
+    "weighted_score": 4.57,
+    "rationale": "Prospection automatisable par IA ; confiance, relation longue durée et négociation complexe résistent."
+  },
+  {
+    "label": "Gestionnaire de copropriété (syndic)",
+    "domain": "Q",
+    "fap_code": "C3Z20",
+    "salary_net_monthly": 2650,
+    "employment_count": 42000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "McKinsey · real estate management automation"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2024,
+        "src": "UNIS / Fnaim · digitalisation syndics 2024"
+      },
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3334 Property Managers · Gradient 1 (mean 0.38)"
+      }
+    ],
+    "weighted_score": 5.0,
+    "rationale": "La gestion de copropriété est partiellement automatisable (comptabilité, convocations, reporting) mais conserve un fort ancrage relationnel et juridique. L'IA simplifie la gestion courante, pas la résolution des litiges."
+  },
+  {
+    "label": "Expert immobilier / évaluateur foncier",
+    "domain": "Q",
+    "fap_code": "C3Z30",
+    "salary_net_monthly": 3200,
+    "employment_count": 18000,
+    "regulations": [
+      "RGPD",
+      "AMF"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "McKinsey · real estate valuation · partial automation"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Institut Français de l'Expertise Immobilière (IFEI) · IA et expertise 2024"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2141 Appraisers · Gradient 1 (mean 0.35)"
+      }
+    ],
+    "weighted_score": 4.0,
+    "rationale": "L'expertise immobilière s'appuie sur un jugement contextuel (localisation fine, état réel, usage futur) irremplaçable par des modèles AVE. L'IA aide à croiser les données mais l'expertise certifiée reste humaine."
+  },
+  {
+    "label": "Conseiller en gestion de patrimoine (CGP)",
+    "domain": "Q",
+    "fap_code": "C3Z40",
+    "salary_net_monthly": 3400,
+    "employment_count": 28000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2413 Financial Advisors · Gradient 2 (mean 0.47) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "McKinsey · wealth management & robo-advisors"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2024,
+        "src": "ANACOFI / CNCEF · digitalisation CGP 2024"
+      }
+    ],
+    "weighted_score": 6.0,
+    "rationale": "La gestion de patrimoine combine analyse quantitative (automatisable) et conseil de vie (non automatisable). Les robo-advisors gagnent du terrain sur les produits standardisés. La valeur humaine réside dans la planification successorale et les situations complexes."
+  },
+  {
+    "label": "Diagnostiqueur immobilier (DPE/amiante)",
+    "domain": "Q",
+    "fap_code": "C3Z50",
+    "salary_net_monthly": 2480,
+    "employment_count": 22000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "ADEME · DPE et IA : outils d'aide au diagnostic 2024"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Fnaim · diagnostiqueurs et transition énergétique 2024"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3115 Building Inspectors · Minimal Exposure (mean 0.32)"
+      }
+    ],
+    "weighted_score": 3.29,
+    "rationale": "Le diagnostic immobilier exige une présence physique irremplaçable. L'IA aide au calcul DPE mais ne peut pas inspecter les matériaux sur site. Très forte demande liée à la loi Énergie-Climat (passoires thermiques)."
+  },
+  {
+    "label": "E-commerce manager",
+    "domain": "D",
+    "fap_code": "D1Z20",
+    "salary_net_monthly": 3150,
+    "employment_count": 28000,
+    "regulations": [
+      "RGPD",
+      "DSA",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · marketing & LLMs"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · e-commerce automation"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Journal du Net · IA e-commerce"
+      },
+      {
+        "tier": 1,
+        "val": 8.8,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Customer service reps 70.1% observed (Anthropic EconIndex 2026)"
+      }
+    ],
+    "weighted_score": 7.65,
+    "rationale": "Catalogue, SEO, personnalisation très automatisables. Stratégie de marque et expérience client résistent."
+  },
+  {
+    "label": "Vendeur automobile",
+    "domain": "D",
+    "fap_code": "D2Z10",
+    "salary_net_monthly": 2250,
+    "employment_count": 58000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2023,
+        "src": "McKinsey · automotive retail"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2024,
+        "src": "L'Argus · IA concessions"
+      }
+    ],
+    "weighted_score": 4.0,
+    "rationale": "Configurateurs en ligne progressent mais la découverte physique et la négociation restent essentielles."
+  },
+  {
+    "label": "Journaliste",
+    "domain": "E",
+    "fap_code": "E1Z10",
+    "salary_net_monthly": 2480,
+    "employment_count": 36000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2023,
+        "src": "Reuters Institute · IA & journalisme"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "WAN-IFRA · newsrooms IA"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Libération · IA rédactions françaises"
+      },
+      {
+        "tier": 4,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Enquête rédacteurs en chef FR"
+      },
+      {
+        "tier": 1,
+        "val": 5.4,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2642 Journalists · Gradient 3 (mean 0.54) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −5.8% emploi 15-29 ans édition T4 2025 · retournement concomitant à l'IA générative"
+      }
+    ],
+    "weighted_score": 6.49,
+    "rationale": "Articles factuels, dépêches et synthèses automatisables. Investigation terrain, récit et fact-checking critique résistent."
+  },
+  {
+    "label": "Rédacteur web",
+    "domain": "E",
+    "fap_code": "E1Z20",
+    "salary_net_monthly": 2310,
+    "employment_count": 42000,
+    "regulations": [
+      "RGPD",
+      "DSA",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2023,
+        "src": "Noy & Zhang MIT · LLMs & writing"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Autor MIT · content generation"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2024,
+        "src": "McKinsey Global Institute · content work"
+      },
+      {
+        "tier": 3,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Le Monde · freelances vs IA"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −5.8% emploi 15-29 ans édition T4 2025 · retournement concomitant à l'IA générative"
+      }
+    ],
+    "weighted_score": 8.58,
+    "rationale": "Production de contenu générique = exposition maximale aux LLMs. Valeur migre vers la stratégie et la supervision."
+  },
+  {
+    "label": "Traducteur",
+    "domain": "E",
+    "fap_code": "E1Z30",
+    "salary_net_monthly": 2250,
+    "employment_count": 14000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Koehn et al. · Neural MT quality"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2023,
+        "src": "Eloundou et al. · LLM translation"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Commission EU · traduction IA"
+      },
+      {
+        "tier": 1,
+        "val": 5.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2643 Translators & Interpreters · Gradient 3 (mean 0.59) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 8.09,
+    "rationale": "Traduction brute quasi-automatisée par NMT. Valeur sur la post-édition culturelle et la localisation experte."
+  },
+  {
+    "label": "Graphiste",
+    "domain": "E",
+    "fap_code": "E2Z10",
+    "salary_net_monthly": 2380,
+    "employment_count": 48000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Dell'Acqua et al. · creative AI tasks"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Adobe · Firefly impact study"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Créazine · IA et graphisme"
+      },
+      {
+        "tier": 1,
+        "val": 4.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2166 Graphic & Multimedia Designers · Gradient 2 (mean 0.49) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 6.57,
+    "rationale": "Génération d'images automatisée ; direction artistique, identité de marque et jugement esthétique résistent."
+  },
+  {
+    "label": "Photographe de presse",
+    "domain": "O",
+    "fap_code": "E1Z40",
+    "salary_net_monthly": 2100,
+    "employment_count": 8000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Eloundou et al. · creative & visual tasks LLM exposure"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Generative Images · Reuters Institute Digital News Report 2024"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "WAN-IFRA · IA et photojournalisme 2024"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Le Monde · Midjourney, Sora et photographes de presse 2025"
+      },
+      {
+        "tier": 4,
+        "val": 6.0,
+        "year": 2025,
+        "src": "CCIJP · Observatoire des métiers de la presse 2024"
+      }
+    ],
+    "weighted_score": 5.48,
+    "rationale": "L'IA génère des images convaincantes mais le reportage de terrain, l'accès aux zones sensibles, l'authenticité documentaire et la valeur légale de la photo de presse restent irremplaçables. ~8 000 photographes avec carte de presse (CCIJP 2024 · ~12% des 34 948 journalistes actifs)."
+  },
+  {
+    "label": "Attaché de presse-RP",
+    "domain": "E",
+    "fap_code": "E5Z10",
+    "salary_net_monthly": 2800,
+    "employment_count": 25000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · PR & communications tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "McKinsey · marketing & communication automation 2024"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Stratégies.fr · IA et agences RP France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 7.0,
+        "year": 2025,
+        "src": "SYNTEC Communication · baromètre IA et agences 2025"
+      }
+    ],
+    "weighted_score": 6.2,
+    "rationale": "Rédaction de communiqués, revues de presse et reprises médias : automatisables à 70%. La relation de confiance avec les journalistes, la gestion de crise et la stratégie d'influence restent irremplaçables. ~25 000 attachés de presse (INSEE EEC 2024)."
+  },
+  {
+    "label": "Présentateur-animateur TV-radio",
+    "domain": "O",
+    "fap_code": "E6Z10",
+    "salary_net_monthly": 3200,
+    "employment_count": 12000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · non-routine interactive work & charisma"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "ARCOM · rapport IA et présentateurs 2024"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Télérama · avatars IA et présentateurs virtuels France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 4.0,
+        "year": 2025,
+        "src": "CFDT Journalistes · IA et emplois audiovisuels 2024"
+      }
+    ],
+    "weighted_score": 3.2,
+    "rationale": "Présence à l'antenne, charisme, improvisation face aux imprévus et lien émotionnel avec l'audience restent profondément humains. Les avatars IA existent (présentateurs virtuels en Asie) mais n'ont pas pénétré le marché français. ~12 000 présentateurs et animateurs (Audiens/EEC 2024)."
+  },
+  {
+    "label": "Scénariste-auteur",
+    "domain": "O",
+    "fap_code": "E7Z10",
+    "salary_net_monthly": 2500,
+    "employment_count": 8000,
+    "regulations": [
+      "RGPD",
+      "DSA",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · creative writing & narrative tasks LLM exposure"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2023,
+        "src": "Noy & Zhang MIT · LLMs & long-form creative writing"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "SACD · rapport IA et auteurs dramatiques 2024"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Le Monde · ChatGPT et scénaristes hollywoodiens · impact France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Guilde française des scénaristes · position IA 2025"
+      }
+    ],
+    "weighted_score": 5.96,
+    "rationale": "La génération de trames et de dialogues génériques est très automatisable. L'écriture singulière, l'univers propre, la profondeur psychologique des personnages et la négociation éditoriale résistent. ~8 000 auteurs dramatiques (SACD/SCAM 2024). La grève WGA 2023 a cristallisé les enjeux."
+  },
+  {
+    "label": "Maçon",
+    "domain": "F",
+    "fap_code": "F0Z10",
+    "salary_net_monthly": 1980,
+    "employment_count": 128000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 1.0,
+        "year": 2022,
+        "src": "Frey & Osborne · construction physique"
+      },
+      {
+        "tier": 2,
+        "val": 1.0,
+        "year": 2023,
+        "src": "OCDE · automatisation BTP"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Le Bâtiment · robots chantier"
+      }
+    ],
+    "weighted_score": 1.14,
+    "rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier."
+  },
+  {
+    "label": "Électricien bâtiment",
+    "domain": "F",
+    "fap_code": "F0Z20",
+    "salary_net_monthly": 2080,
+    "employment_count": 112000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2022,
+        "src": "Frey & Osborne · artisan électrique"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2023,
+        "src": "FFIE · numérique et électriciens"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Batiactu · IA et diagnostic"
+      }
+    ],
+    "weighted_score": 2.0,
+    "rationale": "Intervention physique et diagnostic terrain restent manuels. Pénurie de compétences persistante."
+  },
+  {
+    "label": "Conducteur de travaux",
+    "domain": "F",
+    "fap_code": "F0Z30",
+    "salary_net_monthly": 3280,
+    "employment_count": 52000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2023,
+        "src": "McKinsey · coordination chantier"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "NBER · managers & IA"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Construction21 · IA chef de chantier"
+      }
+    ],
+    "weighted_score": 4.43,
+    "rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain."
+  },
+  {
+    "label": "Architecte",
+    "domain": "F",
+    "fap_code": "F0Z40",
+    "salary_net_monthly": 3450,
+    "employment_count": 38000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2023,
+        "src": "Eloundou · design tasks LLM"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Autodesk · AI architecture"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2024,
+        "src": "D'architectures · IA Archicad"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      }
+    ],
+    "weighted_score": 5.82,
+    "rationale": "Conception créative et responsabilité réglementaire résistent ; rendus et variations s'automatisent rapidement."
+  },
+  {
+    "label": "Cuisinier",
+    "domain": "G",
+    "fap_code": "G0Z10",
+    "salary_net_monthly": 1780,
+    "employment_count": 218000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2022,
+        "src": "Frey & Osborne · cuisine manuelle"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2023,
+        "src": "UMIH · automatisation restauration"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "L'Hôtellerie Restauration · robots"
+      }
+    ],
+    "weighted_score": 2.0,
+    "rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food."
+  },
+  {
+    "label": "Réceptionniste hôtel",
+    "domain": "G",
+    "fap_code": "G0Z20",
+    "salary_net_monthly": 1840,
+    "employment_count": 62000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Skift · hôtellerie & IA"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · service encounter"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "L'Écho Touristique · chatbots hôtels"
+      }
+    ],
+    "weighted_score": 3.57,
+    "rationale": "Check-in digitaux progressent ; relation et service personnalisés haut-de-gamme restent humains."
+  },
+  {
+    "label": "Ingénieur process",
+    "domain": "H",
+    "fap_code": "H2Z10",
+    "salary_net_monthly": 3580,
+    "employment_count": 48000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2023,
+        "src": "Brynjolfsson · digital twin automation"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · industrie 4.0"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Siemens IA report 2024"
+      }
+    ],
+    "weighted_score": 6.75,
+    "rationale": "Optimisation de process très exposée aux jumeaux numériques et IA prédictive. Conception système et validation restent humaines."
+  },
+  {
+    "label": "Soudeur",
+    "domain": "H",
+    "fap_code": "H2Z20",
+    "salary_net_monthly": 2180,
+    "employment_count": 82000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2022,
+        "src": "Frey & Osborne · soudage physique"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Deloitte · cobots & soudage"
+      }
+    ],
+    "weighted_score": 2.33,
+    "rationale": "Cobots progressent sur les soudures répétitives ; contextes variables et positions complexes restent manuels."
+  },
+  {
+    "label": "Technicien maintenance",
+    "domain": "I",
+    "fap_code": "I1Z10",
+    "salary_net_monthly": 2180,
+    "employment_count": 92000,
+    "regulations": [
+      "RGPD",
+      "NIS2"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2022,
+        "src": "Frey & Osborne · maintenance physique"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Deloitte · predictive maintenance"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Industrie & Technologies · IoT maintenance"
+      }
+    ],
+    "weighted_score": 3.0,
+    "rationale": "Diagnostic et intervention physique restent manuels. La maintenance prédictive assiste sans remplacer."
+  },
+  {
+    "label": "Automaticien",
+    "domain": "I",
+    "fap_code": "I1Z20",
+    "salary_net_monthly": 2850,
+    "employment_count": 38000,
+    "regulations": [
+      "RGPD",
+      "NIS2",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2023,
+        "src": "Autor · routine analytical tasks"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "McKinsey · automation engineering"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Information security analysts 48.6% observed (Anthropic EconIndex 2026)"
+      }
+    ],
+    "weighted_score": 5.4,
+    "rationale": "Programmation d'automates partiellement assistée par IA ; intégration terrain et validation système résistent."
+  },
+  {
+    "label": "Médecin généraliste",
+    "domain": "J",
+    "fap_code": "J3Z40",
+    "salary_net_monthly": 5340,
+    "employment_count": 96000,
+    "regulations": [
+      "RGPD",
+      "CSP",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2023,
+        "src": "NEJM · LLMs en médecine générale"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "JAMA · AI clinical decision"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "HAS France · IA et médecins"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Quotidien du Médecin"
+      },
+      {
+        "tier": 1,
+        "val": 5.2,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Medical record specialists 66.7% observed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 2.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2211 Generalist Medical Practitioners · Not Exposed (mean 0.29) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 4.39,
+    "rationale": "Diagnostic augmenté par IA, mais relation thérapeutique, gestion de l'incertitude et empathie restent irremplaçables."
+  },
+  {
+    "label": "Infirmier",
+    "domain": "J",
+    "fap_code": "J4Z30",
+    "salary_net_monthly": 2340,
+    "employment_count": 580000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "The Lancet · nursing & AI"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "WHO · digital health nurses"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Revue de l'Infirmière · IA soins"
+      },
+      {
+        "tier": 1,
+        "val": 2.5,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2221 Nursing Professionals · Not Exposed (mean 0.25) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 2.82,
+    "rationale": "Soins directs, gestes techniques, soutien psychologique · IA assiste l'administratif sans remplacer le soin."
+  },
+  {
+    "label": "Radiologue",
+    "domain": "J",
+    "fap_code": "J3Z20",
+    "salary_net_monthly": 6650,
+    "employment_count": 13500,
+    "regulations": [
+      "RGPD",
+      "CSP",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Rajpurkar et al. NEJM · radiology AI"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2023,
+        "src": "Nature Medicine · chest X-ray AI"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "HAS France · imagerie IA"
+      },
+      {
+        "tier": 1,
+        "val": 7.8,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Healthcare record automation tasks (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "OEM Observatoire des Emplois Menacés · cas d'étude radiologue · scénarios LLM/AGI : −2740 postes CT, −50% MT, transformation radicale vers superviseur IA (observatoire-emplois-menaces.com 2025)"
+      }
+    ],
+    "weighted_score": 7.55,
+    "rationale": "IA de détection d'anomalies très avancée (AUC > 0.95 sur dépistage). Interprétation finale et actes interventionnels restent médicaux."
+  },
+  {
+    "label": "Aide-soignant",
+    "domain": "J",
+    "fap_code": "J4Z10",
+    "salary_net_monthly": 1890,
+    "employment_count": 355000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2022,
+        "src": "Frey & Osborne · soins physiques"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2023,
+        "src": "OCDE · care workers"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Soins · IA et aide-soignants"
+      }
+    ],
+    "weighted_score": 2.0,
+    "rationale": "Soin direct, nursing et relationnel humain · non substituable par aucun modèle actuel."
+  },
+  {
+    "label": "Pharmacien",
+    "domain": "J",
+    "fap_code": "J1Z10",
+    "salary_net_monthly": 3850,
+    "employment_count": 74000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "NEJM · pharmacy automation"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "ANSM · IA et pharmacie"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Le Moniteur des Pharmacies"
+      },
+      {
+        "tier": 1,
+        "val": 3.3,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2262 Pharmacists · Minimal Exposure (mean 0.33) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 4.84,
+    "rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent."
+  },
+  {
+    "label": "Aide à domicile",
+    "domain": "K",
+    "fap_code": "K2Z10",
+    "salary_net_monthly": 1580,
+    "employment_count": 695000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 1.0,
+        "year": 2022,
+        "src": "Frey & Osborne · care physique"
+      },
+      {
+        "tier": 2,
+        "val": 1.0,
+        "year": 2023,
+        "src": "Rapport Blanchet · emploi à domicile"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Le Particulier Emploi · IA"
+      }
+    ],
+    "weighted_score": 1.14,
+    "rationale": "Présence physique, empathie et adaptation permanente · non-automatisable avec les technologies actuelles."
+  },
+  {
+    "label": "Éducateur spécialisé",
+    "domain": "K",
+    "fap_code": "K1Z10",
+    "salary_net_monthly": 2050,
+    "employment_count": 105000,
+    "regulations": [
+      "RGPD"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · social service work"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2023,
+        "src": "IGAS · travailleurs sociaux & IA"
+      }
+    ],
+    "weighted_score": 3.0,
+    "rationale": "Relation éducative, accompagnement individualisé et médiation résistent à l'automatisation."
+  },
+  {
+    "label": "Policier",
+    "domain": "P",
+    "fap_code": "K4Z10",
+    "salary_net_monthly": 2250,
+    "employment_count": 155000,
+    "regulations": [
+      "RGPD",
+      "LOPJ",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "INHESJ · IA sécurité intérieure"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Cahiers de la Sécurité · algorithmes"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Autor · non-routine manual enforcement"
+      }
+    ],
+    "weighted_score": 3.57,
+    "rationale": "Intervention terrain, médiation, décision en urgence · IA assiste sans remplacer l'officier."
+  },
+  {
+    "label": "Conseiller pénitentiaire (CPIP)",
+    "domain": "K",
+    "fap_code": "K5Z10",
+    "salary_net_monthly": 2300,
+    "employment_count": 4400,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2023,
+        "src": "Autor · social casework, counseling & non-routine interpersonal: low LLM automatability"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Ministère de la Justice · rapport DAP, effectifs SPIP France 2024"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Commission européenne · AI Act, article 5 : interdiction notation comportementale dans le domaine pénal"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "AJ Pénal · IA et probation, risques et potentiels 2025"
+      },
+      {
+        "tier": 4,
+        "val": 5.0,
+        "year": 2025,
+        "src": "SNEPAP-FSU (syndicat CPIP) · rapport IA et travail social pénitentiaire 2025"
+      }
+    ],
+    "weighted_score": 4.26,
+    "rationale": "Le suivi socio-judiciaire des personnes condamnées repose sur la relation de confiance, l'évaluation clinique du risque de récidive et la coordination pluridisciplinaire. Outils d'évaluation actuarielle (STATIC-99, LSI-R) déjà utilisés mais décision reste humaine. ~4 400 conseillers pénitentiaires d'insertion et de probation (CPIP) actifs en France (DAP/Ministère Justice 2024). L'IA est explicitement interdite pour la notation comportementale dans le domaine pénal (AI Act, art. 5)."
+  },
+  {
+    "label": "Musicien",
+    "domain": "L",
+    "fap_code": "L0Z10",
+    "salary_net_monthly": 1780,
+    "employment_count": 22000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Ferraro et al. · creative AI & musicians"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "IRMA · IA et musiciens France"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Télérama · Suno, Udio et musiciens"
+      },
+      {
+        "tier": 1,
+        "val": 2.8,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2652 Musicians, Singers & Composers · Not Exposed (mean 0.28) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 3.02,
+    "rationale": "Performance live et interprétation émotionnelle · l'IA génère mais ne performe pas. Valeur sur le live et la pédagogie."
+  },
+  {
+    "label": "Réalisateur audiovisuel-cinéma",
+    "domain": "O",
+    "fap_code": "L1Z10",
+    "salary_net_monthly": 3500,
+    "employment_count": 15000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Eloundou et al. · film & audiovisual directing tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "CNC · rapport IA et création cinématographique 2024"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Audiens CPNEF-AV · rapport emploi audiovisuel 2024"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Cahiers du Cinéma · IA et réalisateurs France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 6.0,
+        "year": 2025,
+        "src": "SRF (Société des réalisateurs de films) · position IA 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.7,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2654 Film, Stage & Related Directors · Minimal Exposure (mean 0.37) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 4.73,
+    "rationale": "Les outils IA de pré-production (storyboarding, prévisualisation, casting) progressent rapidement. La direction d'acteurs, la vision artistique singulière et les décisions en temps réel sur le plateau restent irremplaçables. ~15 000 réalisateurs actifs (Audiens/intermittents 2024)."
+  },
+  {
+    "label": "Monteur-vidéaste",
+    "domain": "O",
+    "fap_code": "L1Z20",
+    "salary_net_monthly": 2400,
+    "employment_count": 18000,
+    "regulations": [
+      "RGPD",
+      "DSA",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou et al. · video editing tasks LLM & generative AI exposure"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Audiens CPNEF-AV · rapport emploi post-production 2024"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "CC production audiovisuelle · avenant n°19, juillet 2024"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Écran Total · IA et montage automatique France 2025"
+      },
+      {
+        "tier": 3,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Libération · Runway, Sora et les monteurs 2025"
+      }
+    ],
+    "weighted_score": 8.1,
+    "rationale": "Montage automatique (génération de rushes, découpes IA, sous-titrage) : très exposé. L'Adobe Premiere/DaVinci Resolve intègrent déjà l'IA de manière native. La direction éditoriale, le rythme narratif et la post-production de prestige restent différenciants. ~18 000 monteurs (Audiens/CPNEF-AV 2024)."
+  },
+  {
+    "label": "Développeur logiciel",
+    "domain": "S",
+    "fap_code": "M1Z50",
+    "salary_net_monthly": 3850,
+    "employment_count": 182000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "NIS2",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Peng et al. · GitHub Copilot productivity"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Science · GenAI coding diffusion"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2025,
+        "src": "NBER w34851"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2025,
+        "src": "LinkedIn Eco Graph · Copilot"
+      },
+      {
+        "tier": 1,
+        "val": 9.2,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Computer programmers 74.5% observed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 5.3,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2512 Software Developers · Gradient 3 (mean 0.53) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −7.4% emploi 15-29 ans activités informatiques T4 2025 · −3% info-communication 2023-2025 entièrement porté par les jeunes"
+      }
+    ],
+    "weighted_score": 8.27,
+    "rationale": "Génération de code par LLMs très avancée (+55% productivité Copilot). Architecture, compréhension produit et jugement système résistent."
+  },
+  {
+    "label": "Data scientist",
+    "domain": "S",
+    "fap_code": "M1Z55",
+    "salary_net_monthly": 4280,
+    "employment_count": 52000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "NIS2"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Eloundou et al. · data analysis LLMs"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2023,
+        "src": "Noy & Zhang · analytical tasks"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2024,
+        "src": "McKinsey · analytics automation"
+      },
+      {
+        "tier": 1,
+        "val": 8.5,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Market research analysts 64.8% observed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 5.7,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2514 Applications Programmers · Gradient 3 (mean 0.57) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −7.4% emploi 15-29 ans activités informatiques T4 2025 · −3% info-communication 2023-2025 entièrement porté par les jeunes"
+      }
+    ],
+    "weighted_score": 8.26,
+    "rationale": "AutoML et LLMs effectuent les analyses standard. Valeur migre vers la définition du problème et l'interprétation stratégique."
+  },
+  {
+    "label": "Comptable",
+    "domain": "M",
+    "fap_code": "M1Z20",
+    "salary_net_monthly": 2650,
+    "employment_count": 128000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2025,
+        "src": "SSRN 5039640 · AI & accounting"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou · financial tasks LLMs"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "PwC · comptabilité & IA France"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "L'Expert-Comptable · IA cabinet"
+      },
+      {
+        "tier": 1,
+        "val": 8.8,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Accountants top exposed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 5.1,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2411 Accountants · Gradient 3 (mean 0.51) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 7.77,
+    "rationale": "Saisie, déclarations et rapprochements très automatisables. La valeur migre vers le conseil et l'analyse critique."
+  },
+  {
+    "label": "Juriste droit social",
+    "domain": "P",
+    "fap_code": "M1Z10",
+    "salary_net_monthly": 3560,
+    "employment_count": 32000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou · legal tasks LLMs"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2023,
+        "src": "Noy & Zhang · legal writing"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "McKinsey · legal automation"
+      },
+      {
+        "tier": 1,
+        "val": 7.8,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Lawyers highly exposed (Anthropic EconIndex 2026)"
+      }
+    ],
+    "weighted_score": 7.66,
+    "rationale": "Actes standard et recherche jurisprudentielle automatisables. Conseil stratégique, contentieux et négociation restent humains."
+  },
+  {
+    "label": "Analyste financier",
+    "domain": "M",
+    "fap_code": "M1Z30",
+    "salary_net_monthly": 4080,
+    "employment_count": 38000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Eloundou et al. · financial analysis"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2023,
+        "src": "Lopez-Lira & Tang · ChatGPT & markets"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Bloomberg Intelligence · IA finance"
+      },
+      {
+        "tier": 3,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Les Échos · IA et analystes"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Financial analysts 57.2% observed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 6.2,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2413 Financial Analysts · Gradient 4 (mean 0.62) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 8.25,
+    "rationale": "Analyse quantitative et rédaction de rapports = haute automatisabilité. Jugement stratégique et relations client résistent."
+  },
+  {
+    "label": "DRH",
+    "domain": "M",
+    "fap_code": "M1Z40",
+    "salary_net_monthly": 4080,
+    "employment_count": 42000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2023,
+        "src": "Autor · managers & routines"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Gartner · HR automation"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "RH Info · IA et DRH France"
+      },
+      {
+        "tier": 1,
+        "val": 6.8,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Business & finance observed exposure (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 4.5,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2423 Personnel & Careers Professionals · Gradient 2 (mean 0.45) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      }
+    ],
+    "weighted_score": 5.91,
+    "rationale": "Recrutement et administration RH très exposés. Culture d'entreprise, stratégie humaine et gestion des conflits résistent."
+  },
+  {
+    "label": "UX designer",
+    "domain": "S",
+    "fap_code": "M1Z60",
+    "salary_net_monthly": 3250,
+    "employment_count": 26000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Dell'Acqua et al. · creative AI tasks"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Nielsen Norman Group · AI UX"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Figma · IA et designers"
+      },
+      {
+        "tier": 1,
+        "val": 6.5,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Arts & media observed exposure (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 4.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2166 Graphic & Multimedia Designers · Gradient 2 (mean 0.49) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −7.4% emploi 15-29 ans activités informatiques T4 2025 · −3% info-communication 2023-2025 entièrement porté par les jeunes"
+      }
+    ],
+    "weighted_score": 6.63,
+    "rationale": "Génération d'interfaces automatisable. Recherche utilisateur, test et stratégie produit résistent."
+  },
+  {
+    "label": "Contrôleur de gestion",
+    "domain": "M",
+    "fap_code": "M1Z25",
+    "salary_net_monthly": 3450,
+    "employment_count": 72000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou · financial reporting"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "DFCG · IA et contrôle de gestion"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Décideurs · contrôleurs & IA"
+      },
+      {
+        "tier": 1,
+        "val": 7.5,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Business & finance category (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 4.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3313 Accounting Associate Professionals · Gradient 2 (mean 0.49) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 7.4,
+    "rationale": "Consolidation et reporting très automatisables. Rôle de business partner et conseil stratégique résistent."
+  },
+  {
+    "label": "Chef de projet IT",
+    "domain": "S",
+    "fap_code": "M1Z70",
+    "salary_net_monthly": 3680,
+    "employment_count": 88000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "NIS2",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Autor · project management & AI"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Gartner · AI in project management"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "CIO · IA et chefs de projet"
+      },
+      {
+        "tier": 1,
+        "val": 7.2,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · Software QA analysts 51.9% observed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 1,
+        "val": 4.6,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2421 Management & Organization Analysts · Gradient 2 (mean 0.46) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −7.4% emploi 15-29 ans activités informatiques T4 2025 · −3% info-communication 2023-2025 entièrement porté par les jeunes"
+      }
+    ],
+    "weighted_score": 6.53,
+    "rationale": "Planification assistée par IA ; coordination humaine, gestion des risques imprévus et négociation stakeholders résistent."
+  },
+  {
+    "label": "Chauffeur routier",
+    "domain": "N",
+    "fap_code": "N4Z10",
+    "salary_net_monthly": 2080,
+    "employment_count": 278000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2023,
+        "src": "Frey & Osborne update · autonomous trucks"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "France Stratégie · autonomie transport"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Transportinfo · IA chauffeur"
+      }
+    ],
+    "weighted_score": 4.14,
+    "rationale": "Conduite autonome progresse (L4 en zone contrôlée) mais contexte réglementaire FR maintient un humain à moyen terme."
+  },
+  {
+    "label": "Greffier",
+    "domain": "P",
+    "fap_code": "O1Z10",
+    "salary_net_monthly": 2300,
+    "employment_count": 24000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · legal & administrative documentation LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Sénat · IA et professions du droit, rapport 2024"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Rapport IA au service de la Justice · Ministère de la Justice, 2025"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "OCDE · IA dans l'administration de la justice 2025"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Dalloz · Justice et IA, préparons demain, nov. 2025"
+      },
+      {
+        "tier": 4,
+        "val": 7.0,
+        "year": 2025,
+        "src": "LOPJ 2023-2027 · plan recrutement 1 800 greffiers supplémentaires"
+      }
+    ],
+    "weighted_score": 6.91,
+    "rationale": "Rédaction de procès-verbaux, saisie d'actes et gestion administrative des dossiers : très exposés à l'automatisation IA. Le rôle d'authentification, la relation aux justiciables et la maîtrise du droit procédural restent différenciants. ~24 000 greffiers fonctionnaires (Ministère de la Justice 2024) · plan de recrutement massif prévu par la LOPJ."
+  },
+  {
+    "label": "Commissaire de justice",
+    "domain": "P",
+    "fap_code": "O2Z10",
+    "salary_net_monthly": 4200,
+    "employment_count": 3800,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · legal process & enforcement tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Sénat · IA et professions du droit, rapport 2024"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "RSJ 2024 · Rapport statistique sur la Justice · effectifs OPM"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2024,
+        "src": "CNCJ · chambre nationale des commissaires de justice · adoption IA 2024"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Fiducial · IA et transformation de la profession, mai 2024"
+      }
+    ],
+    "weighted_score": 5.8,
+    "rationale": "Issu de la fusion huissiers/commissaires-priseurs (juillet 2022), ce profil hybride combine actes d'exécution forcée, constats et ventes judiciaires. La signification d'actes et la saisie de données sont automatisables. La présence physique, la relation au débiteur et l'autorité de l'officier ministériel restent irremplaçables. ~3 800 commissaires de justice (RSJ 2024)."
+  },
+  {
+    "label": "Expert judiciaire",
+    "domain": "P",
+    "fap_code": "O3Z10",
+    "salary_net_monthly": 4800,
+    "employment_count": 20000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Eloundou et al. · expert analysis & report writing tasks"
+      },
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2023,
+        "src": "Noy & Zhang MIT · LLMs & expert report drafting"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Sénat · IA et professions du droit, rapport 2024 · experts judiciaires"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Village de la justice · IA et experts judiciaires, 2025"
+      },
+      {
+        "tier": 4,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Conseil national des experts judiciaires · position IA 2024"
+      }
+    ],
+    "weighted_score": 5.04,
+    "rationale": "La rédaction de rapports d'expertise et la recherche documentaire sont exposées. Mais l'évaluation sur site, le témoignage contradictoire en audience, la responsabilité personnelle engagée et le jugement d'expert en matière technique (médical, immobilier, forensique) restent hors portée des LLMs. ~20 000 experts judiciaires inscrits sur liste (Ministère Justice 2024)."
+  },
+  {
+    "label": "Médiateur-conciliateur",
+    "domain": "P",
+    "fap_code": "O4Z10",
+    "salary_net_monthly": 2800,
+    "employment_count": 5000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2023,
+        "src": "Autor · non-routine interpersonal & empathy-based work · low AI exposure"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Sénat · IA et professions du droit, rapport 2024 · alternatives amiables"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2025,
+        "src": "Rapport IA au service de la Justice · Ministère de la Justice 2025"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2025,
+        "src": "Village de la justice · essor de la médiation 2025"
+      },
+      {
+        "tier": 4,
+        "val": 3.0,
+        "year": 2025,
+        "src": "CMAP · bilan médiation commerciale 2024"
+      }
+    ],
+    "weighted_score": 2.05,
+    "rationale": "La médiation repose sur la présence physique, l'écoute active, la gestion émotionnelle des conflits et la co-construction d'accords · tâches très peu reproductibles par l'IA. La politique de l'amiable de la LOPJ 2023-2027 crée une forte demande. ~5 000 médiateurs certifiés et 3 500 conciliateurs bénévoles (Ministère Justice 2024)."
+  },
+  {
+    "label": "Logisticien",
+    "domain": "N",
+    "fap_code": "N4Z20",
+    "salary_net_monthly": 2650,
+    "employment_count": 92000,
+    "regulations": [
+      "RGPD",
+      "NIS2"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2023,
+        "src": "Autor · logistics & AI"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "McKinsey · supply chain IA"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Supply Chain Magazine · IA"
+      }
+    ],
+    "weighted_score": 6.0,
+    "rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent."
+  },
+  {
+    "label": "Pilote de ligne",
+    "domain": "N",
+    "fap_code": "N3Z10",
+    "salary_net_monthly": 7200,
+    "employment_count": 14000,
+    "regulations": [
+      "RGPD",
+      "NIS2"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · aviation & automation"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "EASA · IA cockpit"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "L'Avion · IA et pilotes"
+      }
+    ],
+    "weighted_score": 3.0,
+    "rationale": "Automatisation forte en vol nominal. Décision d'urgence, gestion CRM et responsabilité réglementaire maintiennent l'humain."
+  },
+  {
+    "label": "Avocat",
+    "domain": "P",
+    "fap_code": "M2Z20",
+    "salary_net_monthly": 3800,
+    "employment_count": 79000,
+    "regulations": [
+      "RGPD",
+      "LOPJ",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou et al. · legal tasks LLM exposure (NBER 2023)"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Noy & Zhang MIT · legal writing tasks automated"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · legal automation 2024"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · lawyers highly exposed (Anthropic EconIndex 2026)"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Étude LexisNexis · IA et avocats France 2024"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Village Justice · LegalTech et avocats France 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.6,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2611 Lawyers · Minimal Exposure (mean 0.36) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 7.07,
+    "rationale": "Recherche documentaire, rédaction d'actes standard et due diligence : fortement automatisables. Le conseil stratégique, la plaidoirie et les contentieux complexes restent irremplaçables. 79 141 avocats inscrits en janv. 2026 (CNB/Ministère de la Justice)."
+  },
+  {
+    "label": "Notaire",
+    "domain": "P",
+    "fap_code": "M2Z30",
+    "salary_net_monthly": 3600,
+    "employment_count": 17000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · document drafting & authentication tasks LLM"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2023,
+        "src": "France Stratégie · professions juridiques réglementées & IA"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "CSN · rapport IA et notariat 2024"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Village Justice · LegalTech & offices notariaux 2025"
+      }
+    ],
+    "weighted_score": 6.22,
+    "rationale": "Actes immobiliers répétitifs, rédaction de clauses standard : exposés aux LLMs spécialisés. Authentification des actes, responsabilité ministerielle et conseil patrimonial complexe restent des fonctions humaines irremplaçables. 17 000 notaires en France (CSN 2024)."
+  },
+  {
+    "label": "Magistrat",
+    "domain": "P",
+    "fap_code": "M2Z40",
+    "salary_net_monthly": 4200,
+    "employment_count": 9300,
+    "regulations": [
+      "RGPD",
+      "LOPJ",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Eloundou et al. · judicial decision tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2023,
+        "src": "France Stratégie · IA et professions judiciaires"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Commission EU · AI Act & justice algorithms"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Dalloz · IA et aide à la décision judiciaire France 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.1,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2612 Judges · Not Exposed (mean 0.31) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 3.88,
+    "rationale": "L'aide à la décision par IA progresse (jurisprudence, prédiction de peines) mais la décision judiciaire, l'appréciation des faits et la motivation des jugements restent des fonctions constitutionnellement humaines. 9 300 magistrats en France (Ministère de la Justice 2024)."
+  },
+  {
+    "label": "Juriste d'entreprise",
+    "domain": "P",
+    "fap_code": "M2Z50",
+    "salary_net_monthly": 3800,
+    "employment_count": 65000,
+    "regulations": [
+      "RGPD",
+      "LOPJ",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · in-house counsel tasks LLM"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · corporate legal automation 2024"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "EY LLP · AI in legal departments survey 2024"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Les Échos · IA et directions juridiques France 2025"
+      }
+    ],
+    "weighted_score": 7.11,
+    "rationale": "Revue de contrats, veille réglementaire et rédaction de clauses : automatisables à 60-70%. Le conseil stratégique, la négociation et la gestion des contentieux restent humains. ~65 000 juristes en entreprise (INSEE EEC 2024)."
+  },
+  {
+    "label": "Greffier des services judiciaires",
+    "domain": "P",
+    "fap_code": "M2Z60",
+    "salary_net_monthly": 2000,
+    "employment_count": 11000,
+    "regulations": [
+      "RGPD",
+      "LOPJ"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · administrative & legal clerical tasks very high LLM exposure (NBER 2023)"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Ministère de la Justice · programme numérique des juridictions, LFI 2024"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Commission européenne · AI Act, automatisation des procédures judiciaires standardisées"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Dalloz Actualité · IA dans les greffes, dématérialisation judiciaire 2025"
+      },
+      {
+        "tier": 4,
+        "val": 6.0,
+        "year": 2024,
+        "src": "USM (syndicat magistrats) · numérisation des greffes, rapport conditions de travail 2024"
+      }
+    ],
+    "weighted_score": 6.95,
+    "rationale": "Rédaction d'actes de procédure standardisés, gestion documentaire et convocations : tâches très exposées aux LLMs. La certification légale des actes, la présence aux audiences et la traçabilité pénale restent constitutionnellement humaines. ~11 000 greffiers fonctionnaires (catégorie B, Ministère Justice 2024 · 1 500 postes supplémentaires créés d'ici 2027)."
+  },
+  {
+    "label": "Professeur des écoles",
+    "domain": "R",
+    "fap_code": "K6Z20",
+    "salary_net_monthly": 2380,
+    "employment_count": 370000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Noy & Zhang MIT · AI tutoring efficacy & teaching tasks"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "OCDE · IA et enseignants, rapport 2024"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2025,
+        "src": "NBER w34851 · productivity gaps GenAI in education"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "DEPP/MEN · rapport usage IA dans les classes France 2024"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Le Monde Education · IA en classe primaire France"
+      },
+      {
+        "tier": 1,
+        "val": 2.6,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2341 Primary School Teachers · Not Exposed (mean 0.26) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 4.2,
+    "rationale": "Tuteurs IA personnalisés (Khan Academy, Khanmigo) progressent mais la relation éducative, la gestion de classe, la socialisation précoce et l'adaptation aux besoins individuels restent irremplaçables. 370 500 professeurs des écoles en France (DEPP 2024)."
+  },
+  {
+    "label": "Professeur collège-lycée",
+    "domain": "R",
+    "fap_code": "K6Z30",
+    "salary_net_monthly": 2680,
+    "employment_count": 530000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Noy & Zhang MIT · AI tutoring & teacher substitution"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "OCDE Education at a Glance 2024 · IA & enseignants"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2025,
+        "src": "NBER w34851 · GenAI productivity gaps education"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2025,
+        "src": "France Stratégie · transformation enseignement secondaire & IA"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Le Monde Education · ChatGPT et lycéens 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2330 Secondary Education Teachers · Not Exposed (mean 0.3) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 4.47,
+    "rationale": "Production de cours, correction de copies : automatisables. L'animation pédagogique, la relation éducative, la gestion des difficultés d'apprentissage et la mission de socialisation restent irremplaçables. 530 000 enseignants du 2nd degré (DEPP Panorama 2024-2025)."
+  },
+  {
+    "label": "Enseignant-chercheur",
+    "domain": "R",
+    "fap_code": "K6Z40",
+    "salary_net_monthly": 3400,
+    "employment_count": 93000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · knowledge work tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "OCDE · IA et recherche académique 2024"
+      },
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Nature · LLMs & scientific discovery 2025"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2023,
+        "src": "MESR · rapport IA dans l'enseignement supérieur 2023"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Le Monde Université · IA et enseignement supérieur 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.7,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2310 University & Higher Education Teachers · Minimal Exposure (mean 0.37) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 5.22,
+    "rationale": "Production de cours et rédaction d'articles standards très exposées. La recherche originale, la direction de thèse, l'évaluation par les pairs et la transmission du raisonnement scientifique restent profondément humaines. 93 000 enseignants du supérieur (MESR 2023)."
+  },
+  {
+    "label": "Conseiller d'orientation-psychologue",
+    "domain": "R",
+    "fap_code": "K6Z50",
+    "salary_net_monthly": 2500,
+    "employment_count": 11000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2023,
+        "src": "Autor · social service work & human interaction tasks"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "OCDE · IA et orientation scolaire & professionnelle"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "L'Etudiant · IA et orientation scolaire France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 5.0,
+        "year": 2025,
+        "src": "ONISEP · baromètre orientation & IA 2025"
+      }
+    ],
+    "weighted_score": 4.2,
+    "rationale": "Les outils d'orientation algorithmiques (Parcoursup, Mon Master) se développent mais l'accompagnement psychologique individualisé, la détection des troubles et la relation de confiance restent irremplaçables. ~11 000 PsyEN en France (MEN 2024)."
+  },
+  {
+    "label": "Psychologue clinicien",
+    "domain": "J",
+    "fap_code": "J8Z10",
+    "salary_net_monthly": 2200,
+    "employment_count": 80000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · emotional labor & therapeutic relationship non-automatable"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "OCDE · IA et santé mentale, limites éthiques 2024"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "HAS France · encadrement IA en psychologie clinique 2024"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Le Monde · chatbots thérapeutiques et psychologues France 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "Nature Medicine · LLMs & psychotherapy clinical limits 2025"
+      },
+      {
+        "tier": 1,
+        "val": 3.9,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2634 Psychologists · Gradient 1 (mean 0.39) · Gmyrek et al. mai 2025"
+      }
+    ],
+    "weighted_score": 3.39,
+    "rationale": "La relation thérapeutique, le transfert et la formulation clinique restent irremplaçables. Les chatbots CBT assurent un premier niveau d'écoute mais ne se substituent pas au suivi psychologique. 80 000 psychologues inscrits (DREES/RPPS 2024)."
+  },
+  {
+    "label": "Chirurgien-dentiste",
+    "domain": "J",
+    "fap_code": "J9Z10",
+    "salary_net_monthly": 4200,
+    "employment_count": 40000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Eloundou et al. · physical healthcare tasks low LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "DREES · IA et imagerie dentaire CBCT 2024"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Le Chirurgien-Dentiste de France · IA en cabinet 2025"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Carestream Dental · AI dental diagnostics adoption Europe 2024"
+      }
+    ],
+    "weighted_score": 4.44,
+    "rationale": "Gestes cliniques et chirurgicaux irremplaçables. L'IA progresse sur la détection des caries et pathologies (radiographies, CBCT) mais n'effectue pas les soins. 40 000 chirurgiens-dentistes (DREES/RPPS 2024)."
+  },
+  {
+    "label": "Kinésithérapeute",
+    "domain": "J",
+    "fap_code": "J6Z20",
+    "salary_net_monthly": 2800,
+    "employment_count": 105000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "Autor · physical therapeutic interaction & tactile skills"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "HAS · rééducation, IA et actes manuels 2024"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2023,
+        "src": "OCDE · care workers & automation barriers"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Kinésithérapie La Revue · exosquelettes et IA rehab 2024"
+      }
+    ],
+    "weighted_score": 3.0,
+    "rationale": "Le toucher thérapeutique et l'adaptation en temps réel à la douleur sont non-substituables. Les exosquelettes et applications de téléréhabilitation assistent sans remplacer. 105 000 kinésithérapeutes (DREES/RPPS 2024)."
+  },
+  {
+    "label": "Sage-femme",
+    "domain": "J",
+    "fap_code": "J2Z30",
+    "salary_net_monthly": 2400,
+    "employment_count": 24000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2023,
+        "src": "The Lancet · midwifery clinical judgment non-automatable"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "WHO · digital health & midwives 2024"
+      },
+      {
+        "tier": 3,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Sages-femmes.net · IA et surveillance foetale France 2024"
+      }
+    ],
+    "weighted_score": 3.0,
+    "rationale": "Accompagnement de la naissance, surveillance du travail et décision clinique en temps réel : non substituables. L'IA assiste le monitoring foetal (CTG) et la détection d'anomalies sans remplacer le jugement. 24 000 sages-femmes (DREES/RPPS 2024)."
+  },
+  {
+    "label": "Vétérinaire",
+    "domain": "J",
+    "fap_code": "J0Z10",
+    "salary_net_monthly": 3200,
+    "employment_count": 20000,
+    "regulations": [
+      "RGPD",
+      "CSP"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Eloundou et al. · veterinary diagnostic tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "OCDE · automatisation professions libérales de santé 2024"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "La Semaine Vétérinaire · IA en diagnostic animal France 2025"
+      },
+      {
+        "tier": 4,
+        "val": 4.0,
+        "year": 2024,
+        "src": "ONVS · rapport IA & pratique vétérinaire 2024"
+      }
+    ],
+    "weighted_score": 4.13,
+    "rationale": "Examen clinique et chirurgie : irremplaçables. L'IA progresse sur l'imagerie (radio, écho) et le diagnostic différentiel assisté. 20 000 vétérinaires en France (ONVS 2024)."
+  },
+  {
+    "label": "Community manager",
+    "domain": "O",
+    "fap_code": "D4Z20",
+    "salary_net_monthly": 2500,
+    "employment_count": 95000,
+    "regulations": [
+      "RGPD",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Eloundou et al. · social media & content generation LLM exposure"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2023,
+        "src": "Noy & Zhang MIT · writing & content tasks automated by LLM"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "McKinsey · marketing content automation 2024"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2026,
+        "src": "Massenkoff & McCrory · customer service 70.1% observed (Anthropic 2026)"
+      },
+      {
+        "tier": 3,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Journal du Net · IA et community managers France 2025"
+      },
+      {
+        "tier": 1,
+        "val": 5.5,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2431 Advertising & Marketing Professionals · Gradient 3 (mean 0.55) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −5.8% emploi 15-29 ans édition T4 2025 · retournement concomitant à l'IA générative"
+      }
+    ],
+    "weighted_score": 7.96,
+    "rationale": "Production de posts, réponses standardisées et reporting : très automatisables. La stratégie de marque, la gestion de crise et la création de contenu distinctif restent différenciants. ~95 000 CM (INSEE EEC 2024)."
+  },
+  {
+    "label": "Consultant en management",
+    "domain": "M",
+    "fap_code": "M3Z30",
+    "salary_net_monthly": 4200,
+    "employment_count": 180000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · knowledge worker & strategy tasks LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · management consulting automation 2024"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2024,
+        "src": "BCG · AI & consultants internal study 2024"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Les Échos · IA et cabinets de conseil en France 2025"
+      },
+      {
+        "tier": 1,
+        "val": 4.6,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2421 Management & Organization Analysts · Gradient 2 (mean 0.46) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −3.7% emploi 15-29 ans conseil en gestion T4 2025 · ralentissement des embauches juniors"
+      }
+    ],
+    "weighted_score": 6.11,
+    "rationale": "Analyse de données, production de slides et reporting : très automatisables. Le diagnostic organisationnel, la relation client et la conduite du changement humain restent des domaines où l'IA augmente sans remplacer. ~180 000 consultants (INSEE EEC 2024)."
+  },
+  {
+    "label": "Mécanicien automobile",
+    "domain": "H",
+    "fap_code": "I0Z30",
+    "salary_net_monthly": 2000,
+    "employment_count": 120000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2022,
+        "src": "Frey & Osborne · skilled manual repairs non-automatable"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2023,
+        "src": "ANFA · rapport formation automotive & numérisation 2023"
+      },
+      {
+        "tier": 3,
+        "val": 4.0,
+        "year": 2024,
+        "src": "L'Argus Pro · IA et diagnostic auto France 2024"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "INA/FCBA · transition VE et compétences garagistes 2024"
+      }
+    ],
+    "weighted_score": 3.33,
+    "rationale": "Diagnostic et réparation physique sur véhicule : difficile à automatiser. Les outils OBD/IA assistent sans remplacer la compétence terrain. La transition VE crée une demande de nouvelles compétences critiques. 120 000 mécaniciens (ANFA/INSEE 2024)."
+  },
+  {
+    "label": "Coiffeur-esthéticien",
+    "domain": "G",
+    "fap_code": "G0Z30",
+    "salary_net_monthly": 1700,
+    "employment_count": 110000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 1.0,
+        "year": 2022,
+        "src": "Frey & Osborne · personal appearance services, manual & relational"
+      },
+      {
+        "tier": 2,
+        "val": 1.0,
+        "year": 2023,
+        "src": "OCDE · services de contact physique non-automatisables"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2024,
+        "src": "L'Officiel des Coiffeurs · IA et essayage virtuel 2024"
+      }
+    ],
+    "weighted_score": 1.14,
+    "rationale": "Contact physique, geste technique personnalisé et relation de confiance : exposition minimale à l'IA. Les outils de visualisation (essayage virtuel) assistent le conseil sans substituer la prestation. 110 000 coiffeurs (UNEC/INSEE 2024)."
+  },
+  {
+    "label": "Conseiller en gestion de patrimoine",
+    "domain": "C",
+    "fap_code": "C2Z40",
+    "salary_net_monthly": 4200,
+    "employment_count": 32000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou et al. · financial advisory LLM exposure"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "AMF · IA et conseil financier personnalisé"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2025,
+        "src": "McKinsey · wealth management automation"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2412 Financial & Investment Advisers · Gradient 3 (mean 0.57)"
+      }
+    ],
+    "weighted_score": 7.67,
+    "rationale": "Analyse patrimoniale automatisable, mais conseil personnalisé, relation de confiance et responsabilité fiduciaire freinent la substitution totale."
+  },
+  {
+    "label": "Chargé de conformité (compliance)",
+    "domain": "C",
+    "fap_code": "C2Z50",
+    "salary_net_monthly": 4800,
+    "employment_count": 18000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA",
+      "NIS2",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2412 Financial Advisers · Gradient 3 (mean 0.57)"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "EBA · IA Act compliance obligations finance"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Autorité Bancaire Européenne · DORA audit 2025"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · compliance & legal tasks LLM exposure"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 7.38,
+    "rationale": "Veille réglementaire et détection d'anomalies très automatisables par LLMs. Mais la responsabilité d'interprétation face au régulateur reste humaine. L'IA Act crée une forte demande de ce profil."
+  },
+  {
+    "label": "Analyste crédit / underwriter",
+    "domain": "C",
+    "fap_code": "C2Z60",
+    "salary_net_monthly": 3400,
+    "employment_count": 25000,
+    "regulations": [
+      "RGPD",
+      "AMF",
+      "DORA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3312 Credit & Loans Officers · Gradient 4 (mean 0.60)"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2024,
+        "src": "BCE · IA scoring crédit Europe"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou et al. · financial scoring tasks LLM exposure"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Les Échos · IA décision crédit bancaire"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 8.27,
+    "rationale": "Scoring automatisé par IA dans les grands réseaux bancaires. ISCO G4 selon ILO WP140. La valeur migre vers les dossiers complexes et la relation client sur les cas difficiles."
+  },
+  {
+    "label": "Technicien CNC / conducteur de machines",
+    "domain": "H",
+    "fap_code": "H2Z10",
+    "salary_net_monthly": 2500,
+    "employment_count": 195000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 8121 Metal Processing Plant Operators · Not Exposed (mean 0.26)"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "France Stratégie · automatisation industrie 4.0"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "UIMM · compétences industrie du futur"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Acemoglu & Autor · tâches manuelles automatisation physique"
+      }
+    ],
+    "weighted_score": 4.67,
+    "rationale": "Conduite de machines-outils et programmation CFAO partiellement automatisables. La maintenance de premier niveau, le réglage fin et la gestion des aléas de production nécessitent la présence physique."
+  },
+  {
+    "label": "Travailleur social / assistant de service social",
+    "domain": "K",
+    "fap_code": "K1Z10",
+    "salary_net_monthly": 2150,
+    "employment_count": 145000,
+    "regulations": [
+      "RGPD"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2635 Social Work & Counselling · Not Exposed (mean 0.28)"
+      },
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Acemoglu & Autor · tâches relationnelles & non-routinières"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2024,
+        "src": "France Stratégie · métiers du lien social résistance IA"
+      },
+      {
+        "tier": 3,
+        "val": 2.0,
+        "year": 2025,
+        "src": "Le Monde Social · IA et travail social"
+      }
+    ],
+    "weighted_score": 2.18,
+    "rationale": "L'accompagnement social individuel, la gestion des crises et la médiation familiale reposent entièrement sur la relation humaine, le jugement contextuel et la confiance. ILO WP140 classifie ces métiers Not Exposed."
+  },
+  {
+    "label": "Responsable administratif & financier (RAF)",
+    "domain": "M",
+    "fap_code": "M1Z10",
+    "salary_net_monthly": 4500,
+    "employment_count": 45000,
+    "regulations": [
+      "RGPD",
+      "AMF"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 1211 Finance Managers · Minimal Exposure (mean 0.37)"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2024,
+        "src": "McKinsey · finance function automation"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2024,
+        "src": "Eloundou et al. · financial management tasks"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "Décideurs Magazine · RAF et IA"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      }
+    ],
+    "weighted_score": 6.47,
+    "rationale": "Consolidation comptable, reporting et trésorerie très automatisables. La supervision des clôtures, la relation avec les commissaires aux comptes et la prise de décision financière stratégique résistent."
+  },
+  {
+    "label": "Directeur de projet / PMO",
+    "domain": "M",
+    "fap_code": "M1Z20",
+    "salary_net_monthly": 5500,
+    "employment_count": 38000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 1219 Business Services Managers NEC · Gradient 2 (mean 0.42)"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "PMI · IA et gestion de projet 2024"
+      },
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Acemoglu · tâches coordination et décision"
+      },
+      {
+        "tier": 3,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Harvard Business Review · IA projet management"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "Brynjolfsson et al. Stanford/NBER 2025 · 'Canaries' · emploi stable/croissance dans métiers à usage augmentant de l'IA · signal positif pour adaptation"
+      },
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2026,
+        "src": "INSEE NDC mars 2026 · Adjerad & Vermersch · −3.7% emploi 15-29 ans conseil en gestion T4 2025 · ralentissement des embauches juniors"
+      }
+    ],
+    "weighted_score": 5.47,
+    "rationale": "Planification et suivi de planning automatisables. La gestion des parties prenantes, la résolution de conflits et l'arbitrage stratégique des projets nécessitent le jugement et l'autorité humaine."
+  },
+  {
+    "label": "Gestionnaire paie & administration RH",
+    "domain": "M",
+    "fap_code": "M1Z30",
+    "salary_net_monthly": 2800,
+    "employment_count": 82000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 4313 Payroll Clerks · Gradient 4 (mean 0.61)"
+      },
+      {
+        "tier": 2,
+        "val": 9.0,
+        "year": 2024,
+        "src": "Deloitte · paie & RH automatisation LLM"
+      },
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2024,
+        "src": "Eloundou et al. · payroll processing LLM exposure"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Liaisons Sociales · IA et gestion de paie"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 8.4,
+    "rationale": "Calcul de paie et déclarations sociales = exposition maximale selon ILO WP140 (ISCO Gradient 4). La valeur migre vers la gestion des cas complexes, la veille réglementaire sociale et le conseil."
+  },
+  {
+    "label": "Directeur artistique (DA) / créatif",
+    "domain": "O",
+    "fap_code": "O1Z10",
+    "salary_net_monthly": 4000,
+    "employment_count": 24000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2166 Graphic & Multimedia Designers · Gradient 2 (mean 0.49)"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · creative direction & visual tasks"
+      },
+      {
+        "tier": 2,
+        "val": 6.0,
+        "year": 2025,
+        "src": "DGMIC · IA et industries créatives France"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "CB News · direction artistique et IA générative"
+      }
+    ],
+    "weighted_score": 6.45,
+    "rationale": "Génération d'images IA automatise la production visuelle de base. Mais la direction artistique (cohérence de marque, concept, regard éditorial) reste une compétence humaine de haute valeur."
+  },
+  {
+    "label": "Formateur professionnel / responsable formation",
+    "domain": "R",
+    "fap_code": "R1Z10",
+    "salary_net_monthly": 2950,
+    "employment_count": 95000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2356 Information Technology Trainers · Gradient 2 (mean 0.47)"
+      },
+      {
+        "tier": 2,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Caisse des Dépôts CPF · IA et formation professionnelle"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Acemoglu · tâches pédagogie et transmission"
+      },
+      {
+        "tier": 3,
+        "val": 5.0,
+        "year": 2025,
+        "src": "Centre Inffo · IA et ingénierie de formation"
+      }
+    ],
+    "weighted_score": 4.64,
+    "rationale": "Conception de modules e-learning automatisable. Mais l'animation présentielle, l'adaptation pédagogique en temps réel et l'accompagnement des apprenants en difficulté résistent à l'automatisation."
+  },
+  {
+    "label": "Artiste plasticien / peintre",
+    "domain": "B",
+    "fap_code": "B1Z10",
+    "salary_net_monthly": 1850,
+    "employment_count": 48000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2651 Visual Artists · Not Exposed (mean 0.21) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "EY/ICC Panorama 2025 · arts visuels & patrimoine 22,3 Md€ CA · IA générative enjeu majeur droit d'auteur (We Are Creative / Ministère Culture)"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ADAGP 2025 · IA générative = menace sur droit d'auteur sans rémunération des artistes (Panorama ICC déc. 2025)"
+      },
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Eloundou et al. (OpenAI) · visual art & creative tasks · LLM exposure score bas pour création plastique originale"
+      }
+    ],
+    "weighted_score": 2.33,
+    "rationale": "L'IA génère des images mais ne signe pas d'œuvre : l'intentionnalité, la biographie de l'artiste et la reconnaissance critique constituent la valeur marchande irréductible. Revenu médian annuel 2 332 € (ADAGP 2025) : secteur économiquement fragile malgré la résistance à l'automatisation."
+  },
+  {
+    "label": "Illustrateur / dessinateur BD",
+    "domain": "B",
+    "fap_code": "B1Z20",
+    "salary_net_monthly": 2100,
+    "employment_count": 22000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2166 Graphic & Multimedia Designers · Gradient 2 (mean 0.49) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2025,
+        "src": "ADAGP 2025 · graphistes et photographes : baisse missions · entreprises remplacent par IA générative interne (Panorama ICC 2025)"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · illustration & graphic tasks · exposition significative LLMs"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Société des Auteurs des Arts Visuels (SAIF) · IA générative et contraction du marché illustration 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 7.73,
+    "rationale": "Exposition élevée (ILO G2). L'ADAGP 2025 documente une chute réelle des commandes. La valeur migre vers la direction artistique, le style personnel distinctive et les projets à haute valeur éditoriale que l'IA ne peut pas conceptualiser seule."
+  },
+  {
+    "label": "Photographe professionnel (art / studio)",
+    "domain": "B",
+    "fap_code": "B1Z30",
+    "salary_net_monthly": 2400,
+    "employment_count": 34000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 6.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3431 Photographers · Gradient 1 (mean 0.39) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 7.0,
+        "year": 2025,
+        "src": "ADAGP 2025 · photographes : manque à gagner croissant · entreprises remplacent prestations par IA générative (Panorama ICC 2025)"
+      },
+      {
+        "tier": 1,
+        "val": 5.0,
+        "year": 2024,
+        "src": "Eloundou et al. · photography & visual capture tasks · exposition modérée, partie technique automatisable"
+      },
+      {
+        "tier": 3,
+        "val": 7.0,
+        "year": 2025,
+        "src": "SAIF & Union des photographes professionnels · contentieux IA et droit à l'image 2025"
+      }
+    ],
+    "weighted_score": 5.91,
+    "rationale": "ISCO Gradient 1 selon ILO WP140. La prise de vue reste physique et irremplaçable, mais la retouche, la sélection et la post-production sont sous forte pression. L'ADAGP documente une contraction réelle du marché."
+  },
+  {
+    "label": "Conservateur de musée / patrimoine",
+    "domain": "B",
+    "fap_code": "B1Z40",
+    "salary_net_monthly": 3200,
+    "employment_count": 12000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2621 Archivists & Curators · Gradient 2 (mean 0.47) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2025,
+        "src": "Ministère de la Culture · France 2030 'Transition numérique de la Culture et appropriation IA' · déploiement outils IA dans les institutions patrimoniales"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2025,
+        "src": "EY/ICC Panorama 2025 · musées et patrimoine 25% du CA arts visuels · numérisation et IA comme levier d'accès"
+      },
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2024,
+        "src": "Acemoglu & Autor · tâches d'expertise curatoriale et jugement critique · faible exposition automatisation"
+      }
+    ],
+    "weighted_score": 3.67,
+    "rationale": "Le jugement curatorial (authenticité, provenance, signification culturelle) est une expertise humaine irréductible. L'IA augmente la numérisation et la médiation mais ne remplace pas l'expertise scientifique."
+  },
+  {
+    "label": "Graphiste / designer graphique indépendant",
+    "domain": "B",
+    "fap_code": "B1Z50",
+    "salary_net_monthly": 2600,
+    "employment_count": 55000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 8.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2166 Graphic & Multimedia Designers · Gradient 2 (mean 0.49) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 8.0,
+        "year": 2025,
+        "src": "ADAGP 2025 · graphistes : baisse missions documentée · IA générative interne remplace prestations externes (Panorama ICC déc. 2025)"
+      },
+      {
+        "tier": 1,
+        "val": 7.0,
+        "year": 2024,
+        "src": "Eloundou et al. · graphic design & layout tasks · exposition élevée aux LLMs pour tâches de production"
+      },
+      {
+        "tier": 3,
+        "val": 8.0,
+        "year": 2025,
+        "src": "Libération / Liaisons Sociales · 'Le graphisme face à l'IA' · contraction marché freelances 2025"
+      },
+      {
+        "tier": 1,
+        "val": 9.0,
+        "year": 2025,
+        "src": "Brynjolfsson, Chandar & Chen · Stanford/NBER nov. 2025 · 'Canaries in the Coal Mine' · données ADP millions travailleurs · −16% emploi 22-25 ans dans métiers exposés IA (usages automatisants)"
+      }
+    ],
+    "weighted_score": 8.0,
+    "rationale": "Exposition G2 confirmée ILO WP140. Distinction critique entre graphisme de production (très exposé) et direction artistique conceptuelle (résiste). L'ADAGP 2025 documente la chute réelle des commandes de prestations externes."
+  },
+  {
+    "label": "Comédien / acteur",
+    "domain": "L",
+    "fap_code": "L1Z10",
+    "salary_net_monthly": 1950,
+    "employment_count": 65000,
+    "regulations": [
+      "RGPD",
+      "IA_Act",
+      "DSA"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2655 Actors · Minimal Exposure (mean 0.31) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "CPNEF-SV Rapport emploi formation spectacle vivant déc. 2025 · 200 métiers, interprétation artistique irremplaçable"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2025,
+        "src": "EY/ICC Panorama 2025 · spectacle vivant, cinéma · IA générative et deepfakes : enjeux SAG-AFTRA, droits image acteurs"
+      },
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Eloundou et al. · performing arts & embodied expression · très faible exposition LLMs pour jeu scénique physique"
+      }
+    ],
+    "weighted_score": 2.83,
+    "rationale": "ILO WP140 classe les acteurs en Minimal Exposure (0.31). La présence physique, la performance incarnée et l'émotion en temps réel sont irremplaçables sur scène. Risque réel sur le doublage, les synthèses vocales et les doublures numériques (deepfakes)."
+  },
+  {
+    "label": "Danseur / chorégraphe",
+    "domain": "L",
+    "fap_code": "L1Z20",
+    "salary_net_monthly": 1750,
+    "employment_count": 22000,
+    "regulations": [
+      "RGPD",
+      "IA_Act"
+    ],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2653 Dancers & Choreographers · Not Exposed (mean 0.19) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 2.0,
+        "year": 2025,
+        "src": "CPNEF-SV Rapport déc. 2025 · danse contemporaine, interprétation physique · besoin compétences numériques croissant sans substitution"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "Europe Créative EXPAND · IA et XR dans les arts du spectacle vivant · levier d'augmentation"
+      },
+      {
+        "tier": 1,
+        "val": 1.0,
+        "year": 2024,
+        "src": "Acemoglu & Autor · tâches corporelles et artistiques · exposition très faible à l'automatisation"
+      }
+    ],
+    "weighted_score": 1.83,
+    "rationale": "Not Exposed selon ILO WP140 (score 0.19). La danse est l'expression artistique la plus incarnée qui soit. La captation de mouvement et la chorégraphie assistée par IA sont des outils d'augmentation, pas de substitution."
+  },
+  {
+    "label": "Technicien son / lumière (spectacle vivant)",
+    "domain": "L",
+    "fap_code": "L1Z30",
+    "salary_net_monthly": 2350,
+    "employment_count": 38000,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 3521 Broadcasting & Audio-visual Technicians · Minimal Exposure (mean 0.35) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2025,
+        "src": "CPNEF-SV Rapport emploi formation spectacle vivant déc. 2025 · compétences techniques réseaux, signal, sécurité ERP · besoin formation numérique fort"
+      },
+      {
+        "tier": 2,
+        "val": 4.0,
+        "year": 2024,
+        "src": "France Stratégie · automatisation tâches techniques de régie · faible pour travail en conditions live"
+      },
+      {
+        "tier": 1,
+        "val": 4.0,
+        "year": 2024,
+        "src": "Eloundou et al. · audio-visual technical tasks · exposition modérée, partie conception automatisable"
+      }
+    ],
+    "weighted_score": 3.67,
+    "rationale": "Les tâches de régie en live (concert, théâtre) exigent une réactivité physique et une expertise contextuelle irremplaçable. L'IA automatise la conception de plans lumière et le traitement audio, mais l'opérationnel en temps réel reste humain."
+  },
+  {
+    "label": "Chef de chœur / directeur musical",
+    "domain": "L",
+    "fap_code": "L1Z40",
+    "salary_net_monthly": 2800,
+    "employment_count": 8500,
+    "regulations": [],
+    "sources": [
+      {
+        "tier": 1,
+        "val": 3.0,
+        "year": 2025,
+        "src": "ILO WP140 · ISCO 2652 Musicians, Singers & Composers · Not Exposed (mean 0.28) · Gmyrek et al. mai 2025"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "EY/ICC Panorama 2025 · musique live · IA dans la composition, mais la direction artistique humaine reste centrale"
+      },
+      {
+        "tier": 2,
+        "val": 3.0,
+        "year": 2025,
+        "src": "CPNEF-SV déc. 2025 · musique, direction d'ensemble · relation humaine indispensable à la conduite artistique"
+      },
+      {
+        "tier": 1,
+        "val": 2.0,
+        "year": 2024,
+        "src": "Eloundou et al. · musical direction & ensemble coordination · exposition très faible"
+      }
+    ],
+    "weighted_score": 2.67,
+    "rationale": "Not Exposed selon ILO WP140. La direction musicale est une autorité artistique, psychologique et relationnelle. L'IA peut générer des partitions mais ne peut pas conduire un orchestre ou former des choristes."
+  }
+]
