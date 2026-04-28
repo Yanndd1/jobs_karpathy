@@ -1,0 +1,14 @@
+{
+  "code": "L1202",
+  "libelle": "Musiciens",
+  "definition": "Le/la musiciens exerce un métier relevant de la catégorie arts-spectacle. Ce métier est référencé sous le code ROME L1202.",
+  "acces": "",
+  "appellations": [
+    {
+      "libelle": "Musiciens"
+    }
+  ],
+  "competences": [],
+  "contexteTravail": [],
+  "mobilites": []
+}
