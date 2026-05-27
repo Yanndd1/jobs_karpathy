@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visualiseur du marché du travail français</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --fg: #e0e0e8;
+  --fg2: #888894;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+
+#wrapper {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 250px;
+}
+
+#header {
+  padding: 20px 28px 16px;
+  flex-shrink: 0;
+}
+
+.intro {
+  margin-bottom: 18px;
+}
+.intro h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.intro h1 a {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--fg2);
+  text-decoration: none;
+}
+.intro h1 a:hover { text-decoration: underline; }
+.intro p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--fg2);
+  margin-bottom: 8px;
+}
+.intro a { color: var(--fg2); }
+.intro strong, .intro b { color: var(--fg); font-weight: 600; }
+
+.intro details { margin: 10px 0; }
+.intro summary {
+  font-size: 14px;
+  color: var(--fg2);
+  cursor: pointer;
+  user-select: none;
+}
+.intro summary:hover { color: var(--fg); }
+.intro .prompt-box {
+  margin-top: 8px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--fg2);
+  max-height: 300px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.stat-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.stat-section h3 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg2);
+}
+.stat-big {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-label {
+  font-size: 11px;
+  color: var(--fg2);
+}
+
+.tier-bar { display: flex; flex-direction: column; gap: 3px; }
+.tier-row { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.tier-color { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+.tier-name { flex: 1; color: var(--fg2); white-space: nowrap; }
+.tier-jobs { text-align: right; white-space: nowrap; }
+.tier-pct { text-align: right; width: 30px; color: var(--fg2); font-size: 11px; }
+
+.histogram { display: flex; align-items: flex-end; gap: 2px; height: 54px; }
+.histogram .bar { flex: 1; border-radius: 1px 1px 0 0; min-height: 1px; }
+.hist-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--fg2); margin-top: 2px; }
+
+.hbar-chart { display: flex; flex-direction: column; gap: 3px; }
+.hbar-row { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.hbar-label { width: 72px; flex-shrink: 0; color: var(--fg2); font-size: 11px; text-align: right; }
+.hbar-track { flex: 1; height: 12px; background: rgba(255,255,255,0.04); border-radius: 2px; overflow: hidden; min-width: 36px; }
+.hbar-fill { height: 100%; border-radius: 2px; }
+.hbar-val { width: 30px; flex-shrink: 0; font-size: 11px; color: var(--fg); text-align: right; }
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.color-toggle {
+  display: flex;
+  gap: 4px;
+}
+.color-toggle button {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--fg2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.color-toggle button.active {
+  background: rgba(255,255,255,0.08);
+  color: var(--fg);
+  border-color: rgba(255,255,255,0.2);
+}
+.color-toggle button:hover:not(.active) {
+  background: rgba(255,255,255,0.04);
+}
+
+.gradient-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--fg2);
+}
+.gradient-legend canvas { border-radius: 2px; }
+
+canvas#canvas {
+  display: block;
+  cursor: default;
+}
+
+#tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 340px;
+  opacity: 0;
+  transition: opacity 0.12s;
+  z-index: 20;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+#tooltip.visible { opacity: 1; }
+#tooltip .tt-title { font-weight: 600; font-size: 14px; margin-bottom: 6px; color: #fff; }
+#tooltip .tt-exposure { font-size: 12px; margin-bottom: 8px; }
+#tooltip .tt-stats { display: grid; grid-template-columns: auto auto; gap: 2px 12px; font-size: 12px; }
+#tooltip .tt-stats .label { color: var(--fg2); }
+#tooltip .tt-stats .value { color: var(--fg); text-align: right; }
+#tooltip .tt-rationale { font-size: 11px; color: var(--fg2); margin-top: 8px; line-height: 1.4; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 8px; }
+</style>
+</head>
+<body>
+
+<div id="wrapper">
+<div id="header">
+  <div class="intro">
+    <h1>Marché du travail français &amp; IA <a href="index.html">Accueil</a> <a href="https://github.com/yanndd1/jobs_karpathy">GitHub</a></h1>
+    <p>Outil de recherche visualisant les <b>métiers</b> du <a href="https://candidat.francetravail.fr/metierscope/">répertoire ROME</a> de France Travail, couvrant l'ensemble de l'économie française. La <b>surface</b> de chaque rectangle est proportionnelle au nombre d'emplois. La <b>couleur</b> indique la métrique sélectionnée &mdash; basculez entre perspectives de croissance, salaire médian, niveau de formation et exposition à l'IA. Cliquez sur une tuile pour voir la fiche métier complète. Ceci n'est pas un rapport ni une publication scientifique &mdash; c'est un outil exploratoire.</p>
+    <p><b>Coloration par LLM :</b> Le <a href="https://github.com/yanndd1/jobs_karpathy">code source</a> inclut des scrapers, des parsers et un pipeline pour écrire des prompts LLM personnalisés afin de scorer et colorer les métiers selon n'importe quel critère. L'option « Exposition IA » en est un exemple &mdash; elle estime dans quelle mesure l'IA actuelle (principalement numérique) va transformer chaque métier. Vous pouvez écrire un prompt différent pour toute autre question et relancer le pipeline.</p>
+    <details>
+      <summary>Voir le prompt de scoring « Exposition IA » (exemple)</summary>
+      <div class="prompt-box">Vous êtes un analyste expert évaluant l'exposition des différents métiers à l'intelligence artificielle dans le contexte du marché du travail français. On vous fournira une description détaillée d'un métier issu du répertoire ROME de France Travail.
+
+Évaluez l'Exposition à l'IA de ce métier sur une échelle de 0 à 10.
+
+L'Exposition à l'IA mesure : dans quelle mesure l'IA va-t-elle transformer ce métier ? Considérez à la fois les effets directs (automatisation de tâches) et les effets indirects (gains de productivité réduisant les besoins en effectifs).
+
+Un signal clé est de savoir si le produit du travail est fondamentalement numérique. Si le métier peut être exercé entièrement depuis un bureau à domicile — écrire, coder, analyser, communiquer — alors l'exposition est intrinsèquement élevée (7+). Les spécificités françaises (RGPD, AI Act, droit du travail, métiers réglementés) sont prises en compte.
+
+Repères de calibration :
+- 0–1 Minimale : couvreurs, maçons, jardiniers-paysagistes
+- 2–3 Faible : électriciens, plombiers, sapeurs-pompiers, aides-soignants
+- 4–5 Modérée : infirmiers, policiers, vétérinaires, éducateurs spécialisés
+- 6–7 Élevée : enseignants, comptables, journalistes, conseillers bancaires
+- 8–9 Très élevée : développeurs, designers graphiques, traducteurs, data analysts
+- 10 Maximale : opérateurs de saisie, télévendeurs
+
+Répondez avec UNIQUEMENT un objet JSON :
+{"exposure": &lt;0-10&gt;, "rationale": "&lt;2-3 phrases en français&gt;"}</div>
+    </details>
+    <p><b>Avertissement sur les scores d'exposition :</b> Ce sont des estimations brutes d'un LLM, pas des prédictions rigoureuses. Un score élevé ne prédit pas la disparition du métier. Les développeurs informatiques scorent 9/10 car l'IA transforme leur travail &mdash; mais la demande de logiciels pourrait facilement <em>augmenter</em>. Le score ne tient pas compte de l'élasticité de la demande, des barrières réglementaires ou des préférences sociales. Beaucoup de métiers à forte exposition seront transformés, pas remplacés.</p>
+  </div>
+
+  <div class="controls-row">
+    <div class="stat-section">
+      <h3>Couche</h3>
+      <div class="color-toggle" id="colorToggle">
+        <button data-mode="outlook" class="active">Perspectives</button>
+        <button data-mode="pay">Salaire médian</button>
+        <button data-mode="education">Formation</button>
+        <button data-mode="exposure">Exposition IA</button>
+      </div>
+    </div>
+    <div class="gradient-legend">
+      <span id="legendLow">En déclin</span>
+      <canvas id="gradientLegend" width="80" height="8"></canvas>
+      <span id="legendHigh">En croissance</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-section">
+      <h3>Total emplois</h3>
+      <div class="stat-big" id="statTotalJobs">&mdash;</div>
+    </div>
+    <div class="stat-section" id="block2"></div>
+    <div class="stat-section" id="block3"></div>
+    <div class="stat-section" id="block4"></div>
+    <div class="stat-section" id="block5"></div>
+    <div class="stat-section" id="block6"></div>
+    <div class="stat-section" id="block7"></div>
+    <div class="stat-section" id="block8"></div>
+  </div>
+</div>
+
+<canvas id="canvas"></canvas>
+</div>
+
+<div id="tooltip">
+  <div class="tt-title"></div>
+  <div class="tt-exposure"></div>
+  <div class="tt-stats"></div>
+  <div class="tt-rationale"></div>
+</div>
+
+<script>
+
+// ── Color scales ────────────────────────────────────────────────────────
+
+let colorMode = "outlook";
+
+function boostContrast(t) {
+  const c = (t - 0.5) * 2;
+  const b = Math.sign(c) * Math.pow(Math.abs(c), 0.55);
+  return b / 2 + 0.5;
+}
+
+function greenRedCSS(t, alpha) {
+  t = boostContrast(Math.max(0, Math.min(1, t)));
+  let r, g, b;
+  if (t < 0.5) {
+    const s = t / 0.5;
+    r = Math.round(30 + s * 200);
+    g = Math.round(180 - s * 20);
+    b = Math.round(40 - s * 20);
+  } else {
+    const s = (t - 0.5) / 0.5;
+    r = Math.round(230 + s * 25);
+    g = Math.round(160 - s * 130);
+    b = Math.round(20 - s * 5);
+  }
+  return `rgba(${r},${g},${b},${alpha})`;
+}
+
+const EDU_LEVELS = [
+  "Sans diplôme",
+  "CAP/BEP",
+  "Baccalauréat",
+  "Bac professionnel",
+  "BTS/DUT (Bac+2)",
+  "Licence (Bac+3)",
+  "Master (Bac+5)",
+  "Doctorat (Bac+8)",
+];
+
+// Color for a normalized value (0=green, 1=red). Flip for "good=green" metrics.
+function outlookColor(v, a) {
+  if (v == null) return `rgba(128,128,128,${a})`;
+  return greenRedCSS(1 - Math.max(0, Math.min(1, (v + 12) / 24)), a);
+}
+function payColor(v, a) {
+  if (v == null) return `rgba(128,128,128,${a})`;
+  const t = 1 - (Math.log(Math.max(18000, Math.min(80000, v))) - Math.log(18000)) / (Math.log(80000) - Math.log(18000));
+  return greenRedCSS(t, a);
+}
+function eduColor(idx, a) {
+  if (idx < 0) return `rgba(128,128,128,${a})`;
+  return greenRedCSS(1 - idx / (EDU_LEVELS.length - 1), a);
+}
+function exposureColor(v, a) {
+  if (v == null) return `rgba(128,128,128,${a})`;
+  return greenRedCSS(v / 10, a);
+}
+
+function tileColorCSS(d, alpha) {
+  if (colorMode === "exposure") return exposureColor(d.exposure, alpha);
+  if (colorMode === "outlook") return outlookColor(d.outlook, alpha);
+  if (colorMode === "pay") return payColor(d.pay, alpha);
+  if (colorMode === "education") {
+    return eduColor(EDU_LEVELS.indexOf(d.education), alpha);
+  }
+  return `rgba(128,128,128,${alpha})`;
+}
+
+function tileSubInfo(r) {
+  if (colorMode === "exposure") {
+    return (r.exposure != null ? r.exposure + "/10" : "") +
+           (r.jobs ? " \u00b7 " + formatNumber(r.jobs) + " emplois" : "");
+  }
+  if (colorMode === "outlook") {
+    const o = r.outlook != null ? (r.outlook > 0 ? "+" : "") + r.outlook + "%" : "";
+    return o + (r.jobs ? " \u00b7 " + formatNumber(r.jobs) + " emplois" : "");
+  }
+  if (colorMode === "pay") {
+    return (r.pay != null ? formatPay(r.pay) : "") +
+           (r.jobs ? " \u00b7 " + formatNumber(r.jobs) + " emplois" : "");
+  }
+  if (colorMode === "education") {
+    const short = {
+      "Sans diplôme": "Sans dipl.",
+      "CAP/BEP": "CAP/BEP",
+      "Baccalauréat": "Bac",
+      "Bac professionnel": "Bac pro",
+      "BTS/DUT (Bac+2)": "Bac+2",
+      "Licence (Bac+3)": "Bac+3",
+      "Master (Bac+5)": "Bac+5",
+      "Doctorat (Bac+8)": "Bac+8",
+    }[r.education] || "";
+    return short + (r.jobs ? " \u00b7 " + formatNumber(r.jobs) + " emplois" : "");
+  }
+  return "";
+}
+
+// ── Squarified treemap layout ──────────────────────────────────────────
+
+function squarify(items, x, y, w, h) {
+  if (items.length === 0) return [];
+  if (items.length === 1) return [{ ...items[0], rx: x, ry: y, rw: w, rh: h }];
+  const total = items.reduce((s, d) => s + d.value, 0);
+  if (total === 0) return [];
+  const results = [];
+  let remaining = [...items], cx = x, cy = y, cw = w, ch = h;
+  while (remaining.length > 0) {
+    const remTotal = remaining.reduce((s, d) => s + d.value, 0);
+    const vertical = cw >= ch;
+    const side = vertical ? ch : cw;
+    let row = [remaining[0]], rowSum = remaining[0].value;
+    for (let i = 1; i < remaining.length; i++) {
+      const candidate = [...row, remaining[i]];
+      const candidateSum = rowSum + remaining[i].value;
+      if (worstAspect(candidate, candidateSum, side, remTotal, vertical ? cw : ch) <
+          worstAspect(row, rowSum, side, remTotal, vertical ? cw : ch)) {
+        row = candidate; rowSum = candidateSum;
+      } else break;
+    }
+    const rowFraction = rowSum / remTotal;
+    const rowThickness = vertical ? cw * rowFraction : ch * rowFraction;
+    let offset = 0;
+    for (const item of row) {
+      const itemFraction = item.value / rowSum;
+      const itemLength = side * itemFraction;
+      if (vertical) results.push({ ...item, rx: cx, ry: cy + offset, rw: rowThickness, rh: itemLength });
+      else results.push({ ...item, rx: cx + offset, ry: cy, rw: itemLength, rh: rowThickness });
+      offset += itemLength;
+    }
+    if (vertical) { cx += rowThickness; cw -= rowThickness; }
+    else { cy += rowThickness; ch -= rowThickness; }
+    remaining = remaining.slice(row.length);
+  }
+  return results;
+}
+
+function worstAspect(row, rowSum, side, totalArea, availableExtent) {
+  const rowExtent = availableExtent * (rowSum / totalArea);
+  if (rowExtent === 0) return Infinity;
+  let worst = 0;
+  for (const item of row) {
+    const itemLen = side * (item.value / rowSum);
+    if (itemLen === 0) continue;
+    const aspect = Math.max(rowExtent / itemLen, itemLen / rowExtent);
+    if (aspect > worst) worst = aspect;
+  }
+  return worst;
+}
+
+// ── Rendering ──────────────────────────────────────────────────────────
+
+let data = [];
+let rects = [];
+let hovered = null;
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+let dpr = window.devicePixelRatio || 1;
+const MARGIN = 12, GAP = 1.5;
+
+function layout() {
+  const wrapper = document.getElementById("wrapper");
+  const headerH = document.getElementById("header").offsetHeight;
+  const w = wrapper.clientWidth;
+  const h = Math.round(w * 3 / 4);
+  canvas.width = w * dpr; canvas.height = h * dpr;
+  canvas.style.width = w + "px"; canvas.style.height = h + "px";
+  const tx = MARGIN, ty = MARGIN, tw = w - MARGIN * 2, th = h - MARGIN * 2;
+  const byCategory = {};
+  for (const d of data) { if (!byCategory[d.category]) byCategory[d.category] = []; byCategory[d.category].push(d); }
+  const categories = Object.keys(byCategory).map(cat => ({
+    cat, items: byCategory[cat].sort((a, b) => (b.jobs || 0) - (a.jobs || 0)),
+    value: byCategory[cat].reduce((s, d) => s + (d.jobs || 1), 0),
+  })).sort((a, b) => b.value - a.value);
+  const catRects = squarify(categories, tx, ty, tw, th);
+  rects = [];
+  for (const cr of catRects) {
+    const items = cr.items.map(d => ({ ...d, value: d.jobs || 1 }));
+    const innerRects = squarify(items, cr.rx + GAP, cr.ry + GAP, cr.rw - GAP * 2, cr.rh - GAP * 2);
+    for (const ir of innerRects) rects.push(ir);
+  }
+}
+
+function draw() {
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.fillStyle = "#0a0a0f";
+  ctx.fillRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+  for (const r of rects) {
+    const isHovered = r === hovered;
+    const g = GAP / 2, rx = r.rx + g, ry = r.ry + g, rw = r.rw - g * 2, rh = r.rh - g * 2;
+    if (rw <= 0 || rh <= 0) continue;
+    ctx.fillStyle = tileColorCSS(r, isHovered ? 0.8 : 0.5);
+    ctx.fillRect(rx, ry, rw, rh);
+    if (isHovered) { ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.strokeRect(rx, ry, rw, rh); }
+    if (rw > 50 && rh > 18) {
+      ctx.save(); ctx.beginPath(); ctx.rect(rx + 4, ry + 2, rw - 8, rh - 4); ctx.clip();
+      const fontSize = Math.min(13, Math.max(9, Math.min(rw / 10, rh / 3)));
+      ctx.font = `500 ${fontSize}px -apple-system, system-ui, sans-serif`;
+      ctx.fillStyle = isHovered ? "#fff" : "rgba(255,255,255,0.85)";
+      ctx.textBaseline = "top";
+      ctx.fillText(r.title, rx + 5, ry + 4);
+      if (rh > 34 && rw > 60) {
+        ctx.font = `400 ${Math.max(8, fontSize - 2)}px -apple-system, system-ui, sans-serif`;
+        ctx.fillStyle = "rgba(255,255,255,0.5)";
+        ctx.fillText(tileSubInfo(r), rx + 5, ry + 4 + fontSize + 2);
+      }
+      ctx.restore();
+    }
+  }
+}
+
+function hitTest(mx, my) {
+  const rect = canvas.getBoundingClientRect();
+  const cx = mx - rect.left, cy = my - rect.top;
+  for (let i = rects.length - 1; i >= 0; i--) {
+    const r = rects[i];
+    if (cx >= r.rx && cx < r.rx + r.rw && cy >= r.ry && cy < r.ry + r.rh) return r;
+  }
+  return null;
+}
+
+function formatNumber(n) {
+  if (n == null) return "\u2014";
+  if (n >= 1e6) return (n / 1e6).toFixed(1) + "M";
+  if (n >= 1e3) return Math.round(n / 1e3) + "K";
+  return n.toLocaleString();
+}
+function formatPay(n) { return n == null ? "\u2014" : n.toLocaleString("fr-FR") + " \u20ac"; }
+
+function tooltipHighlight(d) {
+  if (colorMode === "exposure") {
+    const v = d.exposure;
+    if (v == null) return "";
+    const color = exposureColor(v, 1);
+    return `<span style="color:${color};font-weight:600;">Exposition IA : ${v}/10</span>` +
+      `<div style="margin-top:3px;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;">` +
+      `<div style="height:100%;width:${v * 10}%;background:${color};border-radius:2px;"></div></div>`;
+  } else if (colorMode === "outlook") {
+    const v = d.outlook;
+    if (v == null) return "";
+    const color = outlookColor(v, 1);
+    return `<span style="color:${color};font-weight:600;">Perspectives : ${v > 0 ? '+' : ''}${v}%</span>` +
+      (d.outlook_desc ? ` <span style="color:var(--fg2);">(${d.outlook_desc})</span>` : '') +
+      `<div style="margin-top:3px;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;">` +
+      `<div style="height:100%;width:${Math.min(100, Math.max(0, (v + 10) / 30 * 100))}%;background:${color};border-radius:2px;"></div></div>`;
+  } else if (colorMode === "pay") {
+    const v = d.pay;
+    if (v == null) return "";
+    const color = payColor(v, 1);
+    return `<span style="color:${color};font-weight:600;">Salaire médian : ${formatPay(v)}</span>` +
+      `<div style="margin-top:3px;height:4px;background:rgba(255,255,255,0.08);border-radius:2px;">` +
+      `<div style="height:100%;width:${Math.min(100, v / 80000 * 100)}%;background:${color};border-radius:2px;"></div></div>`;
+  } else if (colorMode === "education") {
+    const edu = d.education || "";
+    const idx = EDU_LEVELS.indexOf(edu);
+    const color = idx >= 0 ? eduColor(idx, 1) : "var(--fg)";
+    return `<span style="color:${color};font-weight:600;">Formation : ${edu || '\u2014'}</span>`;
+  }
+  return "";
+}
+
+function showTooltip(d, mx, my) {
+  const tt = document.getElementById("tooltip");
+  tt.querySelector(".tt-title").textContent = d.title;
+  tt.querySelector(".tt-exposure").innerHTML = tooltipHighlight(d);
+  tt.querySelector(".tt-stats").innerHTML = `
+    <span class="label">Salaire médian</span><span class="value">${formatPay(d.pay)}</span>
+    <span class="label">Emplois</span><span class="value">${formatNumber(d.jobs)}</span>
+    <span class="label">Perspectives</span><span class="value">${d.outlook != null ? d.outlook + '%' : '\u2014'} ${d.outlook_desc ? '(' + d.outlook_desc + ')' : ''}</span>
+    <span class="label">Formation</span><span class="value">${d.education || '\u2014'}</span>`;
+  tt.querySelector(".tt-rationale").textContent = colorMode === "exposure" ? (d.exposure_rationale || "") : "";
+  let tx = mx + 16, ty = my - 16;
+  if (tx + 340 > window.innerWidth) tx = mx - 356;
+  if (ty < 10) ty = my + 16;
+  if (ty + 200 > window.innerHeight) ty = my - 200;
+  tt.style.left = tx + "px"; tt.style.top = ty + "px";
+  tt.classList.add("visible");
+}
+function hideTooltip() { document.getElementById("tooltip").classList.remove("visible"); }
+
+// ── Shared stat data ────────────────────────────────────────────────────
+
+const PAY_BANDS = [
+  { label: "<20K\u20ac", min: 0, max: 20000 },
+  { label: "20\u201330K\u20ac", min: 20000, max: 30000 },
+  { label: "30\u201340K\u20ac", min: 30000, max: 40000 },
+  { label: "40\u201360K\u20ac", min: 40000, max: 60000 },
+  { label: "60K\u20ac+", min: 60000, max: Infinity },
+];
+
+const EDU_GROUPS = [
+  { label: "Sans dipl./CAP", match: ["Sans diplôme", "CAP/BEP"] },
+  { label: "Bac", match: ["Baccalauréat", "Bac professionnel"] },
+  { label: "Bac+2", match: ["BTS/DUT (Bac+2)"] },
+  { label: "Bac+3/+5", match: ["Licence (Bac+3)", "Master (Bac+5)"] },
+  { label: "Bac+8", match: ["Doctorat (Bac+8)"] },
+];
+
+const OUTLOOK_TIERS = [
+  { label: "En déclin (<0%)", min: -Infinity, max: -1 },
+  { label: "Lente (0\u20133%)", min: 0, max: 3 },
+  { label: "Moyenne (4\u20137%)", min: 4, max: 7 },
+  { label: "Rapide (8\u201314%)", min: 8, max: 14 },
+  { label: "Très rapide (15%+)", min: 15, max: Infinity },
+];
+
+// Weighted avg of metric across a set of group filters
+function weightedAvgByGroups(groups, filterFn, metricFn) {
+  return groups.map(g => {
+    let wS = 0, wC = 0;
+    for (const d of data) {
+      const v = metricFn(d);
+      if (v != null && d.jobs && filterFn(d, g)) { wS += v * d.jobs; wC += d.jobs; }
+    }
+    return { ...g, avg: wC > 0 ? wS / wC : 0, jobs: wC };
+  });
+}
+
+// Render helpers
+function renderTiers(tiers, totalJobs) {
+  return tiers.map(t => `<div class="tier-row">
+    <div class="tier-color" style="background:${t.color}"></div>
+    <span class="tier-name">${t.label}</span>
+    <span class="tier-jobs">${formatNumber(t.jobs)}</span>
+    <span class="tier-pct">${totalJobs > 0 ? (t.jobs / totalJobs * 100).toFixed(0) : 0}%</span>
+  </div>`).join("");
+}
+
+function renderHbars(items) {
+  return items.map(it => `<div class="hbar-row">
+    <span class="hbar-label">${it.label}</span>
+    <div class="hbar-track"><div class="hbar-fill" style="width:${it.pct}%;background:${it.color}"></div></div>
+    <span class="hbar-val">${it.val}</span>
+  </div>`).join("");
+}
+
+// ── Layer-specific stats ────────────────────────────────────────────────
+
+function updateStats() {
+  const totalJobs = data.reduce((s, d) => s + (d.jobs || 0), 0);
+  document.getElementById("statTotalJobs").textContent = totalJobs >= 1e6 ? (totalJobs / 1e6).toFixed(1) + "M" : formatNumber(totalJobs);
+
+  if (colorMode === "outlook") updateOutlookStats(totalJobs);
+  else if (colorMode === "pay") updatePayStats(totalJobs);
+  else if (colorMode === "education") updateEducationStats(totalJobs);
+  else updateExposureStats(totalJobs);
+}
+
+function updateOutlookStats(totalJobs) {
+  // Headline: weighted avg outlook
+  let wS = 0, wC = 0;
+  for (const d of data) { if (d.outlook != null && d.jobs) { wS += d.outlook * d.jobs; wC += d.jobs; } }
+  const avg = wC > 0 ? wS / wC : 0;
+  document.getElementById("block2").innerHTML = `<h3>Perspectives moy.</h3>
+    <div class="stat-big"><span style="color:${outlookColor(avg, 1)}">${avg > 0 ? "+" : ""}${avg.toFixed(1)}%</span></div>
+    <div class="stat-label">pondéré par l'emploi</div>`;
+
+  // Histogram: jobs by outlook bucket
+  const buckets = [
+    { lo: -Infinity, hi: -1, mid: -5 }, { lo: 0, hi: 2, mid: 1 }, { lo: 3, hi: 5, mid: 4 },
+    { lo: 6, hi: 8, mid: 7 }, { lo: 9, hi: 14, mid: 11 }, { lo: 15, hi: Infinity, mid: 20 },
+  ];
+  const histJobs = buckets.map(() => 0);
+  for (const d of data) { if (d.outlook != null && d.jobs) { const i = buckets.findIndex(b => d.outlook >= b.lo && d.outlook <= b.hi); if (i >= 0) histJobs[i] += d.jobs; } }
+  const maxH = Math.max(...histJobs);
+  document.getElementById("block3").innerHTML = `<h3>Emplois par perspectives</h3>
+    <div class="histogram">${histJobs.map((c, i) => `<div class="bar" style="height:${Math.max(2, maxH > 0 ? c / maxH * 100 : 0)}%;background:${outlookColor(buckets[i].mid, 0.7)}"></div>`).join("")}</div>
+    <div class="hist-labels"><span>&lt;0%</span><span>5%</span><span>15%+</span></div>`;
+
+  // Tier breakdown
+  const tiers = OUTLOOK_TIERS.map(t => {
+    let jobs = 0;
+    for (const d of data) { if (d.outlook != null && d.jobs && d.outlook >= t.min && d.outlook <= t.max) jobs += d.jobs; }
+    return { ...t, jobs, color: outlookColor((t.min === -Infinity ? -8 : t.max === Infinity ? 20 : (t.min + t.max) / 2), 1) };
+  });
+  document.getElementById("block4").innerHTML = `<h3>Niveaux de perspectives</h3><div class="tier-bar">${renderTiers(tiers, totalJobs)}</div>`;
+
+  // Cross: outlook by pay
+  const byPay = weightedAvgByGroups(PAY_BANDS, (d, g) => d.pay != null && d.pay >= g.min && d.pay < g.max, d => d.outlook);
+  document.getElementById("block5").innerHTML = `<h3>Perspectives par salaire</h3><div class="hbar-chart">${renderHbars(byPay.map(g => ({
+    label: g.label, val: (g.avg > 0 ? "+" : "") + g.avg.toFixed(1) + "%",
+    pct: Math.max(0, Math.min(100, (g.avg + 10) / 30 * 100)), color: outlookColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Cross: outlook by education
+  const byEdu = weightedAvgByGroups(EDU_GROUPS, (d, g) => g.match.includes(d.education), d => d.outlook);
+  document.getElementById("block6").innerHTML = `<h3>Perspectives par formation</h3><div class="hbar-chart">${renderHbars(byEdu.map(g => ({
+    label: g.label, val: (g.avg > 0 ? "+" : "") + g.avg.toFixed(1) + "%",
+    pct: Math.max(0, Math.min(100, (g.avg + 10) / 30 * 100)), color: outlookColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Impact: declining jobs
+  let declining = 0;
+  for (const d of data) { if (d.outlook != null && d.outlook < 0 && d.jobs) declining += d.jobs; }
+  document.getElementById("block7").innerHTML = `<h3>Emplois en déclin</h3>
+    <div class="stat-big" style="color:${outlookColor(-5, 1)}">${formatNumber(declining)}</div>
+    <div class="stat-label">perspectives négatives</div>`;
+
+  // Impact: growing jobs
+  let growing = 0;
+  for (const d of data) { if (d.outlook != null && d.outlook > 0 && d.jobs) growing += d.jobs; }
+  document.getElementById("block8").innerHTML = `<h3>Emplois en croissance</h3>
+    <div class="stat-big" style="color:${outlookColor(10, 1)}">${formatNumber(growing)}</div>
+    <div class="stat-label">perspectives positives</div>`;
+}
+
+function updatePayStats(totalJobs) {
+  let wS = 0, wC = 0;
+  for (const d of data) { if (d.pay != null && d.jobs) { wS += d.pay * d.jobs; wC += d.jobs; } }
+  const avg = wC > 0 ? wS / wC : 0;
+  document.getElementById("block2").innerHTML = `<h3>Salaire moy.</h3>
+    <div class="stat-big"><span style="color:${payColor(avg, 1)}">${Math.round(avg / 1000)}K\u20ac</span></div>
+    <div class="stat-label">pondéré par l'emploi</div>`;
+
+  // Histogram
+  const buckets = [
+    { lo: 0, hi: 20000, mid: 18000 }, { lo: 20000, hi: 25000, mid: 22000 }, { lo: 25000, hi: 30000, mid: 27000 },
+    { lo: 30000, hi: 40000, mid: 35000 }, { lo: 40000, hi: 60000, mid: 50000 }, { lo: 60000, hi: Infinity, mid: 70000 },
+  ];
+  const histJobs = buckets.map(() => 0);
+  for (const d of data) { if (d.pay != null && d.jobs) { const i = buckets.findIndex(b => d.pay >= b.lo && d.pay < b.hi); if (i >= 0) histJobs[i] += d.jobs; } }
+  const maxH = Math.max(...histJobs);
+  document.getElementById("block3").innerHTML = `<h3>Emplois par salaire</h3>
+    <div class="histogram">${histJobs.map((c, i) => `<div class="bar" style="height:${Math.max(2, maxH > 0 ? c / maxH * 100 : 0)}%;background:${payColor(buckets[i].mid, 0.7)}"></div>`).join("")}</div>
+    <div class="hist-labels"><span>20K\u20ac</span><span>40K\u20ac</span><span>60K\u20ac+</span></div>`;
+
+  // Tiers
+  const tiers = PAY_BANDS.map(t => {
+    let jobs = 0;
+    for (const d of data) { if (d.pay != null && d.jobs && d.pay >= t.min && d.pay < t.max) jobs += d.jobs; }
+    return { ...t, label: t.label, jobs, color: payColor(t.max === Infinity ? 130000 : (t.min + t.max) / 2, 1) };
+  });
+  document.getElementById("block4").innerHTML = `<h3>Tranches de salaire</h3><div class="tier-bar">${renderTiers(tiers, totalJobs)}</div>`;
+
+  // Cross: pay by education
+  const byEdu = weightedAvgByGroups(EDU_GROUPS, (d, g) => g.match.includes(d.education), d => d.pay);
+  document.getElementById("block5").innerHTML = `<h3>Salaire par formation</h3><div class="hbar-chart">${renderHbars(byEdu.map(g => ({
+    label: g.label, val: Math.round(g.avg / 1000) + "K\u20ac",
+    pct: Math.max(0, Math.min(100, (Math.log(Math.max(18000, g.avg)) - Math.log(18000)) / (Math.log(80000) - Math.log(18000)) * 100)),
+    color: payColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Cross: pay by outlook tier
+  const byOl = weightedAvgByGroups(OUTLOOK_TIERS, (d, g) => d.outlook != null && d.outlook >= g.min && d.outlook <= g.max, d => d.pay);
+  document.getElementById("block6").innerHTML = `<h3>Salaire par perspectives</h3><div class="hbar-chart">${renderHbars(byOl.map(g => ({
+    label: g.label.replace(/ \(.*/, ""), val: Math.round(g.avg / 1000) + "K\u20ac",
+    pct: Math.max(0, Math.min(100, (Math.log(Math.max(18000, g.avg)) - Math.log(18000)) / (Math.log(80000) - Math.log(18000)) * 100)),
+    color: payColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Impact: total wages
+  let totalWages = 0;
+  for (const d of data) { if (d.pay != null && d.jobs) totalWages += d.pay * d.jobs; }
+  document.getElementById("block7").innerHTML = `<h3>Masse salariale</h3>
+    <div class="stat-big">${(totalWages / 1e9).toFixed(0)} Md\u20ac</div>
+    <div class="stat-label">annuelle</div>`;
+  document.getElementById("block8").innerHTML = "";
+}
+
+function updateEducationStats(totalJobs) {
+  // Headline: % Bac+3 et plus
+  let bsJobs = 0;
+  for (const d of data) {
+    if (d.jobs && ["Licence (Bac+3)", "Master (Bac+5)", "Doctorat (Bac+8)"].includes(d.education)) bsJobs += d.jobs;
+  }
+  document.getElementById("block2").innerHTML = `<h3>Bac+3 et plus</h3>
+    <div class="stat-big"><span style="color:${eduColor(5, 1)}">${totalJobs > 0 ? (bsJobs / totalJobs * 100).toFixed(0) : 0}%</span></div>
+    <div class="stat-label">de tous les emplois</div>`;
+
+  // Histogram: jobs by education group
+  const groups = EDU_GROUPS.map((g, i) => {
+    let jobs = 0;
+    for (const d of data) { if (d.jobs && g.match.includes(d.education)) jobs += d.jobs; }
+    return { ...g, jobs, idx: i };
+  });
+  const maxH = Math.max(...groups.map(g => g.jobs));
+  document.getElementById("block3").innerHTML = `<h3>Emplois par formation</h3>
+    <div class="histogram">${groups.map(g => `<div class="bar" style="height:${Math.max(2, maxH > 0 ? g.jobs / maxH * 100 : 0)}%;background:${eduColor(g.idx * 2, 0.7)}"></div>`).join("")}</div>
+    <div class="hist-labels"><span>CAP</span><span>Bac+2</span><span>Bac+8</span></div>`;
+
+  // Tier breakdown (same groups with counts)
+  const tiers = groups.map((g, i) => ({ label: g.label, jobs: g.jobs, color: eduColor(i * 2, 1) }));
+  document.getElementById("block4").innerHTML = `<h3>Niveaux de formation</h3><div class="tier-bar">${renderTiers(tiers, totalJobs)}</div>`;
+
+  // Cross: avg pay by education
+  const payByEdu = weightedAvgByGroups(EDU_GROUPS, (d, g) => g.match.includes(d.education), d => d.pay);
+  document.getElementById("block5").innerHTML = `<h3>Salaire moy. par formation</h3><div class="hbar-chart">${renderHbars(payByEdu.map(g => ({
+    label: g.label, val: Math.round(g.avg / 1000) + "K\u20ac",
+    pct: Math.max(0, Math.min(100, (Math.log(Math.max(18000, g.avg)) - Math.log(18000)) / (Math.log(80000) - Math.log(18000)) * 100)),
+    color: payColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Cross: avg outlook by education
+  const olByEdu = weightedAvgByGroups(EDU_GROUPS, (d, g) => g.match.includes(d.education), d => d.outlook);
+  document.getElementById("block6").innerHTML = `<h3>Perspectives par formation</h3><div class="hbar-chart">${renderHbars(olByEdu.map(g => ({
+    label: g.label, val: (g.avg > 0 ? "+" : "") + g.avg.toFixed(1) + "%",
+    pct: Math.max(0, Math.min(100, (g.avg + 10) / 30 * 100)), color: outlookColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Impact: jobs with no formal degree
+  let noDeg = 0;
+  for (const d of data) {
+    if (d.jobs && ["Sans diplôme", "CAP/BEP"].includes(d.education)) noDeg += d.jobs;
+  }
+  document.getElementById("block7").innerHTML = `<h3>Sans diplôme / CAP</h3>
+    <div class="stat-big">${formatNumber(noDeg)}</div>
+    <div class="stat-label">emplois sans diplôme requis</div>`;
+  document.getElementById("block8").innerHTML = "";
+}
+
+function updateExposureStats(totalJobs) {
+  let wS = 0, wC = 0;
+  for (const d of data) { if (d.exposure != null && d.jobs) { wS += d.exposure * d.jobs; wC += d.jobs; } }
+  const avg = wC > 0 ? wS / wC : 0;
+  document.getElementById("block2").innerHTML = `<h3>Exposition moy.</h3>
+    <div class="stat-big"><span style="color:${exposureColor(avg, 1)}">${avg.toFixed(1)}</span></div>
+    <div class="stat-label">pondérée, 0\u201310</div>`;
+
+  // Histogram
+  const histogram = new Array(11).fill(0);
+  for (const d of data) { if (d.exposure != null && d.jobs) histogram[d.exposure] += d.jobs; }
+  const maxH = Math.max(...histogram);
+  document.getElementById("block3").innerHTML = `<h3>Emplois par exposition</h3>
+    <div class="histogram">${histogram.map((c, i) => `<div class="bar" style="height:${Math.max(2, maxH > 0 ? c / maxH * 100 : 0)}%;background:${exposureColor(i, 0.7)}"></div>`).join("")}</div>
+    <div class="hist-labels"><span>0</span><span>5</span><span>10</span></div>`;
+
+  // Tier breakdown
+  const tierDefs = [
+    { label: "Minimale (0\u20131)", lo: 0, hi: 1, mid: 0.5 },
+    { label: "Faible (2\u20133)", lo: 2, hi: 3, mid: 2.5 },
+    { label: "Modérée (4\u20135)", lo: 4, hi: 5, mid: 4.5 },
+    { label: "Élevée (6\u20137)", lo: 6, hi: 7, mid: 6.5 },
+    { label: "Très élevée (8\u201310)", lo: 8, hi: 10, mid: 9 },
+  ];
+  const tiers = tierDefs.map(t => {
+    let jobs = 0;
+    for (const d of data) { if (d.exposure != null && d.jobs && d.exposure >= t.lo && d.exposure <= t.hi) jobs += d.jobs; }
+    return { ...t, jobs, color: exposureColor(t.mid, 1) };
+  });
+  document.getElementById("block4").innerHTML = `<h3>Niveaux d'exposition</h3><div class="tier-bar">${renderTiers(tiers, totalJobs)}</div>`;
+
+  // Cross: exposure by pay
+  const byPay = weightedAvgByGroups(PAY_BANDS, (d, g) => d.pay != null && d.pay >= g.min && d.pay < g.max, d => d.exposure);
+  document.getElementById("block5").innerHTML = `<h3>Exposition par salaire</h3><div class="hbar-chart">${renderHbars(byPay.map(g => ({
+    label: g.label, val: g.avg.toFixed(1), pct: g.avg / 10 * 100, color: exposureColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Cross: exposure by education
+  const byEdu = weightedAvgByGroups(EDU_GROUPS, (d, g) => g.match.includes(d.education), d => d.exposure);
+  document.getElementById("block6").innerHTML = `<h3>Exposition par formation</h3><div class="hbar-chart">${renderHbars(byEdu.map(g => ({
+    label: g.label, val: g.avg.toFixed(1), pct: g.avg / 10 * 100, color: exposureColor(g.avg, 0.8)
+  })))}</div>`;
+
+  // Impact: wages exposed
+  let wagesExposed = 0;
+  for (const d of data) { if (d.exposure != null && d.exposure >= 7 && d.jobs && d.pay) wagesExposed += d.jobs * d.pay; }
+  document.getElementById("block7").innerHTML = `<h3>Salaires exposés</h3>
+    <div class="stat-big" style="color:${exposureColor(8, 1)}">${(wagesExposed / 1e9).toFixed(0)} Md\u20ac</div>
+    <div class="stat-label">annuels, métiers scorant 7+</div>`;
+  document.getElementById("block8").innerHTML = "";
+}
+
+// ── Events ─────────────────────────────────────────────────────────────
+
+canvas.addEventListener("mousemove", (e) => {
+  const hit = hitTest(e.clientX, e.clientY);
+  if (hit !== hovered) { hovered = hit; draw(); }
+  if (hovered) { showTooltip(hovered, e.clientX, e.clientY); canvas.style.cursor = "pointer"; }
+  else { hideTooltip(); canvas.style.cursor = "default"; }
+});
+canvas.addEventListener("click", (e) => { const hit = hitTest(e.clientX, e.clientY); if (hit && hit.url) window.open(hit.url, "_blank"); });
+canvas.addEventListener("mouseleave", () => { hovered = null; hideTooltip(); draw(); });
+function resize() { dpr = window.devicePixelRatio || 1; layout(); draw(); }
+
+// ── Legend gradient ────────────────────────────────────────────────────
+
+const LEGEND_CONFIG = {
+  exposure:  { low: "Faible", high: "Élevée" },
+  outlook:   { low: "En déclin", high: "En croissance" },
+  pay:       { low: "18K\u20ac", high: "80K\u20ac" },
+  education: { low: "Sans diplôme", high: "Doctorat" },
+};
+
+function drawGradientLegend() {
+  const c = document.getElementById("gradientLegend");
+  const gctx = c.getContext("2d");
+  for (let x = 0; x < 80; x++) {
+    const t = x / 79;
+    gctx.fillStyle = colorMode === "exposure" ? greenRedCSS(t, 1) : greenRedCSS(1 - t, 1);
+    gctx.fillRect(x, 0, 1, 8);
+  }
+  const cfg = LEGEND_CONFIG[colorMode];
+  document.getElementById("legendLow").textContent = cfg.low;
+  document.getElementById("legendHigh").textContent = cfg.high;
+}
+
+// ── Layer toggle ─────────────────────────────────────────────────────
+
+document.getElementById("colorToggle").addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn || !btn.dataset.mode) return;
+  colorMode = btn.dataset.mode;
+  document.querySelectorAll("#colorToggle button").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  updateStats();
+  drawGradientLegend();
+  draw();
+  // Re-layout since stats height may have changed
+  requestAnimationFrame(resize);
+});
+
+// ── Load ───────────────────────────────────────────────────────────────
+
+// Data embedded inline — no server needed
+data = [{"title": "Comptables", "slug": "comptables", "category": "support-entreprise", "code_rome": "M1203", "pay": 31800, "jobs": 128000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 8, "exposure_rationale": "Saisie, déclarations et rapprochements très automatisables. La valeur migre vers le conseil et l'analyse critique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1203"}, {"title": "Développeurs informatiques", "slug": "developpeurs-informatiques", "category": "informatique-telecoms", "code_rome": "M1805", "pay": 46200, "jobs": 182000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Génération de code par LLMs très avancée (+55% productivité Copilot). Architecture, compréhension produit et jugement système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1805"}, {"title": "Infirmiers en soins généraux", "slug": "infirmiers-soins-generaux", "category": "sante", "code_rome": "J1506", "pay": 28080, "jobs": 580000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "Soins directs, gestes techniques, soutien psychologique · IA assiste l'administratif sans remplacer le soin.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1506"}, {"title": "Aides-soignants", "slug": "aides-soignants", "category": "sante", "code_rome": "J1501", "pay": 22680, "jobs": 355000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Soin direct, nursing et relationnel humain · non substituable par aucun modèle actuel.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1501"}, {"title": "Enseignants du secondaire", "slug": "enseignants-secondaire", "category": "enseignement-formation", "code_rome": "K2107", "pay": 32160, "jobs": 530000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 4, "exposure_rationale": "Production de cours, correction de copies : automatisables. L'animation pédagogique, la relation éducative, la gestion des difficultés d'apprentissage et la mission de socialisation restent irremplaçables. 530 000 enseignants du 2nd degré (DEPP Panorama 2024-2025).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2107"}, {"title": "Enseignants du primaire", "slug": "enseignants-primaire", "category": "enseignement-formation", "code_rome": "K2106", "pay": 28560, "jobs": 370000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 4, "exposure_rationale": "Tuteurs IA personnalisés (Khan Academy, Khanmigo) progressent mais la relation éducative, la gestion de classe, la socialisation précoce et l'adaptation aux besoins individuels restent irremplaçables. 370 500 professeurs des écoles en France (DEPP 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2106"}, {"title": "Agents de sécurité", "slug": "agents-securite", "category": "services-collectivite", "code_rome": "K2503", "pay": null, "jobs": null, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 3, "exposure_rationale": "Surveillance terrain et intervention physique limitent l'automatisation. La vidéosurveillance IA progresse mais ne remplace pas la présence humaine.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2503"}, {"title": "Vendeurs en magasin", "slug": "vendeurs-magasin", "category": "commerce-vente", "code_rome": "D1214", "pay": 27000, "jobs": 58000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Configurateurs en ligne progressent mais la découverte physique et la négociation restent essentielles.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1214"}, {"title": "Caissiers", "slug": "caissiers", "category": "commerce-vente", "code_rome": "D1505", "pay": 21360, "jobs": 218000, "outlook": 5, "outlook_desc": "", "education": "Sans diplôme", "exposure": 2, "exposure_rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1505"}, {"title": "Cuisiniers", "slug": "cuisiniers", "category": "hotellerie-restauration", "code_rome": "G1602", "pay": 21360, "jobs": 218000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1602"}, {"title": "Serveurs de restaurant", "slug": "serveurs-restaurant", "category": "hotellerie-restauration", "code_rome": "G1803", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Service en salle requiert présence physique, adaptation et contact humain. Automatisation anecdotique hors restauration rapide.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1803"}, {"title": "Maçons", "slug": "macons", "category": "construction-btp", "code_rome": "F1703", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1703"}, {"title": "Électriciens du bâtiment", "slug": "electriciens-batiment", "category": "construction-btp", "code_rome": "F1602", "pay": 24960, "jobs": 112000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Intervention physique et diagnostic terrain restent manuels. Pénurie de compétences persistante.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1602"}, {"title": "Plombiers-chauffagistes", "slug": "plombiers-chauffagistes", "category": "construction-btp", "code_rome": "F1603", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Intervention physique en milieu non structuré. Diagnostic et réparation manuels. Forte pénurie de main-d'œuvre.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1603"}, {"title": "Peintres en bâtiment", "slug": "peintres-batiment", "category": "construction-btp", "code_rome": "F1606", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1606"}, {"title": "Conducteurs de travaux", "slug": "conducteurs-travaux", "category": "construction-btp", "code_rome": "F1201", "pay": 39360, "jobs": 52000, "outlook": 3, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 4, "exposure_rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1201"}, {"title": "Conducteurs routiers", "slug": "conducteurs-routiers", "category": "transport-logistique", "code_rome": "N4101", "pay": 24960, "jobs": 278000, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 4, "exposure_rationale": "Conduite autonome progresse (L4 en zone contrôlée) mais contexte réglementaire FR maintient un humain à moyen terme.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4101"}, {"title": "Agents de transit", "slug": "agents-transit", "category": "transport-logistique", "code_rome": "N1202", "pay": 31800, "jobs": 92000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 6, "exposure_rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1202"}, {"title": "Magasiniers", "slug": "magasiniers", "category": "transport-logistique", "code_rome": "N1103", "pay": 31800, "jobs": 92000, "outlook": 1, "outlook_desc": "", "education": "CAP/BEP", "exposure": 6, "exposure_rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1103"}, {"title": "Livreurs", "slug": "livreurs", "category": "transport-logistique", "code_rome": "N4105", "pay": 24960, "jobs": 278000, "outlook": 3, "outlook_desc": "", "education": "Sans diplôme", "exposure": 4, "exposure_rationale": "Conduite autonome progresse (L4 en zone contrôlée) mais contexte réglementaire FR maintient un humain à moyen terme.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4105"}, {"title": "Médecins généralistes", "slug": "medecins-generalistes", "category": "sante", "code_rome": "J1102", "pay": 64080, "jobs": 96000, "outlook": 3, "outlook_desc": "", "education": "Doctorat (Bac+8)", "exposure": 4, "exposure_rationale": "Diagnostic augmenté par IA, mais relation thérapeutique, gestion de l'incertitude et empathie restent irremplaçables.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1102"}, {"title": "Pharmaciens", "slug": "pharmaciens", "category": "sante", "code_rome": "J1202", "pay": 46200, "jobs": 74000, "outlook": 1, "outlook_desc": "", "education": "Doctorat (Bac+8)", "exposure": 5, "exposure_rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1202"}, {"title": "Kinésithérapeutes", "slug": "kinesitherapeutes", "category": "sante", "code_rome": "J1404", "pay": 33600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 3, "exposure_rationale": "Le toucher thérapeutique et l'adaptation en temps réel à la douleur sont non-substituables. Les exosquelettes et applications de téléréhabilitation assistent sans remplacer. 105 000 kinésithérapeutes (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1404"}, {"title": "Chirurgiens-dentistes", "slug": "chirurgiens-dentistes", "category": "sante", "code_rome": "J1103", "pay": 50400, "jobs": 40000, "outlook": 3, "outlook_desc": "", "education": "Doctorat (Bac+8)", "exposure": 4, "exposure_rationale": "Gestes cliniques et chirurgicaux irremplaçables. L'IA progresse sur la détection des caries et pathologies (radiographies, CBCT) mais n'effectue pas les soins. 40 000 chirurgiens-dentistes (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1103"}, {"title": "Sages-femmes", "slug": "sages-femmes", "category": "sante", "code_rome": "J1104", "pay": 28800, "jobs": 24000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 3, "exposure_rationale": "Accompagnement de la naissance, surveillance du travail et décision clinique en temps réel : non substituables. L'IA assiste le monitoring foetal (CTG) et la détection d'anomalies sans remplacer le jugement. 24 000 sages-femmes (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1104"}, {"title": "Psychologues", "slug": "psychologues", "category": "sante", "code_rome": "K1104", "pay": 26400, "jobs": 80000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 3, "exposure_rationale": "La relation thérapeutique, le transfert et la formulation clinique restent irremplaçables. Les chatbots CBT assurent un premier niveau d'écoute mais ne se substituent pas au suivi psychologique. 80 000 psychologues inscrits (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1104"}, {"title": "Avocats", "slug": "avocats", "category": "droit-justice", "code_rome": "K1903", "pay": 45600, "jobs": 79000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Recherche documentaire, rédaction d'actes standard et due diligence : fortement automatisables. Le conseil stratégique, la plaidoirie et les contentieux complexes restent irremplaçables. 79 141 avocats inscrits en janv. 2026 (CNB/Ministère de la Justice).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1903"}, {"title": "Notaires", "slug": "notaires", "category": "droit-justice", "code_rome": "K1901", "pay": 43200, "jobs": 17000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Actes immobiliers répétitifs, rédaction de clauses standard : exposés aux LLMs spécialisés. Authentification des actes, responsabilité ministerielle et conseil patrimonial complexe restent des fonctions humaines irremplaçables. 17 000 notaires en France (CSN 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1901"}, {"title": "Agents immobiliers", "slug": "agents-immobiliers", "category": "banque-assurance-immobilier", "code_rome": "C1504", "pay": 29040, "jobs": 148000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Visites virtuelles et scoring automatique progressent ; négociation et réseau local résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1504"}, {"title": "Conseillers bancaires", "slug": "conseillers-bancaires", "category": "banque-assurance-immobilier", "code_rome": "C1206", "pay": 32160, "jobs": 158000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 7, "exposure_rationale": "Analyse financière et conseil patrimonial très exposés aux LLMs et robo-advisors. La relation de confiance personnelle résiste.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1206"}, {"title": "Agents d'assurance", "slug": "agents-assurance", "category": "banque-assurance-immobilier", "code_rome": "C1102", "pay": 32160, "jobs": 158000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 7, "exposure_rationale": "Analyse financière et conseil patrimonial très exposés aux LLMs et robo-advisors. La relation de confiance personnelle résiste.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1102"}, {"title": "Agriculteurs", "slug": "agriculteurs", "category": "agriculture-peche", "code_rome": "A1101", "pay": 21840, "jobs": 165000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 3, "exposure_rationale": "Présence terrain et conduite d'engins limitent l'automatisation. Les outils d'aide à la décision progressent mais restent en appui.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1101"}, {"title": "Jardiniers-paysagistes", "slug": "jardiniers-paysagistes", "category": "agriculture-peche", "code_rome": "A1203", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en extérieur, adaptation constante au terrain et au vivant. Exposition minimale.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1203"}, {"title": "Boulangers-pâtissiers", "slug": "boulangers-patissiers", "category": "commerce-vente", "code_rome": "D1102", "pay": 21360, "jobs": 218000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1102"}, {"title": "Bouchers", "slug": "bouchers", "category": "commerce-vente", "code_rome": "D1101", "pay": 21360, "jobs": 218000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1101"}, {"title": "Coiffeurs", "slug": "coiffeurs", "category": "services-personne", "code_rome": "D1202", "pay": 20400, "jobs": 110000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Contact physique, geste technique personnalisé et relation de confiance : exposition minimale à l'IA. Les outils de visualisation (essayage virtuel) assistent le conseil sans substituer la prestation. 110 000 coiffeurs (UNEC/INSEE 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1202"}, {"title": "Esthéticiens", "slug": "estheticiens", "category": "services-personne", "code_rome": "D1208", "pay": 20400, "jobs": 110000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Contact physique, geste technique personnalisé et relation de confiance : exposition minimale à l'IA. Les outils de visualisation (essayage virtuel) assistent le conseil sans substituer la prestation. 110 000 coiffeurs (UNEC/INSEE 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1208"}, {"title": "Assistants maternels", "slug": "assistants-maternels", "category": "services-personne", "code_rome": "K1303", "pay": 18960, "jobs": 695000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Présence physique, empathie et adaptation permanente · non-automatisable avec les technologies actuelles.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1303"}, {"title": "Aides à domicile", "slug": "aides-domicile", "category": "services-personne", "code_rome": "K1304", "pay": 18960, "jobs": 695000, "outlook": 5, "outlook_desc": "", "education": "Sans diplôme", "exposure": 1, "exposure_rationale": "Présence physique, empathie et adaptation permanente · non-automatisable avec les technologies actuelles.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1304"}, {"title": "Agents d'entretien", "slug": "agents-entretien", "category": "services-collectivite", "code_rome": "K2204", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "Sans diplôme", "exposure": 1, "exposure_rationale": "Travail physique de nettoyage. Robots aspirateurs existent mais ne couvrent pas le spectre complet des tâches.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2204"}, {"title": "Secrétaires", "slug": "secretaires", "category": "support-entreprise", "code_rome": "M1607", "pay": 52200, "jobs": 6200, "outlook": -5, "outlook_desc": "", "education": "Baccalauréat", "exposure": 9, "exposure_rationale": "Modélisation statistique = cœur automatisable par ML spécialisés. Valeur migre vers l'interprétation et la gouvernance.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1607"}, {"title": "Assistants de direction", "slug": "assistants-direction", "category": "support-entreprise", "code_rome": "M1604", "pay": null, "jobs": null, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 7, "exposure_rationale": "Organisation et communication très exposées aux outils IA. Le rôle stratégique de filtrage et de coordination résiste.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1604"}, {"title": "Responsables des ressources humaines", "slug": "responsables-rh", "category": "support-entreprise", "code_rome": "M1503", "pay": 48960, "jobs": 42000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Recrutement et administration RH très exposés. Culture d'entreprise, stratégie humaine et gestion des conflits résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1503"}, {"title": "Contrôleurs de gestion", "slug": "controleurs-gestion", "category": "support-entreprise", "code_rome": "M1204", "pay": 41400, "jobs": 72000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Consolidation et reporting très automatisables. Rôle de business partner et conseil stratégique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1204"}, {"title": "Directeurs de magasin", "slug": "directeurs-magasin", "category": "commerce-vente", "code_rome": "D1301", "pay": 50400, "jobs": 180000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 6, "exposure_rationale": "Analyse de données, production de slides et reporting : très automatisables. Le diagnostic organisationnel, la relation client et la conduite du changement humain restent des domaines où l'IA augmente sans remplacer. ~180 000 consultants (INSEE EEC 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1301"}, {"title": "Responsables logistiques", "slug": "responsables-logistiques", "category": "transport-logistique", "code_rome": "N1302", "pay": 31800, "jobs": 92000, "outlook": 1, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 6, "exposure_rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1302"}, {"title": "Techniciens de maintenance industrielle", "slug": "techniciens-maintenance-industrielle", "category": "industrie", "code_rome": "I1304", "pay": 26160, "jobs": 92000, "outlook": 3, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 3, "exposure_rationale": "Diagnostic et intervention physique restent manuels. La maintenance prédictive assiste sans remplacer.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1304"}, {"title": "Soudeurs", "slug": "soudeurs", "category": "industrie", "code_rome": "H2913", "pay": 26160, "jobs": 82000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Cobots progressent sur les soudures répétitives ; contextes variables et positions complexes restent manuels.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2913"}, {"title": "Opérateurs de production", "slug": "operateurs-production", "category": "industrie", "code_rome": "H3302", "pay": 30000, "jobs": 195000, "outlook": 1, "outlook_desc": "", "education": "CAP/BEP", "exposure": 5, "exposure_rationale": "Conduite de machines-outils et programmation CFAO partiellement automatisables. La maintenance de premier niveau, le réglage fin et la gestion des aléas de production nécessitent la présence physique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H3302"}, {"title": "Ingénieurs en mécanique", "slug": "ingenieurs-mecanique", "category": "industrie", "code_rome": "H1206", "pay": 42960, "jobs": 48000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Optimisation de process très exposée aux jumeaux numériques et IA prédictive. Conception système et validation restent humaines.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1206"}, {"title": "Techniciens qualité", "slug": "techniciens-qualite", "category": "industrie", "code_rome": "H1502", "pay": 42960, "jobs": 48000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 7, "exposure_rationale": "Optimisation de process très exposée aux jumeaux numériques et IA prédictive. Conception système et validation restent humaines.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1502"}, {"title": "Designers graphiques", "slug": "designers-graphiques", "category": "communication-media", "code_rome": "E1205", "pay": 28560, "jobs": 48000, "outlook": -2, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 7, "exposure_rationale": "Génération d'images automatisée ; direction artistique, identité de marque et jugement esthétique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1205"}, {"title": "Journalistes", "slug": "journalistes", "category": "communication-media", "code_rome": "E1106", "pay": 29760, "jobs": 36000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Articles factuels, dépêches et synthèses automatisables. Investigation terrain, récit et fact-checking critique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1106"}, {"title": "Rédacteurs web", "slug": "redacteurs-web", "category": "communication-media", "code_rome": "E1104", "pay": 27720, "jobs": 42000, "outlook": -5, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 9, "exposure_rationale": "Production de contenu générique = exposition maximale aux LLMs. Valeur migre vers la stratégie et la supervision.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1104"}, {"title": "Chargés de communication", "slug": "charges-communication", "category": "communication-media", "code_rome": "E1103", "pay": 33600, "jobs": 25000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Rédaction de communiqués, revues de presse et reprises médias : automatisables à 70%. La relation de confiance avec les journalistes, la gestion de crise et la stratégie d'influence restent irremplaçables. ~25 000 attachés de presse (INSEE EEC 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1103"}, {"title": "Community managers", "slug": "community-managers", "category": "communication-media", "code_rome": "E1101", "pay": 30000, "jobs": 95000, "outlook": -2, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 8, "exposure_rationale": "Production de posts, réponses standardisées et reporting : très automatisables. La stratégie de marque, la gestion de crise et la création de contenu distinctif restent différenciants. ~95 000 CM (INSEE EEC 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1101"}, {"title": "Administrateurs systèmes et réseaux", "slug": "administrateurs-systemes-reseaux", "category": "informatique-telecoms", "code_rome": "M1801", "pay": 46200, "jobs": 182000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Génération de code par LLMs très avancée (+55% productivité Copilot). Architecture, compréhension produit et jugement système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1801"}, {"title": "Chefs de projets informatiques", "slug": "chefs-projets-informatiques", "category": "informatique-telecoms", "code_rome": "M1803", "pay": 44160, "jobs": 88000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Planification assistée par IA ; coordination humaine, gestion des risques imprévus et négociation stakeholders résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1803"}, {"title": "Data analysts", "slug": "data-analysts", "category": "informatique-telecoms", "code_rome": "M1403", "pay": 51360, "jobs": 52000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "AutoML et LLMs effectuent les analyses standard. Valeur migre vers la définition du problème et l'interprétation stratégique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1403"}, {"title": "Techniciens support informatique", "slug": "techniciens-support-informatique", "category": "informatique-telecoms", "code_rome": "I1401", "pay": 44160, "jobs": 88000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 7, "exposure_rationale": "Planification assistée par IA ; coordination humaine, gestion des risques imprévus et négociation stakeholders résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1401"}, {"title": "Architectes", "slug": "architectes", "category": "construction-btp", "code_rome": "F1101", "pay": 41400, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Conception créative et responsabilité réglementaire résistent ; rendus et variations s'automatisent rapidement.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1101"}, {"title": "Géomètres-topographes", "slug": "geometres-topographes", "category": "construction-btp", "code_rome": "F1107", "pay": 41400, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 6, "exposure_rationale": "Conception créative et responsabilité réglementaire résistent ; rendus et variations s'automatisent rapidement.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1107"}, {"title": "Mécaniciens automobiles", "slug": "mecaniciens-automobiles", "category": "industrie", "code_rome": "I1604", "pay": 24000, "jobs": 120000, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 3, "exposure_rationale": "Diagnostic et réparation physique sur véhicule : difficile à automatiser. Les outils OBD/IA assistent sans remplacer la compétence terrain. La transition VE crée une demande de nouvelles compétences critiques. 120 000 mécaniciens (ANFA/INSEE 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1604"}, {"title": "Carrossiers", "slug": "carrossiers", "category": "industrie", "code_rome": "I1606", "pay": 24000, "jobs": 120000, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 3, "exposure_rationale": "Diagnostic et réparation physique sur véhicule : difficile à automatiser. Les outils OBD/IA assistent sans remplacer la compétence terrain. La transition VE crée une demande de nouvelles compétences critiques. 120 000 mécaniciens (ANFA/INSEE 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1606"}, {"title": "Sapeurs-pompiers", "slug": "sapeurs-pompiers", "category": "services-collectivite", "code_rome": "K1705", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "Baccalauréat", "exposure": 2, "exposure_rationale": "Intervention d'urgence physique en milieu dangereux. L'IA assiste la détection d'incendie et la logistique sans remplacer l'intervention.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1705"}, {"title": "Policiers", "slug": "policiers", "category": "services-collectivite", "code_rome": "K1706", "pay": 27000, "jobs": 155000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Intervention terrain, médiation, décision en urgence · IA assiste sans remplacer l'officier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1706"}, {"title": "Gendarmes", "slug": "gendarmes", "category": "services-collectivite", "code_rome": "K1707", "pay": 27000, "jobs": 155000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Intervention terrain, médiation, décision en urgence · IA assiste sans remplacer l'officier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1707"}, {"title": "Éducateurs spécialisés", "slug": "educateurs-specialises", "category": "social", "code_rome": "K1207", "pay": 24600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "Relation éducative, accompagnement individualisé et médiation résistent à l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1207"}, {"title": "Assistants de service social", "slug": "assistants-service-social", "category": "social", "code_rome": "K1201", "pay": 25800, "jobs": 145000, "outlook": 5, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 2, "exposure_rationale": "L'accompagnement social individuel, la gestion des crises et la médiation familiale reposent entièrement sur la relation humaine, le jugement contextuel et la confiance. ILO WP140 classifie ces métiers Not Exposed.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1201"}, {"title": "Animateurs socioculturels", "slug": "animateurs-socioculturels", "category": "social", "code_rome": "K1206", "pay": 24600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 3, "exposure_rationale": "Relation éducative, accompagnement individualisé et médiation résistent à l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1206"}, {"title": "Directeurs généraux", "slug": "directeurs-generaux", "category": "direction-entreprise", "code_rome": "M1302", "pay": 66000, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 5, "exposure_rationale": "Planification et suivi de planning automatisables. La gestion des parties prenantes, la résolution de conflits et l'arbitrage stratégique des projets nécessitent le jugement et l'autorité humaine.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1302"}, {"title": "Directeurs financiers", "slug": "directeurs-financiers", "category": "direction-entreprise", "code_rome": "M1207", "pay": 66000, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 5, "exposure_rationale": "Planification et suivi de planning automatisables. La gestion des parties prenantes, la résolution de conflits et l'arbitrage stratégique des projets nécessitent le jugement et l'autorité humaine.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1207"}, {"title": "Responsables marketing", "slug": "responsables-marketing", "category": "commerce-vente", "code_rome": "M1705", "pay": 37800, "jobs": 28000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Catalogue, SEO, personnalisation très automatisables. Stratégie de marque et expérience client résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1705"}, {"title": "Commerciaux terrain", "slug": "commerciaux-terrain", "category": "commerce-vente", "code_rome": "D1407", "pay": 34680, "jobs": 242000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Prospection automatisable par IA ; confiance, relation longue durée et négociation complexe résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1407"}, {"title": "Télévendeurs", "slug": "televendeurs", "category": "commerce-vente", "code_rome": "D1408", "pay": null, "jobs": null, "outlook": -5, "outlook_desc": "", "education": "Baccalauréat", "exposure": 10, "exposure_rationale": "Prospection téléphonique scriptée. Les chatbots et voicebots IA remplacent progressivement ce métier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1408"}, {"title": "Acheteurs", "slug": "acheteurs", "category": "support-entreprise", "code_rome": "M1101", "pay": 34680, "jobs": 242000, "outlook": 1, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 5, "exposure_rationale": "Prospection automatisable par IA ; confiance, relation longue durée et négociation complexe résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1101"}, {"title": "Charpentiers", "slug": "charpentiers", "category": "construction-btp", "code_rome": "F1501", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1501"}, {"title": "Couvreurs", "slug": "couvreurs", "category": "construction-btp", "code_rome": "F1610", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1610"}, {"title": "Menuisiers", "slug": "menuisiers", "category": "industrie", "code_rome": "H2206", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2206"}, {"title": "Techniciens en électronique", "slug": "techniciens-electronique", "category": "industrie", "code_rome": "I1305", "pay": 34200, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Programmation d'automates partiellement assistée par IA ; intégration terrain et validation système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1305"}, {"title": "Ingénieurs en informatique", "slug": "ingenieurs-informatique", "category": "informatique-telecoms", "code_rome": "M1802", "pay": 46200, "jobs": 182000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Génération de code par LLMs très avancée (+55% productivité Copilot). Architecture, compréhension produit et jugement système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1802"}, {"title": "Experts en cybersécurité", "slug": "experts-cybersecurite", "category": "informatique-telecoms", "code_rome": "M1806", "pay": 46200, "jobs": 182000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Génération de code par LLMs très avancée (+55% productivité Copilot). Architecture, compréhension produit et jugement système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1806"}, {"title": "Techniciens télécoms", "slug": "techniciens-telecoms", "category": "informatique-telecoms", "code_rome": "I1307", "pay": 34200, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Programmation d'automates partiellement assistée par IA ; intégration terrain et validation système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1307"}, {"title": "Traducteurs-interprètes", "slug": "traducteurs-interpretes", "category": "communication-media", "code_rome": "E1108", "pay": 27000, "jobs": 14000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Traduction brute quasi-automatisée par NMT. Valeur sur la post-édition culturelle et la localisation experte.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1108"}, {"title": "Photographes", "slug": "photographes", "category": "communication-media", "code_rome": "E1201", "pay": 28800, "jobs": 34000, "outlook": 1, "outlook_desc": "", "education": "Baccalauréat", "exposure": 6, "exposure_rationale": "ISCO Gradient 1 selon ILO WP140. La prise de vue reste physique et irremplaçable, mais la retouche, la sélection et la post-production sont sous forte pression. L'ADAGP documente une contraction réelle du marché.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1201"}, {"title": "Techniciens audiovisuels", "slug": "techniciens-audiovisuels", "category": "arts-spectacle", "code_rome": "L1505", "pay": 28800, "jobs": 18000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 8, "exposure_rationale": "Montage automatique (génération de rushes, découpes IA, sous-titrage) : très exposé. L'Adobe Premiere/DaVinci Resolve intègrent déjà l'IA de manière native. La direction éditoriale, le rythme narratif et la post-production de prestige restent différenciants. ~18 000 monteurs (Audiens/CPNEF-AV 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1505"}, {"title": "Comédiens", "slug": "comediens", "category": "arts-spectacle", "code_rome": "L1203", "pay": 23400, "jobs": 65000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "ILO WP140 classe les acteurs en Minimal Exposure (0.31). La présence physique, la performance incarnée et l'émotion en temps réel sont irremplaçables sur scène. Risque réel sur le doublage, les synthèses vocales et les doublures numériques (deepfakes).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1203"}, {"title": "Musiciens", "slug": "musiciens", "category": "arts-spectacle", "code_rome": "L1202", "pay": 21360, "jobs": 22000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "Performance live et interprétation émotionnelle · l'IA génère mais ne performe pas. Valeur sur le live et la pédagogie.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1202"}, {"title": "Agents de voyage", "slug": "agents-voyage", "category": "hotellerie-restauration", "code_rome": "G1303", "pay": 29040, "jobs": 148000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Visites virtuelles et scoring automatique progressent ; négociation et réseau local résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1303"}, {"title": "Réceptionnistes d'hôtel", "slug": "receptionnistes-hotel", "category": "hotellerie-restauration", "code_rome": "G1703", "pay": 22080, "jobs": 62000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Check-in digitaux progressent ; relation et service personnalisés haut-de-gamme restent humains.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1703"}, {"title": "Guides touristiques", "slug": "guides-touristiques", "category": "hotellerie-restauration", "code_rome": "G1201", "pay": null, "jobs": null, "outlook": 1, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 5, "exposure_rationale": "Audioguides et visites virtuelles IA progressent. Le contact humain, l'improvisation et la narration vivante résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1201"}, {"title": "Chefs de cuisine", "slug": "chefs-cuisine", "category": "hotellerie-restauration", "code_rome": "G1601", "pay": 21360, "jobs": 218000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1601"}, {"title": "Experts-comptables", "slug": "experts-comptables", "category": "support-entreprise", "code_rome": "M1202", "pay": 31800, "jobs": 128000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Saisie, déclarations et rapprochements très automatisables. La valeur migre vers le conseil et l'analyse critique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1202"}, {"title": "Auditeurs financiers", "slug": "auditeurs-financiers", "category": "support-entreprise", "code_rome": "M1202", "pay": 44160, "jobs": 22000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Analyse documentaire et scoring facilement automatisables. L'expertise de jugement dans les cas complexes résiste.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1202"}, {"title": "Opticiens-lunetiers", "slug": "opticiens-lunetiers", "category": "sante", "code_rome": "J1405", "pay": 46200, "jobs": 74000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1405"}, {"title": "Vétérinaires", "slug": "veterinaires", "category": "agriculture-peche", "code_rome": "A1504", "pay": 38400, "jobs": 20000, "outlook": 3, "outlook_desc": "", "education": "Doctorat (Bac+8)", "exposure": 4, "exposure_rationale": "Examen clinique et chirurgie : irremplaçables. L'IA progresse sur l'imagerie (radio, écho) et le diagnostic différentiel assisté. 20 000 vétérinaires en France (ONVS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1504"}, {"title": "Ingénieurs agronomes", "slug": "ingenieurs-agronomes", "category": "agriculture-peche", "code_rome": "A1303", "pay": 21840, "jobs": 165000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 3, "exposure_rationale": "Présence terrain et conduite d'engins limitent l'automatisation. Les outils d'aide à la décision progressent mais restent en appui.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1303"}, {"title": "Ouvriers viticoles", "slug": "ouvriers-viticoles", "category": "agriculture-peche", "code_rome": "A1405", "pay": 19800, "jobs": 52000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Travail physique saisonnier et grande variabilité des produits limitent l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1405"}, {"title": "Chercheurs", "slug": "chercheurs", "category": "enseignement-formation", "code_rome": "K2402", "pay": 40800, "jobs": 93000, "outlook": 1, "outlook_desc": "", "education": "Doctorat (Bac+8)", "exposure": 5, "exposure_rationale": "Production de cours et rédaction d'articles standards très exposées. La recherche originale, la direction de thèse, l'évaluation par les pairs et la transmission du raisonnement scientifique restent profondément humaines. 93 000 enseignants du supérieur (MESR 2023).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2402"}, {"title": "Formateurs", "slug": "formateurs", "category": "enseignement-formation", "code_rome": "K2111", "pay": 35400, "jobs": 95000, "outlook": 1, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 5, "exposure_rationale": "Conception de modules e-learning automatisable. Mais l'animation présentielle, l'adaptation pédagogique en temps réel et l'accompagnement des apprenants en difficulté résistent à l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2111"}, {"title": "Bibliothécaires", "slug": "bibliothecaires", "category": "enseignement-formation", "code_rome": "K1601", "pay": 38400, "jobs": 12000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 4, "exposure_rationale": "Le jugement curatorial (authenticité, provenance, signification culturelle) est une expertise humaine irréductible. L'IA augmente la numérisation et la médiation mais ne remplace pas l'expertise scientifique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1601"}, {"title": "Préparateurs en pharmacie", "slug": "preparateurs-pharmacie", "category": "sante", "code_rome": "J1307", "pay": 46200, "jobs": 74000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1307"}, {"title": "Ambulanciers", "slug": "ambulanciers", "category": "sante", "code_rome": "J1305", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Transport sanitaire et premiers soins requièrent une présence physique et une réactivité humaine.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1305"}, {"title": "Manipulateurs en radiologie", "slug": "manipulateurs-radiologie", "category": "sante", "code_rome": "J1306", "pay": 79800, "jobs": 13500, "outlook": -2, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 8, "exposure_rationale": "IA de détection d'anomalies très avancée (AUC > 0.95 sur dépistage). Interprétation finale et actes interventionnels restent médicaux.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1306"}, {"title": "Techniciens de laboratoire médical", "slug": "techniciens-labo-medical", "category": "sante", "code_rome": "J1302", "pay": 46200, "jobs": 74000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1302"}, {"title": "Agents de propreté urbaine", "slug": "agents-proprete-urbaine", "category": "services-collectivite", "code_rome": "K2303", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "Sans diplôme", "exposure": 1, "exposure_rationale": "Travail physique en extérieur, conditions variables. Automatisation très limitée en milieu urbain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2303"}, {"title": "Conducteurs de bus", "slug": "conducteurs-bus", "category": "transport-logistique", "code_rome": "N4103", "pay": 39360, "jobs": 52000, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 4, "exposure_rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4103"}, {"title": "Conducteurs de train", "slug": "conducteurs-train", "category": "transport-logistique", "code_rome": "N4301", "pay": 39360, "jobs": 52000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4301"}, {"title": "Pilotes d'avion", "slug": "pilotes-avion", "category": "transport-logistique", "code_rome": "N2101", "pay": 86400, "jobs": 14000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "Automatisation forte en vol nominal. Décision d'urgence, gestion CRM et responsabilité réglementaire maintiennent l'humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N2101"}, {"title": "Mécaniciens aéronautiques", "slug": "mecaniciens-aeronautiques", "category": "industrie", "code_rome": "I1602", "pay": 24000, "jobs": 120000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 3, "exposure_rationale": "Diagnostic et réparation physique sur véhicule : difficile à automatiser. Les outils OBD/IA assistent sans remplacer la compétence terrain. La transition VE crée une demande de nouvelles compétences critiques. 120 000 mécaniciens (ANFA/INSEE 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1602"}, {"title": "Ingénieurs en énergie", "slug": "ingenieurs-energie", "category": "industrie", "code_rome": "H1206", "pay": 42960, "jobs": 48000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Optimisation de process très exposée aux jumeaux numériques et IA prédictive. Conception système et validation restent humaines.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1206"}, {"title": "Techniciens en énergie renouvelable", "slug": "techniciens-energie-renouvelable", "category": "industrie", "code_rome": "I1306", "pay": 34200, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Programmation d'automates partiellement assistée par IA ; intégration terrain et validation système résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1306"}, {"title": "Agents d'accueil", "slug": "agents-accueil", "category": "support-entreprise", "code_rome": "M1601", "pay": 22080, "jobs": 62000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Check-in digitaux progressent ; relation et service personnalisés haut-de-gamme restent humains.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1601"}, {"title": "Opérateurs de saisie", "slug": "operateurs-saisie", "category": "support-entreprise", "code_rome": "M1606", "pay": 38400, "jobs": 12000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 4, "exposure_rationale": "Le jugement curatorial (authenticité, provenance, signification culturelle) est une expertise humaine irréductible. L'IA augmente la numérisation et la médiation mais ne remplace pas l'expertise scientifique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1606"}, {"title": "Gestionnaires de paie", "slug": "gestionnaires-paie", "category": "support-entreprise", "code_rome": "M1501", "pay": 33600, "jobs": 82000, "outlook": -2, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 8, "exposure_rationale": "Calcul de paie et déclarations sociales = exposition maximale selon ILO WP140 (ISCO Gradient 4). La valeur migre vers la gestion des cas complexes, la veille réglementaire sociale et le conseil.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1501"}, {"title": "Juristes d'entreprise", "slug": "juristes-entreprise", "category": "droit-justice", "code_rome": "K1903", "pay": 45600, "jobs": 65000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Revue de contrats, veille réglementaire et rédaction de clauses : automatisables à 60-70%. Le conseil stratégique, la négociation et la gestion des contentieux restent humains. ~65 000 juristes en entreprise (INSEE EEC 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1903"}, {"title": "Huissiers de justice", "slug": "huissiers-justice", "category": "droit-justice", "code_rome": "K1902", "pay": 50400, "jobs": 3800, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Issu de la fusion huissiers/commissaires-priseurs (juillet 2022), ce profil hybride combine actes d'exécution forcée, constats et ventes judiciaires. La signification d'actes et la saisie de données sont automatisables. La présence physique, la relation au débiteur et l'autorité de l'officier ministériel restent irremplaçables. ~3 800 commissaires de justice (RSJ 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1902"}, {"title": "Greffiers", "slug": "greffiers", "category": "droit-justice", "code_rome": "K1904", "pay": 27600, "jobs": 24000, "outlook": -2, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 7, "exposure_rationale": "Rédaction de procès-verbaux, saisie d'actes et gestion administrative des dossiers : très exposés à l'automatisation IA. Le rôle d'authentification, la relation aux justiciables et la maîtrise du droit procédural restent différenciants. ~24 000 greffiers fonctionnaires (Ministère de la Justice 2024) · plan de recrutement massif prévu par la LOPJ.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1904"}, {"title": "Ingénieurs BTP", "slug": "ingenieurs-btp", "category": "construction-btp", "code_rome": "F1106", "pay": 39360, "jobs": 52000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 4, "exposure_rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1106"}, {"title": "Urbanistes", "slug": "urbanistes", "category": "services-collectivite", "code_rome": "K1404", "pay": 41400, "jobs": 38000, "outlook": 1, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 6, "exposure_rationale": "Conception créative et responsabilité réglementaire résistent ; rendus et variations s'automatisent rapidement.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1404"}, {"title": "Agents des impôts", "slug": "agents-impots", "category": "services-collectivite", "code_rome": "K1501", "pay": null, "jobs": null, "outlook": -2, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 7, "exposure_rationale": "Contrôle fiscal et traitement de dossiers très automatisables. L'interprétation des situations complexes résiste.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1501"}, {"title": "Attachés territoriaux", "slug": "attaches-territoriaux", "category": "services-collectivite", "code_rome": "K1401", "pay": null, "jobs": null, "outlook": 1, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 5, "exposure_rationale": "Administration et rédaction de rapports exposées. La connaissance du terrain local et la médiation politique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1401"}, {"title": "Ingénieurs environnement", "slug": "ingenieurs-environnement", "category": "industrie", "code_rome": "H1302", "pay": 42960, "jobs": 48000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 7, "exposure_rationale": "Optimisation de process très exposée aux jumeaux numériques et IA prédictive. Conception système et validation restent humaines.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1302"}, {"title": "Techniciens en traitement des eaux", "slug": "techniciens-traitement-eaux", "category": "services-collectivite", "code_rome": "K2306", "pay": 26160, "jobs": 92000, "outlook": 3, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 3, "exposure_rationale": "Diagnostic et intervention physique restent manuels. La maintenance prédictive assiste sans remplacer.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2306"}, {"title": "Conseillers en insertion professionnelle", "slug": "conseillers-insertion", "category": "social", "code_rome": "K1801", "pay": 30000, "jobs": 11000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 4, "exposure_rationale": "Les outils d'orientation algorithmiques (Parcoursup, Mon Master) se développent mais l'accompagnement psychologique individualisé, la détection des troubles et la relation de confiance restent irremplaçables. ~11 000 PsyEN en France (MEN 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1801"}, {"title": "Moniteurs-éducateurs", "slug": "moniteurs-educateurs", "category": "social", "code_rome": "K1208", "pay": 24600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Baccalauréat", "exposure": 3, "exposure_rationale": "Relation éducative, accompagnement individualisé et médiation résistent à l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1208"}, {"title": "Éleveurs", "slug": "eleveurs", "category": "agriculture-peche", "code_rome": "A1410", "pay": 21000, "jobs": 98000, "outlook": 5, "outlook_desc": "", "education": "Baccalauréat", "exposure": 2, "exposure_rationale": "Robots de traite existent mais la gestion du troupeau reste très humaine.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1410"}, {"title": "Pêcheurs", "slug": "pecheurs", "category": "agriculture-peche", "code_rome": "A1416", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Travail physique en mer, conditions imprévisibles. La technologie assiste la navigation et la détection mais pas la pêche elle-même.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1416"}, {"title": "Conducteurs d'engins de chantier", "slug": "conducteurs-engins-chantier", "category": "construction-btp", "code_rome": "F1302", "pay": null, "jobs": null, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 3, "exposure_rationale": "Conduite d'engins en milieu de chantier variable. La téléopération progresse mais le contexte imprévisible freine l'automatisation.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1302"}, {"title": "Carreleurs", "slug": "carreleurs", "category": "construction-btp", "code_rome": "F1608", "pay": 23760, "jobs": 128000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 1, "exposure_rationale": "Travail physique en milieu non structuré · très difficile à automatiser. Contexte variable de chaque chantier.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1608"}, {"title": "Gestionnaires de patrimoine", "slug": "gestionnaires-patrimoine", "category": "banque-assurance-immobilier", "code_rome": "C1205", "pay": 50400, "jobs": 32000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Analyse patrimoniale automatisable, mais conseil personnalisé, relation de confiance et responsabilité fiduciaire freinent la substitution totale.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1205"}, {"title": "Traders", "slug": "traders", "category": "banque-assurance-immobilier", "code_rome": "C1301", "pay": 48960, "jobs": 38000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Analyse quantitative et rédaction de rapports = haute automatisabilité. Jugement stratégique et relations client résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1301"}, {"title": "Analystes financiers", "slug": "analystes-financiers", "category": "banque-assurance-immobilier", "code_rome": "C1202", "pay": 48960, "jobs": 38000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Analyse quantitative et rédaction de rapports = haute automatisabilité. Jugement stratégique et relations client résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1202"}, {"title": "Moniteurs de sport", "slug": "moniteurs-sport", "category": "sport-loisirs", "code_rome": "G1204", "pay": 28800, "jobs": 18000, "outlook": -2, "outlook_desc": "", "education": "Baccalauréat", "exposure": 8, "exposure_rationale": "Montage automatique (génération de rushes, découpes IA, sous-titrage) : très exposé. L'Adobe Premiere/DaVinci Resolve intègrent déjà l'IA de manière native. La direction éditoriale, le rythme narratif et la post-production de prestige restent différenciants. ~18 000 monteurs (Audiens/CPNEF-AV 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1204"}, {"title": "Entraîneurs sportifs", "slug": "entraineurs-sportifs", "category": "sport-loisirs", "code_rome": "G1204", "pay": null, "jobs": null, "outlook": 5, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 2, "exposure_rationale": "Coaching physique, motivation et adaptation en temps réel. Les applications fitness IA assistent mais ne remplacent pas.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1204"}, {"title": "Diététiciens", "slug": "dieteticiens", "category": "sante", "code_rome": "J1403", "pay": 46200, "jobs": 74000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 5, "exposure_rationale": "Dispensation automatisée progresse ; conseil patient, pharmacovigilance et gestion clinique résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1403"}, {"title": "Orthophonistes", "slug": "orthophonistes", "category": "sante", "code_rome": "J1406", "pay": 33600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 3, "exposure_rationale": "Le toucher thérapeutique et l'adaptation en temps réel à la douleur sont non-substituables. Les exosquelettes et applications de téléréhabilitation assistent sans remplacer. 105 000 kinésithérapeutes (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1406"}, {"title": "Ergothérapeutes", "slug": "ergotherapeutes", "category": "sante", "code_rome": "J1403", "pay": 33600, "jobs": 105000, "outlook": 3, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 3, "exposure_rationale": "Le toucher thérapeutique et l'adaptation en temps réel à la douleur sont non-substituables. Les exosquelettes et applications de téléréhabilitation assistent sans remplacer. 105 000 kinésithérapeutes (DREES/RPPS 2024).", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1403"}, {"title": "Opérateurs en centre d'appels", "slug": "operateurs-centre-appels", "category": "commerce-vente", "code_rome": "D1408", "pay": null, "jobs": null, "outlook": -5, "outlook_desc": "", "education": "Baccalauréat", "exposure": 9, "exposure_rationale": "Traitement d'appels standardisés très exposé aux chatbots IA. Seuls les cas complexes nécessitent encore un humain.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1408"}, {"title": "Webmasters", "slug": "webmasters", "category": "informatique-telecoms", "code_rome": "E1101", "pay": 27720, "jobs": 42000, "outlook": -5, "outlook_desc": "", "education": "Licence (Bac+3)", "exposure": 9, "exposure_rationale": "Production de contenu générique = exposition maximale aux LLMs. Valeur migre vers la stratégie et la supervision.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1101"}, {"title": "Chefs de produit", "slug": "chefs-produit", "category": "commerce-vente", "code_rome": "M1703", "pay": 37800, "jobs": 28000, "outlook": -2, "outlook_desc": "", "education": "Master (Bac+5)", "exposure": 8, "exposure_rationale": "Catalogue, SEO, personnalisation très automatisables. Stratégie de marque et expérience client résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1703"}, {"title": "Logisticiens", "slug": "logisticiens", "category": "transport-logistique", "code_rome": "N1301", "pay": 31800, "jobs": 92000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 6, "exposure_rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1301"}, {"title": "Déclarants en douane", "slug": "declarants-douane", "category": "transport-logistique", "code_rome": "N1202", "pay": 31800, "jobs": 92000, "outlook": 1, "outlook_desc": "", "education": "BTS/DUT (Bac+2)", "exposure": 6, "exposure_rationale": "Optimisation des flux exposée aux algorithmes. Gestion des exceptions, fournisseurs et risques géopolitiques résistent.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1202"}, {"title": "Techniciens frigoristes", "slug": "techniciens-frigoristes", "category": "industrie", "code_rome": "I1306", "pay": 26160, "jobs": 92000, "outlook": 3, "outlook_desc": "", "education": "CAP/BEP", "exposure": 3, "exposure_rationale": "Diagnostic et intervention physique restent manuels. La maintenance prédictive assiste sans remplacer.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1306"}, {"title": "Chaudronniers", "slug": "chaudronniers", "category": "industrie", "code_rome": "H2902", "pay": 26160, "jobs": 82000, "outlook": 5, "outlook_desc": "", "education": "CAP/BEP", "exposure": 2, "exposure_rationale": "Cobots progressent sur les soudures répétitives ; contextes variables et positions complexes restent manuels.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2902"}, {"title": "Usineurs", "slug": "usineurs", "category": "industrie", "code_rome": "H2903", "pay": 30000, "jobs": 195000, "outlook": 1, "outlook_desc": "", "education": "CAP/BEP", "exposure": 5, "exposure_rationale": "Conduite de machines-outils et programmation CFAO partiellement automatisables. La maintenance de premier niveau, le réglage fin et la gestion des aléas de production nécessitent la présence physique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2903"}, {"title": "Conducteurs de ligne de production", "slug": "conducteurs-ligne-production", "category": "industrie", "code_rome": "H2301", "pay": 30000, "jobs": 195000, "outlook": 1, "outlook_desc": "", "education": "CAP/BEP", "exposure": 5, "exposure_rationale": "Conduite de machines-outils et programmation CFAO partiellement automatisables. La maintenance de premier niveau, le réglage fin et la gestion des aléas de production nécessitent la présence physique.", "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2301"}];
+updateStats();
+drawGradientLegend();
+resize();
+
+window.addEventListener("resize", resize);
+</script>
+</body>
+</html>
