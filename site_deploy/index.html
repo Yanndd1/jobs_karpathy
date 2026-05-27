@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exposition des métiers français à l'IA — jobs.solicare.fr</title>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --bg3: #1a1a26;
+  --fg: #e0e0e8;
+  --fg2: #888894;
+  --accent: #6b8afd;
+  --accent2: #4ecdc4;
+  --red: #e74c3c;
+  --green: #2ecc71;
+  --orange: #f39c12;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Hero ──────────────────────────────────────────────── */
+
+.hero {
+  padding: 80px 0 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.hero h1 span { color: var(--accent); }
+.hero .subtitle {
+  font-size: 18px;
+  color: var(--fg2);
+  max-width: 640px;
+  margin: 0 auto 32px;
+}
+.hero .cta {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.hero .cta:hover {
+  background: #5a7bf0;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(107,138,253,0.3);
+}
+
+/* ── Stats bar ─────────────────────────────────────────── */
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-item .num {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.stat-item .label {
+  font-size: 13px;
+  color: var(--fg2);
+  margin-top: 2px;
+}
+
+/* ── Sections ──────────────────────────────────────────── */
+
+section {
+  padding: 56px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+section:last-of-type { border-bottom: none; }
+
+section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+section h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 24px 0 10px;
+  color: var(--fg);
+}
+
+section p {
+  color: var(--fg2);
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+section p strong, section p b { color: var(--fg); font-weight: 600; }
+
+section ul, section ol {
+  color: var(--fg2);
+  margin: 0 0 16px 20px;
+  font-size: 15px;
+}
+section li { margin-bottom: 6px; }
+section li strong { color: var(--fg); }
+
+/* ── Source cards ───────────────────────────────────────── */
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.source-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 16px 18px;
+}
+.source-card .tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+.source-card .tag.t1 { background: rgba(107,138,253,0.15); color: var(--accent); }
+.source-card .tag.t2 { background: rgba(78,205,196,0.15); color: var(--accent2); }
+.source-card .tag.t3 { background: rgba(243,156,18,0.15); color: var(--orange); }
+.source-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.source-card p {
+  font-size: 12px;
+  color: var(--fg2);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Scale legend ──────────────────────────────────────── */
+
+.scale-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+}
+.scale-table th, .scale-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.scale-table th {
+  color: var(--fg2);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.score-badge {
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 2px 0;
+  border-radius: 4px;
+}
+
+/* ── Pipeline ──────────────────────────────────────────── */
+
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+.pipeline-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.pipeline-step .step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg3);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.pipeline-step .step-text {
+  font-size: 14px;
+  color: var(--fg2);
+  padding-top: 3px;
+}
+.pipeline-step .step-text code {
+  font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+  font-size: 12px;
+  background: var(--bg3);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--accent2);
+}
+
+/* ── Caveat box ────────────────────────────────────────── */
+
+.caveat {
+  background: rgba(231,76,60,0.06);
+  border: 1px solid rgba(231,76,60,0.15);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 24px 0;
+}
+.caveat h4 {
+  color: var(--red);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.caveat p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* ── Fork credit ───────────────────────────────────────── */
+
+.fork-box {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.fork-box .fork-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--bg3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+.fork-box h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.fork-box p {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+
+footer {
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+footer p {
+  font-size: 13px;
+  color: var(--fg2);
+  margin-bottom: 6px;
+}
+footer a { color: var(--fg2); }
+footer a:hover { color: var(--fg); }
+
+/* ── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .hero .subtitle { font-size: 15px; }
+  .stats-bar { gap: 24px; }
+  .stat-item .num { font-size: 24px; }
+  .fork-box { flex-direction: column; }
+  .source-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ── Hero ──────────────────────────────────────────── -->
+
+  <div class="hero">
+    <h1>Exposition des métiers français<br>à l'<span>Intelligence Artificielle</span></h1>
+    <p class="subtitle">Visualisation interactive de 147 métiers du répertoire ROME, scorés sur leur exposition à l'IA à partir de sources académiques et institutionnelles. Un outil exploratoire, pas un rapport.</p>
+    <a href="treemap.html" class="cta">Explorer la visualisation</a>
+  </div>
+
+  <!-- ── Stats bar ─────────────────────────────────────── -->
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="num">147</div>
+      <div class="label">métiers analysés</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">14,7M</div>
+      <div class="label">emplois couverts</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">4,7<small>/10</small></div>
+      <div class="label">exposition moyenne</div>
+    </div>
+    <div class="stat-item">
+      <div class="num">6</div>
+      <div class="label">sources de données</div>
+    </div>
+  </div>
+
+  <!-- ── Le projet ─────────────────────────────────────── -->
+
+  <section>
+    <h2>Le projet</h2>
+    <p>Ce site propose une <strong>cartographie visuelle de l'exposition des métiers français à l'intelligence artificielle</strong>. Chaque métier est représenté par un rectangle dont la surface est proportionnelle au nombre d'emplois, et dont la couleur indique le niveau d'exposition à l'IA (ou d'autres métriques : salaire, formation, perspectives).</p>
+    <p>L'objectif n'est pas de prédire quels métiers vont "disparaître" — <strong>un score élevé ne signifie pas la fin d'un métier</strong>. Les développeurs informatiques scorent 8/10 car l'IA transforme profondément leur travail, mais la demande de logiciels pourrait facilement <em>augmenter</em> avec les gains de productivité. Le score mesure l'ampleur de la transformation, pas son issue.</p>
+    <p>C'est un <strong>outil exploratoire</strong> destiné à alimenter la réflexion sur l'évolution du marché du travail, pas une publication académique ni un rapport officiel.</p>
+  </section>
+
+  <!-- ── Origine : fork de Karpathy ────────────────────── -->
+
+  <section>
+    <h2>Origine du projet</h2>
+
+    <div class="fork-box">
+      <div class="fork-icon">&#x2442;</div>
+      <div>
+        <h4>Fork de karpathy/jobs</h4>
+        <p>Ce projet est un <strong>fork</strong> du travail réalisé par <a href="https://karpathy.ai/">Andrej Karpathy</a> (co-fondateur d'OpenAI, ancien directeur IA chez Tesla). Son projet original — <a href="https://github.com/karpathy/jobs">karpathy/jobs</a> — visualise <strong>342 métiers américains</strong> à partir des données du Bureau of Labor Statistics (BLS), avec un scoring d'exposition IA réalisé par LLM.</p>
+        <p style="margin-top:10px;">Nous avons <strong>adapté l'intégralité du pipeline</strong> au marché du travail français : remplacement du BLS par le répertoire ROME de France Travail, utilisation de sources académiques multi-institutionnelles pour le scoring, traduction complète de l'interface, et conversion aux échelles françaises (euros, niveaux de diplôme du CAP au Doctorat).</p>
+      </div>
+    </div>
+
+    <h3>Ce qui a été conservé</h3>
+    <ul>
+      <li>L'architecture du pipeline : scrape &rarr; parse &rarr; score &rarr; visualise</li>
+      <li>Le moteur de visualisation treemap (algorithme squarify)</li>
+      <li>Les 4 couches de coloration interactives</li>
+      <li>Le principe de scoring par occupation via un rubrique structuré</li>
+    </ul>
+
+    <h3>Ce qui a été adapté</h3>
+    <ul>
+      <li><strong>Source de données</strong> : BLS Occupational Outlook Handbook &rarr; ROME 4.0 (France Travail)</li>
+      <li><strong>Scoring</strong> : prompt LLM unique &rarr; scores multi-sources pondérés (académiques, institutionnels, presse spécialisée)</li>
+      <li><strong>Données emploi</strong> : BLS projections &rarr; INSEE Enquête Emploi en Continu 2024</li>
+      <li><strong>Contexte réglementaire</strong> : prise en compte du RGPD, de l'AI Act européen, du droit du travail français, des métiers réglementés</li>
+      <li><strong>Interface</strong> : traduction intégrale en français, échelles de salaire en euros, niveaux de formation français</li>
+    </ul>
+  </section>
+
+  <!-- ── Méthodologie ──────────────────────────────────── -->
+
+  <section>
+    <h2>Méthodologie de scoring</h2>
+    <p>Chaque métier est évalué sur un <strong>axe unique d'Exposition à l'IA de 0 à 10</strong>, mesurant dans quelle mesure l'IA va transformer ce métier. Le score prend en compte :</p>
+    <ul>
+      <li><strong>L'automatisation directe</strong> — l'IA réalisant des tâches actuellement humaines</li>
+      <li><strong>Les effets indirects</strong> — l'IA rendant les travailleurs si productifs que moins de personnes sont nécessaires</li>
+    </ul>
+
+    <p>Un heuristique clé : si un métier peut être exercé entièrement depuis un ordinateur — écrire, coder, analyser, communiquer — son exposition est intrinsèquement élevée (7+). Les métiers nécessitant une présence physique, un savoir-faire manuel ou une interaction humaine en temps réel ont une barrière naturelle à l'exposition.</p>
+
+    <h3>Echelle de calibration</h3>
+    <table class="scale-table">
+      <tr><th>Score</th><th>Niveau</th><th>Exemples</th></tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(30,180,40,0.3);color:#2ecc71;">0-1</span></td>
+        <td><strong>Minimale</strong></td>
+        <td>Maçons, couvreurs, jardiniers-paysagistes, aides à domicile</td>
+      </tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(80,170,50,0.3);color:#6abf4b;">2-3</span></td>
+        <td><strong>Faible</strong></td>
+        <td>Electriciens, plombiers, sapeurs-pompiers, aides-soignants, infirmiers</td>
+      </tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(180,180,30,0.3);color:#c8c832;">4-5</span></td>
+        <td><strong>Modérée</strong></td>
+        <td>Policiers, vétérinaires, pharmaciens, éducateurs spécialisés, architectes</td>
+      </tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(220,140,20,0.3);color:#e8a020;">6-7</span></td>
+        <td><strong>Elevée</strong></td>
+        <td>Enseignants, comptables, journalistes, conseillers bancaires, avocats</td>
+      </tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(230,80,30,0.3);color:#e65030;">8-9</span></td>
+        <td><strong>Très élevée</strong></td>
+        <td>Développeurs, designers graphiques, traducteurs, data analysts, rédacteurs web</td>
+      </tr>
+      <tr>
+        <td><span class="score-badge" style="background:rgba(220,40,30,0.3);color:#dc2820;">10</span></td>
+        <td><strong>Maximale</strong></td>
+        <td>Télévendeurs, opérateurs de saisie</td>
+      </tr>
+    </table>
+
+    <div class="caveat">
+      <h4>Avertissements importants</h4>
+      <p><strong>Un score élevé ne prédit pas la disparition d'un métier.</strong> Il mesure l'ampleur de la transformation, pas son issue. Le score ne tient pas compte de l'élasticité de la demande, de la demande latente, des barrières réglementaires ou des préférences sociales. Beaucoup de métiers à forte exposition seront transformés, pas remplacés.</p>
+    </div>
+  </section>
+
+  <!-- ── Sources de données ────────────────────────────── -->
+
+  <section>
+    <h2>Sources de données</h2>
+    <p>Contrairement au projet original qui utilise un scoring par LLM unique, nous avons construit un <strong>scoring multi-sources pondéré</strong> s'appuyant sur des travaux académiques et institutionnels.</p>
+
+    <div class="source-grid">
+      <div class="source-card">
+        <span class="tag t1">Source primaire</span>
+        <h4>transitions-ia.fr</h4>
+        <p>97 métiers français scorés (0-10) avec pondération multi-sources : poids par niveau de preuve (académique, institutionnel, presse) et récence. Basé sur ROME 4.0 + INSEE EEC 2024 + DARES BMO 2024.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t1">Source primaire</span>
+        <h4>Felten AIOE Index</h4>
+        <p>774 métiers (SOC) évalués sur 10 capacités IA croisées avec 52 aptitudes O*NET. Référence académique publiée dans le <em>Journal of Finance</em>.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t1">Source primaire</span>
+        <h4>ILO GenAI Exposure</h4>
+        <p>Index de l'Organisation Internationale du Travail (Working Paper 140). 427 métiers ISCO-08 avec scores tâche par tâche sur l'exposition à l'IA générative.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t2">Source secondaire</span>
+        <h4>Demirev ESCO Scores</h4>
+        <p>3 003 occupations ESCO scorées à partir de 27 000 capacités IA extraites de communiqués d'entreprises. Distinction automatisation vs. augmentation.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t2">Source secondaire</span>
+        <h4>INSEE EEC 2024</h4>
+        <p>Enquête Emploi en Continu de l'INSEE. Effectifs et salaires nets mensuels par profession (PCS 2020), reliés aux codes ROME via la nomenclature FAP 2021.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t3">Crosswalk</span>
+        <h4>ROME-ESCO Mapping</h4>
+        <p>Table de correspondance officielle France Travail : 11 118 appellations ROME mappées vers 1 915 occupations ESCO. Passerelle vers les indices internationaux.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pipeline technique ────────────────────────────── -->
+
+  <section>
+    <h2>Pipeline technique</h2>
+    <p>Le code source est disponible sur <a href="https://github.com/Yanndd1/jobs_karpathy">GitHub</a>. Voici les étapes du pipeline :</p>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Scraper</strong> — <code>scrape_francetravail.py</code> récupère les fiches métier via l'API France Travail (ROME v2, OAuth2).</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Parser</strong> — <code>parse_rome.py</code> + <code>process.py</code> convertissent les données JSON en fichiers Markdown structurés.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Tabuler</strong> — <code>make_csv_fr.py</code> extrait les champs structurés (salaire, formation, emplois) dans un CSV.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Scorer</strong> — <code>build_scores.py</code> mappe les scores multi-sources (transitions-ia.fr, Felten, ILO, ESCO) vers nos 147 métiers.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Construire</strong> — <code>build_site_data.py</code> fusionne CSV et scores dans un JSON compact pour le frontend.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">6</div>
+        <div class="step-text"><strong>Visualiser</strong> — <code>treemap.html</code> affiche le treemap interactif avec 4 couches de coloration.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Les 4 couches ─────────────────────────────────── -->
+
+  <section>
+    <h2>Les 4 couches de visualisation</h2>
+    <p>Le treemap propose 4 modes de coloration interactifs :</p>
+    <ul>
+      <li><strong>Exposition IA</strong> — Score 0-10 basé sur les sources académiques multi-institutionnelles. Du vert (minimale) au rouge (maximale).</li>
+      <li><strong>Salaire médian</strong> — Salaire brut annuel en euros (données INSEE EEC 2024). Couvre 130 métiers sur 147.</li>
+      <li><strong>Formation</strong> — Niveau de diplôme requis, du Sans diplôme au Doctorat (Bac+8). Basé sur les fiches ROME.</li>
+      <li><strong>Perspectives</strong> — Estimation de l'évolution de la demande, corrélée inversement à l'exposition IA et aux projections DARES.</li>
+    </ul>
+
+    <p style="text-align:center;margin-top:28px;">
+      <a href="treemap.html" class="cta">Explorer la visualisation</a>
+    </p>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
+
+</div>
+
+<footer>
+  <div class="container">
+    <p>Fork de <a href="https://github.com/karpathy/jobs">karpathy/jobs</a> par Andrej Karpathy, adapté au marché du travail français.</p>
+    <p>Code source : <a href="https://github.com/Yanndd1/jobs_karpathy">github.com/Yanndd1/jobs_karpathy</a></p>
+    <p>Propulsé par <a href="https://solicare.fr">Solicare</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

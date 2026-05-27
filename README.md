@@ -1,77 +1,79 @@
-# US Job Market Visualizer
+# Visualiseur du marché du travail français
 
-A research tool for visually exploring Bureau of Labor Statistics [Occupational Outlook Handbook](https://www.bls.gov/ooh/) data. This is not a report, a paper, or a serious economic publication — it is a development tool for exploring BLS data visually.
+Outil de recherche pour explorer visuellement les données du [répertoire ROME](https://candidat.francetravail.fr/metierscope/) de France Travail (anciennement Pôle Emploi). Ce n'est pas un rapport ni une publication scientifique — c'est un outil de développement pour explorer les données de l'emploi visuellement.
 
-**Live demo: [karpathy.ai/jobs](https://karpathy.ai/jobs/)**
+Fork de [karpathy/jobs](https://github.com/karpathy/jobs) adapté au marché du travail français.
 
-## What's here
+## Contenu
 
-The BLS OOH covers **342 occupations** spanning every sector of the US economy, with detailed data on job duties, work environment, education requirements, pay, and employment projections. We scraped all of it and built an interactive treemap visualization where each rectangle's **area** is proportional to total employment and **color** shows the selected metric — toggle between BLS projected growth outlook, median pay, education requirements, and AI exposure.
+Le répertoire ROME couvre les métiers de l'économie française avec des données détaillées sur les tâches, l'environnement de travail, les conditions d'accès, les compétences et les salaires. Nous avons scrappé ces données via l'API France Travail et construit une visualisation interactive en treemap où la **surface** de chaque rectangle est proportionnelle au nombre d'emplois et la **couleur** indique la métrique sélectionnée — basculez entre perspectives de croissance, salaire médian, niveau de formation et exposition à l'IA.
 
-## LLM-powered coloring
+## Coloration par LLM
 
-The repo includes scrapers, parsers, and a pipeline for writing custom LLM prompts to score and color occupations by any criteria. You write a prompt, the LLM scores each occupation, and the treemap colors accordingly. The "Digital AI Exposure" layer is one example — it estimates how much current AI (which is primarily digital) will reshape each occupation. But you could write a different prompt for any question — e.g. exposure to humanoid robotics, offshoring risk, climate impact — and re-run the pipeline to get a different coloring. See `score.py` for the prompt and scoring pipeline.
+Le repo inclut des scrapers, des parsers et un pipeline pour écrire des prompts LLM personnalisés afin de scorer et colorer les métiers selon n'importe quel critère. Vous écrivez un prompt, le LLM score chaque métier, et le treemap colore en conséquence. L'option « Exposition IA » en est un exemple — elle estime dans quelle mesure l'IA actuelle (principalement numérique) va transformer chaque métier. Voir `score.py` pour le prompt et le pipeline de scoring.
 
-**What "AI Exposure" is NOT:**
-- It does **not** predict that a job will disappear. Software developers score 9/10 because AI is transforming their work — but demand for software could easily *grow* as each developer becomes more productive.
-- It does **not** account for demand elasticity, latent demand, regulatory barriers, or social preferences for human workers.
-- The scores are rough LLM estimates (Gemini Flash via OpenRouter), not rigorous predictions. Many high-exposure jobs will be reshaped, not replaced.
+**Ce que l'« Exposition IA » n'est PAS :**
+- Elle ne prédit **pas** la disparition d'un métier. Les développeurs scorent 9/10 car l'IA transforme leur travail — mais la demande de logiciels pourrait facilement *augmenter*.
+- Elle ne tient **pas** compte de l'élasticité de la demande, des barrières réglementaires, ou des préférences sociales.
+- Les scores sont des estimations brutes d'un LLM (Gemini Flash via OpenRouter), pas des prédictions rigoureuses.
 
-## Data pipeline
+## Pipeline de données
 
-1. **Scrape** (`scrape.py`) — Playwright (non-headless, BLS blocks bots) downloads raw HTML for all 342 occupation pages into `html/`.
-2. **Parse** (`parse_detail.py`, `process.py`) — BeautifulSoup converts raw HTML into clean Markdown files in `pages/`.
-3. **Tabulate** (`make_csv.py`) — Extracts structured fields (pay, education, job count, growth outlook, SOC code) into `occupations.csv`.
-4. **Score** (`score.py`) — Sends each occupation's Markdown description to an LLM with a scoring rubric. Each occupation gets an AI Exposure score from 0-10 with a rationale. Results saved to `scores.json`. Fork this to write your own prompts.
-5. **Build site data** (`build_site_data.py`) — Merges CSV stats and AI exposure scores into a compact `site/data.json` for the frontend.
-6. **Website** (`site/index.html`) — Interactive treemap visualization with four color layers: BLS Outlook, Median Pay, Education, and Digital AI Exposure.
+1. **Scraper** (`scrape_francetravail.py`) — Récupère les données via l'API France Travail (ROME v2) avec authentification OAuth2. Sauvegarde les JSON bruts dans `html/`.
+2. **Parser** (`parse_rome.py`, `process.py`) — Convertit les données JSON/HTML en fichiers Markdown propres dans `pages/`.
+3. **Tabuler** (`make_csv_fr.py`) — Extrait les champs structurés (salaire, formation, emplois, code ROME) dans `metiers.csv`.
+4. **Scorer** (`score.py`) — Envoie la description Markdown de chaque métier à un LLM avec un rubrique de scoring adapté au contexte français. Résultats dans `scores.json`.
+5. **Construire les données du site** (`build_site_data.py`) — Fusionne CSV et scores IA dans `site/data.json`.
+6. **Site web** (`site/index.html`) — Visualisation treemap interactive avec quatre couches : Perspectives, Salaire médian, Formation, Exposition IA.
 
-## Key files
+## Fichiers clés
 
-| File | Description |
-|------|-------------|
-| `occupations.json` | Master list of 342 occupations with title, URL, category, slug |
-| `occupations.csv` | Summary stats: pay, education, job count, growth projections |
-| `scores.json` | AI exposure scores (0-10) with rationales for all 342 occupations |
-| `prompt.md` | All data in a single file, designed to be pasted into an LLM for analysis |
-| `html/` | Raw HTML pages from BLS (source of truth, ~40MB) |
-| `pages/` | Clean Markdown versions of each occupation page |
-| `site/` | Static website (treemap visualization) |
+| Fichier | Description |
+|---------|-------------|
+| `metiers.json` | Liste principale des métiers avec titre, URL, catégorie, slug, code ROME |
+| `metiers.csv` | Statistiques résumées : salaire, formation, nombre d'emplois |
+| `scores.json` | Scores d'exposition IA (0-10) avec explications |
+| `prompt.md` | Toutes les données dans un seul fichier, conçu pour être collé dans un LLM |
+| `html/` | Données brutes de l'API France Travail (source de vérité) |
+| `pages/` | Versions Markdown propres de chaque fiche métier |
+| `site/` | Site web statique (visualisation treemap) |
 
-## LLM prompt
+## Prompt LLM
 
-[`prompt.md`](prompt.md) packages all the data — aggregate statistics, tier breakdowns, exposure by pay/education, BLS growth projections, and all 342 occupations with their scores and rationales — into a single file (~45K tokens) designed to be pasted into an LLM. This lets you have a data-grounded conversation about AI's impact on the job market without needing to run any code. Regenerate it with `uv run python make_prompt.py`.
+[`prompt.md`](prompt.md) package toutes les données — statistiques agrégées, répartitions par niveau, exposition par salaire/formation, et tous les métiers avec leurs scores et explications — dans un seul fichier conçu pour être collé dans un LLM. Régénérez-le avec `uv run python make_prompt.py`.
 
-## Setup
+## Installation
 
 ```
 uv sync
 uv run playwright install chromium
 ```
 
-Requires an OpenRouter API key in `.env`:
+Nécessite dans `.env` :
 ```
-OPENROUTER_API_KEY=your_key_here
+FRANCE_TRAVAIL_CLIENT_ID=votre_client_id
+FRANCE_TRAVAIL_CLIENT_SECRET=votre_client_secret
+OPENROUTER_API_KEY=votre_cle
 ```
 
-## Usage
+## Utilisation
 
 ```bash
-# Scrape BLS pages (only needed once, results are cached in html/)
-uv run python scrape.py
+# Scraper les données France Travail (une seule fois, résultats mis en cache dans html/)
+uv run python scrape_francetravail.py
 
-# Generate Markdown from HTML
+# Générer le Markdown à partir des données brutes
 uv run python process.py
 
-# Generate CSV summary
-uv run python make_csv.py
+# Générer le CSV résumé
+uv run python make_csv_fr.py
 
-# Score AI exposure (uses OpenRouter API)
+# Scorer l'exposition IA (utilise l'API OpenRouter)
 uv run python score.py
 
-# Build website data
+# Construire les données du site
 uv run python build_site_data.py
 
-# Serve the site locally
+# Servir le site localement
 cd site && python -m http.server 8000
 ```

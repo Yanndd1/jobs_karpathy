@@ -1,0 +1,522 @@
+{
+  "comptables": {
+    "salary_net_monthly": 2650,
+    "employment_count": 128000
+  },
+  "developpeurs-informatiques": {
+    "salary_net_monthly": 3850,
+    "employment_count": 182000
+  },
+  "infirmiers-soins-generaux": {
+    "salary_net_monthly": 2340,
+    "employment_count": 580000
+  },
+  "aides-soignants": {
+    "salary_net_monthly": 1890,
+    "employment_count": 355000
+  },
+  "enseignants-secondaire": {
+    "salary_net_monthly": 2680,
+    "employment_count": 530000
+  },
+  "enseignants-primaire": {
+    "salary_net_monthly": 2380,
+    "employment_count": 370000
+  },
+  "vendeurs-magasin": {
+    "salary_net_monthly": 2250,
+    "employment_count": 58000
+  },
+  "caissiers": {
+    "salary_net_monthly": 1780,
+    "employment_count": 218000
+  },
+  "cuisiniers": {
+    "salary_net_monthly": 1780,
+    "employment_count": 218000
+  },
+  "macons": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "electriciens-batiment": {
+    "salary_net_monthly": 2080,
+    "employment_count": 112000
+  },
+  "peintres-batiment": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "conducteurs-travaux": {
+    "salary_net_monthly": 3280,
+    "employment_count": 52000
+  },
+  "conducteurs-routiers": {
+    "salary_net_monthly": 2080,
+    "employment_count": 278000
+  },
+  "agents-transit": {
+    "salary_net_monthly": 2650,
+    "employment_count": 92000
+  },
+  "magasiniers": {
+    "salary_net_monthly": 2650,
+    "employment_count": 92000
+  },
+  "livreurs": {
+    "salary_net_monthly": 2080,
+    "employment_count": 278000
+  },
+  "medecins-generalistes": {
+    "salary_net_monthly": 5340,
+    "employment_count": 96000
+  },
+  "pharmaciens": {
+    "salary_net_monthly": 3850,
+    "employment_count": 74000
+  },
+  "kinesitherapeutes": {
+    "salary_net_monthly": 2800,
+    "employment_count": 105000
+  },
+  "chirurgiens-dentistes": {
+    "salary_net_monthly": 4200,
+    "employment_count": 40000
+  },
+  "sages-femmes": {
+    "salary_net_monthly": 2400,
+    "employment_count": 24000
+  },
+  "psychologues": {
+    "salary_net_monthly": 2200,
+    "employment_count": 80000
+  },
+  "avocats": {
+    "salary_net_monthly": 3800,
+    "employment_count": 79000
+  },
+  "notaires": {
+    "salary_net_monthly": 3600,
+    "employment_count": 17000
+  },
+  "agents-immobiliers": {
+    "salary_net_monthly": 2420,
+    "employment_count": 148000
+  },
+  "conseillers-bancaires": {
+    "salary_net_monthly": 2680,
+    "employment_count": 158000
+  },
+  "agents-assurance": {
+    "salary_net_monthly": 2680,
+    "employment_count": 158000
+  },
+  "agriculteurs": {
+    "salary_net_monthly": 1820,
+    "employment_count": 165000
+  },
+  "boulangers-patissiers": {
+    "salary_net_monthly": 1780,
+    "employment_count": 218000
+  },
+  "bouchers": {
+    "salary_net_monthly": 1780,
+    "employment_count": 218000
+  },
+  "coiffeurs": {
+    "salary_net_monthly": 1700,
+    "employment_count": 110000
+  },
+  "estheticiens": {
+    "salary_net_monthly": 1700,
+    "employment_count": 110000
+  },
+  "assistants-maternels": {
+    "salary_net_monthly": 1580,
+    "employment_count": 695000
+  },
+  "aides-domicile": {
+    "salary_net_monthly": 1580,
+    "employment_count": 695000
+  },
+  "secretaires": {
+    "salary_net_monthly": 4350,
+    "employment_count": 6200
+  },
+  "responsables-rh": {
+    "salary_net_monthly": 4080,
+    "employment_count": 42000
+  },
+  "controleurs-gestion": {
+    "salary_net_monthly": 3450,
+    "employment_count": 72000
+  },
+  "directeurs-magasin": {
+    "salary_net_monthly": 4200,
+    "employment_count": 180000
+  },
+  "responsables-logistiques": {
+    "salary_net_monthly": 2650,
+    "employment_count": 92000
+  },
+  "techniciens-maintenance-industrielle": {
+    "salary_net_monthly": 2180,
+    "employment_count": 92000
+  },
+  "soudeurs": {
+    "salary_net_monthly": 2180,
+    "employment_count": 82000
+  },
+  "operateurs-production": {
+    "salary_net_monthly": 2500,
+    "employment_count": 195000
+  },
+  "ingenieurs-mecanique": {
+    "salary_net_monthly": 3580,
+    "employment_count": 48000
+  },
+  "techniciens-qualite": {
+    "salary_net_monthly": 3580,
+    "employment_count": 48000
+  },
+  "designers-graphiques": {
+    "salary_net_monthly": 2380,
+    "employment_count": 48000
+  },
+  "journalistes": {
+    "salary_net_monthly": 2480,
+    "employment_count": 36000
+  },
+  "redacteurs-web": {
+    "salary_net_monthly": 2310,
+    "employment_count": 42000
+  },
+  "charges-communication": {
+    "salary_net_monthly": 2800,
+    "employment_count": 25000
+  },
+  "community-managers": {
+    "salary_net_monthly": 2500,
+    "employment_count": 95000
+  },
+  "administrateurs-systemes-reseaux": {
+    "salary_net_monthly": 3850,
+    "employment_count": 182000
+  },
+  "chefs-projets-informatiques": {
+    "salary_net_monthly": 3680,
+    "employment_count": 88000
+  },
+  "data-analysts": {
+    "salary_net_monthly": 4280,
+    "employment_count": 52000
+  },
+  "techniciens-support-informatique": {
+    "salary_net_monthly": 3680,
+    "employment_count": 88000
+  },
+  "architectes": {
+    "salary_net_monthly": 3450,
+    "employment_count": 38000
+  },
+  "geometres-topographes": {
+    "salary_net_monthly": 3450,
+    "employment_count": 38000
+  },
+  "mecaniciens-automobiles": {
+    "salary_net_monthly": 2000,
+    "employment_count": 120000
+  },
+  "carrossiers": {
+    "salary_net_monthly": 2000,
+    "employment_count": 120000
+  },
+  "policiers": {
+    "salary_net_monthly": 2250,
+    "employment_count": 155000
+  },
+  "gendarmes": {
+    "salary_net_monthly": 2250,
+    "employment_count": 155000
+  },
+  "educateurs-specialises": {
+    "salary_net_monthly": 2050,
+    "employment_count": 105000
+  },
+  "assistants-service-social": {
+    "salary_net_monthly": 2150,
+    "employment_count": 145000
+  },
+  "animateurs-socioculturels": {
+    "salary_net_monthly": 2050,
+    "employment_count": 105000
+  },
+  "directeurs-generaux": {
+    "salary_net_monthly": 5500,
+    "employment_count": 38000
+  },
+  "directeurs-financiers": {
+    "salary_net_monthly": 5500,
+    "employment_count": 38000
+  },
+  "responsables-marketing": {
+    "salary_net_monthly": 3150,
+    "employment_count": 28000
+  },
+  "commerciaux-terrain": {
+    "salary_net_monthly": 2890,
+    "employment_count": 242000
+  },
+  "acheteurs": {
+    "salary_net_monthly": 2890,
+    "employment_count": 242000
+  },
+  "charpentiers": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "couvreurs": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "menuisiers": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "techniciens-electronique": {
+    "salary_net_monthly": 2850,
+    "employment_count": 38000
+  },
+  "ingenieurs-informatique": {
+    "salary_net_monthly": 3850,
+    "employment_count": 182000
+  },
+  "experts-cybersecurite": {
+    "salary_net_monthly": 3850,
+    "employment_count": 182000
+  },
+  "techniciens-telecoms": {
+    "salary_net_monthly": 2850,
+    "employment_count": 38000
+  },
+  "traducteurs-interpretes": {
+    "salary_net_monthly": 2250,
+    "employment_count": 14000
+  },
+  "photographes": {
+    "salary_net_monthly": 2400,
+    "employment_count": 34000
+  },
+  "techniciens-audiovisuels": {
+    "salary_net_monthly": 2400,
+    "employment_count": 18000
+  },
+  "comediens": {
+    "salary_net_monthly": 1950,
+    "employment_count": 65000
+  },
+  "musiciens": {
+    "salary_net_monthly": 1780,
+    "employment_count": 22000
+  },
+  "agents-voyage": {
+    "salary_net_monthly": 2420,
+    "employment_count": 148000
+  },
+  "receptionnistes-hotel": {
+    "salary_net_monthly": 1840,
+    "employment_count": 62000
+  },
+  "chefs-cuisine": {
+    "salary_net_monthly": 1780,
+    "employment_count": 218000
+  },
+  "experts-comptables": {
+    "salary_net_monthly": 2650,
+    "employment_count": 128000
+  },
+  "auditeurs-financiers": {
+    "salary_net_monthly": 3680,
+    "employment_count": 22000
+  },
+  "opticiens-lunetiers": {
+    "salary_net_monthly": 3850,
+    "employment_count": 74000
+  },
+  "veterinaires": {
+    "salary_net_monthly": 3200,
+    "employment_count": 20000
+  },
+  "ingenieurs-agronomes": {
+    "salary_net_monthly": 1820,
+    "employment_count": 165000
+  },
+  "ouvriers-viticoles": {
+    "salary_net_monthly": 1650,
+    "employment_count": 52000
+  },
+  "chercheurs": {
+    "salary_net_monthly": 3400,
+    "employment_count": 93000
+  },
+  "formateurs": {
+    "salary_net_monthly": 2950,
+    "employment_count": 95000
+  },
+  "bibliothecaires": {
+    "salary_net_monthly": 3200,
+    "employment_count": 12000
+  },
+  "preparateurs-pharmacie": {
+    "salary_net_monthly": 3850,
+    "employment_count": 74000
+  },
+  "manipulateurs-radiologie": {
+    "salary_net_monthly": 6650,
+    "employment_count": 13500
+  },
+  "techniciens-labo-medical": {
+    "salary_net_monthly": 3850,
+    "employment_count": 74000
+  },
+  "conducteurs-bus": {
+    "salary_net_monthly": 3280,
+    "employment_count": 52000
+  },
+  "conducteurs-train": {
+    "salary_net_monthly": 3280,
+    "employment_count": 52000
+  },
+  "pilotes-avion": {
+    "salary_net_monthly": 7200,
+    "employment_count": 14000
+  },
+  "mecaniciens-aeronautiques": {
+    "salary_net_monthly": 2000,
+    "employment_count": 120000
+  },
+  "ingenieurs-energie": {
+    "salary_net_monthly": 3580,
+    "employment_count": 48000
+  },
+  "techniciens-energie-renouvelable": {
+    "salary_net_monthly": 2850,
+    "employment_count": 38000
+  },
+  "agents-accueil": {
+    "salary_net_monthly": 1840,
+    "employment_count": 62000
+  },
+  "operateurs-saisie": {
+    "salary_net_monthly": 3200,
+    "employment_count": 12000
+  },
+  "gestionnaires-paie": {
+    "salary_net_monthly": 2800,
+    "employment_count": 82000
+  },
+  "juristes-entreprise": {
+    "salary_net_monthly": 3800,
+    "employment_count": 65000
+  },
+  "huissiers-justice": {
+    "salary_net_monthly": 4200,
+    "employment_count": 3800
+  },
+  "greffiers": {
+    "salary_net_monthly": 2300,
+    "employment_count": 24000
+  },
+  "ingenieurs-btp": {
+    "salary_net_monthly": 3280,
+    "employment_count": 52000
+  },
+  "urbanistes": {
+    "salary_net_monthly": 3450,
+    "employment_count": 38000
+  },
+  "ingenieurs-environnement": {
+    "salary_net_monthly": 3580,
+    "employment_count": 48000
+  },
+  "techniciens-traitement-eaux": {
+    "salary_net_monthly": 2180,
+    "employment_count": 92000
+  },
+  "conseillers-insertion": {
+    "salary_net_monthly": 2500,
+    "employment_count": 11000
+  },
+  "moniteurs-educateurs": {
+    "salary_net_monthly": 2050,
+    "employment_count": 105000
+  },
+  "eleveurs": {
+    "salary_net_monthly": 1750,
+    "employment_count": 98000
+  },
+  "carreleurs": {
+    "salary_net_monthly": 1980,
+    "employment_count": 128000
+  },
+  "gestionnaires-patrimoine": {
+    "salary_net_monthly": 4200,
+    "employment_count": 32000
+  },
+  "traders": {
+    "salary_net_monthly": 4080,
+    "employment_count": 38000
+  },
+  "analystes-financiers": {
+    "salary_net_monthly": 4080,
+    "employment_count": 38000
+  },
+  "moniteurs-sport": {
+    "salary_net_monthly": 2400,
+    "employment_count": 18000
+  },
+  "dieteticiens": {
+    "salary_net_monthly": 3850,
+    "employment_count": 74000
+  },
+  "orthophonistes": {
+    "salary_net_monthly": 2800,
+    "employment_count": 105000
+  },
+  "ergotherapeutes": {
+    "salary_net_monthly": 2800,
+    "employment_count": 105000
+  },
+  "webmasters": {
+    "salary_net_monthly": 2310,
+    "employment_count": 42000
+  },
+  "chefs-produit": {
+    "salary_net_monthly": 3150,
+    "employment_count": 28000
+  },
+  "logisticiens": {
+    "salary_net_monthly": 2650,
+    "employment_count": 92000
+  },
+  "declarants-douane": {
+    "salary_net_monthly": 2650,
+    "employment_count": 92000
+  },
+  "techniciens-frigoristes": {
+    "salary_net_monthly": 2180,
+    "employment_count": 92000
+  },
+  "chaudronniers": {
+    "salary_net_monthly": 2180,
+    "employment_count": 82000
+  },
+  "usineurs": {
+    "salary_net_monthly": 2500,
+    "employment_count": 195000
+  },
+  "conducteurs-ligne-production": {
+    "salary_net_monthly": 2500,
+    "employment_count": 195000
+  }
+}

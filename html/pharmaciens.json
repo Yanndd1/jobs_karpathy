@@ -1,0 +1,14 @@
+{
+  "code": "J1202",
+  "libelle": "Pharmaciens",
+  "definition": "Le/la pharmaciens exerce un métier relevant de la catégorie sante. Ce métier est référencé sous le code ROME J1202.",
+  "acces": "",
+  "appellations": [
+    {
+      "libelle": "Pharmaciens"
+    }
+  ],
+  "competences": [],
+  "contexteTravail": [],
+  "mobilites": []
+}

@@ -1,0 +1,14 @@
+{
+  "code": "A1101",
+  "libelle": "Agriculteurs",
+  "definition": "Le/la agriculteurs exerce un métier relevant de la catégorie agriculture-peche. Ce métier est référencé sous le code ROME A1101.",
+  "acces": "",
+  "appellations": [
+    {
+      "libelle": "Agriculteurs"
+    }
+  ],
+  "competences": [],
+  "contexteTravail": [],
+  "mobilites": []
+}
