@@ -1,0 +1,2872 @@
+[
+ {
+  "slug": "comptables",
+  "title": "Comptables",
+  "faps": [
+   "L1X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés de la comptabilité"
+  ],
+  "effectif_total_fap": 230000,
+  "effectif": 230000,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "L1X60"
+  ],
+  "ancien_effectif": 230000,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "developpeurs-informatiques",
+  "title": "Développeurs informatiques",
+  "faps": [
+   "M1X80",
+   "M2X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens d'étude et de développement en informatique",
+   "Ingénieurs et cadres d'étude, recherche et développement en informatique et télécom"
+  ],
+  "effectif_total_fap": 449400,
+  "effectif": 449400,
+  "salaire_mensuel": 2974,
+  "salaire_niveau": [
+   "M1X80",
+   "M2X90"
+  ],
+  "ancien_effectif": 449400,
+  "ancien_salaire": 2974
+ },
+ {
+  "slug": "infirmiers-soins-generaux",
+  "title": "Infirmiers en soins généraux",
+  "faps": [
+   "V1X80a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Infirmiers généralistes et de prévention"
+  ],
+  "effectif_total_fap": 559600,
+  "effectif": 559600,
+  "salaire_mensuel": 2300,
+  "salaire_niveau": [
+   "V1X80a"
+  ],
+  "ancien_effectif": 559600,
+  "ancien_salaire": 2300
+ },
+ {
+  "slug": "aides-soignants",
+  "title": "Aides-soignants",
+  "faps": [
+   "V0X60c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Aides-soignants"
+  ],
+  "effectif_total_fap": 488700,
+  "effectif": 488700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "V0X60c"
+  ],
+  "ancien_effectif": 488700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "enseignants-secondaire",
+  "title": "Enseignants du secondaire",
+  "faps": [
+   "W0X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professeurs du secondaire"
+  ],
+  "effectif_total_fap": 598500,
+  "effectif": 598500,
+  "salaire_mensuel": 2700,
+  "salaire_niveau": [
+   "W0X90"
+  ],
+  "ancien_effectif": 598500,
+  "ancien_salaire": 2700
+ },
+ {
+  "slug": "enseignants-primaire",
+  "title": "Enseignants du primaire",
+  "faps": [
+   "W0X80"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professeurs des écoles"
+  ],
+  "effectif_total_fap": 456500,
+  "effectif": 456500,
+  "salaire_mensuel": 2500,
+  "salaire_niveau": [
+   "W0X80"
+  ],
+  "ancien_effectif": 456500,
+  "ancien_salaire": 2500
+ },
+ {
+  "slug": "agents-securite",
+  "title": "Agents de sécurité",
+  "faps": [
+   "T3X61"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents de sécurité et de surveillance"
+  ],
+  "effectif_total_fap": 212900,
+  "effectif": 212900,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "T3X61"
+  ],
+  "ancien_effectif": 212900,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "vendeurs-magasin",
+  "title": "Vendeurs en magasin",
+  "faps": [
+   "R1X60",
+   "R1X61",
+   "R1X62"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Vendeurs en produits alimentaires",
+   "Vendeurs en ameublement, équipement du foyer, bricolage",
+   "Vendeurs en habillement et accessoires, articles de luxe, de sport, de loisirs et culturels"
+  ],
+  "effectif_total_fap": 788900,
+  "effectif": 788900,
+  "salaire_mensuel": 1523,
+  "salaire_niveau": [
+   "R1X60",
+   "R1X61",
+   "R1X62"
+  ],
+  "ancien_effectif": 788900,
+  "ancien_salaire": 1523
+ },
+ {
+  "slug": "caissiers",
+  "title": "Caissiers",
+  "faps": [
+   "R0X61"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Caissiers"
+  ],
+  "effectif_total_fap": 168700,
+  "effectif": 168700,
+  "salaire_mensuel": 1425,
+  "salaire_niveau": [
+   "R0X61"
+  ],
+  "ancien_effectif": 168700,
+  "ancien_salaire": 1425
+ },
+ {
+  "slug": "cuisiniers",
+  "title": "Cuisiniers",
+  "faps": [
+   "S1X40"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cuisiniers"
+  ],
+  "effectif_total_fap": 219200,
+  "effectif": 219200,
+  "salaire_mensuel": 1730,
+  "salaire_niveau": [
+   "S1X40"
+  ],
+  "ancien_effectif": 219200,
+  "ancien_salaire": 1730
+ },
+ {
+  "slug": "serveurs-restaurant",
+  "title": "Serveurs de restaurant",
+  "faps": [
+   "S2X61"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Serveurs de cafés restaurants"
+  ],
+  "effectif_total_fap": 207700,
+  "effectif": 207700,
+  "salaire_mensuel": 1600,
+  "salaire_niveau": [
+   "S2X61"
+  ],
+  "ancien_effectif": 207700,
+  "ancien_salaire": 1600
+ },
+ {
+  "slug": "macons",
+  "title": "Maçons",
+  "faps": [
+   "B1X30",
+   "B1X31"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Maçons peu qualifiés",
+   "Maçons qualifiés"
+  ],
+  "effectif_total_fap": 197900,
+  "effectif": 197900,
+  "salaire_mensuel": 1927,
+  "salaire_niveau": [
+   "B1X30",
+   "B1X31"
+  ],
+  "ancien_effectif": 197900,
+  "ancien_salaire": 1927
+ },
+ {
+  "slug": "electriciens-batiment",
+  "title": "Électriciens du bâtiment",
+  "faps": [
+   "B2X32a",
+   "B2X32b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en électricité du bâtiment",
+   "Ouvriers qualifiés en électricité du bâtiment"
+  ],
+  "effectif_total_fap": 113500,
+  "effectif": 113500,
+  "salaire_mensuel": 1980,
+  "salaire_niveau": [
+   "B2X32",
+   "B2X32b"
+  ],
+  "ancien_effectif": 113500,
+  "ancien_salaire": 1980
+ },
+ {
+  "slug": "plombiers-chauffagistes",
+  "title": "Plombiers-chauffagistes",
+  "faps": [
+   "B2X33a",
+   "B2X33b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Plombiers, chauffagistes peu qualifiés",
+   "Plombiers, chauffagistes qualifiés"
+  ],
+  "effectif_total_fap": 129000,
+  "effectif": 129000,
+  "salaire_mensuel": 1994,
+  "salaire_niveau": [
+   "B2X33",
+   "B2X33b"
+  ],
+  "ancien_effectif": 129000,
+  "ancien_salaire": 1994
+ },
+ {
+  "slug": "peintres-batiment",
+  "title": "Peintres en bâtiment",
+  "faps": [
+   "B2X36a",
+   "B2X36b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en peinture en bâtiment",
+   "Ouvriers qualifiés en peinture en bâtiment"
+  ],
+  "effectif_total_fap": 114800,
+  "effectif": 114800,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "B2X36",
+   "B2X36b"
+  ],
+  "ancien_effectif": 114800,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "conducteurs-travaux",
+  "title": "Conducteurs de travaux",
+  "faps": [
+   "B6X74"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs de travaux et chefs de chantier non cadres"
+  ],
+  "effectif_total_fap": 120100,
+  "effectif": 120100,
+  "salaire_mensuel": 2372,
+  "salaire_niveau": [
+   "B6X74"
+  ],
+  "ancien_effectif": 120100,
+  "ancien_salaire": 2372
+ },
+ {
+  "slug": "conducteurs-routiers",
+  "title": "Conducteurs routiers",
+  "faps": [
+   "J3X43"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs routiers"
+  ],
+  "effectif_total_fap": 328300,
+  "effectif": 328300,
+  "salaire_mensuel": 2150,
+  "salaire_niveau": [
+   "J3X43"
+  ],
+  "ancien_effectif": 328300,
+  "ancien_salaire": 2150
+ },
+ {
+  "slug": "agents-transit",
+  "title": "Agents de transit",
+  "faps": [
+   "J5X40a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents d'exploitation des transports (hors ferroviaire)"
+  ],
+  "effectif_total_fap": 26700,
+  "effectif": 26700,
+  "salaire_mensuel": 2091,
+  "salaire_niveau": [
+   "J5X40"
+  ],
+  "ancien_effectif": 26700,
+  "ancien_salaire": 2091
+ },
+ {
+  "slug": "magasiniers",
+  "title": "Magasiniers",
+  "faps": [
+   "J0X33",
+   "J0X34"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Magasiniers et préparateurs de commandes peu qualifiés",
+   "Magasiniers et préparateurs de commande qualifiés"
+  ],
+  "effectif_total_fap": 466500,
+  "effectif": 466500,
+  "salaire_mensuel": 1645,
+  "salaire_niveau": [
+   "J0X33",
+   "J0X34"
+  ],
+  "ancien_effectif": 466500,
+  "ancien_salaire": 1645
+ },
+ {
+  "slug": "livreurs",
+  "title": "Livreurs",
+  "faps": [
+   "J3X42"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs et livreurs sur courte distance (hors distribution de documents)"
+  ],
+  "effectif_total_fap": 164500,
+  "effectif": 164500,
+  "salaire_mensuel": 1750,
+  "salaire_niveau": [
+   "J3X42"
+  ],
+  "ancien_effectif": 164500,
+  "ancien_salaire": 1750
+ },
+ {
+  "slug": "medecins-generalistes",
+  "title": "Médecins généralistes",
+  "faps": [
+   "V2X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Médecins"
+  ],
+  "effectif_total_fap": 292600,
+  "effectif": 292600,
+  "salaire_mensuel": 5000,
+  "salaire_niveau": [
+   "V2X90"
+  ],
+  "ancien_effectif": 292600,
+  "ancien_salaire": 5000
+ },
+ {
+  "slug": "pharmaciens",
+  "title": "Pharmaciens",
+  "faps": [
+   "V2X93a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Pharmaciens"
+  ],
+  "effectif_total_fap": 77400,
+  "effectif": 77400,
+  "salaire_mensuel": 3500,
+  "salaire_niveau": [
+   "V2X93"
+  ],
+  "ancien_effectif": 77400,
+  "ancien_salaire": 3500
+ },
+ {
+  "slug": "kinesitherapeutes",
+  "title": "Kinésithérapeutes",
+  "faps": [
+   "V3X80c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Masseurs-kinésithérapeuthes"
+  ],
+  "effectif_total_fap": 104900,
+  "effectif": 104900,
+  "salaire_mensuel": 2116,
+  "salaire_niveau": [
+   "V3X"
+  ],
+  "ancien_effectif": 104900,
+  "ancien_salaire": 2116
+ },
+ {
+  "slug": "chirurgiens-dentistes",
+  "title": "Chirurgiens-dentistes",
+  "faps": [
+   "V2X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Dentistes"
+  ],
+  "effectif_total_fap": 51800,
+  "effectif": 51800,
+  "salaire_mensuel": 4305,
+  "salaire_niveau": [
+   "V2X"
+  ],
+  "ancien_effectif": 51800,
+  "ancien_salaire": 4305
+ },
+ {
+  "slug": "sages-femmes",
+  "title": "Sages-femmes",
+  "faps": [
+   "V1X80d"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Sages-femmes"
+  ],
+  "effectif_total_fap": 29000,
+  "effectif": 29000,
+  "salaire_mensuel": 2400,
+  "salaire_niveau": [
+   "V1X80"
+  ],
+  "ancien_effectif": 29000,
+  "ancien_salaire": 2400
+ },
+ {
+  "slug": "psychologues",
+  "title": "Psychologues",
+  "faps": [
+   "V3X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Psychologues, psychothérapeutes"
+  ],
+  "effectif_total_fap": 97700,
+  "effectif": 97700,
+  "salaire_mensuel": 2116,
+  "salaire_niveau": [
+   "V3X"
+  ],
+  "ancien_effectif": 97700,
+  "ancien_salaire": 2116
+ },
+ {
+  "slug": "avocats",
+  "title": "Avocats",
+  "faps": [
+   "L5X91"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Juristes et avocats"
+  ],
+  "effectif_total_fap": 206700,
+  "effectif": 103350,
+  "salaire_mensuel": 2700,
+  "salaire_niveau": [
+   "L5X91"
+  ],
+  "ancien_effectif": 103350,
+  "ancien_salaire": 2700
+ },
+ {
+  "slug": "notaires",
+  "title": "Notaires",
+  "faps": [
+   "P3X90a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professionnels du droit en Aide et médiation judiciaire"
+  ],
+  "effectif_total_fap": 28500,
+  "effectif": 28500,
+  "salaire_mensuel": 2222,
+  "salaire_niveau": [
+   "P3X90"
+  ],
+  "ancien_effectif": 28500,
+  "ancien_salaire": 2222
+ },
+ {
+  "slug": "agents-immobiliers",
+  "title": "Agents immobiliers",
+  "faps": [
+   "R3X84",
+   "R4X93a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés et professions intermédiaires de l'immobilier",
+   "Cadres agents immobiliers"
+  ],
+  "effectif_total_fap": 192000,
+  "effectif": 192000,
+  "salaire_mensuel": 2493,
+  "salaire_niveau": [
+   "R3X84",
+   "R4X93"
+  ],
+  "ancien_effectif": 192000,
+  "ancien_salaire": 2493
+ },
+ {
+  "slug": "conseillers-bancaires",
+  "title": "Conseillers bancaires",
+  "faps": [
+   "QCX01"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés et techniciens commerciaux de la banque"
+  ],
+  "effectif_total_fap": 147300,
+  "effectif": 147300,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "QCX01"
+  ],
+  "ancien_effectif": 147300,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "agents-assurance",
+  "title": "Agents d'assurance",
+  "faps": [
+   "QDX01",
+   "QDX02"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés et techniciens commerciaux des assurances",
+   "Cadres et indépendants commerciaux des assurances"
+  ],
+  "effectif_total_fap": 113500,
+  "effectif": 113500,
+  "salaire_mensuel": 2073,
+  "salaire_niveau": [
+   "QDX",
+   "QDX01"
+  ],
+  "ancien_effectif": 113500,
+  "ancien_salaire": 2073
+ },
+ {
+  "slug": "agriculteurs",
+  "title": "Agriculteurs",
+  "faps": [
+   "A0X40"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agriculteurs"
+  ],
+  "effectif_total_fap": 242900,
+  "effectif": 242900,
+  "salaire_mensuel": 1689,
+  "salaire_niveau": [
+   "A0X40"
+  ],
+  "ancien_effectif": 242900,
+  "ancien_salaire": 1689
+ },
+ {
+  "slug": "jardiniers-paysagistes",
+  "title": "Jardiniers-paysagistes",
+  "faps": [
+   "A1X41"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Jardiniers des espaces verts et naturels"
+  ],
+  "effectif_total_fap": 263000,
+  "effectif": 263000,
+  "salaire_mensuel": 1667,
+  "salaire_niveau": [
+   "A1X41"
+  ],
+  "ancien_effectif": 263000,
+  "ancien_salaire": 1667
+ },
+ {
+  "slug": "boulangers-patissiers",
+  "title": "Boulangers-pâtissiers",
+  "faps": [
+   "S0X42"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Boulangers, pâtissiers"
+  ],
+  "effectif_total_fap": 165100,
+  "effectif": 165100,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "S0X42"
+  ],
+  "ancien_effectif": 165100,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "bouchers",
+  "title": "Bouchers",
+  "faps": [
+   "S0X40"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Bouchers"
+  ],
+  "effectif_total_fap": 73200,
+  "effectif": 73200,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "S0X40"
+  ],
+  "ancien_effectif": 73200,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "coiffeurs",
+  "title": "Coiffeurs",
+  "faps": [
+   "T0X60a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Coiffeurs"
+  ],
+  "effectif_total_fap": 156800,
+  "effectif": 156800,
+  "salaire_mensuel": 1500,
+  "salaire_niveau": [
+   "T0X60a"
+  ],
+  "ancien_effectif": 156800,
+  "ancien_salaire": 1500
+ },
+ {
+  "slug": "estheticiens",
+  "title": "Esthéticiens",
+  "faps": [
+   "T0X60b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Esthéticiens, manucure, hydrothérapie"
+  ],
+  "effectif_total_fap": 124100,
+  "effectif": 124100,
+  "salaire_mensuel": 1500,
+  "salaire_niveau": [
+   "T0X60"
+  ],
+  "ancien_effectif": 124100,
+  "ancien_salaire": 1500
+ },
+ {
+  "slug": "assistants-maternels",
+  "title": "Assistants maternels",
+  "faps": [
+   "T2B60a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Assistants maternels, assistants familiaux et gardes à domicile"
+  ],
+  "effectif_total_fap": 367100,
+  "effectif": 367100,
+  "salaire_mensuel": 1450,
+  "salaire_niveau": [
+   "T2B60a"
+  ],
+  "ancien_effectif": 367100,
+  "ancien_salaire": 1450
+ },
+ {
+  "slug": "aides-domicile",
+  "title": "Aides à domicile",
+  "faps": [
+   "T1X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Personnels de ménage chez des particuliers"
+  ],
+  "effectif_total_fap": 182100,
+  "effectif": 182100,
+  "salaire_mensuel": null,
+  "salaire_niveau": [],
+  "ancien_effectif": 182100,
+  "ancien_salaire": null
+ },
+ {
+  "slug": "agents-entretien",
+  "title": "Agents d'entretien",
+  "faps": [
+   "T4X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents d'entretien de locaux"
+  ],
+  "effectif_total_fap": 504500,
+  "effectif": 504500,
+  "salaire_mensuel": 1586,
+  "salaire_niveau": [
+   "T4X60"
+  ],
+  "ancien_effectif": 504500,
+  "ancien_salaire": 1586
+ },
+ {
+  "slug": "secretaires",
+  "title": "Secrétaires",
+  "faps": [
+   "L0X60a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Secrétaires"
+  ],
+  "effectif_total_fap": 468600,
+  "effectif": 468600,
+  "salaire_mensuel": 1725,
+  "salaire_niveau": [
+   "L0X60a"
+  ],
+  "ancien_effectif": 468600,
+  "ancien_salaire": 1725
+ },
+ {
+  "slug": "assistants-direction",
+  "title": "Assistants de direction",
+  "faps": [
+   "L3X80b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Secrétaires et assistanat de direction"
+  ],
+  "effectif_total_fap": 198600,
+  "effectif": 198600,
+  "salaire_mensuel": 2127,
+  "salaire_niveau": [
+   "L3X80b"
+  ],
+  "ancien_effectif": 198600,
+  "ancien_salaire": 2127
+ },
+ {
+  "slug": "responsables-rh",
+  "title": "Responsables des ressources humaines",
+  "faps": [
+   "L5X92"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres des ressources humaines et du recrutement"
+  ],
+  "effectif_total_fap": 207400,
+  "effectif": 207400,
+  "salaire_mensuel": 3093,
+  "salaire_niveau": [
+   "L5X92"
+  ],
+  "ancien_effectif": 207400,
+  "ancien_salaire": 3093
+ },
+ {
+  "slug": "controleurs-gestion",
+  "title": "Contrôleurs de gestion",
+  "faps": [
+   "L4X81"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise des services financiers ou comptables"
+  ],
+  "effectif_total_fap": 164100,
+  "effectif": 164100,
+  "salaire_mensuel": 2100,
+  "salaire_niveau": [
+   "L4X81"
+  ],
+  "ancien_effectif": 164100,
+  "ancien_salaire": 2100
+ },
+ {
+  "slug": "directeurs-magasin",
+  "title": "Directeurs de magasin",
+  "faps": [
+   "R4X92"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres du management des magasins"
+  ],
+  "effectif_total_fap": 143700,
+  "effectif": 143700,
+  "salaire_mensuel": 2750,
+  "salaire_niveau": [
+   "R4X92"
+  ],
+  "ancien_effectif": 143700,
+  "ancien_salaire": 2750
+ },
+ {
+  "slug": "responsables-logistiques",
+  "title": "Responsables logistiques",
+  "faps": [
+   "J1X80",
+   "J6X92"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Responsable du magasinage et de la logistique (non cadres)",
+   "Cadres de la logistique"
+  ],
+  "effectif_total_fap": 174500,
+  "effectif": 174500,
+  "salaire_mensuel": 2454,
+  "salaire_niveau": [
+   "J1X80",
+   "J6X92"
+  ],
+  "ancien_effectif": 174500,
+  "ancien_salaire": 2454
+ },
+ {
+  "slug": "techniciens-maintenance-industrielle",
+  "title": "Techniciens de maintenance industrielle",
+  "faps": [
+   "G1X72a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise en maintenance mécanique et entretien d'équipements industriels"
+  ],
+  "effectif_total_fap": 106300,
+  "effectif": 106300,
+  "salaire_mensuel": 2400,
+  "salaire_niveau": [
+   "G1X72a"
+  ],
+  "ancien_effectif": 106300,
+  "ancien_salaire": 2400
+ },
+ {
+  "slug": "soudeurs",
+  "title": "Soudeurs",
+  "faps": [
+   "D1X33a",
+   "D1X33b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en soudage",
+   "Ouvriers qualifiés en soudage"
+  ],
+  "effectif_total_fap": 34500,
+  "effectif": 34500,
+  "salaire_mensuel": 1936,
+  "salaire_niveau": [
+   "D1X"
+  ],
+  "ancien_effectif": 34500,
+  "ancien_salaire": 1936
+ },
+ {
+  "slug": "operateurs-production",
+  "title": "Opérateurs de production",
+  "faps": [
+   "E4X32a",
+   "E4X32b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés du conditionnement, du tri et de l'emballage",
+   "Ouvriers qualifiés du conditionnement, du tri et de l'emballage"
+  ],
+  "effectif_total_fap": 96200,
+  "effectif": 96200,
+  "salaire_mensuel": 1644,
+  "salaire_niveau": [
+   "E4X32a",
+   "E4X32b"
+  ],
+  "ancien_effectif": 96200,
+  "ancien_salaire": 1644
+ },
+ {
+  "slug": "ingenieurs-mecanique",
+  "title": "Ingénieurs en mécanique",
+  "faps": [
+   "N1X90"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Ingénieurs et cadres d'étude, recherche et développement (industrie)"
+  ],
+  "effectif_total_fap": 307800,
+  "effectif": 153900,
+  "salaire_mensuel": 3492,
+  "salaire_niveau": [
+   "N1X90"
+  ],
+  "ancien_effectif": 153900,
+  "ancien_salaire": 3492
+ },
+ {
+  "slug": "techniciens-qualite",
+  "title": "Techniciens qualité",
+  "faps": [
+   "H0X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens du contrôle qualité"
+  ],
+  "effectif_total_fap": 100100,
+  "effectif": 100100,
+  "salaire_mensuel": 2183,
+  "salaire_niveau": [
+   "H0X90"
+  ],
+  "ancien_effectif": 100100,
+  "ancien_salaire": 2183
+ },
+ {
+  "slug": "designers-graphiques",
+  "title": "Designers graphiques",
+  "faps": [
+   "U1X82c"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Concepteur et réalisateur multimédia"
+  ],
+  "effectif_total_fap": 132600,
+  "effectif": 66300,
+  "salaire_mensuel": 2200,
+  "salaire_niveau": [
+   "U1X82c"
+  ],
+  "ancien_effectif": 66300,
+  "ancien_salaire": 2200
+ },
+ {
+  "slug": "journalistes",
+  "title": "Journalistes",
+  "faps": [
+   "U0X92b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Journalistes et responsable de l'information média"
+  ],
+  "effectif_total_fap": 65800,
+  "effectif": 65800,
+  "salaire_mensuel": 2723,
+  "salaire_niveau": [
+   "U0X92b"
+  ],
+  "ancien_effectif": 65800,
+  "ancien_salaire": 2723
+ },
+ {
+  "slug": "redacteurs-web",
+  "title": "Rédacteurs web",
+  "faps": [
+   "U0X80"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Assistants de la communication"
+  ],
+  "effectif_total_fap": 124900,
+  "effectif": 62450,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "U0X80"
+  ],
+  "ancien_effectif": 62450,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "charges-communication",
+  "title": "Chargés de communication",
+  "faps": [
+   "U0X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres de la communication"
+  ],
+  "effectif_total_fap": 137800,
+  "effectif": 137800,
+  "salaire_mensuel": 3265,
+  "salaire_niveau": [
+   "U0X90"
+  ],
+  "ancien_effectif": 137800,
+  "ancien_salaire": 3265
+ },
+ {
+  "slug": "community-managers",
+  "title": "Community managers",
+  "faps": [
+   "U0X80"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Assistants de la communication"
+  ],
+  "effectif_total_fap": 124900,
+  "effectif": 62450,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "U0X80"
+  ],
+  "ancien_effectif": 62450,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "administrateurs-systemes-reseaux",
+  "title": "Administrateurs systèmes et réseaux",
+  "faps": [
+   "M1X81a",
+   "M2X92a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens de production, exploitation et administration des systèmes d'information",
+   "Responsables de production, d'exploitation et d'administration des systèmes d'information et télécom"
+  ],
+  "effectif_total_fap": 135200,
+  "effectif": 135200,
+  "salaire_mensuel": 2842,
+  "salaire_niveau": [
+   "M1X81a",
+   "M2X92a"
+  ],
+  "ancien_effectif": 135200,
+  "ancien_salaire": 2842
+ },
+ {
+  "slug": "chefs-projets-informatiques",
+  "title": "Chefs de projets informatiques",
+  "faps": [
+   "M2X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Chefs de projet et directeurs de service informatique"
+  ],
+  "effectif_total_fap": 214400,
+  "effectif": 214400,
+  "salaire_mensuel": 3600,
+  "salaire_niveau": [
+   "M2X91"
+  ],
+  "ancien_effectif": 214400,
+  "ancien_salaire": 3600
+ },
+ {
+  "slug": "data-analysts",
+  "title": "Data analysts",
+  "faps": [
+   "L5X93"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Chargés d'études socio-économiques"
+  ],
+  "effectif_total_fap": 78400,
+  "effectif": 78400,
+  "salaire_mensuel": 3000,
+  "salaire_niveau": [
+   "L5X93"
+  ],
+  "ancien_effectif": 78400,
+  "ancien_salaire": 3000
+ },
+ {
+  "slug": "techniciens-support-informatique",
+  "title": "Techniciens support informatique",
+  "faps": [
+   "M1X81c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens de maintenance, support et service aux utilisateurs en informatique"
+  ],
+  "effectif_total_fap": 101900,
+  "effectif": 101900,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "M1X81c"
+  ],
+  "ancien_effectif": 101900,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "architectes",
+  "title": "Architectes",
+  "faps": [
+   "B7X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Architectes"
+  ],
+  "effectif_total_fap": 77400,
+  "effectif": 77400,
+  "salaire_mensuel": 3000,
+  "salaire_niveau": [
+   "B7X"
+  ],
+  "ancien_effectif": 77400,
+  "ancien_salaire": 3000
+ },
+ {
+  "slug": "geometres-topographes",
+  "title": "Géomètres-topographes",
+  "faps": [
+   "B6X70"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Géomètres"
+  ],
+  "effectif_total_fap": 14300,
+  "effectif": 14300,
+  "salaire_mensuel": 2300,
+  "salaire_niveau": [
+   "B6X"
+  ],
+  "ancien_effectif": 14300,
+  "ancien_salaire": 2300
+ },
+ {
+  "slug": "mecaniciens-automobiles",
+  "title": "Mécaniciens automobiles",
+  "faps": [
+   "G0B41b",
+   "G0B41e"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en mécanique automobile",
+   "Ouvriers qualifiés en Mécanique automobile"
+  ],
+  "effectif_total_fap": 207100,
+  "effectif": 207100,
+  "salaire_mensuel": 1825,
+  "salaire_niveau": [
+   "G0B41",
+   "G0B41e"
+  ],
+  "ancien_effectif": 207100,
+  "ancien_salaire": 1825
+ },
+ {
+  "slug": "carrossiers",
+  "title": "Carrossiers",
+  "faps": [
+   "G0B40a",
+   "G0B40b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en réparation de carrosserie",
+   "Ouvriers qualifiés en réparation de carrosserie"
+  ],
+  "effectif_total_fap": 61200,
+  "effectif": 61200,
+  "salaire_mensuel": 1996,
+  "salaire_niveau": [
+   "G0B40",
+   "G0B40b"
+  ],
+  "ancien_effectif": 61200,
+  "ancien_salaire": 1996
+ },
+ {
+  "slug": "sapeurs-pompiers",
+  "title": "Sapeurs-pompiers",
+  "faps": [
+   "P4X60b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Sécurité civile et secours"
+  ],
+  "effectif_total_fap": 56900,
+  "effectif": 56900,
+  "salaire_mensuel": 2500,
+  "salaire_niveau": [
+   "P4X60b"
+  ],
+  "ancien_effectif": 56900,
+  "ancien_salaire": 2500
+ },
+ {
+  "slug": "policiers",
+  "title": "Policiers",
+  "faps": [
+   "P4X60c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Sécurité publique"
+  ],
+  "effectif_total_fap": 193900,
+  "effectif": 193900,
+  "salaire_mensuel": 2550,
+  "salaire_niveau": [
+   "P4X60c"
+  ],
+  "ancien_effectif": 193900,
+  "ancien_salaire": 2550
+ },
+ {
+  "slug": "gendarmes",
+  "title": "Gendarmes",
+  "faps": [
+   "P4X60a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Personnel de la Défense"
+  ],
+  "effectif_total_fap": 76800,
+  "effectif": 76800,
+  "salaire_mensuel": 2155,
+  "salaire_niveau": [
+   "P4X60a"
+  ],
+  "ancien_effectif": 76800,
+  "ancien_salaire": 2155
+ },
+ {
+  "slug": "educateurs-specialises",
+  "title": "Éducateurs spécialisés",
+  "faps": [
+   "V4X83b"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Éducateurs techniques spécialisés, moniteurs d’ateliers"
+  ],
+  "effectif_total_fap": 197400,
+  "effectif": 98700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "V4X83b"
+  ],
+  "ancien_effectif": 98700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "assistants-service-social",
+  "title": "Assistants de service social",
+  "faps": [
+   "V4X85c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Action et médiation sociale"
+  ],
+  "effectif_total_fap": 109600,
+  "effectif": 109600,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "V4X85c"
+  ],
+  "ancien_effectif": 109600,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "animateurs-socioculturels",
+  "title": "Animateurs socioculturels",
+  "faps": [
+   "V5X81"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professionnels de l'animation socioculturelle"
+  ],
+  "effectif_total_fap": 205900,
+  "effectif": 205900,
+  "salaire_mensuel": 1680,
+  "salaire_niveau": [
+   "V5X81"
+  ],
+  "ancien_effectif": 205900,
+  "ancien_salaire": 1680
+ },
+ {
+  "slug": "directeurs-generaux",
+  "title": "Directeurs généraux",
+  "faps": [
+   "L6X00"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Dirigeants de petites et moyennes entreprises de moins de 50 salariés"
+  ],
+  "effectif_total_fap": 138200,
+  "effectif": 138200,
+  "salaire_mensuel": 5100,
+  "salaire_niveau": [
+   "L6X"
+  ],
+  "ancien_effectif": 138200,
+  "ancien_salaire": 5100
+ },
+ {
+  "slug": "directeurs-financiers",
+  "title": "Directeurs financiers",
+  "faps": [
+   "L5X90"
+  ],
+  "n_partage": 3,
+  "fap_labels": [
+   "Cadres administratifs, comptables et financiers (hors juristes)"
+  ],
+  "effectif_total_fap": 750200,
+  "effectif": 250067,
+  "salaire_mensuel": 3200,
+  "salaire_niveau": [
+   "L5X90"
+  ],
+  "ancien_effectif": 250067,
+  "ancien_salaire": 3200
+ },
+ {
+  "slug": "responsables-marketing",
+  "title": "Responsables marketing",
+  "faps": [
+   "R4X90b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres commerciaux et de la mercatique"
+  ],
+  "effectif_total_fap": 462700,
+  "effectif": 462700,
+  "salaire_mensuel": 3500,
+  "salaire_niveau": [
+   "R4X90b"
+  ],
+  "ancien_effectif": 462700,
+  "ancien_salaire": 3500
+ },
+ {
+  "slug": "commerciaux-terrain",
+  "title": "Commerciaux terrain",
+  "faps": [
+   "R2X80a",
+   "R4X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Attachés commerciaux (hors médical)",
+   "Technico-commerciaux"
+  ],
+  "effectif_total_fap": 356900,
+  "effectif": 356900,
+  "salaire_mensuel": 2592,
+  "salaire_niveau": [
+   "R2X80a",
+   "R4X91"
+  ],
+  "ancien_effectif": 356900,
+  "ancien_salaire": 2592
+ },
+ {
+  "slug": "televendeurs",
+  "title": "Télévendeurs",
+  "faps": [
+   "R1X67"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Télévendeurs et téléconseillers"
+  ],
+  "effectif_total_fap": 64100,
+  "effectif": 32050,
+  "salaire_mensuel": 1490,
+  "salaire_niveau": [
+   "R1X67"
+  ],
+  "ancien_effectif": 32050,
+  "ancien_salaire": 1490
+ },
+ {
+  "slug": "acheteurs",
+  "title": "Acheteurs",
+  "faps": [
+   "R4X90a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Acheteurs"
+  ],
+  "effectif_total_fap": 85200,
+  "effectif": 85200,
+  "salaire_mensuel": 3262,
+  "salaire_niveau": [
+   "R4X90a"
+  ],
+  "ancien_effectif": 85200,
+  "ancien_salaire": 3262
+ },
+ {
+  "slug": "charpentiers",
+  "title": "Charpentiers",
+  "faps": [
+   "B1X33a",
+   "B1X33b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Charpentiers peu qualifiés",
+   "Charpentiers qualifiés"
+  ],
+  "effectif_total_fap": 64700,
+  "effectif": 64700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "B1X33",
+   "B1X33b"
+  ],
+  "ancien_effectif": 64700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "couvreurs",
+  "title": "Couvreurs",
+  "faps": [
+   "B1X34a",
+   "B1X34b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Couvreurs peu qualifiés",
+   "Couvreurs qualifiés"
+  ],
+  "effectif_total_fap": 66900,
+  "effectif": 66900,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "B1X34"
+  ],
+  "ancien_effectif": 66900,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "menuisiers",
+  "title": "Menuisiers",
+  "faps": [
+   "B2X37",
+   "B2X38"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en menuiserie et en agencement du BTP",
+   "Ouvriers qualifiés en menuiserie et en agencement du BTP"
+  ],
+  "effectif_total_fap": 189100,
+  "effectif": 189100,
+  "salaire_mensuel": 1909,
+  "salaire_niveau": [
+   "B2X",
+   "B2X38"
+  ],
+  "ancien_effectif": 189100,
+  "ancien_salaire": 1909
+ },
+ {
+  "slug": "techniciens-electronique",
+  "title": "Techniciens en électronique",
+  "faps": [
+   "G0A41",
+   "G1X77b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers de la maintenance en électricité et en électronique",
+   "Techniciens et agents de maîtrise en Installation et maintenance électronique"
+  ],
+  "effectif_total_fap": 43800,
+  "effectif": 43800,
+  "salaire_mensuel": 2025,
+  "salaire_niveau": [
+   "G0A",
+   "G1X77"
+  ],
+  "ancien_effectif": 43800,
+  "ancien_salaire": 2025
+ },
+ {
+  "slug": "ingenieurs-informatique",
+  "title": "Ingénieurs en informatique",
+  "faps": [
+   "M2X93"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Experts et consultants en systèmes d'information"
+  ],
+  "effectif_total_fap": 216300,
+  "effectif": 108150,
+  "salaire_mensuel": 3200,
+  "salaire_niveau": [
+   "M2X93"
+  ],
+  "ancien_effectif": 108150,
+  "ancien_salaire": 3200
+ },
+ {
+  "slug": "experts-cybersecurite",
+  "title": "Experts en cybersécurité",
+  "faps": [
+   "M2X93"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Experts et consultants en systèmes d'information"
+  ],
+  "effectif_total_fap": 216300,
+  "effectif": 108150,
+  "salaire_mensuel": 3200,
+  "salaire_niveau": [
+   "M2X93"
+  ],
+  "ancien_effectif": 108150,
+  "ancien_salaire": 3200
+ },
+ {
+  "slug": "techniciens-telecoms",
+  "title": "Techniciens télécoms",
+  "faps": [
+   "G1X75"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise en assistance et support technique client et en installation et maintenance télécoms et courants faibles"
+  ],
+  "effectif_total_fap": 23800,
+  "effectif": 23800,
+  "salaire_mensuel": 2201,
+  "salaire_niveau": [
+   "G1X"
+  ],
+  "ancien_effectif": 23800,
+  "ancien_salaire": 2201
+ },
+ {
+  "slug": "traducteurs-interpretes",
+  "title": "Traducteurs-interprètes",
+  "faps": [
+   "U0X81"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Interprètes"
+  ],
+  "effectif_total_fap": 18600,
+  "effectif": 18600,
+  "salaire_mensuel": 2400,
+  "salaire_niveau": [
+   "U0X"
+  ],
+  "ancien_effectif": 18600,
+  "ancien_salaire": 2400
+ },
+ {
+  "slug": "photographes",
+  "title": "Photographes",
+  "faps": [
+   "U1X81"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Photographes"
+  ],
+  "effectif_total_fap": 31800,
+  "effectif": 31800,
+  "salaire_mensuel": 2266,
+  "salaire_niveau": [
+   "U1X"
+  ],
+  "ancien_effectif": 31800,
+  "ancien_salaire": 2266
+ },
+ {
+  "slug": "techniciens-audiovisuels",
+  "title": "Techniciens audiovisuels",
+  "faps": [
+   "U1X80b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens de la réalisation cinématographique et audiovisuelle"
+  ],
+  "effectif_total_fap": 46800,
+  "effectif": 46800,
+  "salaire_mensuel": 2500,
+  "salaire_niveau": [
+   "U1X80"
+  ],
+  "ancien_effectif": 46800,
+  "ancien_salaire": 2500
+ },
+ {
+  "slug": "comediens",
+  "title": "Comédiens",
+  "faps": [
+   "U1X91a"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Artistes interprètes et metteurs en scène"
+  ],
+  "effectif_total_fap": 78300,
+  "effectif": 39150,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "U1X91"
+  ],
+  "ancien_effectif": 39150,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "musiciens",
+  "title": "Musiciens",
+  "faps": [
+   "U1X91a"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Artistes interprètes et metteurs en scène"
+  ],
+  "effectif_total_fap": 78300,
+  "effectif": 39150,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "U1X91"
+  ],
+  "ancien_effectif": 39150,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "agents-voyage",
+  "title": "Agents de voyage",
+  "faps": [
+   "J4X63"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés du tourisme et agent de billetterie des transports"
+  ],
+  "effectif_total_fap": 37900,
+  "effectif": 37900,
+  "salaire_mensuel": 1828,
+  "salaire_niveau": [
+   "J4X"
+  ],
+  "ancien_effectif": 37900,
+  "ancien_salaire": 1828
+ },
+ {
+  "slug": "receptionnistes-hotel",
+  "title": "Réceptionnistes d'hôtel",
+  "faps": [
+   "S2X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés de l'hôtellerie"
+  ],
+  "effectif_total_fap": 98900,
+  "effectif": 98900,
+  "salaire_mensuel": 1608,
+  "salaire_niveau": [
+   "S2X60"
+  ],
+  "ancien_effectif": 98900,
+  "ancien_salaire": 1608
+ },
+ {
+  "slug": "guides-touristiques",
+  "title": "Guides touristiques",
+  "faps": [
+   "J4X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents et hôtesses d'accompagnement"
+  ],
+  "effectif_total_fap": 25400,
+  "effectif": 25400,
+  "salaire_mensuel": 1828,
+  "salaire_niveau": [
+   "J4X"
+  ],
+  "ancien_effectif": 25400,
+  "ancien_salaire": 1828
+ },
+ {
+  "slug": "chefs-cuisine",
+  "title": "Chefs de cuisine",
+  "faps": [
+   "S1X80"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Chefs cuisiniers"
+  ],
+  "effectif_total_fap": 64100,
+  "effectif": 64100,
+  "salaire_mensuel": 1942,
+  "salaire_niveau": [
+   "S1X80"
+  ],
+  "ancien_effectif": 64100,
+  "ancien_salaire": 1942
+ },
+ {
+  "slug": "experts-comptables",
+  "title": "Experts-comptables",
+  "faps": [
+   "L5X90"
+  ],
+  "n_partage": 3,
+  "fap_labels": [
+   "Cadres administratifs, comptables et financiers (hors juristes)"
+  ],
+  "effectif_total_fap": 750200,
+  "effectif": 250067,
+  "salaire_mensuel": 3200,
+  "salaire_niveau": [
+   "L5X90"
+  ],
+  "ancien_effectif": 250067,
+  "ancien_salaire": 3200
+ },
+ {
+  "slug": "auditeurs-financiers",
+  "title": "Auditeurs financiers",
+  "faps": [
+   "L5X90"
+  ],
+  "n_partage": 3,
+  "fap_labels": [
+   "Cadres administratifs, comptables et financiers (hors juristes)"
+  ],
+  "effectif_total_fap": 750200,
+  "effectif": 250067,
+  "salaire_mensuel": 3200,
+  "salaire_niveau": [
+   "L5X90"
+  ],
+  "ancien_effectif": 250067,
+  "ancien_salaire": 3200
+ },
+ {
+  "slug": "opticiens-lunetiers",
+  "title": "Opticiens-lunetiers",
+  "faps": [
+   "V3X71b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Optique – lunetterie"
+  ],
+  "effectif_total_fap": 58200,
+  "effectif": 58200,
+  "salaire_mensuel": 2021,
+  "salaire_niveau": [
+   "V3X71"
+  ],
+  "ancien_effectif": 58200,
+  "ancien_salaire": 2021
+ },
+ {
+  "slug": "veterinaires",
+  "title": "Vétérinaires",
+  "faps": [
+   "V2X92"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Vétérinaires"
+  ],
+  "effectif_total_fap": 29500,
+  "effectif": 29500,
+  "salaire_mensuel": 4305,
+  "salaire_niveau": [
+   "V2X"
+  ],
+  "ancien_effectif": 29500,
+  "ancien_salaire": 4305
+ },
+ {
+  "slug": "ingenieurs-agronomes",
+  "title": "Ingénieurs agronomes",
+  "faps": [
+   "A2X90"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ingénieurs, cadres techniques de l'agriculture"
+  ],
+  "effectif_total_fap": 41000,
+  "effectif": 41000,
+  "salaire_mensuel": 2200,
+  "salaire_niveau": [
+   "A2X"
+  ],
+  "ancien_effectif": 41000,
+  "ancien_salaire": 2200
+ },
+ {
+  "slug": "ouvriers-viticoles",
+  "title": "Ouvriers viticoles",
+  "faps": [
+   "A1X42"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Viticulteurs, arboriculteurs"
+  ],
+  "effectif_total_fap": 112000,
+  "effectif": 112000,
+  "salaire_mensuel": 1526,
+  "salaire_niveau": [
+   "A1X42"
+  ],
+  "ancien_effectif": 112000,
+  "ancien_salaire": 1526
+ },
+ {
+  "slug": "chercheurs",
+  "title": "Chercheurs",
+  "faps": [
+   "N1X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Chercheurs (sauf industrie et enseignement supérieur)"
+  ],
+  "effectif_total_fap": 89500,
+  "effectif": 89500,
+  "salaire_mensuel": 2712,
+  "salaire_niveau": [
+   "N1X91"
+  ],
+  "ancien_effectif": 89500,
+  "ancien_salaire": 2712
+ },
+ {
+  "slug": "formateurs",
+  "title": "Formateurs",
+  "faps": [
+   "W1X80b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Formateurs professionnels"
+  ],
+  "effectif_total_fap": 153800,
+  "effectif": 153800,
+  "salaire_mensuel": 2240,
+  "salaire_niveau": [
+   "W1X80b"
+  ],
+  "ancien_effectif": 153800,
+  "ancien_salaire": 2240
+ },
+ {
+  "slug": "bibliothecaires",
+  "title": "Bibliothécaires",
+  "faps": [
+   "U0X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres et techniciens de la documentation"
+  ],
+  "effectif_total_fap": 74300,
+  "effectif": 74300,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "U0X91"
+  ],
+  "ancien_effectif": 74300,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "preparateurs-pharmacie",
+  "title": "Préparateurs en pharmacie",
+  "faps": [
+   "V3X70c"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Préparation en pharmacie"
+  ],
+  "effectif_total_fap": 91700,
+  "effectif": 91700,
+  "salaire_mensuel": 1940,
+  "salaire_niveau": [
+   "V3X70c"
+  ],
+  "ancien_effectif": 91700,
+  "ancien_salaire": 1940
+ },
+ {
+  "slug": "ambulanciers",
+  "title": "Ambulanciers",
+  "faps": [
+   "J3X40a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ambulanciers"
+  ],
+  "effectif_total_fap": 56900,
+  "effectif": 56900,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "J3X40a"
+  ],
+  "ancien_effectif": 56900,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "manipulateurs-radiologie",
+  "title": "Manipulateurs en radiologie",
+  "faps": [
+   "V3X70b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens en imagerie médicale"
+  ],
+  "effectif_total_fap": 31200,
+  "effectif": 31200,
+  "salaire_mensuel": 2100,
+  "salaire_niveau": [
+   "V3X70"
+  ],
+  "ancien_effectif": 31200,
+  "ancien_salaire": 2100
+ },
+ {
+  "slug": "techniciens-labo-medical",
+  "title": "Techniciens de laboratoire médical",
+  "faps": [
+   "V3X70a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens de laboratoire médical"
+  ],
+  "effectif_total_fap": 35300,
+  "effectif": 35300,
+  "salaire_mensuel": 2100,
+  "salaire_niveau": [
+   "V3X70"
+  ],
+  "ancien_effectif": 35300,
+  "ancien_salaire": 2100
+ },
+ {
+  "slug": "agents-proprete-urbaine",
+  "title": "Agents de propreté urbaine",
+  "faps": [
+   "T4X62a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents d'entretien des espaces urbains"
+  ],
+  "effectif_total_fap": 120800,
+  "effectif": 120800,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "T4X62a"
+  ],
+  "ancien_effectif": 120800,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "conducteurs-bus",
+  "title": "Conducteurs de bus",
+  "faps": [
+   "J3X41"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs de transport en commun sur route"
+  ],
+  "effectif_total_fap": 125600,
+  "effectif": 125600,
+  "salaire_mensuel": 1968,
+  "salaire_niveau": [
+   "J3X41"
+  ],
+  "ancien_effectif": 125600,
+  "ancien_salaire": 1968
+ },
+ {
+  "slug": "conducteurs-train",
+  "title": "Conducteurs de train",
+  "faps": [
+   "J3X44"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs sur rails et d'engins de traction"
+  ],
+  "effectif_total_fap": 25700,
+  "effectif": 25700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "J3X"
+  ],
+  "ancien_effectif": 25700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "pilotes-avion",
+  "title": "Pilotes d'avion",
+  "faps": [
+   "J6X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Personnels techniques navigants de l’aviation"
+  ],
+  "effectif_total_fap": 19000,
+  "effectif": 19000,
+  "salaire_mensuel": 3300,
+  "salaire_niveau": [
+   "J6X"
+  ],
+  "ancien_effectif": 19000,
+  "ancien_salaire": 3300
+ },
+ {
+  "slug": "mecaniciens-aeronautiques",
+  "title": "Mécaniciens aéronautiques",
+  "faps": [
+   "G0A40c",
+   "G1X72b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers en installation maintenance en nautisme, mécanique de marine et aéronefs",
+   "Techniciens et agents de maîtrise en maintenance en nautisme, mécanique de marine et aéronefs"
+  ],
+  "effectif_total_fap": 34400,
+  "effectif": 34400,
+  "salaire_mensuel": 2323,
+  "salaire_niveau": [
+   "G0A40",
+   "G1X72"
+  ],
+  "ancien_effectif": 34400,
+  "ancien_salaire": 2323
+ },
+ {
+  "slug": "ingenieurs-energie",
+  "title": "Ingénieurs en énergie",
+  "faps": [
+   "N1X90"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Ingénieurs et cadres d'étude, recherche et développement (industrie)"
+  ],
+  "effectif_total_fap": 307800,
+  "effectif": 153900,
+  "salaire_mensuel": 3492,
+  "salaire_niveau": [
+   "N1X90"
+  ],
+  "ancien_effectif": 153900,
+  "ancien_salaire": 3492
+ },
+ {
+  "slug": "techniciens-energie-renouvelable",
+  "title": "Techniciens en énergie renouvelable",
+  "faps": [
+   "G1X74"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise en installation et maintenance en froid et conditionnement d'air"
+  ],
+  "effectif_total_fap": 44000,
+  "effectif": 22000,
+  "salaire_mensuel": 2201,
+  "salaire_niveau": [
+   "G1X"
+  ],
+  "ancien_effectif": 22000,
+  "ancien_salaire": 2201
+ },
+ {
+  "slug": "agents-accueil",
+  "title": "Agents d'accueil",
+  "faps": [
+   "L2X60"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents d'accueil et d'information"
+  ],
+  "effectif_total_fap": 102900,
+  "effectif": 102900,
+  "salaire_mensuel": 1600,
+  "salaire_niveau": [
+   "L2X60"
+  ],
+  "ancien_effectif": 102900,
+  "ancien_salaire": 1600
+ },
+ {
+  "slug": "operateurs-saisie",
+  "title": "Opérateurs de saisie",
+  "faps": [
+   "L2X61"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Agents administratifs"
+  ],
+  "effectif_total_fap": 448300,
+  "effectif": 448300,
+  "salaire_mensuel": 1800,
+  "salaire_niveau": [
+   "L2X61"
+  ],
+  "ancien_effectif": 448300,
+  "ancien_salaire": 1800
+ },
+ {
+  "slug": "gestionnaires-paie",
+  "title": "Gestionnaires de paie",
+  "faps": [
+   "L4X80a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens assistanat en ressources humaines"
+  ],
+  "effectif_total_fap": 97600,
+  "effectif": 97600,
+  "salaire_mensuel": 2100,
+  "salaire_niveau": [
+   "L4X80a"
+  ],
+  "ancien_effectif": 97600,
+  "ancien_salaire": 2100
+ },
+ {
+  "slug": "juristes-entreprise",
+  "title": "Juristes d'entreprise",
+  "faps": [
+   "L5X91"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Juristes et avocats"
+  ],
+  "effectif_total_fap": 206700,
+  "effectif": 103350,
+  "salaire_mensuel": 2700,
+  "salaire_niveau": [
+   "L5X91"
+  ],
+  "ancien_effectif": 103350,
+  "ancien_salaire": 2700
+ },
+ {
+  "slug": "huissiers-justice",
+  "title": "Huissiers de justice",
+  "faps": [
+   "P3X90b"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Professionnels du droit en Collaboration juridique"
+  ],
+  "effectif_total_fap": 89000,
+  "effectif": 44500,
+  "salaire_mensuel": 2200,
+  "salaire_niveau": [
+   "P3X90b"
+  ],
+  "ancien_effectif": 44500,
+  "ancien_salaire": 2200
+ },
+ {
+  "slug": "greffiers",
+  "title": "Greffiers",
+  "faps": [
+   "P3X90b"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Professionnels du droit en Collaboration juridique"
+  ],
+  "effectif_total_fap": 89000,
+  "effectif": 44500,
+  "salaire_mensuel": 2200,
+  "salaire_niveau": [
+   "P3X90b"
+  ],
+  "ancien_effectif": 44500,
+  "ancien_salaire": 2200
+ },
+ {
+  "slug": "ingenieurs-btp",
+  "title": "Ingénieurs BTP",
+  "faps": [
+   "B6X71a",
+   "B7X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise des études BTP, des études géologiques et du contrôle et diagnostic technique du BTP",
+   "Cadres des études BTP, des études géologiques, du métré de la construction et du contrôle et diagnostic technique du BTP"
+  ],
+  "effectif_total_fap": 136800,
+  "effectif": 136800,
+  "salaire_mensuel": 2838,
+  "salaire_niveau": [
+   "B6X",
+   "B7X91"
+  ],
+  "ancien_effectif": 136800,
+  "ancien_salaire": 2838
+ },
+ {
+  "slug": "urbanistes",
+  "title": "Urbanistes",
+  "faps": [
+   "P2X90a"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Cadres A des administrations publiques en conception, pilotage et mise en oeuvre des pouvoirs publics et en représentation de l'Etat"
+  ],
+  "effectif_total_fap": 54800,
+  "effectif": 27400,
+  "salaire_mensuel": 3336,
+  "salaire_niveau": [
+   "P2X90a"
+  ],
+  "ancien_effectif": 27400,
+  "ancien_salaire": 3336
+ },
+ {
+  "slug": "agents-impots",
+  "title": "Agents des impôts",
+  "faps": [
+   "P1X80",
+   "P2X90g"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Contrôleurs des impôts et des douanes",
+   "Cadres A des impôts, du Trésor Public et des douanes"
+  ],
+  "effectif_total_fap": 83900,
+  "effectif": 83900,
+  "salaire_mensuel": 2689,
+  "salaire_niveau": [
+   "P1X80",
+   "P2X90"
+  ],
+  "ancien_effectif": 83900,
+  "ancien_salaire": 2689
+ },
+ {
+  "slug": "attaches-territoriaux",
+  "title": "Attachés territoriaux",
+  "faps": [
+   "P2X90a"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Cadres A des administrations publiques en conception, pilotage et mise en oeuvre des pouvoirs publics et en représentation de l'Etat"
+  ],
+  "effectif_total_fap": 54800,
+  "effectif": 27400,
+  "salaire_mensuel": 3336,
+  "salaire_niveau": [
+   "P2X90a"
+  ],
+  "ancien_effectif": 27400,
+  "ancien_salaire": 3336
+ },
+ {
+  "slug": "ingenieurs-environnement",
+  "title": "Ingénieurs environnement",
+  "faps": [
+   "H1X91"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ingénieurs et cadres techniques en Hygiène Sécurité Environnement -HSE- industriels et exploitation éco-industriel"
+  ],
+  "effectif_total_fap": 53500,
+  "effectif": 53500,
+  "salaire_mensuel": 3060,
+  "salaire_niveau": [
+   "H1X91"
+  ],
+  "ancien_effectif": 53500,
+  "ancien_salaire": 3060
+ },
+ {
+  "slug": "techniciens-traitement-eaux",
+  "title": "Techniciens en traitement des eaux",
+  "faps": [
+   "G1X78"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise en distribution et assainissement d'eau et gestion des déchets"
+  ],
+  "effectif_total_fap": 33200,
+  "effectif": 33200,
+  "salaire_mensuel": 2201,
+  "salaire_niveau": [
+   "G1X"
+  ],
+  "ancien_effectif": 33200,
+  "ancien_salaire": 2201
+ },
+ {
+  "slug": "conseillers-insertion",
+  "title": "Conseillers en insertion professionnelle",
+  "faps": [
+   "V4X80"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professionnels de l’orientation et de l’insertion professionnelle"
+  ],
+  "effectif_total_fap": 80200,
+  "effectif": 80200,
+  "salaire_mensuel": 1968,
+  "salaire_niveau": [
+   "V4X80"
+  ],
+  "ancien_effectif": 80200,
+  "ancien_salaire": 1968
+ },
+ {
+  "slug": "moniteurs-educateurs",
+  "title": "Moniteurs-éducateurs",
+  "faps": [
+   "V4X83b"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Éducateurs techniques spécialisés, moniteurs d’ateliers"
+  ],
+  "effectif_total_fap": 197400,
+  "effectif": 98700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "V4X83b"
+  ],
+  "ancien_effectif": 98700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "eleveurs",
+  "title": "Éleveurs",
+  "faps": [
+   "A0X41"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Eleveurs"
+  ],
+  "effectif_total_fap": 174900,
+  "effectif": 174900,
+  "salaire_mensuel": 1750,
+  "salaire_niveau": [
+   "A0X"
+  ],
+  "ancien_effectif": 174900,
+  "ancien_salaire": 1750
+ },
+ {
+  "slug": "pecheurs",
+  "title": "Pêcheurs",
+  "faps": [
+   "A3X40"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Pêcheurs et aquaculteurs"
+  ],
+  "effectif_total_fap": 17900,
+  "effectif": 17900,
+  "salaire_mensuel": null,
+  "salaire_niveau": [],
+  "ancien_effectif": 17900,
+  "ancien_salaire": null
+ },
+ {
+  "slug": "conducteurs-engins-chantier",
+  "title": "Conducteurs d'engins de chantier",
+  "faps": [
+   "B5X40b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Conducteurs d'engins de terrassement et de carrière"
+  ],
+  "effectif_total_fap": 83700,
+  "effectif": 83700,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "B5X40b"
+  ],
+  "ancien_effectif": 83700,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "carreleurs",
+  "title": "Carreleurs",
+  "faps": [
+   "B2X30a",
+   "B2X30b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en pose et décoration de revêtements",
+   "Ouvriers qualifiés en pose et décoration de revêtements"
+  ],
+  "effectif_total_fap": 46400,
+  "effectif": 46400,
+  "salaire_mensuel": 1900,
+  "salaire_niveau": [
+   "B2X"
+  ],
+  "ancien_effectif": 46400,
+  "ancien_salaire": 1900
+ },
+ {
+  "slug": "gestionnaires-patrimoine",
+  "title": "Gestionnaires de patrimoine",
+  "faps": [
+   "QCX02"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Cadres et indépendants commerciaux de la banque"
+  ],
+  "effectif_total_fap": 86400,
+  "effectif": 86400,
+  "salaire_mensuel": 3248,
+  "salaire_niveau": [
+   "QCX02"
+  ],
+  "ancien_effectif": 86400,
+  "ancien_salaire": 3248
+ },
+ {
+  "slug": "traders",
+  "title": "Traders",
+  "faps": [
+   "QAX01"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Experts de la finance"
+  ],
+  "effectif_total_fap": 24800,
+  "effectif": 24800,
+  "salaire_mensuel": 3259,
+  "salaire_niveau": [
+   "QAX"
+  ],
+  "ancien_effectif": 24800,
+  "ancien_salaire": 3259
+ },
+ {
+  "slug": "analystes-financiers",
+  "title": "Analystes financiers",
+  "faps": [
+   "QAX02"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Experts de la banque"
+  ],
+  "effectif_total_fap": 41300,
+  "effectif": 41300,
+  "salaire_mensuel": 3259,
+  "salaire_niveau": [
+   "QAX"
+  ],
+  "ancien_effectif": 41300,
+  "ancien_salaire": 3259
+ },
+ {
+  "slug": "moniteurs-sport",
+  "title": "Moniteurs de sport",
+  "faps": [
+   "V5X82"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Sportifs et animateurs sportifs"
+  ],
+  "effectif_total_fap": 156000,
+  "effectif": 78000,
+  "salaire_mensuel": 1872,
+  "salaire_niveau": [
+   "V5X82"
+  ],
+  "ancien_effectif": 78000,
+  "ancien_salaire": 1872
+ },
+ {
+  "slug": "entraineurs-sportifs",
+  "title": "Entraîneurs sportifs",
+  "faps": [
+   "V5X82"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Sportifs et animateurs sportifs"
+  ],
+  "effectif_total_fap": 156000,
+  "effectif": 78000,
+  "salaire_mensuel": 1872,
+  "salaire_niveau": [
+   "V5X82"
+  ],
+  "ancien_effectif": 78000,
+  "ancien_salaire": 1872
+ },
+ {
+  "slug": "dieteticiens",
+  "title": "Diététiciens",
+  "faps": [
+   "V3X80a"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Diététique"
+  ],
+  "effectif_total_fap": 14700,
+  "effectif": 14700,
+  "salaire_mensuel": 2116,
+  "salaire_niveau": [
+   "V3X"
+  ],
+  "ancien_effectif": 14700,
+  "ancien_salaire": 2116
+ },
+ {
+  "slug": "orthophonistes",
+  "title": "Orthophonistes",
+  "faps": [
+   "V3X80d"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Orthophonistes et spécialistes de l'orthoptique"
+  ],
+  "effectif_total_fap": 36400,
+  "effectif": 36400,
+  "salaire_mensuel": 2116,
+  "salaire_niveau": [
+   "V3X"
+  ],
+  "ancien_effectif": 36400,
+  "ancien_salaire": 2116
+ },
+ {
+  "slug": "ergotherapeutes",
+  "title": "Ergothérapeutes",
+  "faps": [
+   "V3X80b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ergothérapeute"
+  ],
+  "effectif_total_fap": 16200,
+  "effectif": 16200,
+  "salaire_mensuel": 2116,
+  "salaire_niveau": [
+   "V3X"
+  ],
+  "ancien_effectif": 16200,
+  "ancien_salaire": 2116
+ },
+ {
+  "slug": "operateurs-centre-appels",
+  "title": "Opérateurs en centre d'appels",
+  "faps": [
+   "R1X67"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Télévendeurs et téléconseillers"
+  ],
+  "effectif_total_fap": 64100,
+  "effectif": 32050,
+  "salaire_mensuel": 1490,
+  "salaire_niveau": [
+   "R1X67"
+  ],
+  "ancien_effectif": 32050,
+  "ancien_salaire": 1490
+ },
+ {
+  "slug": "webmasters",
+  "title": "Webmasters",
+  "faps": [
+   "U1X82c"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Concepteur et réalisateur multimédia"
+  ],
+  "effectif_total_fap": 132600,
+  "effectif": 66300,
+  "salaire_mensuel": 2200,
+  "salaire_niveau": [
+   "U1X82c"
+  ],
+  "ancien_effectif": 66300,
+  "ancien_salaire": 2200
+ },
+ {
+  "slug": "chefs-produit",
+  "title": "Chefs de produit",
+  "faps": [
+   "R3X83"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Professions intermédiaires du marketing et des services commerciaux (hors achats)"
+  ],
+  "effectif_total_fap": 111700,
+  "effectif": 111700,
+  "salaire_mensuel": 2150,
+  "salaire_niveau": [
+   "R3X83"
+  ],
+  "ancien_effectif": 111700,
+  "ancien_salaire": 2150
+ },
+ {
+  "slug": "logisticiens",
+  "title": "Logisticiens",
+  "faps": [
+   "J5X80"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Techniciens d'exploitation et d'administration des transports"
+  ],
+  "effectif_total_fap": 61200,
+  "effectif": 61200,
+  "salaire_mensuel": 2400,
+  "salaire_niveau": [
+   "J5X80"
+  ],
+  "ancien_effectif": 61200,
+  "ancien_salaire": 2400
+ },
+ {
+  "slug": "declarants-douane",
+  "title": "Déclarants en douane",
+  "faps": [
+   "J4X62"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Employés administratifs et commerciaux des transports"
+  ],
+  "effectif_total_fap": 23900,
+  "effectif": 23900,
+  "salaire_mensuel": 1828,
+  "salaire_niveau": [
+   "J4X"
+  ],
+  "ancien_effectif": 23900,
+  "ancien_salaire": 1828
+ },
+ {
+  "slug": "techniciens-frigoristes",
+  "title": "Techniciens frigoristes",
+  "faps": [
+   "G1X74"
+  ],
+  "n_partage": 2,
+  "fap_labels": [
+   "Techniciens et agents de maîtrise en installation et maintenance en froid et conditionnement d'air"
+  ],
+  "effectif_total_fap": 44000,
+  "effectif": 22000,
+  "salaire_mensuel": 2201,
+  "salaire_niveau": [
+   "G1X"
+  ],
+  "ancien_effectif": 22000,
+  "ancien_salaire": 2201
+ },
+ {
+  "slug": "chaudronniers",
+  "title": "Chaudronniers",
+  "faps": [
+   "D1X30a",
+   "D1X30b"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en chaudronnerie et tôlerie",
+   "Ouvriers qualifiés en chaudronnerie et tôlerie"
+  ],
+  "effectif_total_fap": 54200,
+  "effectif": 54200,
+  "salaire_mensuel": 2000,
+  "salaire_niveau": [
+   "D1X30",
+   "D1X30b"
+  ],
+  "ancien_effectif": 54200,
+  "ancien_salaire": 2000
+ },
+ {
+  "slug": "usineurs",
+  "title": "Usineurs",
+  "faps": [
+   "D0X30",
+   "D0X31"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés en conduite d'équipement d'usinage",
+   "Ouvriers qualifiés en conduite d'équipement d'usinage"
+  ],
+  "effectif_total_fap": 85400,
+  "effectif": 85400,
+  "salaire_mensuel": 1999,
+  "salaire_niveau": [
+   "D0X",
+   "D0X31"
+  ],
+  "ancien_effectif": 85400,
+  "ancien_salaire": 1999
+ },
+ {
+  "slug": "conducteurs-ligne-production",
+  "title": "Conducteurs de ligne de production",
+  "faps": [
+   "E2X20",
+   "E2X40"
+  ],
+  "n_partage": 1,
+  "fap_labels": [
+   "Ouvriers peu qualifiés des industries chimiques et plastiques",
+   "Ouvriers qualifiés des industries chimiques et plastiques"
+  ],
+  "effectif_total_fap": 93800,
+  "effectif": 93800,
+  "salaire_mensuel": 1967,
+  "salaire_niveau": [
+   "E2X",
+   "E2X40"
+  ],
+  "ancien_effectif": 93800,
+  "ancien_salaire": 1967
+ }
+]
