@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exposition des métiers français à l'IA — jobs.solicare.fr</title>
+<title>Exposition des métiers français à l'IA · exposition-ia.solicare.fr</title>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -131,6 +131,52 @@ section ul, section ol {
 }
 section li { margin-bottom: 6px; }
 section li strong { color: var(--fg); }
+
+/* ── Bandeau mise à jour ───────────────────────────────── */
+
+.updated-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: rgba(78,205,196,0.1);
+  border: 1px solid rgba(78,205,196,0.2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+/* ── Fiches « ce qui a changé » ─────────────────────────── */
+
+.findings { display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+.finding {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+}
+.finding.fr { border-left-color: var(--accent2); }
+.finding .meta {
+  font-size: 11px;
+  color: var(--fg2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+.finding h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.finding p { font-size: 14px; margin-bottom: 0; }
+
+.zone-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--fg2);
+  margin: 28px 0 4px;
+}
 
 /* ── Source cards ───────────────────────────────────────── */
 
@@ -329,6 +375,7 @@ footer a:hover { color: var(--fg); }
   <!-- ── Hero ──────────────────────────────────────────── -->
 
   <div class="hero">
+    <div class="updated-badge">Mis à jour le 8 août 2026</div>
     <h1>Exposition des métiers français<br>à l'<span>Intelligence Artificielle</span></h1>
     <p class="subtitle">Visualisation interactive de 147 métiers du répertoire ROME, scorés sur leur exposition à l'IA à partir de sources académiques et institutionnelles. Un outil exploratoire, pas un rapport.</p>
     <a href="treemap.html" class="cta">Explorer la visualisation</a>
@@ -342,7 +389,7 @@ footer a:hover { color: var(--fg); }
       <div class="label">métiers analysés</div>
     </div>
     <div class="stat-item">
-      <div class="num">14,7M</div>
+      <div class="num">20,0M</div>
       <div class="label">emplois couverts</div>
     </div>
     <div class="stat-item">
@@ -351,7 +398,7 @@ footer a:hover { color: var(--fg); }
     </div>
     <div class="stat-item">
       <div class="num">6</div>
-      <div class="label">sources de données</div>
+      <div class="label">sources utilisées</div>
     </div>
   </div>
 
@@ -360,8 +407,95 @@ footer a:hover { color: var(--fg); }
   <section>
     <h2>Le projet</h2>
     <p>Ce site propose une <strong>cartographie visuelle de l'exposition des métiers français à l'intelligence artificielle</strong>. Chaque métier est représenté par un rectangle dont la surface est proportionnelle au nombre d'emplois, et dont la couleur indique le niveau d'exposition à l'IA (ou d'autres métriques : salaire, formation, perspectives).</p>
-    <p>L'objectif n'est pas de prédire quels métiers vont "disparaître" — <strong>un score élevé ne signifie pas la fin d'un métier</strong>. Les développeurs informatiques scorent 8/10 car l'IA transforme profondément leur travail, mais la demande de logiciels pourrait facilement <em>augmenter</em> avec les gains de productivité. Le score mesure l'ampleur de la transformation, pas son issue.</p>
+    <p>L'objectif n'est pas de prédire quels métiers vont "disparaître" : <strong>un score élevé ne signifie pas la fin d'un métier</strong>. Les développeurs informatiques scorent 8/10 car l'IA transforme profondément leur travail, mais la demande de logiciels pourrait facilement <em>augmenter</em> avec les gains de productivité. Le score mesure l'ampleur de la transformation, pas son issue.</p>
     <p>C'est un <strong>outil exploratoire</strong> destiné à alimenter la réflexion sur l'évolution du marché du travail, pas une publication académique ni un rapport officiel.</p>
+  </section>
+
+  <!-- ── Ce qui a changé ───────────────────────────────── -->
+
+  <section>
+    <h2>Ce qui a changé depuis un an</h2>
+    <p>Entre août 2025 et août 2026, le débat est passé de la projection à la mesure. Plusieurs institutions publient désormais des données observées sur l'emploi plutôt que des estimations de potentiel. Elles ne disent pas toutes la même chose, et cette divergence est en soi le principal résultat de l'année.</p>
+
+    <div class="zone-label">Dans le monde</div>
+    <div class="findings">
+
+      <div class="finding">
+        <div class="meta">Stanford Digital Economy Lab · novembre 2025, actualisé février 2026</div>
+        <h4>Le premier signal se lit chez les débutants, pas dans l'emploi total</h4>
+        <p>À partir des données de paie ADP, Brynjolfsson, Chandar et Chen mesurent une baisse relative d'environ <strong>16 % de l'emploi des 22-25 ans</strong> dans les métiers les plus exposés depuis la diffusion de l'IA générative, alors que l'emploi des travailleurs expérimentés reste stable ou progresse. L'ajustement passe par un <strong>ralentissement des embauches</strong>, pas par des licenciements, et se concentre là où l'IA automatise plutôt qu'elle n'augmente le travail. <a href="https://digitaleconomy.stanford.edu/publication/canaries-in-the-coal-mine-six-facts-about-the-recent-employment-effects-of-artificial-intelligence/">Voir l'étude</a></p>
+      </div>
+
+      <div class="finding">
+        <div class="meta">Anthropic Economic Index · 5 mars 2026</div>
+        <h4>Une mesure d'exposition fondée sur l'usage réel, et non sur le potentiel</h4>
+        <p>Anthropic introduit l'<strong>exposition observée</strong> : la part des tâches d'un métier réellement traitées via son assistant, pondérée en faveur des usages d'automatisation. En tête, les <strong>programmeurs (74,5 %)</strong>, les <strong>agents de service client (70,1 %)</strong> et les <strong>opérateurs de saisie (67,1 %)</strong>. L'étude ne trouve <strong>aucun effet statistiquement significatif sur le chômage</strong> des métiers les plus exposés depuis fin 2022, mais estime à environ <strong>14 %</strong> le repli du rythme d'embauche des 22-25 ans dans ces métiers. <a href="https://www.anthropic.com/research/labor-market-impacts">Voir l'étude</a></p>
+      </div>
+
+      <div class="finding">
+        <div class="meta">OCDE · Perspectives de l'emploi, 7 juillet 2026</div>
+        <h4>L'OCDE tempère : les preuves restent limitées</h4>
+        <p>L'emploi de la zone OCDE atteint un niveau record, <strong>670 millions</strong> de personnes en mai 2026, pour un chômage de <strong>4,9 %</strong>. Le chômage des jeunes augmente, y compris chez les non-diplômés, mais l'OCDE juge les <strong>preuves d'un effet propre à l'IA encore limitées</strong> : les facteurs conjoncturels et l'évolution de long terme de la demande de compétences pèsent davantage. Les salaires réels restent inférieurs à leur niveau d'il y a cinq ans dans environ un tiers des pays. <a href="https://www.oecd.org/en/publications/oecd-employment-outlook-2026_7e710f54-en.html">Voir le rapport</a></p>
+      </div>
+
+      <div class="finding">
+        <div class="meta">OIT et Banque mondiale · 27 mars 2026</div>
+        <h4>Une exposition très inégale entre pays</h4>
+        <p>Sur <strong>135 pays</strong>, l'exposition à l'IA générative est nettement plus élevée dans les économies avancées, en particulier sur les fonctions administratives et les professions intellectuelles. Les pays en développement risquent de <strong>subir la disruption avant d'en tirer les bénéfices</strong> : les emplois automatisables y sont déjà connectés, ceux qui gagneraient en productivité le sont beaucoup moins. <a href="https://www.ilo.org/resource/news/new-ilo%E2%80%93world-bank-paper-highlights-uneven-global-impact-generative-ai-jobs">Voir le papier</a></p>
+      </div>
+
+    </div>
+
+    <div class="zone-label">En France</div>
+    <div class="findings">
+
+      <div class="finding fr">
+        <div class="meta">INSEE · Note de conjoncture, éclairage du 24 mars 2026</div>
+        <h4>Le même signal jeunes, mesuré sur données françaises</h4>
+        <p>Au quatrième trimestre 2025, l'emploi salarié des <strong>15-29 ans hors alternants</strong> recule sur un an de <strong>7,4 % dans les activités informatiques et services d'information</strong>, de <strong>5,8 % dans l'édition</strong> et de <strong>3,7 % dans le conseil en gestion</strong>, quand l'ensemble du secteur marchand non agricole ne baisse que de 0,7 %. Entre fin 2023 et fin 2025, l'emploi de l'information-communication recule de <strong>3,0 %</strong>, une baisse <strong>entièrement portée par les jeunes</strong> (contribution de -3,8 points). L'INSEE souligne qu'on ne peut pas l'attribuer à la seule IA, mais note un retournement brutal et concomitant dans des secteurs en croissance continue depuis vingt ans. <a href="https://www.insee.fr/fr/statistiques/8907419?sommaire=8907467">Voir l'éclairage</a></p>
+      </div>
+
+      <div class="finding fr">
+        <div class="meta">INSEE Première n° 2120 · 21 juillet 2026</div>
+        <h4>L'adoption de l'IA a triplé en deux ans dans les entreprises</h4>
+        <p><strong>18 % des entreprises</strong> de 10 salariés ou plus implantées en France déclarent utiliser au moins une technologie d'IA en 2025, contre <strong>10 % en 2024</strong> et <strong>6 % en 2023</strong>. La France reste légèrement sous la moyenne de l'Union européenne (20 %). L'écart par taille reste massif : <strong>15 %</strong> pour les 10-49 salariés, <strong>31 %</strong> pour les 50-249, <strong>58 %</strong> au-delà de 250. Surtout, les entreprises utilisatrices concentrent désormais <strong>59 % de l'emploi</strong> du champ étudié, contre 40 % un an plus tôt : la question n'est plus de savoir si l'IA arrive dans les entreprises françaises, mais à quelle vitesse elle redescend jusqu'aux postes de travail. <a href="https://www.insee.fr/fr/statistiques/9025878">Voir la publication</a></p>
+      </div>
+
+      <div class="finding fr">
+        <div class="meta">Direction générale du Trésor · Trésor-Éco n° 391, 30 juin 2026</div>
+        <h4>L'effet net sur l'emploi reste indéterminé</h4>
+        <p>Entre substitution du travail et gains de productivité susceptibles de stimuler la demande, le Trésor conclut que l'<strong>effet net agrégé demeure incertain</strong>, avec des risques concentrés sur certains travailleurs. Les vagues de licenciements attribuées à l'IA se concentrent bien dans les secteurs les plus exposés, finance et informatique, mais l'IA sert aussi parfois de motif affiché pour d'autres causes. <strong>62 % des Français</strong> perçoivent l'IA comme un risque pour l'emploi. <a href="https://www.tresor.economie.gouv.fr/Articles/2026/06/30/l-intelligence-artificielle-quels-effets-sur-l-emploi">Voir la note</a></p>
+      </div>
+
+      <div class="finding fr">
+        <div class="meta">Aghion, Bergeaud, Bunel, Delbouve · juillet 2025</div>
+        <h4>Une diffusion très concentrée, et pas seulement destructrice</h4>
+        <p>À partir de plus de <strong>120 millions d'offres d'emploi</strong> publiées en France depuis 2019, l'étude montre une diffusion très hétérogène, concentrée dans l'informatique, la finance et le conseil, et dans les grandes entreprises pionnières. On observe un recul relatif des créations d'emplois dans les métiers les plus exposés, mais les entreprises qui recrutent sur l'IA voient leur <strong>productivité, leur chiffre d'affaires et leur emploi total augmenter</strong>. <a href="https://www.hec.edu/sites/default/files/documents/Diffusion%20de%20l%E2%80%99Intelligence%20Artificielle%20en%20France_Philippe%20Aghion-Antonin%20Bergeaud-Simon%20Bunel-Paul%20Delbouve_Juillet%202025.pdf">Voir le rapport</a></p>
+      </div>
+
+    </div>
+
+    <div class="zone-label">Dans les données du site</div>
+    <div class="findings">
+      <div class="finding fr">
+        <div class="meta">Refonte des effectifs et des salaires · août 2026</div>
+        <h4>Les chiffres d'emploi viennent désormais directement de la Dares</h4>
+        <p>Jusqu'ici, les effectifs et les salaires provenaient d'estimations agrégées de seconde main, avec des valeurs manifestement fausses sur plusieurs métiers (6 200 secrétaires en France, par exemple). Ils sont maintenant repris tels quels des <strong>Portraits statistiques des métiers</strong> de la Dares, édition du 16 juillet 2026 : <strong>effectifs en emploi 2024</strong> et <strong>salaire mensuel net médian 2023-2025</strong> par famille professionnelle. Le périmètre couvert passe de 14,7 à <strong>20,0 millions d'emplois</strong>, soit environ <strong>70 % de l'emploi total en France</strong>, et les 17 métiers qui n'avaient aucun chiffre en ont désormais un. <a href="https://dares.travail-emploi.gouv.fr/donnees/portraits-statistiques-des-metiers">Voir la source</a></p>
+      </div>
+      <div class="finding fr">
+        <div class="meta">Correction du scoring · août 2026</div>
+        <h4>Cinq scores d'exposition rétablis</h4>
+        <p>Un défaut du script de scoring faisait échouer tous les rattachements dont le libellé comportait un accent, qui retombaient alors sur un rapprochement approximatif par similarité de nom. <strong>Cinq métiers affichaient un score contredisant le barème du projet</strong> : les opérateurs de saisie passent de 4 à <strong>10/10</strong>, les caissiers de 2 à <strong>9/10</strong>, les moniteurs de sport de 8 à <strong>2/10</strong>, les secrétaires de 9 à 8 et les conducteurs de train de 4 à 5. Le rapprochement approximatif n'est plus utilisé du tout : les 147 métiers sont désormais rattachés explicitement, 124 au corpus de sources et 23 à une estimation d'expert.</p>
+      </div>
+    </div>
+
+    <h3>Ce que cela change pour la lecture de la carte</h3>
+    <p>Trois enseignements convergent et méritent d'être gardés en tête en explorant le treemap :</p>
+    <ul>
+      <li><strong>L'effet se voit à l'entrée, pas au stock.</strong> Là où un signal existe, il porte sur les embauches de débutants dans les métiers exposés, pas sur l'emploi total. Un métier fortement coloré n'est pas un métier qui rétrécit, c'est d'abord un métier où l'on entre plus difficilement.</li>
+      <li><strong>Exposition théorique et usage réel ne coïncident pas.</strong> Le score 0-10 mesure un potentiel de transformation. L'usage constaté, ajouté cette année, montre que l'adoption réelle reste très en deçà de ce potentiel pour la plupart des métiers.</li>
+      <li><strong>Le consensus n'existe pas.</strong> Stanford et l'INSEE mesurent un décrochage des jeunes dans les secteurs exposés ; l'OCDE juge les preuves encore insuffisantes pour l'imputer à l'IA. Cette carte est un support de discussion, pas un verdict.</li>
+    </ul>
   </section>
 
   <!-- ── Origine : fork de Karpathy ────────────────────── -->
@@ -373,7 +507,7 @@ footer a:hover { color: var(--fg); }
       <div class="fork-icon">&#x2442;</div>
       <div>
         <h4>Fork de karpathy/jobs</h4>
-        <p>Ce projet est un <strong>fork</strong> du travail réalisé par <a href="https://karpathy.ai/">Andrej Karpathy</a> (co-fondateur d'OpenAI, ancien directeur IA chez Tesla). Son projet original — <a href="https://github.com/karpathy/jobs">karpathy/jobs</a> — visualise <strong>342 métiers américains</strong> à partir des données du Bureau of Labor Statistics (BLS), avec un scoring d'exposition IA réalisé par LLM.</p>
+        <p>Ce projet est un <strong>fork</strong> du travail réalisé par <a href="https://karpathy.ai/">Andrej Karpathy</a> (co-fondateur d'OpenAI, ancien directeur IA chez Tesla). Son projet original, <a href="https://github.com/karpathy/jobs">karpathy/jobs</a>, visualise <strong>342 métiers américains</strong> à partir des données du Bureau of Labor Statistics (BLS), avec un scoring d'exposition IA réalisé par LLM.</p>
         <p style="margin-top:10px;">Nous avons <strong>adapté l'intégralité du pipeline</strong> au marché du travail français : remplacement du BLS par le répertoire ROME de France Travail, utilisation de sources académiques multi-institutionnelles pour le scoring, traduction complète de l'interface, et conversion aux échelles françaises (euros, niveaux de diplôme du CAP au Doctorat).</p>
       </div>
     </div>
@@ -390,8 +524,8 @@ footer a:hover { color: var(--fg); }
     <ul>
       <li><strong>Source de données</strong> : BLS Occupational Outlook Handbook &rarr; ROME 4.0 (France Travail)</li>
       <li><strong>Scoring</strong> : prompt LLM unique &rarr; scores multi-sources pondérés (académiques, institutionnels, presse spécialisée)</li>
-      <li><strong>Données emploi</strong> : BLS projections &rarr; INSEE Enquête Emploi en Continu 2024</li>
-      <li><strong>Contexte réglementaire</strong> : prise en compte du RGPD, de l'AI Act européen, du droit du travail français, des métiers réglementés</li>
+      <li><strong>Données emploi</strong> : BLS projections &rarr; Dares, Portraits statistiques des métiers (effectifs 2024, salaires 2023-2025)</li>
+      <li><strong>Contexte réglementaire</strong> : prise en compte du RGPD, du règlement européen sur l'IA, du droit du travail français, des métiers réglementés</li>
       <li><strong>Interface</strong> : traduction intégrale en français, échelles de salaire en euros, niveaux de formation français</li>
     </ul>
   </section>
@@ -402,11 +536,11 @@ footer a:hover { color: var(--fg); }
     <h2>Méthodologie de scoring</h2>
     <p>Chaque métier est évalué sur un <strong>axe unique d'Exposition à l'IA de 0 à 10</strong>, mesurant dans quelle mesure l'IA va transformer ce métier. Le score prend en compte :</p>
     <ul>
-      <li><strong>L'automatisation directe</strong> — l'IA réalisant des tâches actuellement humaines</li>
-      <li><strong>Les effets indirects</strong> — l'IA rendant les travailleurs si productifs que moins de personnes sont nécessaires</li>
+      <li><strong>L'automatisation directe</strong> : l'IA réalisant des tâches actuellement humaines</li>
+      <li><strong>Les effets indirects</strong> : l'IA rendant les travailleurs si productifs que moins de personnes sont nécessaires</li>
     </ul>
 
-    <p>Un heuristique clé : si un métier peut être exercé entièrement depuis un ordinateur — écrire, coder, analyser, communiquer — son exposition est intrinsèquement élevée (7+). Les métiers nécessitant une présence physique, un savoir-faire manuel ou une interaction humaine en temps réel ont une barrière naturelle à l'exposition.</p>
+    <p>Un heuristique clé : si un métier peut être exercé entièrement depuis un ordinateur (écrire, coder, analyser, communiquer), son exposition est intrinsèquement élevée (7+). Les métiers nécessitant une présence physique, un savoir-faire manuel ou une interaction humaine en temps réel ont une barrière naturelle à l'exposition.</p>
 
     <h3>Echelle de calibration</h3>
     <table class="scale-table">
@@ -414,27 +548,27 @@ footer a:hover { color: var(--fg); }
       <tr>
         <td><span class="score-badge" style="background:rgba(30,180,40,0.3);color:#2ecc71;">0-1</span></td>
         <td><strong>Minimale</strong></td>
-        <td>Maçons, couvreurs, jardiniers-paysagistes, aides à domicile</td>
+        <td>Maçons, menuisiers, jardiniers-paysagistes, aides à domicile, agents d'entretien</td>
       </tr>
       <tr>
         <td><span class="score-badge" style="background:rgba(80,170,50,0.3);color:#6abf4b;">2-3</span></td>
         <td><strong>Faible</strong></td>
-        <td>Electriciens, plombiers, sapeurs-pompiers, aides-soignants, infirmiers</td>
+        <td>Électriciens, plombiers, sapeurs-pompiers, aides-soignants, infirmiers, cuisiniers</td>
       </tr>
       <tr>
         <td><span class="score-badge" style="background:rgba(180,180,30,0.3);color:#c8c832;">4-5</span></td>
         <td><strong>Modérée</strong></td>
-        <td>Policiers, vétérinaires, pharmaciens, éducateurs spécialisés, architectes</td>
+        <td>Policiers, vétérinaires, pharmaciens, enseignants, médecins généralistes</td>
       </tr>
       <tr>
         <td><span class="score-badge" style="background:rgba(220,140,20,0.3);color:#e8a020;">6-7</span></td>
         <td><strong>Elevée</strong></td>
-        <td>Enseignants, comptables, journalistes, conseillers bancaires, avocats</td>
+        <td>Architectes, journalistes, conseillers bancaires, avocats, chefs de projets informatiques</td>
       </tr>
       <tr>
         <td><span class="score-badge" style="background:rgba(230,80,30,0.3);color:#e65030;">8-9</span></td>
         <td><strong>Très élevée</strong></td>
-        <td>Développeurs, designers graphiques, traducteurs, data analysts, rédacteurs web</td>
+        <td>Développeurs, comptables, traducteurs, data analysts, rédacteurs web</td>
       </tr>
       <tr>
         <td><span class="score-badge" style="background:rgba(220,40,30,0.3);color:#dc2820;">10</span></td>
@@ -458,35 +592,63 @@ footer a:hover { color: var(--fg); }
     <div class="source-grid">
       <div class="source-card">
         <span class="tag t1">Source primaire</span>
+        <h4>ROME 4.0, France Travail</h4>
+        <p>Le répertoire opérationnel des métiers et des emplois définit le périmètre des 147 métiers retenus, leurs intitulés, leurs codes et le niveau de formation associé.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t1">Source primaire</span>
         <h4>transitions-ia.fr</h4>
-        <p>97 métiers français scorés (0-10) avec pondération multi-sources : poids par niveau de preuve (académique, institutionnel, presse) et récence. Basé sur ROME 4.0 + INSEE EEC 2024 + DARES BMO 2024.</p>
+        <p>Corpus de 97 métiers français scorés 0-10, agrégeant 392 références pondérées par niveau de preuve et par récence, dont l'OIT (61 citations), Stanford (21) et l'INSEE (9). C'est la source du <em>score d'exposition</em> pour 124 de nos 147 métiers.</p>
       </div>
       <div class="source-card">
-        <span class="tag t1">Source primaire</span>
+        <span class="tag t3">Référence non utilisée</span>
         <h4>Felten AIOE Index</h4>
-        <p>774 métiers (SOC) évalués sur 10 capacités IA croisées avec 52 aptitudes O*NET. Référence académique publiée dans le <em>Journal of Finance</em>.</p>
+        <p>774 métiers (SOC) évalués sur 10 capacités IA croisées avec 52 aptitudes O*NET, publié dans le <em>Journal of Finance</em>. Présent dans le dépôt comme référence, mais <strong>il n'alimente pas le score actuel</strong>.</p>
       </div>
       <div class="source-card">
         <span class="tag t1">Source primaire</span>
-        <h4>ILO GenAI Exposure</h4>
-        <p>Index de l'Organisation Internationale du Travail (Working Paper 140). 427 métiers ISCO-08 avec scores tâche par tâche sur l'exposition à l'IA générative.</p>
+        <h4>OIT GenAI Exposure <span style="color:var(--fg2);font-weight:400;">· mai 2025</span></h4>
+        <p>Index de l'Organisation internationale du travail (Working Paper 140). 427 métiers ISCO-08 avec scores tâche par tâche. C'est la référence la plus citée du corpus amont (61 citations), donc elle alimente nos scores <em>via</em> transitions-ia.fr plutôt que directement. Complété en mars 2026 par le papier OIT-Banque mondiale sur 135 pays.</p>
       </div>
       <div class="source-card">
-        <span class="tag t2">Source secondaire</span>
+        <span class="tag t1">Source primaire</span>
+        <h4>Anthropic Economic Index <span style="color:var(--fg2);font-weight:400;">· mars 2026</span></h4>
+        <p>Exposition <em>observée</em> de 756 professions SOC : part des tâches réellement traitées par un assistant IA, pondérée vers l'automatisation. Ajoutée cette année comme indicateur de comparaison, visible dans l'infobulle du treemap.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t3">Référence non utilisée</span>
         <h4>Demirev ESCO Scores</h4>
-        <p>3 003 occupations ESCO scorées à partir de 27 000 capacités IA extraites de communiqués d'entreprises. Distinction automatisation vs. augmentation.</p>
+        <p>3 003 occupations ESCO scorées à partir de 27 000 capacités IA extraites de communiqués d'entreprises. Présent dans le dépôt comme référence, mais <strong>il n'alimente pas le score actuel</strong>.</p>
       </div>
       <div class="source-card">
-        <span class="tag t2">Source secondaire</span>
-        <h4>INSEE EEC 2024</h4>
-        <p>Enquête Emploi en Continu de l'INSEE. Effectifs et salaires nets mensuels par profession (PCS 2020), reliés aux codes ROME via la nomenclature FAP 2021.</p>
+        <span class="tag t1">Source primaire</span>
+        <h4>Dares, Portraits statistiques des métiers <span style="color:var(--fg2);font-weight:400;">· 16 juillet 2026</span></h4>
+        <p>Effectifs en emploi 2024 et salaire mensuel net médian 2023-2025 pour les 341 familles professionnelles (FAP-2021). C'est la source des <em>chiffres d'emploi et de salaire</em> du site depuis août 2026.</p>
       </div>
       <div class="source-card">
         <span class="tag t3">Crosswalk</span>
+        <h4>Dares, table de passage Rome vers FAP-2021</h4>
+        <p>532 codes ROME reliés aux familles professionnelles de la Dares. Sert de menu de candidats ; le rattachement final de chacun de nos 147 métiers est arbitré à la main dans <code>refresh_stats_fr.py</code>.</p>
+      </div>
+      <div class="source-card">
+        <span class="tag t3">Référence non utilisée</span>
         <h4>ROME-ESCO Mapping</h4>
-        <p>Table de correspondance officielle France Travail : 11 118 appellations ROME mappées vers 1 915 occupations ESCO. Passerelle vers les indices internationaux.</p>
+        <p>Table de correspondance officielle France Travail : 11 118 appellations ROME vers 1 915 occupations ESCO. <strong>Remplacée</strong> depuis août 2026 par la table Rome vers FAP-2021 de la Dares, conservée dans le dépôt.</p>
       </div>
     </div>
+  </section>
+
+  <!-- ── Cadre réglementaire ───────────────────────────── -->
+
+  <section>
+    <h2>Cadre réglementaire : ce qui a bougé</h2>
+    <p>Le calendrier du <strong>règlement européen sur l'IA</strong> a été modifié en 2026. Le paquet de simplification dit <em>digital omnibus</em>, entré en vigueur le <strong>27 juillet 2026</strong>, reporte les obligations applicables aux systèmes à haut risque qui devaient s'appliquer au 2 août 2026 :</p>
+    <ul>
+      <li><strong>2 décembre 2027</strong> pour les systèmes à usage à haut risque, catégorie qui inclut explicitement <strong>l'emploi et le recrutement</strong>, ainsi que la biométrie, l'éducation, les infrastructures critiques et le maintien de l'ordre</li>
+      <li><strong>2 août 2028</strong> pour les systèmes intégrés comme composants de sécurité de produits déjà couverts par la législation sectorielle</li>
+      <li><strong>2 décembre 2026</strong> pour les obligations de marquage des contenus générés par IA</li>
+    </ul>
+    <p>Ce report ne change pas l'exposition des métiers, mais il décale d'environ seize mois le moment où l'usage de l'IA dans les processus RH sera encadré. Il pèse donc sur le rythme d'adoption dans les métiers du recrutement, de la gestion du personnel et de l'orientation. <a href="https://www.europarl.europa.eu/news/en/press-room/20260427IPR42011/ai-act-deal-on-simplification-measures-ban-on-nudifier-apps">Communiqué du Parlement européen</a></p>
   </section>
 
   <!-- ── Pipeline technique ────────────────────────────── -->
@@ -498,27 +660,31 @@ footer a:hover { color: var(--fg); }
     <div class="pipeline">
       <div class="pipeline-step">
         <div class="step-num">1</div>
-        <div class="step-text"><strong>Scraper</strong> — <code>scrape_francetravail.py</code> récupère les fiches métier via l'API France Travail (ROME v2, OAuth2).</div>
+        <div class="step-text"><strong>Scraper</strong> : <code>scrape_francetravail.py</code> récupère les fiches métier via l'API France Travail (ROME v2, OAuth2).</div>
       </div>
       <div class="pipeline-step">
         <div class="step-num">2</div>
-        <div class="step-text"><strong>Parser</strong> — <code>parse_rome.py</code> + <code>process.py</code> convertissent les données JSON en fichiers Markdown structurés.</div>
+        <div class="step-text"><strong>Parser</strong> : <code>parse_rome.py</code> + <code>process.py</code> convertissent les données JSON en fichiers Markdown structurés.</div>
       </div>
       <div class="pipeline-step">
         <div class="step-num">3</div>
-        <div class="step-text"><strong>Tabuler</strong> — <code>make_csv_fr.py</code> extrait les champs structurés (salaire, formation, emplois) dans un CSV.</div>
+        <div class="step-text"><strong>Tabuler</strong> : <code>make_csv_fr.py</code> extrait les champs structurés (salaire, formation, emplois) dans un CSV, puis <code>refresh_stats_fr.py</code> remplace les effectifs et les salaires par ceux de la Dares.</div>
       </div>
       <div class="pipeline-step">
         <div class="step-num">4</div>
-        <div class="step-text"><strong>Scorer</strong> — <code>build_scores.py</code> mappe les scores multi-sources (transitions-ia.fr, Felten, ILO, ESCO) vers nos 147 métiers.</div>
+        <div class="step-text"><strong>Scorer</strong> : <code>build_scores.py</code> rattache 124 métiers au corpus de transitions-ia.fr et applique une estimation d'expert écrite à la main aux 23 métiers sans équivalent.</div>
       </div>
       <div class="pipeline-step">
         <div class="step-num">5</div>
-        <div class="step-text"><strong>Construire</strong> — <code>build_site_data.py</code> fusionne CSV et scores dans un JSON compact pour le frontend.</div>
+        <div class="step-text"><strong>Rapprocher</strong> : <code>build_observed_exposure.py</code> relie chaque métier à la profession SOC américaine la plus proche pour récupérer l'exposition observée de l'Anthropic Economic Index.</div>
       </div>
       <div class="pipeline-step">
         <div class="step-num">6</div>
-        <div class="step-text"><strong>Visualiser</strong> — <code>treemap.html</code> affiche le treemap interactif avec 4 couches de coloration.</div>
+        <div class="step-text"><strong>Construire</strong> : <code>build_site_data.py</code> fusionne CSV, scores et exposition observée dans un JSON compact pour le frontend.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="step-num">7</div>
+        <div class="step-text"><strong>Visualiser</strong> : <code>treemap.html</code> affiche le treemap interactif avec 4 couches de coloration.</div>
       </div>
     </div>
   </section>
@@ -529,11 +695,23 @@ footer a:hover { color: var(--fg); }
     <h2>Les 4 couches de visualisation</h2>
     <p>Le treemap propose 4 modes de coloration interactifs :</p>
     <ul>
-      <li><strong>Exposition IA</strong> — Score 0-10 basé sur les sources académiques multi-institutionnelles. Du vert (minimale) au rouge (maximale).</li>
-      <li><strong>Salaire médian</strong> — Salaire brut annuel en euros (données INSEE EEC 2024). Couvre 130 métiers sur 147.</li>
-      <li><strong>Formation</strong> — Niveau de diplôme requis, du Sans diplôme au Doctorat (Bac+8). Basé sur les fiches ROME.</li>
-      <li><strong>Perspectives</strong> — Estimation de l'évolution de la demande, corrélée inversement à l'exposition IA et aux projections DARES.</li>
+      <li><strong>Exposition IA</strong> : score 0-10 basé sur les sources académiques multi-institutionnelles. Du vert (minimale) au rouge (maximale).</li>
+      <li><strong>Salaire net médian</strong> : salaire net annuel en euros, soit douze fois le salaire mensuel net médian publié par la Dares pour la période 2023-2025. Couvre 145 métiers sur 147. Attention, il s'agit de net et non de brut : les montants ne sont pas comparables à ceux d'une offre d'emploi.</li>
+      <li><strong>Formation</strong> : niveau de diplôme requis, du Sans diplôme au Doctorat (Bac+8). Basé sur les fiches ROME.</li>
+      <li><strong>Perspectives</strong> : estimation de l'évolution de la demande, corrélée inversement à l'exposition IA et aux projections DARES.</li>
     </ul>
+
+    <p>Depuis la mise à jour d'août 2026, l'infobulle affiche en plus l'<strong>usage IA constaté</strong> : la part des tâches du métier effectivement observée dans l'usage réel d'un assistant IA, d'après l'Anthropic Economic Index de mars 2026. Cet indicateur est disponible pour 144 des 147 métiers. Il se lit en regard du score, pas à sa place : le score mesure un potentiel de transformation, l'usage constaté mesure ce qui se passe aujourd'hui. L'écart entre les deux est en général large, et c'est précisément ce qu'il est intéressant de regarder.</p>
+
+    <div class="caveat">
+      <h4>Limite des effectifs et des salaires</h4>
+      <p>Nos 147 métiers ne coïncident pas avec les 341 familles professionnelles de la Dares. Deux ajustements sont faits, et ils sont visibles dans l'infobulle du treemap. Quand un métier <strong>couvre plusieurs familles</strong> (les maçons peu qualifiés et les maçons qualifiés, par exemple), les effectifs sont additionnés et le salaire est la moyenne des médianes pondérée par les effectifs, ce qui n'est pas rigoureusement une médiane. Quand <strong>plusieurs de nos métiers tombent dans la même famille</strong> (avocats et juristes d'entreprise, télévendeurs et opérateurs de centre d'appels), l'effectif est réparti à parts égales entre eux, pour que le total reste juste et que la carte ne compte pas deux fois les mêmes emplois ; ces métiers sont signalés par un astérisque. 27 métiers sur 147 sont dans ce cas.</p>
+    </div>
+
+    <div class="caveat">
+      <h4>Limite de cet indicateur</h4>
+      <p>L'index Anthropic est construit sur des professions américaines (nomenclature SOC) et sur l'usage d'un seul assistant IA. Le rapprochement avec nos métiers ROME est établi <strong>à la main, métier par métier</strong>, et reste approximatif : il donne un ordre de grandeur, pas une mesure française. La table de correspondance est lisible dans <code>build_observed_exposure.py</code>.</p>
+    </div>
 
     <p style="text-align:center;margin-top:28px;">
       <a href="treemap.html" class="cta">Explorer la visualisation</a>
@@ -546,6 +724,7 @@ footer a:hover { color: var(--fg); }
 
 <footer>
   <div class="container">
+    <p>Dernière mise à jour des données et des sources : 8 août 2026.</p>
     <p>Fork de <a href="https://github.com/karpathy/jobs">karpathy/jobs</a> par Andrej Karpathy, adapté au marché du travail français.</p>
     <p>Code source : <a href="https://github.com/Yanndd1/jobs_karpathy">github.com/Yanndd1/jobs_karpathy</a></p>
     <p>Propulsé par <a href="https://solicare.fr">Solicare</a></p>
