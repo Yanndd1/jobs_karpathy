@@ -27,10 +27,6 @@
     "salary_net_monthly": 2250,
     "employment_count": 58000
   },
-  "caissiers": {
-    "salary_net_monthly": 1780,
-    "employment_count": 218000
-  },
   "cuisiniers": {
     "salary_net_monthly": 1780,
     "employment_count": 218000
@@ -138,10 +134,6 @@
   "aides-domicile": {
     "salary_net_monthly": 1580,
     "employment_count": 695000
-  },
-  "secretaires": {
-    "salary_net_monthly": 4350,
-    "employment_count": 6200
   },
   "responsables-rh": {
     "salary_net_monthly": 4080,
@@ -379,14 +371,6 @@
     "salary_net_monthly": 3850,
     "employment_count": 74000
   },
-  "conducteurs-bus": {
-    "salary_net_monthly": 3280,
-    "employment_count": 52000
-  },
-  "conducteurs-train": {
-    "salary_net_monthly": 3280,
-    "employment_count": 52000
-  },
   "pilotes-avion": {
     "salary_net_monthly": 7200,
     "employment_count": 14000
@@ -406,10 +390,6 @@
   "agents-accueil": {
     "salary_net_monthly": 1840,
     "employment_count": 62000
-  },
-  "operateurs-saisie": {
-    "salary_net_monthly": 3200,
-    "employment_count": 12000
   },
   "gestionnaires-paie": {
     "salary_net_monthly": 2800,
@@ -470,10 +450,6 @@
   "analystes-financiers": {
     "salary_net_monthly": 4080,
     "employment_count": 38000
-  },
-  "moniteurs-sport": {
-    "salary_net_monthly": 2400,
-    "employment_count": 18000
   },
   "dieteticiens": {
     "salary_net_monthly": 3850,

@@ -1,10 +1,13 @@
 """
 Build scores.json by mapping external AI exposure data to our 147 ROME occupations.
 
-Sources (in priority order):
-1. transitions-ia.fr — 97 French occupations with multi-source weighted scores (0-10)
-2. Demirev ESCO scores — 3000+ ESCO occupations with AI exposure scores
-3. Manual expert mapping for remaining occupations
+Sources reellement utilisees, dans cet ordre de priorite :
+1. MANUAL_MAP : rattachement explicite a un metier de transitions-ia.fr (124 metiers)
+2. MANUAL_SCORES : estimation d'expert ecrite a la main, pour les metiers sans
+   equivalent dans transitions-ia.fr (23 metiers)
+
+Les jeux de donnees Felten AIOE et Demirev ESCO presents dans external_data/ ne sont
+pas utilises par ce script : ils sont conserves comme references pour un futur scoring.
 
 Also enriches metiers.json entries with salary and employment data from transitions-ia.fr.
 
@@ -222,18 +225,12 @@ MANUAL_SCORES = {
 
 def main():
     # Load transitions-ia.fr scores
-    with open("external_data/transitions_ia_scores.json") as f:
+    with open("external_data/transitions_ia_scores.json", encoding="utf-8") as f:
         tia_data = json.load(f)
     tia_by_label = {entry["label"]: entry for entry in tia_data}
 
-    # Load ESCO scores for supplementary matching
-    esco_scores = {}
-    with open("external_data/scored_esco_occupations.csv") as f:
-        for row in csv.DictReader(f):
-            esco_scores[row["occupation_title"].lower()] = float(row["ai_product_exposure_score"])
-
     # Load our metiers
-    with open("metiers.json") as f:
+    with open("metiers.json", encoding="utf-8") as f:
         metiers = json.load(f)
 
     scores = []
@@ -257,8 +254,14 @@ def main():
                 source = "transitions-ia.fr (manual map)"
                 manual += 1
 
+        # MANUAL_MAP[slug] = None signifie « aucun équivalent dans transitions-ia.fr ».
+        # Ces métiers doivent passer directement au score expert de MANUAL_SCORES :
+        # sans ce garde-fou, le rapprochement flou ci-dessous trouve presque toujours
+        # un libellé au-dessus du seuil et écrase le score écrit à la main.
+        no_equivalent = slug in MANUAL_MAP and MANUAL_MAP[slug] is None
+
         # 2. Try exact/fuzzy match on label
-        if entry is None:
+        if entry is None and not no_equivalent:
             best_score = 0
             best_entry = None
             for label, e in tia_by_label.items():
@@ -314,11 +317,11 @@ def main():
             print(f"  WARNING: No score for {slug} ({title})")
 
     # Save scores.json
-    with open("scores.json", "w") as f:
+    with open("scores.json", "w", encoding="utf-8") as f:
         json.dump(scores, f, indent=2, ensure_ascii=False)
 
     # Save stats enrichment for CSV update
-    with open("external_data/stats_enrichment.json", "w") as f:
+    with open("external_data/stats_enrichment.json", "w", encoding="utf-8") as f:
         json.dump(stats_enrichment, f, indent=2, ensure_ascii=False)
 
     print(f"\nScoring complete:")
@@ -341,7 +344,7 @@ def main():
         dist[v] = dist.get(v, 0) + 1
     print("\n  Distribution:")
     for k in sorted(dist):
-        print(f"    {k}: {'█' * dist[k]} ({dist[k]})")
+        print(f"    {k}: {'#' * dist[k]} ({dist[k]})")
 
 
 if __name__ == "__main__":

@@ -82,11 +82,11 @@
   {
     "slug": "caissiers",
     "title": "Caissiers",
-    "exposure": 2,
-    "exposure_raw": 2.0,
-    "rationale": "Dextérité, créativité culinaire et adaptation en temps réel · automatisation anecdotique hors fast-food.",
-    "source": "transitions-ia.fr (fuzzy 0.67)",
-    "num_evidence_sources": 3,
+    "exposure": 9,
+    "exposure_raw": 9.0,
+    "rationale": "Caisses automatiques et paiement sans contact en forte expansion. Métier en restructuration majeure.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
     "regulations": ""
   },
   {
@@ -402,12 +402,12 @@
   {
     "slug": "secretaires",
     "title": "Secrétaires",
-    "exposure": 9,
-    "exposure_raw": 8.6,
-    "rationale": "Modélisation statistique = cœur automatisable par ML spécialisés. Valeur migre vers l'interprétation et la gouvernance.",
-    "source": "transitions-ia.fr (fuzzy 0.63)",
-    "num_evidence_sources": 3,
-    "regulations": "RGPD|AMF|DORA"
+    "exposure": 8,
+    "exposure_raw": 8.0,
+    "rationale": "Gestion d'agenda, courriers, tri de mails : très automatisable par les assistants IA. La coordination humaine complexe résiste.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
+    "regulations": ""
   },
   {
     "slug": "assistants-direction",
@@ -1063,20 +1063,20 @@
     "slug": "conducteurs-bus",
     "title": "Conducteurs de bus",
     "exposure": 4,
-    "exposure_raw": 4.43,
-    "rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.",
-    "source": "transitions-ia.fr (fuzzy 0.77)",
-    "num_evidence_sources": 3,
+    "exposure_raw": 4.0,
+    "rationale": "Conduite autonome progresse mais le contexte urbain et la responsabilité des passagers maintiennent l'humain à moyen terme.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
     "regulations": ""
   },
   {
     "slug": "conducteurs-train",
     "title": "Conducteurs de train",
-    "exposure": 4,
-    "exposure_raw": 4.43,
-    "rationale": "Coordination multi-acteurs et gestion des aléas de chantier freinent l'automatisation. Responsabilité juridique maintient l'humain.",
-    "source": "transitions-ia.fr (fuzzy 0.83)",
-    "num_evidence_sources": 3,
+    "exposure": 5,
+    "exposure_raw": 5.0,
+    "rationale": "Automatisation avancée (métro sans conducteur). Le réseau ferré classique évolue plus lentement.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
     "regulations": ""
   },
   {
@@ -1132,12 +1132,12 @@
   {
     "slug": "operateurs-saisie",
     "title": "Opérateurs de saisie",
-    "exposure": 4,
-    "exposure_raw": 3.67,
-    "rationale": "Le jugement curatorial (authenticité, provenance, signification culturelle) est une expertise humaine irréductible. L'IA augmente la numérisation et la médiation mais ne remplace pas l'expertise scientifique.",
-    "source": "transitions-ia.fr (fuzzy 0.65)",
-    "num_evidence_sources": 4,
-    "regulations": "RGPD|IA_Act"
+    "exposure": 10,
+    "exposure_raw": 10.0,
+    "rationale": "Traitement routinier d'information entièrement numérique. L'IA réalise déjà la majorité de ces tâches.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
+    "regulations": ""
   },
   {
     "slug": "gestionnaires-paie",
@@ -1332,12 +1332,12 @@
   {
     "slug": "moniteurs-sport",
     "title": "Moniteurs de sport",
-    "exposure": 8,
-    "exposure_raw": 8.1,
-    "rationale": "Montage automatique (génération de rushes, découpes IA, sous-titrage) : très exposé. L'Adobe Premiere/DaVinci Resolve intègrent déjà l'IA de manière native. La direction éditoriale, le rythme narratif et la post-production de prestige restent différenciants. ~18 000 monteurs (Audiens/CPNEF-AV 2024).",
-    "source": "transitions-ia.fr (fuzzy 0.71)",
-    "num_evidence_sources": 5,
-    "regulations": "RGPD|DSA|IA_Act"
+    "exposure": 2,
+    "exposure_raw": 2.0,
+    "rationale": "Enseignement physique et sécurité des pratiquants. Présence humaine indispensable.",
+    "source": "expert estimate",
+    "num_evidence_sources": 0,
+    "regulations": ""
   },
   {
     "slug": "entraineurs-sportifs",
