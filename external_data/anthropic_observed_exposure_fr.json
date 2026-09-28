@@ -1,0 +1,725 @@
+{
+  "comptables": {
+    "soc_code": "13-2011",
+    "soc_title": "Accountants and Auditors",
+    "observed_exposure": 0.3478
+  },
+  "developpeurs-informatiques": {
+    "soc_code": "15-1252",
+    "soc_title": "Software Developers",
+    "observed_exposure": 0.288
+  },
+  "infirmiers-soins-generaux": {
+    "soc_code": "29-1141",
+    "soc_title": "Registered Nurses",
+    "observed_exposure": 0.0595
+  },
+  "aides-soignants": {
+    "soc_code": "31-1131",
+    "soc_title": "Nursing Assistants",
+    "observed_exposure": 0.0
+  },
+  "enseignants-secondaire": {
+    "soc_code": "25-2031",
+    "soc_title": "Secondary School Teachers, Except Special and Career/Technical Education",
+    "observed_exposure": 0.2901
+  },
+  "enseignants-primaire": {
+    "soc_code": "25-2021",
+    "soc_title": "Elementary School Teachers, Except Special Education",
+    "observed_exposure": 0.103
+  },
+  "agents-securite": {
+    "soc_code": "33-9032",
+    "soc_title": "Security Guards",
+    "observed_exposure": 0.0
+  },
+  "vendeurs-magasin": {
+    "soc_code": "41-2031",
+    "soc_title": "Retail Salespersons",
+    "observed_exposure": 0.3222
+  },
+  "caissiers": {
+    "soc_code": "41-2011",
+    "soc_title": "Cashiers",
+    "observed_exposure": 0.0846
+  },
+  "cuisiniers": {
+    "soc_code": "35-2014",
+    "soc_title": "Cooks, Restaurant",
+    "observed_exposure": 0.0116
+  },
+  "serveurs-restaurant": {
+    "soc_code": "35-3031",
+    "soc_title": "Waiters and Waitresses",
+    "observed_exposure": 0.0
+  },
+  "macons": {
+    "soc_code": "47-2021",
+    "soc_title": "Brickmasons and Blockmasons",
+    "observed_exposure": 0.0
+  },
+  "electriciens-batiment": {
+    "soc_code": "47-2111",
+    "soc_title": "Electricians",
+    "observed_exposure": 0.0
+  },
+  "plombiers-chauffagistes": {
+    "soc_code": "47-2152",
+    "soc_title": "Plumbers, Pipefitters, and Steamfitters",
+    "observed_exposure": 0.0116
+  },
+  "peintres-batiment": {
+    "soc_code": "47-2141",
+    "soc_title": "Painters, Construction and Maintenance",
+    "observed_exposure": 0.0
+  },
+  "conducteurs-travaux": {
+    "soc_code": "47-1011",
+    "soc_title": "First-Line Supervisors of Construction Trades and Extraction Workers",
+    "observed_exposure": 0.0296
+  },
+  "conducteurs-routiers": {
+    "soc_code": "53-3032",
+    "soc_title": "Heavy and Tractor-Trailer Truck Drivers",
+    "observed_exposure": 0.0
+  },
+  "agents-transit": {
+    "soc_code": "43-5011",
+    "soc_title": "Cargo and Freight Agents",
+    "observed_exposure": 0.0165
+  },
+  "magasiniers": {
+    "soc_code": "43-5071",
+    "soc_title": "Shipping, Receiving, and Inventory Clerks",
+    "observed_exposure": 0.0
+  },
+  "livreurs": {
+    "soc_code": "53-3033",
+    "soc_title": "Light Truck Drivers",
+    "observed_exposure": 0.0
+  },
+  "medecins-generalistes": {
+    "soc_code": "29-1215",
+    "soc_title": "Family Medicine Physicians",
+    "observed_exposure": 0.0
+  },
+  "pharmaciens": {
+    "soc_code": "29-1051",
+    "soc_title": "Pharmacists",
+    "observed_exposure": 0.0896
+  },
+  "kinesitherapeutes": {
+    "soc_code": "29-1123",
+    "soc_title": "Physical Therapists",
+    "observed_exposure": 0.0174
+  },
+  "chirurgiens-dentistes": {
+    "soc_code": "29-1021",
+    "soc_title": "Dentists, General",
+    "observed_exposure": 0.0309
+  },
+  "sages-femmes": {
+    "soc_code": "29-1161",
+    "soc_title": "Nurse Midwives",
+    "observed_exposure": 0.052
+  },
+  "psychologues": {
+    "soc_code": "19-3033",
+    "soc_title": "Clinical and Counseling Psychologists",
+    "observed_exposure": 0.0591
+  },
+  "avocats": {
+    "soc_code": "23-1011",
+    "soc_title": "Lawyers",
+    "observed_exposure": 0.1673
+  },
+  "notaires": {
+    "soc_code": "23-1011",
+    "soc_title": "Lawyers",
+    "observed_exposure": 0.1673
+  },
+  "agents-immobiliers": {
+    "soc_code": "41-9022",
+    "soc_title": "Real Estate Sales Agents",
+    "observed_exposure": 0.2828
+  },
+  "conseillers-bancaires": {
+    "soc_code": "13-2072",
+    "soc_title": "Loan Officers",
+    "observed_exposure": 0.1857
+  },
+  "agents-assurance": {
+    "soc_code": "41-3021",
+    "soc_title": "Insurance Sales Agents",
+    "observed_exposure": 0.3188
+  },
+  "agriculteurs": {
+    "soc_code": "11-9013",
+    "soc_title": "Farmers, Ranchers, and Other Agricultural Managers",
+    "observed_exposure": 0.0
+  },
+  "jardiniers-paysagistes": {
+    "soc_code": "37-3011",
+    "soc_title": "Landscaping and Groundskeeping Workers",
+    "observed_exposure": 0.0
+  },
+  "boulangers-patissiers": {
+    "soc_code": "51-3011",
+    "soc_title": "Bakers",
+    "observed_exposure": 0.0
+  },
+  "bouchers": {
+    "soc_code": "51-3021",
+    "soc_title": "Butchers and Meat Cutters",
+    "observed_exposure": 0.0
+  },
+  "coiffeurs": {
+    "soc_code": "39-5012",
+    "soc_title": "Hairdressers, Hairstylists, and Cosmetologists",
+    "observed_exposure": 0.0304
+  },
+  "estheticiens": {
+    "soc_code": "39-5094",
+    "soc_title": "Skincare Specialists",
+    "observed_exposure": 0.0
+  },
+  "assistants-maternels": {
+    "soc_code": "39-9011",
+    "soc_title": "Childcare Workers",
+    "observed_exposure": 0.0122
+  },
+  "aides-domicile": {
+    "soc_code": "31-1131",
+    "soc_title": "Nursing Assistants",
+    "observed_exposure": 0.0
+  },
+  "agents-entretien": {
+    "soc_code": "37-2011",
+    "soc_title": "Janitors and Cleaners, Except Maids and Housekeeping Cleaners",
+    "observed_exposure": 0.0
+  },
+  "secretaires": {
+    "soc_code": "43-6014",
+    "soc_title": "Secretaries and Administrative Assistants, Except Legal, Medical, and Executive",
+    "observed_exposure": 0.4528
+  },
+  "assistants-direction": {
+    "soc_code": "43-6011",
+    "soc_title": "Executive Secretaries and Executive Administrative Assistants",
+    "observed_exposure": 0.2336
+  },
+  "responsables-rh": {
+    "soc_code": "11-3121",
+    "soc_title": "Human Resources Managers",
+    "observed_exposure": 0.0
+  },
+  "controleurs-gestion": {
+    "soc_code": "13-2031",
+    "soc_title": "Budget Analysts",
+    "observed_exposure": 0.0672
+  },
+  "directeurs-magasin": {
+    "soc_code": "41-1011",
+    "soc_title": "First-Line Supervisors of Retail Sales Workers",
+    "observed_exposure": 0.2627
+  },
+  "responsables-logistiques": {
+    "soc_code": "11-3071",
+    "soc_title": "Transportation, Storage, and Distribution Managers",
+    "observed_exposure": 0.0956
+  },
+  "techniciens-maintenance-industrielle": {
+    "soc_code": "49-9041",
+    "soc_title": "Industrial Machinery Mechanics",
+    "observed_exposure": 0.0239
+  },
+  "soudeurs": {
+    "soc_code": "51-4121",
+    "soc_title": "Welders, Cutters, Solderers, and Brazers",
+    "observed_exposure": 0.0
+  },
+  "operateurs-production": {
+    "soc_code": "51-9111",
+    "soc_title": "Packaging and Filling Machine Operators and Tenders",
+    "observed_exposure": 0.0
+  },
+  "ingenieurs-mecanique": {
+    "soc_code": "17-2141",
+    "soc_title": "Mechanical Engineers",
+    "observed_exposure": 0.0813
+  },
+  "techniciens-qualite": {
+    "soc_code": "51-9061",
+    "soc_title": "Inspectors, Testers, Sorters, Samplers, and Weighers",
+    "observed_exposure": 0.0324
+  },
+  "designers-graphiques": {
+    "soc_code": "27-1024",
+    "soc_title": "Graphic Designers",
+    "observed_exposure": 0.3672
+  },
+  "journalistes": {
+    "soc_code": "27-3023",
+    "soc_title": "News Analysts, Reporters, and Journalists",
+    "observed_exposure": 0.2098
+  },
+  "redacteurs-web": {
+    "soc_code": "27-3043",
+    "soc_title": "Writers and Authors",
+    "observed_exposure": 0.2462
+  },
+  "charges-communication": {
+    "soc_code": "27-3031",
+    "soc_title": "Public Relations Specialists",
+    "observed_exposure": 0.453
+  },
+  "community-managers": {
+    "soc_code": "27-3031",
+    "soc_title": "Public Relations Specialists",
+    "observed_exposure": 0.453
+  },
+  "administrateurs-systemes-reseaux": {
+    "soc_code": "15-1244",
+    "soc_title": "Network and Computer Systems Administrators",
+    "observed_exposure": 0.3373
+  },
+  "chefs-projets-informatiques": {
+    "soc_code": "11-3021",
+    "soc_title": "Computer and Information Systems Managers",
+    "observed_exposure": 0.1559
+  },
+  "data-analysts": {
+    "soc_code": "15-2051",
+    "soc_title": "Data Scientists",
+    "observed_exposure": 0.4605
+  },
+  "techniciens-support-informatique": {
+    "soc_code": "15-1232",
+    "soc_title": "Computer User Support Specialists",
+    "observed_exposure": 0.4685
+  },
+  "architectes": {
+    "soc_code": "17-1011",
+    "soc_title": "Architects, Except Landscape and Naval",
+    "observed_exposure": 0.0784
+  },
+  "geometres-topographes": {
+    "soc_code": "17-1022",
+    "soc_title": "Surveyors",
+    "observed_exposure": 0.0022
+  },
+  "mecaniciens-automobiles": {
+    "soc_code": "49-3023",
+    "soc_title": "Automotive Service Technicians and Mechanics",
+    "observed_exposure": 0.0
+  },
+  "carrossiers": {
+    "soc_code": "49-3021",
+    "soc_title": "Automotive Body and Related Repairers",
+    "observed_exposure": 0.0
+  },
+  "sapeurs-pompiers": {
+    "soc_code": "33-2011",
+    "soc_title": "Firefighters",
+    "observed_exposure": 0.0
+  },
+  "policiers": {
+    "soc_code": "33-3051",
+    "soc_title": "Police and Sheriff's Patrol Officers",
+    "observed_exposure": 0.1234
+  },
+  "gendarmes": {
+    "soc_code": "33-3051",
+    "soc_title": "Police and Sheriff's Patrol Officers",
+    "observed_exposure": 0.1234
+  },
+  "educateurs-specialises": {
+    "soc_code": "21-1021",
+    "soc_title": "Child, Family, and School Social Workers",
+    "observed_exposure": 0.0074
+  },
+  "assistants-service-social": {
+    "soc_code": "21-1021",
+    "soc_title": "Child, Family, and School Social Workers",
+    "observed_exposure": 0.0074
+  },
+  "animateurs-socioculturels": {
+    "soc_code": "39-9032",
+    "soc_title": "Recreation Workers",
+    "observed_exposure": 0.0
+  },
+  "directeurs-generaux": {
+    "soc_code": "11-1011",
+    "soc_title": "Chief Executives",
+    "observed_exposure": 0.0333
+  },
+  "directeurs-financiers": {
+    "soc_code": "11-3031",
+    "soc_title": "Financial Managers",
+    "observed_exposure": 0.3907
+  },
+  "responsables-marketing": {
+    "soc_code": "11-2021",
+    "soc_title": "Marketing Managers",
+    "observed_exposure": 0.3195
+  },
+  "commerciaux-terrain": {
+    "soc_code": "41-4012",
+    "soc_title": "Sales Representatives, Wholesale and Manufacturing, Except Technical and Scientific Products",
+    "observed_exposure": 0.6279
+  },
+  "televendeurs": {
+    "soc_code": "41-9041",
+    "soc_title": "Telemarketers",
+    "observed_exposure": 0.2852
+  },
+  "acheteurs": {
+    "soc_code": "11-3061",
+    "soc_title": "Purchasing Managers",
+    "observed_exposure": 0.2004
+  },
+  "charpentiers": {
+    "soc_code": "47-2031",
+    "soc_title": "Carpenters",
+    "observed_exposure": 0.0
+  },
+  "couvreurs": {
+    "soc_code": "47-2181",
+    "soc_title": "Roofers",
+    "observed_exposure": 0.0157
+  },
+  "menuisiers": {
+    "soc_code": "47-2031",
+    "soc_title": "Carpenters",
+    "observed_exposure": 0.0
+  },
+  "techniciens-electronique": {
+    "soc_code": "17-3023",
+    "soc_title": "Electrical and Electronic Engineering Technologists and Technicians",
+    "observed_exposure": 0.0202
+  },
+  "ingenieurs-informatique": {
+    "soc_code": "15-1252",
+    "soc_title": "Software Developers",
+    "observed_exposure": 0.288
+  },
+  "experts-cybersecurite": {
+    "soc_code": "15-1212",
+    "soc_title": "Information Security Analysts",
+    "observed_exposure": 0.4859
+  },
+  "techniciens-telecoms": {
+    "soc_code": "49-2022",
+    "soc_title": "Telecommunications Equipment Installers and Repairers, Except Line Installers",
+    "observed_exposure": 0.0333
+  },
+  "traducteurs-interpretes": {
+    "soc_code": "27-3091",
+    "soc_title": "Interpreters and Translators",
+    "observed_exposure": 0.4304
+  },
+  "photographes": {
+    "soc_code": "27-4021",
+    "soc_title": "Photographers",
+    "observed_exposure": 0.195
+  },
+  "techniciens-audiovisuels": {
+    "soc_code": "27-4011",
+    "soc_title": "Audio and Video Technicians",
+    "observed_exposure": 0.0173
+  },
+  "comediens": {
+    "soc_code": "27-2011",
+    "soc_title": "Actors",
+    "observed_exposure": 0.1011
+  },
+  "musiciens": {
+    "soc_code": "27-2042",
+    "soc_title": "Musicians and Singers",
+    "observed_exposure": 0.0
+  },
+  "agents-voyage": {
+    "soc_code": "41-3041",
+    "soc_title": "Travel Agents",
+    "observed_exposure": 0.4054
+  },
+  "receptionnistes-hotel": {
+    "soc_code": "43-4081",
+    "soc_title": "Hotel, Motel, and Resort Desk Clerks",
+    "observed_exposure": 0.1725
+  },
+  "guides-touristiques": null,
+  "chefs-cuisine": {
+    "soc_code": "35-1011",
+    "soc_title": "Chefs and Head Cooks",
+    "observed_exposure": 0.0
+  },
+  "experts-comptables": {
+    "soc_code": "13-2011",
+    "soc_title": "Accountants and Auditors",
+    "observed_exposure": 0.3478
+  },
+  "auditeurs-financiers": {
+    "soc_code": "13-2011",
+    "soc_title": "Accountants and Auditors",
+    "observed_exposure": 0.3478
+  },
+  "opticiens-lunetiers": {
+    "soc_code": "29-2081",
+    "soc_title": "Opticians, Dispensing",
+    "observed_exposure": 0.0
+  },
+  "veterinaires": {
+    "soc_code": "29-1131",
+    "soc_title": "Veterinarians",
+    "observed_exposure": 0.0926
+  },
+  "ingenieurs-agronomes": {
+    "soc_code": "17-2021",
+    "soc_title": "Agricultural Engineers",
+    "observed_exposure": 0.0
+  },
+  "ouvriers-viticoles": {
+    "soc_code": "45-2092",
+    "soc_title": "Farmworkers and Laborers, Crop, Nursery, and Greenhouse",
+    "observed_exposure": 0.0203
+  },
+  "chercheurs": null,
+  "formateurs": {
+    "soc_code": "13-1151",
+    "soc_title": "Training and Development Specialists",
+    "observed_exposure": 0.2793
+  },
+  "bibliothecaires": {
+    "soc_code": "25-4022",
+    "soc_title": "Librarians and Media Collections Specialists",
+    "observed_exposure": 0.2032
+  },
+  "preparateurs-pharmacie": {
+    "soc_code": "29-2052",
+    "soc_title": "Pharmacy Technicians",
+    "observed_exposure": 0.0735
+  },
+  "ambulanciers": {
+    "soc_code": "53-3011",
+    "soc_title": "Ambulance Drivers and Attendants, Except Emergency Medical Technicians",
+    "observed_exposure": 0.0
+  },
+  "manipulateurs-radiologie": {
+    "soc_code": "29-2034",
+    "soc_title": "Radiologic Technologists and Technicians",
+    "observed_exposure": 0.0
+  },
+  "techniciens-labo-medical": {
+    "soc_code": "19-4021",
+    "soc_title": "Biological Technicians",
+    "observed_exposure": 0.0599
+  },
+  "agents-proprete-urbaine": {
+    "soc_code": "53-7081",
+    "soc_title": "Refuse and Recyclable Material Collectors",
+    "observed_exposure": 0.0
+  },
+  "conducteurs-bus": {
+    "soc_code": "53-3052",
+    "soc_title": "Bus Drivers, Transit and Intercity",
+    "observed_exposure": 0.0
+  },
+  "conducteurs-train": {
+    "soc_code": "53-4011",
+    "soc_title": "Locomotive Engineers",
+    "observed_exposure": 0.0
+  },
+  "pilotes-avion": {
+    "soc_code": "53-2011",
+    "soc_title": "Airline Pilots, Copilots, and Flight Engineers",
+    "observed_exposure": 0.0
+  },
+  "mecaniciens-aeronautiques": {
+    "soc_code": "49-3011",
+    "soc_title": "Aircraft Mechanics and Service Technicians",
+    "observed_exposure": 0.0
+  },
+  "ingenieurs-energie": {
+    "soc_code": "17-2071",
+    "soc_title": "Electrical Engineers",
+    "observed_exposure": 0.059
+  },
+  "techniciens-energie-renouvelable": {
+    "soc_code": "49-9081",
+    "soc_title": "Wind Turbine Service Technicians",
+    "observed_exposure": 0.0
+  },
+  "agents-accueil": {
+    "soc_code": "43-4171",
+    "soc_title": "Receptionists and Information Clerks",
+    "observed_exposure": 0.4338
+  },
+  "operateurs-saisie": {
+    "soc_code": "43-9021",
+    "soc_title": "Data Entry Keyers",
+    "observed_exposure": 0.6707
+  },
+  "gestionnaires-paie": {
+    "soc_code": "43-3051",
+    "soc_title": "Payroll and Timekeeping Clerks",
+    "observed_exposure": 0.0487
+  },
+  "juristes-entreprise": {
+    "soc_code": "23-1011",
+    "soc_title": "Lawyers",
+    "observed_exposure": 0.1673
+  },
+  "huissiers-justice": {
+    "soc_code": "33-3011",
+    "soc_title": "Bailiffs",
+    "observed_exposure": 0.0
+  },
+  "greffiers": {
+    "soc_code": "43-4031",
+    "soc_title": "Court, Municipal, and License Clerks",
+    "observed_exposure": 0.102
+  },
+  "ingenieurs-btp": {
+    "soc_code": "17-2051",
+    "soc_title": "Civil Engineers",
+    "observed_exposure": 0.0081
+  },
+  "urbanistes": {
+    "soc_code": "19-3051",
+    "soc_title": "Urban and Regional Planners",
+    "observed_exposure": 0.0959
+  },
+  "agents-impots": {
+    "soc_code": "13-2081",
+    "soc_title": "Tax Examiners and Collectors, and Revenue Agents",
+    "observed_exposure": 0.0275
+  },
+  "attaches-territoriaux": {
+    "soc_code": "11-9199",
+    "soc_title": "Managers, All Other",
+    "observed_exposure": 0.0686
+  },
+  "ingenieurs-environnement": {
+    "soc_code": "17-2081",
+    "soc_title": "Environmental Engineers",
+    "observed_exposure": 0.0358
+  },
+  "techniciens-traitement-eaux": {
+    "soc_code": "51-8031",
+    "soc_title": "Water and Wastewater Treatment Plant and System Operators",
+    "observed_exposure": 0.0
+  },
+  "conseillers-insertion": {
+    "soc_code": "21-1012",
+    "soc_title": "Educational, Guidance, and Career Counselors and Advisors",
+    "observed_exposure": 0.1182
+  },
+  "moniteurs-educateurs": {
+    "soc_code": "21-1093",
+    "soc_title": "Social and Human Service Assistants",
+    "observed_exposure": 0.0
+  },
+  "eleveurs": {
+    "soc_code": "11-9013",
+    "soc_title": "Farmers, Ranchers, and Other Agricultural Managers",
+    "observed_exposure": 0.0
+  },
+  "pecheurs": null,
+  "conducteurs-engins-chantier": {
+    "soc_code": "47-2073",
+    "soc_title": "Operating Engineers and Other Construction Equipment Operators",
+    "observed_exposure": 0.0
+  },
+  "carreleurs": {
+    "soc_code": "47-2044",
+    "soc_title": "Tile and Stone Setters",
+    "observed_exposure": 0.0
+  },
+  "gestionnaires-patrimoine": {
+    "soc_code": "13-2052",
+    "soc_title": "Personal Financial Advisors",
+    "observed_exposure": 0.3504
+  },
+  "traders": {
+    "soc_code": "41-3031",
+    "soc_title": "Securities, Commodities, and Financial Services Sales Agents",
+    "observed_exposure": 0.4413
+  },
+  "analystes-financiers": {
+    "soc_code": "13-2051",
+    "soc_title": "Financial and Investment Analysts",
+    "observed_exposure": 0.5716
+  },
+  "moniteurs-sport": {
+    "soc_code": "39-9031",
+    "soc_title": "Exercise Trainers and Group Fitness Instructors",
+    "observed_exposure": 0.0
+  },
+  "entraineurs-sportifs": {
+    "soc_code": "27-2022",
+    "soc_title": "Coaches and Scouts",
+    "observed_exposure": 0.0
+  },
+  "dieteticiens": {
+    "soc_code": "29-1031",
+    "soc_title": "Dietitians and Nutritionists",
+    "observed_exposure": 0.1328
+  },
+  "orthophonistes": {
+    "soc_code": "29-1127",
+    "soc_title": "Speech-Language Pathologists",
+    "observed_exposure": 0.0
+  },
+  "ergotherapeutes": {
+    "soc_code": "29-1122",
+    "soc_title": "Occupational Therapists",
+    "observed_exposure": 0.008
+  },
+  "operateurs-centre-appels": {
+    "soc_code": "43-4051",
+    "soc_title": "Customer Service Representatives",
+    "observed_exposure": 0.7011
+  },
+  "webmasters": {
+    "soc_code": "15-1254",
+    "soc_title": "Web Developers",
+    "observed_exposure": 0.4802
+  },
+  "chefs-produit": {
+    "soc_code": "13-1161",
+    "soc_title": "Market Research Analysts and Marketing Specialists",
+    "observed_exposure": 0.6483
+  },
+  "logisticiens": {
+    "soc_code": "13-1081",
+    "soc_title": "Logisticians",
+    "observed_exposure": 0.1571
+  },
+  "declarants-douane": {
+    "soc_code": "13-1041",
+    "soc_title": "Compliance Officers",
+    "observed_exposure": 0.1211
+  },
+  "techniciens-frigoristes": {
+    "soc_code": "49-9021",
+    "soc_title": "Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+    "observed_exposure": 0.0191
+  },
+  "chaudronniers": {
+    "soc_code": "47-2011",
+    "soc_title": "Boilermakers",
+    "observed_exposure": 0.0
+  },
+  "usineurs": {
+    "soc_code": "51-4041",
+    "soc_title": "Machinists",
+    "observed_exposure": 0.0
+  },
+  "conducteurs-ligne-production": {
+    "soc_code": "51-4081",
+    "soc_title": "Multiple Machine Tool Setters, Operators, and Tenders, Metal and Plastic",
+    "observed_exposure": 0.0
+  }
+}

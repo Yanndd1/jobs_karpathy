@@ -1,0 +1,14 @@
+{
+  "code": "G1602",
+  "libelle": "Cuisiniers",
+  "definition": "Le/la cuisiniers exerce un métier relevant de la catégorie hotellerie-restauration. Ce métier est référencé sous le code ROME G1602.",
+  "acces": "",
+  "appellations": [
+    {
+      "libelle": "Cuisiniers"
+    }
+  ],
+  "competences": [],
+  "contexteTravail": [],
+  "mobilites": []
+}

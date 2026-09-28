@@ -1,77 +1,97 @@
-# US Job Market Visualizer
+# Visualiseur du marché du travail français
 
-A research tool for visually exploring Bureau of Labor Statistics [Occupational Outlook Handbook](https://www.bls.gov/ooh/) data. This is not a report, a paper, or a serious economic publication — it is a development tool for exploring BLS data visually.
+Outil de recherche pour explorer visuellement les données du [répertoire ROME](https://candidat.francetravail.fr/metierscope/) de France Travail (anciennement Pôle Emploi). Ce n'est pas un rapport ni une publication scientifique — c'est un outil de développement pour explorer les données de l'emploi visuellement.
 
-**Live demo: [karpathy.ai/jobs](https://karpathy.ai/jobs/)**
+Fork de [karpathy/jobs](https://github.com/karpathy/jobs) adapté au marché du travail français.
 
-## What's here
+## Contenu
 
-The BLS OOH covers **342 occupations** spanning every sector of the US economy, with detailed data on job duties, work environment, education requirements, pay, and employment projections. We scraped all of it and built an interactive treemap visualization where each rectangle's **area** is proportional to total employment and **color** shows the selected metric — toggle between BLS projected growth outlook, median pay, education requirements, and AI exposure.
+Le répertoire ROME couvre les métiers de l'économie française avec des données détaillées sur les tâches, l'environnement de travail, les conditions d'accès, les compétences et les salaires. Nous avons scrappé ces données via l'API France Travail et construit une visualisation interactive en treemap où la **surface** de chaque rectangle est proportionnelle au nombre d'emplois et la **couleur** indique la métrique sélectionnée — basculez entre perspectives de croissance, salaire médian, niveau de formation et exposition à l'IA.
 
-## LLM-powered coloring
+## D'où vient le score d'exposition
 
-The repo includes scrapers, parsers, and a pipeline for writing custom LLM prompts to score and color occupations by any criteria. You write a prompt, the LLM scores each occupation, and the treemap colors accordingly. The "Digital AI Exposure" layer is one example — it estimates how much current AI (which is primarily digital) will reshape each occupation. But you could write a different prompt for any question — e.g. exposure to humanoid robotics, offshoring risk, climate impact — and re-run the pipeline to get a different coloring. See `score.py` for the prompt and scoring pipeline.
+Contrairement au projet original, qui fait scorer chaque métier par un LLM, cette version agrège des travaux
+académiques et institutionnels (OIT, Stanford, INSEE, France Stratégie) pondérés par niveau de preuve et par
+récence, via le corpus de transitions-ia.fr. 124 métiers sont rattachés à ce corpus, 23 reposent sur une
+estimation d'expert écrite à la main dans `build_scores.py`. Le pipeline de scoring par LLM du projet
+original (`score.py`) est conservé dans le dépôt mais n'alimente plus le site.
 
-**What "AI Exposure" is NOT:**
-- It does **not** predict that a job will disappear. Software developers score 9/10 because AI is transforming their work — but demand for software could easily *grow* as each developer becomes more productive.
-- It does **not** account for demand elasticity, latent demand, regulatory barriers, or social preferences for human workers.
-- The scores are rough LLM estimates (Gemini Flash via OpenRouter), not rigorous predictions. Many high-exposure jobs will be reshaped, not replaced.
+**Ce que l'« Exposition IA » n'est PAS :**
+- Elle ne prédit **pas** la disparition d'un métier. Les développeurs scorent 8/10 car l'IA transforme leur travail, mais la demande de logiciels pourrait facilement *augmenter*.
+- Elle ne tient **pas** compte de l'élasticité de la demande, des barrières réglementaires, ou des préférences sociales.
+- Ce sont des estimations, pas des prédictions rigoureuses.
 
-## Data pipeline
+## Pipeline de données
 
-1. **Scrape** (`scrape.py`) — Playwright (non-headless, BLS blocks bots) downloads raw HTML for all 342 occupation pages into `html/`.
-2. **Parse** (`parse_detail.py`, `process.py`) — BeautifulSoup converts raw HTML into clean Markdown files in `pages/`.
-3. **Tabulate** (`make_csv.py`) — Extracts structured fields (pay, education, job count, growth outlook, SOC code) into `occupations.csv`.
-4. **Score** (`score.py`) — Sends each occupation's Markdown description to an LLM with a scoring rubric. Each occupation gets an AI Exposure score from 0-10 with a rationale. Results saved to `scores.json`. Fork this to write your own prompts.
-5. **Build site data** (`build_site_data.py`) — Merges CSV stats and AI exposure scores into a compact `site/data.json` for the frontend.
-6. **Website** (`site/index.html`) — Interactive treemap visualization with four color layers: BLS Outlook, Median Pay, Education, and Digital AI Exposure.
+1. **Scraper** (`scrape_francetravail.py`) — Récupère les données via l'API France Travail (ROME v2) avec authentification OAuth2. Sauvegarde les JSON bruts dans `html/`.
+2. **Parser** (`parse_rome.py`, `process.py`) — Convertit les données JSON/HTML en fichiers Markdown propres dans `pages/`.
+3. **Tabuler** (`make_csv_fr.py`) — Extrait les champs structurés (salaire, formation, emplois, code ROME) dans `metiers.csv`.
+3 bis. **Rafraîchir les statistiques** (`refresh_stats_fr.py`) : remplace les effectifs et les salaires de `metiers.csv` par ceux de la Dares (Portraits statistiques des métiers), via un rattachement des 147 métiers aux familles professionnelles FAP-2021. Option `--dry-run` pour un rapport sans écriture.
+4. **Scorer** (`build_scores.py`) : rattache chaque métier au corpus multi-sources de transitions-ia.fr via `MANUAL_MAP` (124 métiers), ou applique une estimation d'expert écrite à la main via `MANUAL_SCORES` (23 métiers). Résultats dans `scores.json`. Le script `score.py` (scoring par LLM, hérité du projet original) n'est plus utilisé.
+5. **Rapprocher l'exposition observée** (`build_observed_exposure.py`) : relie chaque métier à la profession SOC américaine la plus proche pour récupérer l'exposition observée de l'Anthropic Economic Index (mars 2026). Résultats dans `external_data/anthropic_observed_exposure_fr.json`.
+6. **Construire les données du site** (`build_site_data.py`) : fusionne CSV, scores IA et exposition observée dans `site/data.json`.
+7. **Site web** (`site/index.html`) : visualisation treemap interactive avec quatre couches : Perspectives, Salaire médian, Formation, Exposition IA.
 
-## Key files
+## Fichiers clés
 
-| File | Description |
-|------|-------------|
-| `occupations.json` | Master list of 342 occupations with title, URL, category, slug |
-| `occupations.csv` | Summary stats: pay, education, job count, growth projections |
-| `scores.json` | AI exposure scores (0-10) with rationales for all 342 occupations |
-| `prompt.md` | All data in a single file, designed to be pasted into an LLM for analysis |
-| `html/` | Raw HTML pages from BLS (source of truth, ~40MB) |
-| `pages/` | Clean Markdown versions of each occupation page |
-| `site/` | Static website (treemap visualization) |
+| Fichier | Description |
+|---------|-------------|
+| `metiers.json` | Liste principale des métiers avec titre, URL, catégorie, slug, code ROME |
+| `metiers.csv` | Statistiques résumées : salaire, formation, nombre d'emplois |
+| `scores.json` | Scores d'exposition IA (0-10) avec explications |
+| `external_data/dares_psm_effectifs_2004_2024.xlsx` | Effectifs en emploi par famille professionnelle, 2004 à 2024 (Dares) |
+| `external_data/dares_psm_salaire_median.xlsx` | Salaire mensuel net médian par famille professionnelle, 2023-2025 (Dares) |
+| `external_data/dares_rome_to_fap2021.csv` | Table de passage Rome vers FAP-2021 (Dares) |
+| `external_data/dares_stats_fr.json` | Rapport du rattachement de nos 147 métiers aux familles professionnelles |
+| `external_data/anthropic_observed_exposure_2026_03.csv` | Exposition observée de 756 professions SOC (Anthropic Economic Index, mars 2026) |
+| `external_data/anthropic_observed_exposure_fr.json` | Exposition observée rapprochée de nos 147 métiers (144 rapprochés) |
+| `prompt.md` | Toutes les données dans un seul fichier, conçu pour être collé dans un LLM |
+| `html/` | Données brutes de l'API France Travail (source de vérité) |
+| `pages/` | Versions Markdown propres de chaque fiche métier |
+| `site/` | Site web statique (visualisation treemap) |
 
-## LLM prompt
+## Prompt LLM
 
-[`prompt.md`](prompt.md) packages all the data — aggregate statistics, tier breakdowns, exposure by pay/education, BLS growth projections, and all 342 occupations with their scores and rationales — into a single file (~45K tokens) designed to be pasted into an LLM. This lets you have a data-grounded conversation about AI's impact on the job market without needing to run any code. Regenerate it with `uv run python make_prompt.py`.
+[`prompt.md`](prompt.md) package toutes les données — statistiques agrégées, répartitions par niveau, exposition par salaire/formation, et tous les métiers avec leurs scores et explications — dans un seul fichier conçu pour être collé dans un LLM. Régénérez-le avec `uv run python make_prompt.py`.
 
-## Setup
+## Installation
 
 ```
 uv sync
 uv run playwright install chromium
 ```
 
-Requires an OpenRouter API key in `.env`:
+Nécessite dans `.env` :
 ```
-OPENROUTER_API_KEY=your_key_here
+FRANCE_TRAVAIL_CLIENT_ID=votre_client_id
+FRANCE_TRAVAIL_CLIENT_SECRET=votre_client_secret
+OPENROUTER_API_KEY=votre_cle
 ```
 
-## Usage
+## Utilisation
 
 ```bash
-# Scrape BLS pages (only needed once, results are cached in html/)
-uv run python scrape.py
+# Scraper les données France Travail (une seule fois, résultats mis en cache dans html/)
+uv run python scrape_francetravail.py
 
-# Generate Markdown from HTML
+# Générer le Markdown à partir des données brutes
 uv run python process.py
 
-# Generate CSV summary
-uv run python make_csv.py
+# Générer le CSV résumé
+uv run python make_csv_fr.py
 
-# Score AI exposure (uses OpenRouter API)
-uv run python score.py
+# Rafraîchir effectifs et salaires depuis les données Dares
+uv run python refresh_stats_fr.py
 
-# Build website data
+# Scorer l'exposition IA (rattachement au corpus multi-sources)
+uv run python build_scores.py
+
+# Rapprocher l'exposition observée (Anthropic Economic Index, mars 2026)
+uv run python build_observed_exposure.py
+
+# Construire les données du site
 uv run python build_site_data.py
 
-# Serve the site locally
+# Servir le site localement
 cd site && python -m http.server 8000
 ```

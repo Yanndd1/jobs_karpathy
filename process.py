@@ -1,41 +1,47 @@
 """
-Process scraped HTML files into Markdown.
+Process scraped data files into Markdown.
 
-Reads from html/<slug>.html, writes to pages/<slug>.md.
-Reuses parse_detail.parse_ooh_page() which is already tested.
+Reads from html/<slug>.json or html/<slug>.html, writes to pages/<slug>.md.
+Uses parse_rome.parse_metier() for French ROME data.
 
 Usage:
-    uv run python process.py              # process all HTML files
+    uv run python process.py              # process all files
     uv run python process.py --force      # re-process even if .md exists
 """
 
 import argparse
 import json
 import os
-from parse_detail import parse_ooh_page
+from parse_rome import parse_metier
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Convert HTML to Markdown")
+    parser = argparse.ArgumentParser(description="Convert scraped data to Markdown")
     parser.add_argument("--force", action="store_true", help="Re-process even if .md exists")
     args = parser.parse_args()
 
     os.makedirs("pages", exist_ok=True)
 
-    # Load master list for ordering/metadata
-    with open("occupations.json") as f:
-        occupations = json.load(f)
+    # Load master list
+    with open("metiers.json") as f:
+        metiers = json.load(f)
 
     processed = 0
     skipped = 0
     missing = 0
 
-    for occ in occupations:
-        slug = occ["slug"]
+    for m in metiers:
+        slug = m["slug"]
+        # Try JSON first (API data), then HTML (web data)
+        json_path = f"html/{slug}.json"
         html_path = f"html/{slug}.html"
         md_path = f"pages/{slug}.md"
 
-        if not os.path.exists(html_path):
+        if os.path.exists(json_path):
+            source_path = json_path
+        elif os.path.exists(html_path):
+            source_path = html_path
+        else:
             missing += 1
             continue
 
@@ -43,15 +49,19 @@ def main():
             skipped += 1
             continue
 
-        md = parse_ooh_page(html_path)
-        with open(md_path, "w") as f:
-            f.write(md)
-        processed += 1
+        try:
+            md = parse_metier(source_path)
+            with open(md_path, "w") as f:
+                f.write(md)
+            processed += 1
+        except Exception as e:
+            print(f"Error processing {slug}: {e}")
 
-    total_html = len([f for f in os.listdir("html") if f.endswith(".html")])
-    total_md = len([f for f in os.listdir("pages") if f.endswith(".md")])
-    print(f"Processed: {processed}, Skipped (cached): {skipped}, Missing HTML: {missing}")
-    print(f"Total: {total_html} HTML files, {total_md} Markdown files")
+    total_sources = len([f for f in os.listdir("html")
+                         if f.endswith(".json") or f.endswith(".html")])
+    total_md = len([f for f in os.listdir("pages") if f.endswith(".md")]) if os.path.exists("pages") else 0
+    print(f"Processed: {processed}, Skipped (cached): {skipped}, Missing source: {missing}")
+    print(f"Total: {total_sources} source files, {total_md} Markdown files")
 
 
 if __name__ == "__main__":

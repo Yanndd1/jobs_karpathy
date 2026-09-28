@@ -1,0 +1,14 @@
+{
+  "code": "M1203",
+  "libelle": "Comptables",
+  "definition": "Le/la comptables exerce un métier relevant de la catégorie support-entreprise. Ce métier est référencé sous le code ROME M1203.",
+  "acces": "",
+  "appellations": [
+    {
+      "libelle": "Comptables"
+    }
+  ],
+  "competences": [],
+  "contexteTravail": [],
+  "mobilites": []
+}

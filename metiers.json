@@ -1,0 +1,1031 @@
+[
+  {
+    "title": "Comptables",
+    "code_rome": "M1203",
+    "category": "support-entreprise",
+    "slug": "comptables",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1203"
+  },
+  {
+    "title": "Développeurs informatiques",
+    "code_rome": "M1805",
+    "category": "informatique-telecoms",
+    "slug": "developpeurs-informatiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1805"
+  },
+  {
+    "title": "Infirmiers en soins généraux",
+    "code_rome": "J1506",
+    "category": "sante",
+    "slug": "infirmiers-soins-generaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1506"
+  },
+  {
+    "title": "Aides-soignants",
+    "code_rome": "J1501",
+    "category": "sante",
+    "slug": "aides-soignants",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1501"
+  },
+  {
+    "title": "Enseignants du secondaire",
+    "code_rome": "K2107",
+    "category": "enseignement-formation",
+    "slug": "enseignants-secondaire",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2107"
+  },
+  {
+    "title": "Enseignants du primaire",
+    "code_rome": "K2106",
+    "category": "enseignement-formation",
+    "slug": "enseignants-primaire",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2106"
+  },
+  {
+    "title": "Agents de sécurité",
+    "code_rome": "K2503",
+    "category": "services-collectivite",
+    "slug": "agents-securite",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2503"
+  },
+  {
+    "title": "Vendeurs en magasin",
+    "code_rome": "D1214",
+    "category": "commerce-vente",
+    "slug": "vendeurs-magasin",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1214"
+  },
+  {
+    "title": "Caissiers",
+    "code_rome": "D1505",
+    "category": "commerce-vente",
+    "slug": "caissiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1505"
+  },
+  {
+    "title": "Cuisiniers",
+    "code_rome": "G1602",
+    "category": "hotellerie-restauration",
+    "slug": "cuisiniers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1602"
+  },
+  {
+    "title": "Serveurs de restaurant",
+    "code_rome": "G1803",
+    "category": "hotellerie-restauration",
+    "slug": "serveurs-restaurant",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1803"
+  },
+  {
+    "title": "Maçons",
+    "code_rome": "F1703",
+    "category": "construction-btp",
+    "slug": "macons",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1703"
+  },
+  {
+    "title": "Électriciens du bâtiment",
+    "code_rome": "F1602",
+    "category": "construction-btp",
+    "slug": "electriciens-batiment",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1602"
+  },
+  {
+    "title": "Plombiers-chauffagistes",
+    "code_rome": "F1603",
+    "category": "construction-btp",
+    "slug": "plombiers-chauffagistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1603"
+  },
+  {
+    "title": "Peintres en bâtiment",
+    "code_rome": "F1606",
+    "category": "construction-btp",
+    "slug": "peintres-batiment",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1606"
+  },
+  {
+    "title": "Conducteurs de travaux",
+    "code_rome": "F1201",
+    "category": "construction-btp",
+    "slug": "conducteurs-travaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1201"
+  },
+  {
+    "title": "Conducteurs routiers",
+    "code_rome": "N4101",
+    "category": "transport-logistique",
+    "slug": "conducteurs-routiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4101"
+  },
+  {
+    "title": "Agents de transit",
+    "code_rome": "N1202",
+    "category": "transport-logistique",
+    "slug": "agents-transit",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1202"
+  },
+  {
+    "title": "Magasiniers",
+    "code_rome": "N1103",
+    "category": "transport-logistique",
+    "slug": "magasiniers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1103"
+  },
+  {
+    "title": "Livreurs",
+    "code_rome": "N4105",
+    "category": "transport-logistique",
+    "slug": "livreurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4105"
+  },
+  {
+    "title": "Médecins généralistes",
+    "code_rome": "J1102",
+    "category": "sante",
+    "slug": "medecins-generalistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1102"
+  },
+  {
+    "title": "Pharmaciens",
+    "code_rome": "J1202",
+    "category": "sante",
+    "slug": "pharmaciens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1202"
+  },
+  {
+    "title": "Kinésithérapeutes",
+    "code_rome": "J1404",
+    "category": "sante",
+    "slug": "kinesitherapeutes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1404"
+  },
+  {
+    "title": "Chirurgiens-dentistes",
+    "code_rome": "J1103",
+    "category": "sante",
+    "slug": "chirurgiens-dentistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1103"
+  },
+  {
+    "title": "Sages-femmes",
+    "code_rome": "J1104",
+    "category": "sante",
+    "slug": "sages-femmes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1104"
+  },
+  {
+    "title": "Psychologues",
+    "code_rome": "K1104",
+    "category": "sante",
+    "slug": "psychologues",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1104"
+  },
+  {
+    "title": "Avocats",
+    "code_rome": "K1903",
+    "category": "droit-justice",
+    "slug": "avocats",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1903"
+  },
+  {
+    "title": "Notaires",
+    "code_rome": "K1901",
+    "category": "droit-justice",
+    "slug": "notaires",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1901"
+  },
+  {
+    "title": "Agents immobiliers",
+    "code_rome": "C1504",
+    "category": "banque-assurance-immobilier",
+    "slug": "agents-immobiliers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1504"
+  },
+  {
+    "title": "Conseillers bancaires",
+    "code_rome": "C1206",
+    "category": "banque-assurance-immobilier",
+    "slug": "conseillers-bancaires",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1206"
+  },
+  {
+    "title": "Agents d'assurance",
+    "code_rome": "C1102",
+    "category": "banque-assurance-immobilier",
+    "slug": "agents-assurance",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1102"
+  },
+  {
+    "title": "Agriculteurs",
+    "code_rome": "A1101",
+    "category": "agriculture-peche",
+    "slug": "agriculteurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1101"
+  },
+  {
+    "title": "Jardiniers-paysagistes",
+    "code_rome": "A1203",
+    "category": "agriculture-peche",
+    "slug": "jardiniers-paysagistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1203"
+  },
+  {
+    "title": "Boulangers-pâtissiers",
+    "code_rome": "D1102",
+    "category": "commerce-vente",
+    "slug": "boulangers-patissiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1102"
+  },
+  {
+    "title": "Bouchers",
+    "code_rome": "D1101",
+    "category": "commerce-vente",
+    "slug": "bouchers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1101"
+  },
+  {
+    "title": "Coiffeurs",
+    "code_rome": "D1202",
+    "category": "services-personne",
+    "slug": "coiffeurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1202"
+  },
+  {
+    "title": "Esthéticiens",
+    "code_rome": "D1208",
+    "category": "services-personne",
+    "slug": "estheticiens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1208"
+  },
+  {
+    "title": "Assistants maternels",
+    "code_rome": "K1303",
+    "category": "services-personne",
+    "slug": "assistants-maternels",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1303"
+  },
+  {
+    "title": "Aides à domicile",
+    "code_rome": "K1304",
+    "category": "services-personne",
+    "slug": "aides-domicile",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1304"
+  },
+  {
+    "title": "Agents d'entretien",
+    "code_rome": "K2204",
+    "category": "services-collectivite",
+    "slug": "agents-entretien",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2204"
+  },
+  {
+    "title": "Secrétaires",
+    "code_rome": "M1607",
+    "category": "support-entreprise",
+    "slug": "secretaires",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1607"
+  },
+  {
+    "title": "Assistants de direction",
+    "code_rome": "M1604",
+    "category": "support-entreprise",
+    "slug": "assistants-direction",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1604"
+  },
+  {
+    "title": "Responsables des ressources humaines",
+    "code_rome": "M1503",
+    "category": "support-entreprise",
+    "slug": "responsables-rh",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1503"
+  },
+  {
+    "title": "Contrôleurs de gestion",
+    "code_rome": "M1204",
+    "category": "support-entreprise",
+    "slug": "controleurs-gestion",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1204"
+  },
+  {
+    "title": "Directeurs de magasin",
+    "code_rome": "D1301",
+    "category": "commerce-vente",
+    "slug": "directeurs-magasin",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1301"
+  },
+  {
+    "title": "Responsables logistiques",
+    "code_rome": "N1302",
+    "category": "transport-logistique",
+    "slug": "responsables-logistiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1302"
+  },
+  {
+    "title": "Techniciens de maintenance industrielle",
+    "code_rome": "I1304",
+    "category": "industrie",
+    "slug": "techniciens-maintenance-industrielle",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1304"
+  },
+  {
+    "title": "Soudeurs",
+    "code_rome": "H2913",
+    "category": "industrie",
+    "slug": "soudeurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2913"
+  },
+  {
+    "title": "Opérateurs de production",
+    "code_rome": "H3302",
+    "category": "industrie",
+    "slug": "operateurs-production",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H3302"
+  },
+  {
+    "title": "Ingénieurs en mécanique",
+    "code_rome": "H1206",
+    "category": "industrie",
+    "slug": "ingenieurs-mecanique",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1206"
+  },
+  {
+    "title": "Techniciens qualité",
+    "code_rome": "H1502",
+    "category": "industrie",
+    "slug": "techniciens-qualite",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1502"
+  },
+  {
+    "title": "Designers graphiques",
+    "code_rome": "E1205",
+    "category": "communication-media",
+    "slug": "designers-graphiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1205"
+  },
+  {
+    "title": "Journalistes",
+    "code_rome": "E1106",
+    "category": "communication-media",
+    "slug": "journalistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1106"
+  },
+  {
+    "title": "Rédacteurs web",
+    "code_rome": "E1104",
+    "category": "communication-media",
+    "slug": "redacteurs-web",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1104"
+  },
+  {
+    "title": "Chargés de communication",
+    "code_rome": "E1103",
+    "category": "communication-media",
+    "slug": "charges-communication",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1103"
+  },
+  {
+    "title": "Community managers",
+    "code_rome": "E1101",
+    "category": "communication-media",
+    "slug": "community-managers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1101"
+  },
+  {
+    "title": "Administrateurs systèmes et réseaux",
+    "code_rome": "M1801",
+    "category": "informatique-telecoms",
+    "slug": "administrateurs-systemes-reseaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1801"
+  },
+  {
+    "title": "Chefs de projets informatiques",
+    "code_rome": "M1803",
+    "category": "informatique-telecoms",
+    "slug": "chefs-projets-informatiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1803"
+  },
+  {
+    "title": "Data analysts",
+    "code_rome": "M1403",
+    "category": "informatique-telecoms",
+    "slug": "data-analysts",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1403"
+  },
+  {
+    "title": "Techniciens support informatique",
+    "code_rome": "I1401",
+    "category": "informatique-telecoms",
+    "slug": "techniciens-support-informatique",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1401"
+  },
+  {
+    "title": "Architectes",
+    "code_rome": "F1101",
+    "category": "construction-btp",
+    "slug": "architectes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1101"
+  },
+  {
+    "title": "Géomètres-topographes",
+    "code_rome": "F1107",
+    "category": "construction-btp",
+    "slug": "geometres-topographes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1107"
+  },
+  {
+    "title": "Mécaniciens automobiles",
+    "code_rome": "I1604",
+    "category": "industrie",
+    "slug": "mecaniciens-automobiles",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1604"
+  },
+  {
+    "title": "Carrossiers",
+    "code_rome": "I1606",
+    "category": "industrie",
+    "slug": "carrossiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1606"
+  },
+  {
+    "title": "Sapeurs-pompiers",
+    "code_rome": "K1705",
+    "category": "services-collectivite",
+    "slug": "sapeurs-pompiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1705"
+  },
+  {
+    "title": "Policiers",
+    "code_rome": "K1706",
+    "category": "services-collectivite",
+    "slug": "policiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1706"
+  },
+  {
+    "title": "Gendarmes",
+    "code_rome": "K1707",
+    "category": "services-collectivite",
+    "slug": "gendarmes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1707"
+  },
+  {
+    "title": "Éducateurs spécialisés",
+    "code_rome": "K1207",
+    "category": "social",
+    "slug": "educateurs-specialises",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1207"
+  },
+  {
+    "title": "Assistants de service social",
+    "code_rome": "K1201",
+    "category": "social",
+    "slug": "assistants-service-social",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1201"
+  },
+  {
+    "title": "Animateurs socioculturels",
+    "code_rome": "K1206",
+    "category": "social",
+    "slug": "animateurs-socioculturels",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1206"
+  },
+  {
+    "title": "Directeurs généraux",
+    "code_rome": "M1302",
+    "category": "direction-entreprise",
+    "slug": "directeurs-generaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1302"
+  },
+  {
+    "title": "Directeurs financiers",
+    "code_rome": "M1207",
+    "category": "direction-entreprise",
+    "slug": "directeurs-financiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1207"
+  },
+  {
+    "title": "Responsables marketing",
+    "code_rome": "M1705",
+    "category": "commerce-vente",
+    "slug": "responsables-marketing",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1705"
+  },
+  {
+    "title": "Commerciaux terrain",
+    "code_rome": "D1407",
+    "category": "commerce-vente",
+    "slug": "commerciaux-terrain",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1407"
+  },
+  {
+    "title": "Télévendeurs",
+    "code_rome": "D1408",
+    "category": "commerce-vente",
+    "slug": "televendeurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1408"
+  },
+  {
+    "title": "Acheteurs",
+    "code_rome": "M1101",
+    "category": "support-entreprise",
+    "slug": "acheteurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1101"
+  },
+  {
+    "title": "Charpentiers",
+    "code_rome": "F1501",
+    "category": "construction-btp",
+    "slug": "charpentiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1501"
+  },
+  {
+    "title": "Couvreurs",
+    "code_rome": "F1610",
+    "category": "construction-btp",
+    "slug": "couvreurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1610"
+  },
+  {
+    "title": "Menuisiers",
+    "code_rome": "H2206",
+    "category": "industrie",
+    "slug": "menuisiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2206"
+  },
+  {
+    "title": "Techniciens en électronique",
+    "code_rome": "I1305",
+    "category": "industrie",
+    "slug": "techniciens-electronique",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1305"
+  },
+  {
+    "title": "Ingénieurs en informatique",
+    "code_rome": "M1802",
+    "category": "informatique-telecoms",
+    "slug": "ingenieurs-informatique",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1802"
+  },
+  {
+    "title": "Experts en cybersécurité",
+    "code_rome": "M1806",
+    "category": "informatique-telecoms",
+    "slug": "experts-cybersecurite",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1806"
+  },
+  {
+    "title": "Techniciens télécoms",
+    "code_rome": "I1307",
+    "category": "informatique-telecoms",
+    "slug": "techniciens-telecoms",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1307"
+  },
+  {
+    "title": "Traducteurs-interprètes",
+    "code_rome": "E1108",
+    "category": "communication-media",
+    "slug": "traducteurs-interpretes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1108"
+  },
+  {
+    "title": "Photographes",
+    "code_rome": "E1201",
+    "category": "communication-media",
+    "slug": "photographes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1201"
+  },
+  {
+    "title": "Techniciens audiovisuels",
+    "code_rome": "L1505",
+    "category": "arts-spectacle",
+    "slug": "techniciens-audiovisuels",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1505"
+  },
+  {
+    "title": "Comédiens",
+    "code_rome": "L1203",
+    "category": "arts-spectacle",
+    "slug": "comediens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1203"
+  },
+  {
+    "title": "Musiciens",
+    "code_rome": "L1202",
+    "category": "arts-spectacle",
+    "slug": "musiciens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/L1202"
+  },
+  {
+    "title": "Agents de voyage",
+    "code_rome": "G1303",
+    "category": "hotellerie-restauration",
+    "slug": "agents-voyage",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1303"
+  },
+  {
+    "title": "Réceptionnistes d'hôtel",
+    "code_rome": "G1703",
+    "category": "hotellerie-restauration",
+    "slug": "receptionnistes-hotel",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1703"
+  },
+  {
+    "title": "Guides touristiques",
+    "code_rome": "G1201",
+    "category": "hotellerie-restauration",
+    "slug": "guides-touristiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1201"
+  },
+  {
+    "title": "Chefs de cuisine",
+    "code_rome": "G1601",
+    "category": "hotellerie-restauration",
+    "slug": "chefs-cuisine",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1601"
+  },
+  {
+    "title": "Experts-comptables",
+    "code_rome": "M1202",
+    "category": "support-entreprise",
+    "slug": "experts-comptables",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1202"
+  },
+  {
+    "title": "Auditeurs financiers",
+    "code_rome": "M1202",
+    "category": "support-entreprise",
+    "slug": "auditeurs-financiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1202"
+  },
+  {
+    "title": "Opticiens-lunetiers",
+    "code_rome": "J1405",
+    "category": "sante",
+    "slug": "opticiens-lunetiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1405"
+  },
+  {
+    "title": "Vétérinaires",
+    "code_rome": "A1504",
+    "category": "agriculture-peche",
+    "slug": "veterinaires",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1504"
+  },
+  {
+    "title": "Ingénieurs agronomes",
+    "code_rome": "A1303",
+    "category": "agriculture-peche",
+    "slug": "ingenieurs-agronomes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1303"
+  },
+  {
+    "title": "Ouvriers viticoles",
+    "code_rome": "A1405",
+    "category": "agriculture-peche",
+    "slug": "ouvriers-viticoles",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1405"
+  },
+  {
+    "title": "Chercheurs",
+    "code_rome": "K2402",
+    "category": "enseignement-formation",
+    "slug": "chercheurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2402"
+  },
+  {
+    "title": "Formateurs",
+    "code_rome": "K2111",
+    "category": "enseignement-formation",
+    "slug": "formateurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2111"
+  },
+  {
+    "title": "Bibliothécaires",
+    "code_rome": "K1601",
+    "category": "enseignement-formation",
+    "slug": "bibliothecaires",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1601"
+  },
+  {
+    "title": "Préparateurs en pharmacie",
+    "code_rome": "J1307",
+    "category": "sante",
+    "slug": "preparateurs-pharmacie",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1307"
+  },
+  {
+    "title": "Ambulanciers",
+    "code_rome": "J1305",
+    "category": "sante",
+    "slug": "ambulanciers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1305"
+  },
+  {
+    "title": "Manipulateurs en radiologie",
+    "code_rome": "J1306",
+    "category": "sante",
+    "slug": "manipulateurs-radiologie",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1306"
+  },
+  {
+    "title": "Techniciens de laboratoire médical",
+    "code_rome": "J1302",
+    "category": "sante",
+    "slug": "techniciens-labo-medical",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1302"
+  },
+  {
+    "title": "Agents de propreté urbaine",
+    "code_rome": "K2303",
+    "category": "services-collectivite",
+    "slug": "agents-proprete-urbaine",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2303"
+  },
+  {
+    "title": "Conducteurs de bus",
+    "code_rome": "N4103",
+    "category": "transport-logistique",
+    "slug": "conducteurs-bus",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4103"
+  },
+  {
+    "title": "Conducteurs de train",
+    "code_rome": "N4301",
+    "category": "transport-logistique",
+    "slug": "conducteurs-train",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N4301"
+  },
+  {
+    "title": "Pilotes d'avion",
+    "code_rome": "N2101",
+    "category": "transport-logistique",
+    "slug": "pilotes-avion",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N2101"
+  },
+  {
+    "title": "Mécaniciens aéronautiques",
+    "code_rome": "I1602",
+    "category": "industrie",
+    "slug": "mecaniciens-aeronautiques",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1602"
+  },
+  {
+    "title": "Ingénieurs en énergie",
+    "code_rome": "H1206",
+    "category": "industrie",
+    "slug": "ingenieurs-energie",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1206"
+  },
+  {
+    "title": "Techniciens en énergie renouvelable",
+    "code_rome": "I1306",
+    "category": "industrie",
+    "slug": "techniciens-energie-renouvelable",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1306"
+  },
+  {
+    "title": "Agents d'accueil",
+    "code_rome": "M1601",
+    "category": "support-entreprise",
+    "slug": "agents-accueil",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1601"
+  },
+  {
+    "title": "Opérateurs de saisie",
+    "code_rome": "M1606",
+    "category": "support-entreprise",
+    "slug": "operateurs-saisie",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1606"
+  },
+  {
+    "title": "Gestionnaires de paie",
+    "code_rome": "M1501",
+    "category": "support-entreprise",
+    "slug": "gestionnaires-paie",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1501"
+  },
+  {
+    "title": "Juristes d'entreprise",
+    "code_rome": "K1903",
+    "category": "droit-justice",
+    "slug": "juristes-entreprise",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1903"
+  },
+  {
+    "title": "Huissiers de justice",
+    "code_rome": "K1902",
+    "category": "droit-justice",
+    "slug": "huissiers-justice",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1902"
+  },
+  {
+    "title": "Greffiers",
+    "code_rome": "K1904",
+    "category": "droit-justice",
+    "slug": "greffiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1904"
+  },
+  {
+    "title": "Ingénieurs BTP",
+    "code_rome": "F1106",
+    "category": "construction-btp",
+    "slug": "ingenieurs-btp",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1106"
+  },
+  {
+    "title": "Urbanistes",
+    "code_rome": "K1404",
+    "category": "services-collectivite",
+    "slug": "urbanistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1404"
+  },
+  {
+    "title": "Agents des impôts",
+    "code_rome": "K1501",
+    "category": "services-collectivite",
+    "slug": "agents-impots",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1501"
+  },
+  {
+    "title": "Attachés territoriaux",
+    "code_rome": "K1401",
+    "category": "services-collectivite",
+    "slug": "attaches-territoriaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1401"
+  },
+  {
+    "title": "Ingénieurs environnement",
+    "code_rome": "H1302",
+    "category": "industrie",
+    "slug": "ingenieurs-environnement",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H1302"
+  },
+  {
+    "title": "Techniciens en traitement des eaux",
+    "code_rome": "K2306",
+    "category": "services-collectivite",
+    "slug": "techniciens-traitement-eaux",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K2306"
+  },
+  {
+    "title": "Conseillers en insertion professionnelle",
+    "code_rome": "K1801",
+    "category": "social",
+    "slug": "conseillers-insertion",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1801"
+  },
+  {
+    "title": "Moniteurs-éducateurs",
+    "code_rome": "K1208",
+    "category": "social",
+    "slug": "moniteurs-educateurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/K1208"
+  },
+  {
+    "title": "Éleveurs",
+    "code_rome": "A1410",
+    "category": "agriculture-peche",
+    "slug": "eleveurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1410"
+  },
+  {
+    "title": "Pêcheurs",
+    "code_rome": "A1416",
+    "category": "agriculture-peche",
+    "slug": "pecheurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/A1416"
+  },
+  {
+    "title": "Conducteurs d'engins de chantier",
+    "code_rome": "F1302",
+    "category": "construction-btp",
+    "slug": "conducteurs-engins-chantier",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1302"
+  },
+  {
+    "title": "Carreleurs",
+    "code_rome": "F1608",
+    "category": "construction-btp",
+    "slug": "carreleurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/F1608"
+  },
+  {
+    "title": "Gestionnaires de patrimoine",
+    "code_rome": "C1205",
+    "category": "banque-assurance-immobilier",
+    "slug": "gestionnaires-patrimoine",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1205"
+  },
+  {
+    "title": "Traders",
+    "code_rome": "C1301",
+    "category": "banque-assurance-immobilier",
+    "slug": "traders",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1301"
+  },
+  {
+    "title": "Analystes financiers",
+    "code_rome": "C1202",
+    "category": "banque-assurance-immobilier",
+    "slug": "analystes-financiers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/C1202"
+  },
+  {
+    "title": "Moniteurs de sport",
+    "code_rome": "G1204",
+    "category": "sport-loisirs",
+    "slug": "moniteurs-sport",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1204"
+  },
+  {
+    "title": "Entraîneurs sportifs",
+    "code_rome": "G1204",
+    "category": "sport-loisirs",
+    "slug": "entraineurs-sportifs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/G1204"
+  },
+  {
+    "title": "Diététiciens",
+    "code_rome": "J1403",
+    "category": "sante",
+    "slug": "dieteticiens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1403"
+  },
+  {
+    "title": "Orthophonistes",
+    "code_rome": "J1406",
+    "category": "sante",
+    "slug": "orthophonistes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1406"
+  },
+  {
+    "title": "Ergothérapeutes",
+    "code_rome": "J1403",
+    "category": "sante",
+    "slug": "ergotherapeutes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/J1403"
+  },
+  {
+    "title": "Opérateurs en centre d'appels",
+    "code_rome": "D1408",
+    "category": "commerce-vente",
+    "slug": "operateurs-centre-appels",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/D1408"
+  },
+  {
+    "title": "Webmasters",
+    "code_rome": "E1101",
+    "category": "informatique-telecoms",
+    "slug": "webmasters",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/E1101"
+  },
+  {
+    "title": "Chefs de produit",
+    "code_rome": "M1703",
+    "category": "commerce-vente",
+    "slug": "chefs-produit",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/M1703"
+  },
+  {
+    "title": "Logisticiens",
+    "code_rome": "N1301",
+    "category": "transport-logistique",
+    "slug": "logisticiens",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1301"
+  },
+  {
+    "title": "Déclarants en douane",
+    "code_rome": "N1202",
+    "category": "transport-logistique",
+    "slug": "declarants-douane",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/N1202"
+  },
+  {
+    "title": "Techniciens frigoristes",
+    "code_rome": "I1306",
+    "category": "industrie",
+    "slug": "techniciens-frigoristes",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/I1306"
+  },
+  {
+    "title": "Chaudronniers",
+    "code_rome": "H2902",
+    "category": "industrie",
+    "slug": "chaudronniers",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2902"
+  },
+  {
+    "title": "Usineurs",
+    "code_rome": "H2903",
+    "category": "industrie",
+    "slug": "usineurs",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2903"
+  },
+  {
+    "title": "Conducteurs de ligne de production",
+    "code_rome": "H2301",
+    "category": "industrie",
+    "slug": "conducteurs-ligne-production",
+    "url": "https://candidat.francetravail.fr/metierscope/fiche-metier/H2301"
+  }
+]
